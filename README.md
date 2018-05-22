@@ -5,6 +5,7 @@ Announcements
 
  * [PowerDNS](https://blog.powerdns.com/2018/03/22/removing-edns-workarounds/)
  * [CZ.NIC](https://en.blog.nic.cz/2018/03/14/together-for-better-stability-speed-and-further-extensibility-of-the-dns-ecosystem/)
+ * [ISC BIND] (https://www.isc.org/blogs/end-to-bandaids/)
 
 Presentations
 =============
