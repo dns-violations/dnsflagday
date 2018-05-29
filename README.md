@@ -51,6 +51,19 @@ Tools
  * [ISC EDNS Compliance tester](https://ednscomp.isc.org/), [source code](https://gitlab.isc.org/isc-projects/DNS-Compliance-Testing)
  * [DNSViz](http://dnsviz.net/)
 
+Supporters
+==========
+
+[![PowerDNS](/images/powerdns.png)](https://www.powerdns.com/)
+
+[![ISC](/images/isc.png)](https://www.isc.org/)
+
+[![NLnet Labs](/images/nlnetlabs.svg)](https://nlnetlabs.nl/)
+
+[![CZ.NIC](/images/cznic.png)](https://www.nic.cz/)
+
+[![Quad9](/images/quad9.png)](https://quad9.net/)
+
 Background
 ==========
  * [“The DNS Camel”, or, the rise in DNS complexity](https://blog.powerdns.com/2018/03/22/the-dns-camel-or-the-rise-in-dns-complexit/)
