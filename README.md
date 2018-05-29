@@ -37,7 +37,6 @@ Please test your implementations using [ednscomp](https://ednscomp.isc.org/ednsc
 
 It is important to note that EDNS is still not mandatory. If you decide not to support EDNS it is okay as long as your software replies according to [EDNS standard section 7](https://tools.ietf.org/html/rfc6891#section-7).
 
-
 Presentations
 =============
 
@@ -64,6 +63,6 @@ Supporters
 
 [![Quad9](/images/quad9.png)](https://quad9.net/)
 
-Background
-==========
+Additional reading
+==================
  * [“The DNS Camel”, or, the rise in DNS complexity](https://blog.powerdns.com/2018/03/22/the-dns-camel-or-the-rise-in-dns-complexit/)
