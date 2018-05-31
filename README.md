@@ -9,9 +9,42 @@ This change affects only sites which operate broken software. Are you affected?
 
 Domain owners
 =============
-Domain owners can check if their domain is affected by this change using the tool [ednscomp](https://ednscomp.isc.org/ednscomp). Simply enter the name of your domain into the `zone name` field and click the `Submit` button.
-
-The result of the [ednscomp](https://ednscomp.isc.org/ednscomp) test must be a green message `All Ok`. If you get any other result your DNS deployment is going to be affected by this change and your domain might be become inaccessible. In that case please contact your DNS administrator and request fixes!
+Please check if your domain is affected:
+<div id="domain-checker">
+	<form action="https://ednscomp.isc.org/ednscomp" method="GET" target="_blank">
+		<fieldset>
+			<legend>Test your domain</legend>
+			<label for="zone">Domain name (without www):
+				<input type="text" name="zone" id="zone" required>
+			</label>
+			<input type="submit" value="Test!">
+			<noscript>Your browser does not support JavaScript! Technical report will be shown in a new window.<br>
+The result of the <a href="https://ednscomp.isc.org/ednscomp">ednscomp</a> test must be a green message "All Ok". If you get any other result your DNS deployment is going to be affected by this change and your domain might be become inaccessible. In that case please contact your DNS administrator and request fixes!
+			</noscript>
+		</fieldset>
+	</form>
+</div>
+<script><!-- translate the form above and these constants, please keep the whitespaces! -->
+const domainCheckerInit = {
+	placeIntoElement: document.getElementById( "domain-checker" ),
+	texts: {
+		formTitle: 'Test your domain',
+		labelText: 'Domain name (without www): ',
+		submitText: 'Test!',
+		reportOkHtml: ': <span style="color: green;">All Ok!</span>',
+		reportFailHtml: ': <span style="color: red;">This domain has one or more problems!</span> If the problem persists contact your DNS administrator and refer him to https://dnsflagday.net/ and',
+		reportLinkText: ' technical report ',  // text before URL to report
+	},
+	status: {
+		loading: 'Testing in progress, please wait… It might take several tens of seconds.',
+		done: 'Testing completed:',
+		errorApi: 'Communication error! API unavailable… please try again later',
+		errorInput: 'Invalid input! IDN is not supported yet.',
+	},
+};
+</script>
+<script src="/domain-checker.js"></script>
+<br>
 
 DNS administrators
 ==================
