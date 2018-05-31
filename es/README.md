@@ -1,4 +1,4 @@
-¡Este es el repositorio para el día de eliminación de los parches provisorios para EDNS!
+¡Este es el repositorio para el Día de Eliminación de los Parches Provisorios para EDNS!
 
 ¿Qué está pasando?
 ==================
@@ -9,9 +9,42 @@ Este cambio solo afectará a sitios que operan software incorrecto. ¿Te afectar
 
 Dueños de dominios
 ==================
-Los dueños de nombres de dominio pueden revisar si su dominio será afectado con este cambio usando la herramienta [ednscomp](https://ednscomp.isc.org/ednscomp). Ingrese el nombre de su dominio en el campo `zone name` y presione el botón `Submit`.
-
+Por favor revise si su dominio está correcto:
+<div id="domain-checker">
+       <form action="https://ednscomp.isc.org/ednscomp" method="GET" target="_blank">
+               <fieldset>
+                      <legend>Revise su dominio</legend>
+                      <label for="zone">Nombre de dominio (sin www):
+                               <input type="text" name="zone" id="zone" required>
+                       </label>
+                       <input type="submit" value="¡Pruebe!">
+                       <noscript>¡Su navegador no soporta JavaScript! El reporte técnico será mostrado en una ventana nueva.<br>
 El resultado de la prueba [ednscomp](https://ednscomp.isc.org/ednscomp) debe ser un mensaje verde `All Ok` ("Todo bien"). Si recibe cualquier otro resultado, su sistema DNS será afectado por este cambio, y su dominio podría quedar inaccesible. En este caso, por favor ¡contacte al administrador DNS de su dominio y pida que lo corrija!
+                       </noscript>
+               </fieldset>
+       </form>
+</div>
+<script><!-- translate the form above and these constants, please keep the whitespaces! -->
+const domainCheckerInit = {
+       placeIntoElement: document.getElementById( "domain-checker" ),
+       texts: {
+               formTitle: 'Revise su dominio',
+               labelText: 'Nombre de dominio (sin www): ',
+               submitText: '¡Pruebe!',
+               reportOkHtml: ': <span style="color: green;">¡Todo Bien!</span>',
+               reportFailHtml: ': <span style="color: red;">¡Este dominio tiene uno o más problemas!</span> Si el problema persiste, contacte a su administrador DNS y cuéntele de https://dnsflagday.net/ y',
+               reportLinkText: ' reporte técnico ',  // text before URL to report
+       },
+       status: {
+               loading: 'Prueba en progreso, por favor espere… Puede tomar varias decenas de segundos.',
+               done: 'Prueba finalizada:',
+               errorApi: '¡Error de comunicación! API no disponible… por favor reintente más tarde',
+               errorInput: '¡Entrada inválida! IDN aún no está soportado.',
+       },
+};
+</script>
+<script src="/domain-checker.js"></script>
+<br>
 
 Administradores DNS
 ===================
@@ -25,7 +58,7 @@ Si hay algún problema, la herramienta ednscomp entregará una explicación para
 
 Para solucionar estos problemas por favor actualice su software DNS a la última versión estable, y pruebe otra vez. Si las pruebas siguen fallando, por favor revise la configuración del cortafuegos.
 
-**Los cortafuegos no deben descartar paquetes DNS** con extensiones EDNS, incluyendo extensiones que aún son desconocidas en el momento. El software moderno de DNS desarrolla nuevas extensiones continuamente, por ejemplo [DNS cookies](https://tools.ietf.org/html/rfc7873) para protegerse de ataques DoS. Los cortafuegos que descartan paquetes DNS con estas extensiones están empeorando la situación para todos, incluyendo ataques DoS de mayor magnitud, e induciendo mayor latencia en el tráfico DNS.
+**Los cortafuegos no deben descartar paquetes DNS** con extensiones EDNS, incluyendo extensiones que aún son desconocidas en el momento. El software moderno de DNS puede desarrollar nuevas extensiones (por ejemplo [DNS cookies](https://tools.ietf.org/html/rfc7873) para protegerse de ataques DoS). Los cortafuegos que descartan paquetes DNS con estas extensiones están empeorando la situación para todos, incluyendo ataques DoS de mayor magnitud, e induciendo mayor latencia en el tráfico DNS.
 
 Desarrolladores de software DNS
 ===============================
