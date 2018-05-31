@@ -24,7 +24,7 @@ The result of the <a href="https://ednscomp.isc.org/ednscomp">ednscomp</a> test 
 		</fieldset>
 	</form>
 </div>
-<script>
+<script><!-- translate the form above and these constants, please keep the whitespaces! -->
 const domainCheckerInit = {
 	placeIntoElement: document.getElementById( "domain-checker" ),
 	texts: {
@@ -43,6 +43,7 @@ const domainCheckerInit = {
 	},
 };
 </script>
+<script src="/domain-checker.js"></script>
 <br>
 
 DNS administrators
