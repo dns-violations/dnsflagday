@@ -9,23 +9,21 @@ This change affects only sites which operate broken software. Are you affected?
 
 Domain owners
 =============
-Please check if your domain is affected: Simply enter the name of your domain into the field below and click the `Test!` button.
-
+Please check if your domain is affected:
 <div id="domain-checker">
 	<form action="https://ednscomp.isc.org/ednscomp" method="GET" target="_blank">
 		<fieldset>
 			<legend>Test your domain</legend>
 			<label for="zone">Domain name (without www):
-				<input type="text" name="zone" id="zone" pattern="[^\.]*\.([^\.]+)?" required>
+				<input type="text" name="zone" id="zone" required>
 			</label>
 			<input type="submit" value="Test!">
-			<noscript>Your browser does not support JavaScript! Technical result will be shown in a new window.<br>
-The result of the [ednscomp](https://ednscomp.isc.org/ednscomp) test must be a green message `All Ok`. If you get any other result your DNS deployment is going to be affected by this change and your domain might be become inaccessible. In that case please contact your DNS administrator and request fixes!
+			<noscript>Your browser does not support JavaScript! Technical report will be shown in a new window.<br>
+The result of the <a href="https://ednscomp.isc.org/ednscomp">ednscomp</a> test must be a green message "All Ok". If you get any other result your DNS deployment is going to be affected by this change and your domain might be become inaccessible. In that case please contact your DNS administrator and request fixes!
 			</noscript>
 		</fieldset>
 	</form>
 </div>
-
 <script>
 const domainCheckerInit = {
 	placeIntoElement: document.getElementById( "domain-checker" ),
@@ -45,6 +43,7 @@ const domainCheckerInit = {
 	},
 };
 </script>
+<br>
 
 DNS administrators
 ==================
