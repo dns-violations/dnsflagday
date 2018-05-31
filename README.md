@@ -1,39 +1,39 @@
-This is repository for the EDNS Workaround removal flag day!
+This is the repository for the EDNS workaround removal flag day!
 
 What is happening?
 ==================
-Current DNS system suffers from unnecessary delays and inability to deploy new features. To remediate this problem, vendors of DNS software [BIND (ISC)](https://www.isc.org/blogs/end-to-bandaids/), 
+The current DNS suffers from unnecessary delays and an inability to deploy new features. To remediate these problems, vendors of DNS software [BIND (ISC)](https://www.isc.org/blogs/end-to-bandaids/), 
 [Knot Resolver (CZ.NIC)](https://en.blog.nic.cz/2018/03/14/together-for-better-stability-speed-and-further-extensibility-of-the-dns-ecosystem/), [PowerDNS](https://blog.powerdns.com/2018/03/22/removing-edns-workarounds/), and Unbound (NLnet Labs) are going to remove certain workarounds on February 1st, 2019.
 
 This change affects only sites which operate broken software. Are you affected?
 
 Domain owners
 =============
-Domain owners can check if their domain is affected by this change using tool [ednscomp](https://ednscomp.isc.org/ednscomp). Simply enter name of your domain into `zone name` field and click `Submit` button.
+Domain owners can check if their domain is affected by this change using the tool [ednscomp](https://ednscomp.isc.org/ednscomp). Simply enter the name of your domain into the `zone name` field and click the `Submit` button.
 
-The result of [ednscomp](https://ednscomp.isc.org/ednscomp) test must be green message `All Ok`. If you get any other result your DNS deployment is going to be affected by this change and your domain might be become inaccessible. In that case please contact your DNS administrator and request fixes!
+The result of the [ednscomp](https://ednscomp.isc.org/ednscomp) test must be a green message `All Ok`. If you get any other result your DNS deployment is going to be affected by this change and your domain might be become inaccessible. In that case please contact your DNS administrator and request fixes!
 
 DNS administrators
 ==================
-It is possible to test your DNS servers using tool [ednscomp](https://ednscomp.isc.org/ednscomp). Simply enter name of a zone hosted on your DNS servers into `zone name` field and click `Submit` button.
+It is possible to test your DNS servers using the tool [ednscomp](https://ednscomp.isc.org/ednscomp). Simply enter the name of a zone hosted on your DNS servers into the `zone name` field and click the `Submit` button.
 
-Summary result of [ednscomp](https://ednscomp.isc.org/ednscomp) tests must be green message `All Ok`.
+The summary result of [ednscomp](https://ednscomp.isc.org/ednscomp) tests must be a green message `All Ok`.
 
-If there is a problem, the ednscomp tool display explanation for each failed test. Failures in these tests are typically caused by:
+If there is a problem, the ednscomp tool displays an explanation for each failed test. Failures in these tests are typically caused by:
 * broken DNS software
 * broken firewall configuration
 
-To remediate problems please upgrade your DNS software to latest stable versions and test again. If the tests are still failing even after DNS upgrade please check your firewall configuration.
+To remediate problems please upgrade your DNS software to the latest stable versions and test again. If the tests are still failing even after a DNS upgrade please check your firewall configuration.
 
-**Firewalls must not drop DNS packets** with EDNS extension, including extensions unknown at the moment. Modern DNS software deploys new extensions, e.g. [DNS cookies](https://tools.ietf.org/html/rfc7873) to protect from DoS attacks. Firewalls which drop DNS packets with such extensions are making situation worse for everyone, including worsening DoS attacks and inducing higher latency for DNS traffic.
+**Firewalls must not drop DNS packets** with EDNS extensions, including unknown extensions. Modern DNS software may deploy new extensions (e.g. [DNS cookies](https://tools.ietf.org/html/rfc7873) to protect from DoS attacks). Firewalls which drop DNS packets with such extensions are making the situation worse for everyone, including worsening DoS attacks and inducing higher latency for DNS traffic.
 
 DNS software developers
 =======================
-Main change is that DNS software of vendors named above is going to interpret timeouts as sign of network/server problem. Starting from February 1st, 2019 there will be **no attempt to disable EDNS** as reaction to DNS query timeout.
+The main change is that DNS software from vendors named above will interpret timeouts as sign of a network or server problem. Starting February 1st, 2019 there will be **no attempt to disable EDNS** as reaction to a DNS query timeout.
 
 This effectivelly means that all DNS servers which **do not respond at all to EDNS queries** are going to be treated as *dead*.
 
-Please test your implementations using [ednscomp](https://ednscomp.isc.org/ednscomp) tool to make sure that you handle EDNS properly. Source code of the tool [is available](https://gitlab.isc.org/isc-projects/DNS-Compliance-Testing) as well.
+Please test your implementations using the [ednscomp](https://ednscomp.isc.org/ednscomp) tool to make sure that you handle EDNS properly. Source code of the tool [is available](https://gitlab.isc.org/isc-projects/DNS-Compliance-Testing) as well.
 
 It is important to note that EDNS is still not mandatory. If you decide not to support EDNS it is okay as long as your software replies according to [EDNS standard section 7](https://tools.ietf.org/html/rfc6891#section-7).
 
