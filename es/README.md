@@ -1,5 +1,3 @@
-¡Este es el repositorio para el Día de Eliminación de los Parches Provisorios para EDNS!
-
 ¿Qué está pasando?
 ==================
 Los sistemas DNS modernos sufren de demoras innecesarias y dificultad para desarrollar nuevas funcionalidades. Para remediar este problema, los vendedores de software DNS [BIND (ISC)](https://www.isc.org/blogs/end-to-bandaids/), 
