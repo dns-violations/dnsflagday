@@ -1,5 +1,3 @@
-This is the repository for the EDNS workaround removal flag day!
-
 What is happening?
 ==================
 The current DNS suffers from unnecessary delays and an inability to deploy new features. To remediate these problems, vendors of DNS software [BIND (ISC)](https://www.isc.org/blogs/end-to-bandaids/), 
