@@ -1,3 +1,11 @@
+<div class="translations">
+<nav>
+	<a href="/cs"><img alt="Česky" src="/flags/cs.svg"/></a>
+	<a href="/"><img alt="English" src="/flags/en.svg"/></a>
+	<a href="/es"><img alt="Español" src="/flags/es.svg"/></a>
+</nav>
+</div>
+
 What is happening?
 ==================
 The current DNS suffers from unnecessary delays and an inability to deploy new features. To remediate these problems, vendors of DNS software [BIND (ISC)](https://www.isc.org/blogs/end-to-bandaids/), 

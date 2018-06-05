@@ -1,3 +1,11 @@
+<div class="translations">
+<nav>
+	<a href="/cs"><img alt="Česky" src="/flags/cs.svg"/></a>
+	<a href="/"><img alt="English" src="/flags/en.svg"/></a>
+	<a href="/es"><img alt="Español" src="/flags/es.svg"/></a>
+</nav>
+</div>
+
 ¿Qué está pasando?
 ==================
 Los sistemas DNS modernos sufren de demoras innecesarias y dificultad para desarrollar nuevas funcionalidades. Para remediar este problema, los vendedores de software DNS [BIND (ISC)](https://www.isc.org/blogs/end-to-bandaids/), 
