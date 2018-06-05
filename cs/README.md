@@ -1,3 +1,11 @@
+<div class="translations">
+<nav>
+	<a href="/cs"><img alt="Česky" src="/flags/cs.svg"/></a>
+	<a href="/"><img alt="English" src="/flags/en.svg"/></a>
+	<a href="/es"><img alt="Español" src="/flags/es.svg"/></a>
+</nav>
+</div>
+
 Co se připravuje?
 =================
 Současný systém DNS je z historických důvodů pomalý a neumožňuje nasadit novou funkcionalitu. Skupina výrobců DNS software [BIND (ISC)](https://www.isc.org/blogs/end-to-bandaids/), 
