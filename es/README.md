@@ -98,7 +98,7 @@ Apoyan
 
 [![NLnet Labs](/images/nlnetlabs.svg)](https://nlnetlabs.nl/)
 
-[![CZ.NIC](/images/cznic.png)](https://www.nic.cz/)
+[![CZ.NIC](/images/cznic.svg)](https://www.nic.cz/)
 
 [![Quad9](/images/quad9.png)](https://quad9.net/)
 

@@ -98,7 +98,7 @@ Kontakty
 Akci podporují
 ==============
 
-[![CZ.NIC](/images/cznic.png)](https://www.nic.cz/)
+[![CZ.NIC](/images/cznic.svg)](https://www.nic.cz/)
 
 [![PowerDNS](/images/powerdns.png)](https://www.powerdns.com/)
 
