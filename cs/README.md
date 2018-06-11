@@ -89,10 +89,16 @@ Nástroje
  * [ISC EDNS Compliance tester](https://ednscomp.isc.org/), [source code](https://gitlab.isc.org/isc-projects/DNS-Compliance-Testing)
  * [DNSViz](http://dnsviz.net/)
 
+Kontakty
+========
+
+ * Připomínky k tomuto webu prosím směřujte do [dnsflagday repozitáře](https://github.com/dns-violations/dnsflagday/issues) na Githubu
+ * Komentáře k výsledkům testů z toho webu nebo přímo [nástroje ednscomp](https://ednscomp.isc.org/ednscomp) prosím hlaste do [DNS Compliance Testing](https://gitlab.isc.org/isc-projects/DNS-Compliance-Testing) projektu v Gitlabu ISC
+
 Akci podporují
 ==============
 
-[![CZ.NIC](/images/cznic.png)](https://www.nic.cz/)
+[![CZ.NIC](/images/cznic.svg)](https://www.nic.cz/)
 
 [![PowerDNS](/images/powerdns.png)](https://www.powerdns.com/)
 
@@ -101,6 +107,8 @@ Akci podporují
 [![NLnet Labs](/images/nlnetlabs.svg)](https://nlnetlabs.nl/)
 
 [![Quad9](/images/quad9.png)](https://quad9.net/)
+
+[![CleanBrowsing](https://cleanbrowsing.org/images/CleanBrowsing-logo-small-dark.png)](https://cleanbrowsing.org/)
 
 Literatura
 ==========
