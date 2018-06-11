@@ -102,6 +102,8 @@ Akci podporují
 
 [![Quad9](/images/quad9.png)](https://quad9.net/)
 
+[![CleanBrowsing](https://cleanbrowsing.org/images/CleanBrowsing-logo-small-dark.png)](https://cleanbrowsing.org/)
+
 Literatura
 ==========
  * [Minimal EDNS compliance requirements](https://datatracker.ietf.org/doc/draft-spacek-edns-camel-diet/)
