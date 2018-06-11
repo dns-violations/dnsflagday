@@ -89,6 +89,12 @@ Herramientas
  * [ednscomp, prueba de compatibilidad EDNS de ISC](https://ednscomp.isc.org/), [código fuente](https://gitlab.isc.org/isc-projects/DNS-Compliance-Testing)
  * [DNSViz](http://dnsviz.net/)
 
+Contacto
+========
+
+ * Si tiene comentarios sobre este sitio web, por favor indíquelos en el [repositorio dnsflagday](https://github.com/dns-violations/dnsflagday/issues) en Github
+ * Los comentarios sobre el resultado de las pruebas o de la [herramienta ednscomp](https://ednscomp.isc.org/ednscomp) pertenecen al proyecto [DNS Compliance Testing](https://gitlab.isc.org/isc-projects/DNS-Compliance-Testing) en el Gitlab de ISC
+
 Apoyan
 ======
 
