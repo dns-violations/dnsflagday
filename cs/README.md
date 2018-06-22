@@ -97,6 +97,7 @@ Kontakty
 
 Akci podporují
 ==============
+<script id="do-not-translate-randomize-this-section" src="/supporters-randomiser.js" defer></script>
 
 [![CZ.NIC](/images/cznic.svg)](https://www.nic.cz/)
 

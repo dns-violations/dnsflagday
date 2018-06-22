@@ -97,6 +97,7 @@ Contacts
 
 Supporters
 ==========
+<script id="do-not-translate-randomize-this-section" src="/supporters-randomiser.js" defer></script>
 
 [![PowerDNS](/images/powerdns.png)](https://www.powerdns.com/)
 
