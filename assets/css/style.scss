@@ -9,5 +9,11 @@
 }
 .translations img {
 	height: 2em;
-        display: block;
+        display: inline-block;
+}
+
+/* logos */
+p img {
+	max-width:200px;
+	margin:5px 0 !important;
 }
