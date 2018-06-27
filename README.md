@@ -38,7 +38,7 @@ const domainCheckerInit = {
 		labelText: 'Domain name (without www): ',
 		submitText: 'Test!',
 		reportOkHtml: ': <span style="color: green;">All Ok!</span>',
-		reportFailHtml: ': <span style="color: red;">This domain has one or more problems!</span> If the problem persists contact your DNS administrator and refer him to https://dnsflagday.net/ and',
+		reportFailHtml: ': <span style="color: red;">This domain has one or more problems!</span> If the problem persists contact your DNS administrator and refer them to https://dnsflagday.net/ and',
 		reportLinkText: ' technical report ',  // text before URL to report
 	},
 	status: {
