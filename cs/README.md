@@ -76,6 +76,14 @@ Prosím otestujte svou implementaci DNS pomocí nástroje [ednscomp](https://edn
 
 Upozorňujeme, že rozšíření EDNS stále není povinné. Pokud se rozhodnete nepodporovat EDNS, vše bude fungovat pokud se váš software bude řídit podle [EDNS standard section 7](https://tools.ietf.org/html/rfc6891#section-7).
 
+Výzkumníci
+==========
+Další zdroje pro výzkumníky:
+ * [Statistiky podpory EDNS](https://ednscomp.isc.org/) vygenerované pomocí [sady EDNS testů](https://gitlab.isc.org/isc-projects/DNS-Compliance-Testing) vytvořené sdružením ISC.
+ * [EDNS skener zón](https://gitlab.labs.nic.cz/knot/edns-zone-scanner/) vytvořený sdružením CZ.NIC, který si klade za cíl vyhodnotit reálný dopad změny popsané na této stránce.
+
+Před interpretací dat si prosím přečtěte metodologii uvedenou u konkrétního zdroje. S dotazy se neváhejte obrátit na autory pomocí odkazů do Gitlabu uvedených výše.
+
 Prezentace
 ==========
 
