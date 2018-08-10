@@ -13,6 +13,69 @@
 	const SUBMIT_ENABLE_AFTER = 30000; // [int] in ms
 	const DIVIDERS_REGEXP = new RegExp( '(?:,|;|\\s| |\\r?\\n)+', 'u' ); // lot of possible dividers
 
+	const dict_to_values = function (dict) {
+		var values = []
+		for (var key in dict) {
+			values.push(dict[key])
+		}
+		return values
+	}
+
+	// eval one server
+	const eval_edns_strict = function (tests_results) {
+		// strip test names -> array of arrays with test results
+		var test_values = dict_to_values(tests_results)
+		var all_ok = test_values.every(results => results.indexOf('ok') !== -1)
+		if (all_ok)
+			return 'ok'
+
+		// ignore EDNS1, it will not cause problems during the flag day
+		var edns0_tests_results = {}
+		for (var key in tests_results) {
+			if (key.indexOf('edns1') === -1)
+				edns0_tests_results[key] = tests_results[key]
+			else
+				edns0_tests_results[key] = ['ignored']
+		}
+		test_values = dict_to_values(edns0_tests_results)
+
+		// does not fully comply with EDNS but at least it does not break horribly
+		var compatible = test_values.every(results => results.indexOf('timeout') === -1)
+		if (compatible)
+			return 'compatible'
+		else // timeout detected, it will die
+			return 'dead'
+
+		for (var test_name in tests_results) {
+			console.log(test_name, tests_results[test_name])
+		}
+	}
+
+	const eval_domain = function (genreport_data) {
+		if (genreport_data === undefined) {
+			return 'test_error'
+		}
+		var nsip_results = []
+		console.log('NS IP;NSID;result')
+		for (var srv_idx in genreport_data) {
+			var ns_result = eval_edns_strict(genreport_data[srv_idx]['tests'])
+			nsip_results.push(ns_result)
+			console.log(genreport_data[srv_idx]['address'] + ';' + genreport_data[srv_idx]['nsid'] + ';' + ns_result)
+		}
+		if (nsip_results.length === 0) {
+			return 'test_error'
+		}
+		// all results are the same - nothing to analyze
+		var all_same = nsip_results.every(nsres => nsres === nsip_results[0])
+		if (all_same)
+			return nsip_results[0]
+
+		if (nsip_results.filter(nsres => nsres === 'dead').length > 0)
+			// at least one NS is dead, fallback to other NS will be required
+			return 'high_latency'
+		else  // mix of ok and compatible NS -> compatible
+			return 'compatible'
+	}
 
 	const createSingleResultElement = function ( /** @type {{}} */ json, /** @type {String} */ name ) {
 		const element = document.createElement( 'div' );
@@ -24,7 +87,29 @@
 		}
 
 		const span = document.createElement( 'span' );
-		span.innerHTML = ( json.status === 'ok' ) ? domainCheckerInit.texts.reportOkHtml : domainCheckerInit.texts.reportFailHtml;
+		const test_result = eval_domain(json['data'])
+		switch (test_result) {
+			case 'ok':
+				span.innerHTML = domainCheckerInit.texts.reportOkHtml;
+				break;
+
+			case 'compatible':
+				span.innerHTML = domainCheckerInit.texts.reportCompatibleHtml;
+				break;
+
+			case 'high_latency':
+				span.innerHTML = domainCheckerInit.texts.reportHighLatencyHtml;
+				break;
+
+			case 'dead':
+				span.innerHTML = domainCheckerInit.texts.reportFailHtml;
+				break;
+
+			case 'test_error':
+				span.innerHTML = domainCheckerInit.texts.reportTestErrorHtml;
+				break;
+
+		}
 		element.appendChild( span );
 
 		if ( json.status !== 'ok' && json.report )
@@ -44,7 +129,6 @@
 
 		return element;
 	}
-
 
 	const formOnSubmit = function ( /** @type {Event} */ event ) {
 		event.preventDefault();
