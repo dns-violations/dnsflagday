@@ -43,15 +43,15 @@ const domainCheckerInit = {
 
 		reportCompatibleHtml: ': <span style="color: orange;">Minor problems detected!</span></div>' +
 		'<div><img style="height: 5em;" src="signs/compatible.svg"/></div>' +
-		'<div>This domain is going to work after the 2019 DNS flag day BUT it does not support latest DNS standards. As a consequence this domain cannot support latest security features and might be an easier target for network attackers than necessary, and might cause other issues later on. We recommend your domain administrator to fix issues listed in the following',
+		'<div>This domain is going to work after the 2019 DNS flag day BUT it does not support the latest DNS standards. As a consequence this domain cannot support the latest security features and might be an easier target for network attackers than necessary, and might face other issues later on. We recommend your domain administrator to fix issues listed in the following',
 
 		reportHighLatency: ': <span style="color: red;">Serious problem detected!</span></div>' +
 		'<div><img style="height: 5em;" src="signs/high_latency.svg"/></div>' +
-		'<div>This domain will face issues after the 2019 DNS flag. It will somehow work BUT clients will experience delays when accessing this domain. We recommend you to request fixing this issue from your domain administrator! You can refer them to https://dnsflagday.net/ and',
+		'<div>This domain will face issues after the 2019 DNS flag day. It will work in practice, BUT clients will experience delays when accessing this domain. We recommend you request a fix from your domain administrator! You can refer them to https://dnsflagday.net/ and',
 
 		reportFailHtml: ': <span style="font-weight: bold; color: red;">Fatal error detected!</span></div>' +
 		'<div><img style="height: 5em;" src="signs/dead.svg"/></div>' +
-		'<div>This domain is going to STOP WORKING after the 2019 DNS flag day! Please retry the test to eliminate random network failures. If the problem persists you really need to request fixing this issue from your domain administrator. You can refer them to https://dnsflagday.net/ and',
+		'<div>This domain is going to STOP WORKING after the 2019 DNS flag day! Please retry the test to eliminate random network failures. If the problem persists you really need to request a fix from your domain administrator. You can refer them to https://dnsflagday.net/ and',
 
 		reportTestErrorHtml: ': Test cannot be evaluated because of an error. Please make sure the domain name entered refers to a <strong>DNS zone</strong>, i.e. use "example.com" instead of "www.example.com". Retry the test to eliminate random network failures or investigate',
 		reportLinkText: ' technical report ',  // text before URL to report
