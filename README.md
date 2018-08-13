@@ -69,9 +69,13 @@ const domainCheckerInit = {
 
 DNS administrators
 ==================
-It is possible to test your DNS servers using the tool [ednscomp](https://ednscomp.isc.org/ednscomp). Simply enter the name of a zone hosted on your DNS servers into the `zone name` field and click the `Submit` button.
+For introduction to EDNS compliance we recommend you to use form above which produces simplified result for a whole domain.
 
-The summary result of [ednscomp](https://ednscomp.isc.org/ednscomp) tests must be a green message `All Ok`.
+It is also possible to test your DNS servers directly using the tool [ednscomp](https://ednscomp.isc.org/ednscomp) which displays detailed technical report. Simply enter the name of a zone hosted on your DNS servers into the `zone name` field and click the `Submit` button.
+
+The summary result of [ednscomp](https://ednscomp.isc.org/ednscomp) tests should preferably be a green message `All Ok`.
+
+Minimal working setup which will allow your domain to survive 2019 DNS flag day must not have `timeout` result in any of plain DNS and EDNS version 0 tests implemented in [ednscomp](https://ednscomp.isc.org/ednscomp) tool. Please note that this minimal setup is still not standards compliant and will cause other issues sooner or later. For this reason **we strongly recommend you to get full EDNS compliance (all tests `ok`)** instead of doing just minimal cleanup otherwise you will have to face new issues later on.
 
 If there is a problem, the ednscomp tool displays an explanation for each failed test. Failures in these tests are typically caused by:
 * broken DNS software
