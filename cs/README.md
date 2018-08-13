@@ -70,9 +70,13 @@ const domainCheckerInit = {
 
 Správci DNS
 ===========
-Je možné otestovat vaše DNS servery pomocí nástroje [ednscomp](https://ednscomp.isc.org/ednscomp). Zadejte do něj jméno jakékoliv zóny hostované na vašich DNS serverech do pole `zone name` a klikněte na tlačítko `Submit`.
+Pro seznámení s problematikou podpory EDNS vám doporučujeme použít formulář uvedený výše, který poskytuje zjednodušený výsledek pro celou doménu.
 
-Celkový výsledek musí být zelená zpráva `All Ok`.
+Dále je možné otestovat vaše DNS servery pomocí nástroje [ednscomp](https://ednscomp.isc.org/ednscomp), který zobrazuje podrobnou technickou zprávu. Do pole `zone name` zadejte jméno jakékoliv zóny hostované na vašich DNS serverech a klikněte na tlačítko `Submit`.
+
+Celkový výsledek zobrazený nástrojem [ednscomp](https://ednscomp.isc.org/ednscomp) by měl být zelená zpráva `All Ok`.
+
+Pro minimální konfiguraci, která ještě bude v roce 2019 fungovat, nevypisuje nástroj [ednscomp](https://ednscomp.isc.org/ednscomp) výsledek `timeout` v žádném z testů pro původní DNS ani v testech pro rozšíření EDNS verze 0. Vezměte prosím na vědomí, že takováto minimální konfigurace stále neodpovídá standardům a dříve nebo později bude způsobovat potíže. Z tohoto důvodu **doporučujeme najednou opravit vaše DNS tak, aby všechny testy skončily výsledkem `ok`**. Vyhnete se tak problémům v budoucnu.
 
 Pokud bude zjištěn problém, nástroj ednscomp vám zobrazí vysvětlení pro každý test. Problémy jsou typicky způsobeny:
 * nekvalitním DNS softwarem
