@@ -87,6 +87,14 @@ Por favor pruebe sus implementaciones usando la herramienta [ednscomp](https://e
 
 Es importante notar que EDNS no es obligatorio de implementar todavía. Si decide no soportar EDNS, lo puede hacer, siempre que su software responda de acuerdo al [estándar EDNS, sección 7](https://tools.ietf.org/html/rfc6891#section-7).
 
+Investigadores
+==============
+Existen algunas herramientas que pueden interesar a Investigadores y otros interesados, como Operadores de TLD:
+ * [EDNS compliance statistics](https://ednscomp.isc.org/) generadas por [EDNS compliance test suite](https://gitlab.isc.org/isc-projects/DNS-Compliance-Testing) por ISC
+ * [EDNS zone scanner](https://gitlab.labs.nic.cz/knot/edns-zone-scanner/) por CZ.NIC que busca evaluar el impacto en la práctica del día "DNS flag day"
+
+Por favor revise las metodologías respectivas antes de interpretar los datos. En cualquier caso, no dude en ponerse en contacto con los autores de cada herramienta, utilizando los enlaces Gitlab indicados arriba.
+
 Presentaciones
 ==============
 
