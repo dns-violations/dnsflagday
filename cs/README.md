@@ -107,9 +107,10 @@ Před interpretací dat si prosím přečtěte metodologii uvedenou u konkrétn�
 Prezentace
 ==========
 
- * DNS-OARC 28: [abstract](https://indico.dns-oarc.net/event/28/contributions/515/), [slides](https://indico.dns-oarc.net/event/28/contributions/515/attachments/490/799/Removing_EDNS_Workarounds.pdf), [video](https://www.youtube.com/watch?v=9YYH8JFH_bY&feature=youtu.be&t=5198)
- * LOADAYS 2018: [abstract](http://loadays.org/pages/dnsupdate.html), [slides](http://loadays.org/files/plexis-edns-workaround-removal-loadays-2018.pdf), [video](https://www.youtube.com/watch?v=OXbbH0ORmSY)
- * RIPE 76: [slides](https://ripe76.ripe.net/presentations/159-edns.pdf), [video](https://ripe76.ripe.net/archives/video/161)
+ * Bude vaše doména fungovat i v roce 2019? - CSNOG1: [abstrakt](https://csnog.eu/event/1/contributions/33/), [prezentace](https://csnog.eu/event/1/contributions/33/attachments/9/31/Petr_Spacek_01.pdf), [video](https://youtu.be/KQO48HbY6o0)
+ * DNS-OARC 28: [abstrakt](https://indico.dns-oarc.net/event/28/contributions/515/), [prezentace](https://indico.dns-oarc.net/event/28/contributions/515/attachments/490/799/Removing_EDNS_Workarounds.pdf), [video](https://www.youtube.com/watch?v=9YYH8JFH_bY&feature=youtu.be&t=5198)
+ * LOADAYS 2018: [abstrakt](http://loadays.org/pages/dnsupdate.html), [prezentace](http://loadays.org/files/plexis-edns-workaround-removal-loadays-2018.pdf), [video](https://www.youtube.com/watch?v=OXbbH0ORmSY)
+ * RIPE 76: [prezentace](https://ripe76.ripe.net/presentations/159-edns.pdf), [video](https://ripe76.ripe.net/archives/video/161)
 
 Nástroje
 ========
