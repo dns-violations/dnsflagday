@@ -39,7 +39,7 @@ const domainCheckerInit = {
 		submitText: 'Testuj!',
 		reportOkHtml: ': <span style="color: green;">V pořádku.</span></div>' +
 		'<div><img style="height: 5em;" src="/signs/ok.svg"/></div>' +
-		'<div>Tato doméne je perfektně připravena, gratulujeme!',
+		'<div>Tato doména je perfektně připravena, gratulujeme!',
 
 		reportCompatibleHtml: ': <span style="color: orange;">Menší nedostatky!</span></div>' +
 		'<div><img style="height: 5em;" src="/signs/compatible.svg"/></div>' +
