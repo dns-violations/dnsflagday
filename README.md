@@ -37,15 +37,30 @@ const domainCheckerInit = {
 		formTitle: 'Test your domain',
 		labelText: 'Domain name (without www): ',
 		submitText: 'Test!',
-		reportOkHtml: ': <span style="color: green;">All Ok!</span>',
-		reportFailHtml: ': <span style="color: red;">This domain has one or more problems!</span> If the problem persists contact your DNS administrator and refer them to https://dnsflagday.net/ and',
+		reportOkHtml: ': <span style="color: green;">All Ok!</span></div>' +
+		'<div><img style="height: 5em;" src="signs/ok.svg"/></div>' +
+		'<div>This domain is perfectly ready, congratulations!',
+
+		reportCompatibleHtml: ': <span style="color: orange;">Minor problems detected!</span></div>' +
+		'<div><img style="height: 5em;" src="signs/compatible.svg"/></div>' +
+		'<div>This domain is going to work after the 2019 DNS flag day BUT it does not support the latest DNS standards. As a consequence this domain cannot support the latest security features and might be an easier target for network attackers than necessary, and might face other issues later on. We recommend your domain administrator to fix issues listed in the following',
+
+		reportHighLatency: ': <span style="color: red;">Serious problem detected!</span></div>' +
+		'<div><img style="height: 5em;" src="signs/high_latency.svg"/></div>' +
+		'<div>This domain will face issues after the 2019 DNS flag day. It will work in practice, BUT clients will experience delays when accessing this domain. We recommend you request a fix from your domain administrator! You can refer them to https://dnsflagday.net/ and',
+
+		reportFailHtml: ': <span style="font-weight: bold; color: red;">Fatal error detected!</span></div>' +
+		'<div><img style="height: 5em;" src="signs/dead.svg"/></div>' +
+		'<div>This domain is going to STOP WORKING after the 2019 DNS flag day! Please retry the test to eliminate random network failures. If the problem persists you really need to request a fix from your domain administrator. You can refer them to https://dnsflagday.net/ and',
+
+		reportTestErrorHtml: ': Test cannot be evaluated because of an error. Please make sure the domain name entered refers to a <strong>DNS zone</strong>, i.e. use "example.com" instead of "www.example.com". Retry the test to eliminate random network failures or investigate',
 		reportLinkText: ' technical report ',  // text before URL to report
 	},
 	status: {
 		loading: 'Testing in progress, please wait… It might take several tens of seconds.',
 		done: 'Testing completed:',
 		errorApi: 'Communication error! API unavailable… please try again later',
-		errorInput: 'Invalid input! IDN is not supported yet.',
+		errorInput: 'Invalid input or other unexpected error, sorry!',
 	},
 };
 </script>

@@ -38,6 +38,10 @@ const domainCheckerInit = {
                labelText: 'Nombre de dominio (sin www): ',
                submitText: '¡Pruebe!',
                reportOkHtml: ': <span style="color: green;">¡Todo Bien!</span>',
+	       // TODO: reportCompatibleHtml and reportHighLatency need new translation, its current
+	       // text is just copy of reportFailHtml so the report does not break with new version of checker
+               reportCompatibleHtml: ': <span style="color: red;">¡Este dominio tiene uno o más problemas!</span> Si el problema persiste, contacte a su administrador DNS y cuéntele de https://dnsflagday.net/ y',
+               reportHighLatency: ': <span style="color: red;">¡Este dominio tiene uno o más problemas!</span> Si el problema persiste, contacte a su administrador DNS y cuéntele de https://dnsflagday.net/ y',
                reportFailHtml: ': <span style="color: red;">¡Este dominio tiene uno o más problemas!</span> Si el problema persiste, contacte a su administrador DNS y cuéntele de https://dnsflagday.net/ y',
                reportLinkText: ' reporte técnico ',  // text before URL to report
        },
