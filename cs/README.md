@@ -1,3 +1,8 @@
+---
+title: Změny v DNS v roce 2019
+lang: cs
+---
+
 <div class="translations">
 <nav>
 	<a href="/cs"><img alt="Česky" src="/flags/cs.svg"/></a>

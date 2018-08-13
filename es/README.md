@@ -1,3 +1,7 @@
+---
+lang: es
+---
+
 <div class="translations">
 <nav>
 	<a href="/cs"><img alt="Česky" src="/flags/cs.svg"/></a>
