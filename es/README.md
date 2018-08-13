@@ -37,13 +37,20 @@ const domainCheckerInit = {
                formTitle: 'Revise su dominio',
                labelText: 'Nombre de dominio (sin www): ',
                submitText: '¡Pruebe!',
-               reportOkHtml: ': <span style="color: green;">¡Todo Bien!</span>',
-	       // TODO: reportCompatibleHtml and reportHighLatency need new translation, its current
-	       // text is just copy of reportFailHtml so the report does not break with new version of checker
-               reportCompatibleHtml: ': <span style="color: red;">¡Este dominio tiene uno o más problemas!</span> Si el problema persiste, contacte a su administrador DNS y cuéntele de https://dnsflagday.net/ y',
-               reportHighLatency: ': <span style="color: red;">¡Este dominio tiene uno o más problemas!</span> Si el problema persiste, contacte a su administrador DNS y cuéntele de https://dnsflagday.net/ y',
-               reportFailHtml: ': <span style="color: red;">¡Este dominio tiene uno o más problemas!</span> Si el problema persiste, contacte a su administrador DNS y cuéntele de https://dnsflagday.net/ y',
-               reportLinkText: ' reporte técnico ',  // text before URL to report
+               reportOkHtml: ': <span style="color: green;">¡Todo Bien!</span></div>' +
+                '<div><img style="height: 5em;" src="/signs/ok.svg"/></div>' +
+                '<div>Este dominio está completamente listo, ¡Felicidades!',
+                reportCompatibleHtml: ': <span style="color: orange;">¡Problemas menores detectados!</span></div>' +
+                '<div><img style="height: 5em;" src="/signs/compatible.svg"/></div>' +
+                '<div>Este dominio continuará funcionando después del día "DNS Flag Day" del 2019, PERO no respeta los últimos estándares DNS. A consecuencia de esto, este dominio no soporta las últimas características de seguridad y puede ser un objetivo fácil para ataques de red, entre otros problemas en el futuro. Recomendamos que su administrador del dominio corrija los problemas listados acá',
+                reportHighLatency: ': <span style="color: red;">¡Serios problemas detectados!</span></div>' +
+                '<div><img style="height: 5em;" src="/signs/high_latency.svg"/></div>' +
+                '<div>Este dominio encontrará problemas después del día "DNS Flag Day" del 2019. En la práctica funcionará, PERO los clientes experimentarán demoras al acceder a este dominio. ¡Recomendamos que solicite una corrección a su administrador de dominio! Puede enviarle la información en https://dnsflagday.net/ y',
+                reportFailHtml: ': <span style="font-weight: bold; color: red;">¡Error fatal detectado!</span></div>' +
+                '<div><img style="height: 5em;" src="/signs/dead.svg"/></div>' +
+                '<div>¡Este dominio DEJARÁ DE FUNCIONAR después del día "DNS Flag Day" del 2019! Por favor repita la prueba para descartar errores temporales de red. Si el problema persiste, debe contactar a su administrador de dominio y exigir su corrección. Puede enviarle la información en https://dnsflagday.net/ y',
+                reportTestErrorHtml: ': La prueba no pudo realizarse debido a un error. Por favor asegúrese que el nombre de dominio ingresado se refiere a una <strong>zona DNS</strong>, por ej. use "example.com" en vez de "www.example.com". Reintente para eliminar posibles fallas de red temporales, o revise',
+                reportLinkText: ' el informe técnico ',  // text before URL to report
        },
        status: {
                loading: 'Prueba en progreso, por favor espere… Puede tomar varias decenas de segundos.',
