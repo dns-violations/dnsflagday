@@ -37,15 +37,31 @@ const domainCheckerInit = {
 		formTitle: 'Test domény',
 		labelText: 'Jméno domény (bez www): ',
 		submitText: 'Testuj!',
-		reportOkHtml: ': <span style="color: green;">V pořádku!</span>',
-		reportFailHtml: ': <span style="color: red;">Tato doména je postižena!</span> Pokud problém přetrvává prosím kontaktujte správce DNS vaší domény a odkažte ho na web https://dnsflagday.net/ a ',
+		reportOkHtml: ': <span style="color: green;">V pořádku.</span></div>' +
+		'<div><img style="height: 5em;" src="/signs/ok.svg"/></div>' +
+		'<div>Tato doména je perfektně připravena, gratulujeme!',
+
+		reportCompatibleHtml: ': <span style="color: orange;">Menší nedostatky!</span></div>' +
+		'<div><img style="height: 5em;" src="/signs/compatible.svg"/></div>' +
+		'<div>Tato doména bude fungovat i po změnách v roce 2019, nicméně chybí u ní podpora nejnovějších DNS standardů. To znamená, že tato doména nemůže použít nejnovější metody zabezpečení a je zranitelnější vůči útokům. Nalezené nedostatky také mohou způsobit potíže v budoucnosti. Doporučujeme požádat vašeho správce domény o opravu zjištěných problémů. Můžete ho odkázat na web dnsflagday.net/cs a ',
+
+		reportHighLatency: ': <span style="color: red;">Vážné problémy!</span></div>' +
+		'<div><img style="height: 5em;" src="/signs/high_latency.svg"/></div>' +
+		'<div>Tato doména bude po změnách v roce 2019 vážně postižena. Přestože doména nepřestane fungovat, uživatelé mohou čelit náhodným výpadkům a přístup na doménu bude zpomalený. Důrazně doporučujeme požádat vašeho správce domény o opravu zjištěných problémů. Můžete ho odkázat na web dnsflagday.net/cs a ',
+
+		reportFailHtml: ': <span style="font-weight: bold; color: red;">Fatální chyba!</span></div>' +
+		'<div><img style="height: 5em;" src="/signs/dead.svg"/></div>' +
+		'<div>Tato doména bude po změnách v roce 2019 ZCELA NEFUNKČNÍ! Pro vyloučení nahodilých chyb v síti prosím zopakujte test. Pokud problém přetrvává, je nezbytné požadovat nápravu od vašeho správce domény. Můžete ho odkázat na web dnsflagday.net/cs a ',
+
+		reportTestErrorHtml: ': Výsledek testu nelze vyhodnotit. Prosím ujistěte se, že zadané jméno odpovídá <strong>DNS zóně</strong>, tj. zadejte "example.cz" na místo "www.example.cz". Také můžete zkusit test opakovat pro vyloučení chyb na síti nebo se podívat na podrobnou',
+
 		reportLinkText: ' technickou zprávu ',  // text before URL to report
 	},
 	status: {
 		loading: 'Probíhá test, prosím čekejte… Test může zabrat několik desítek sekund.',
 		done: 'Testování dokončeno:',
 		errorApi: 'Chyba při komunikaci! API není dostupné… prosím zkuste to později.',
-		errorInput: 'Neplatné jméno!',
+		errorInput: 'Neplatné jméno nebo jiná neočekávaná chyba!',
 	},
 };
 </script>
@@ -75,6 +91,14 @@ Důsledkem je, že DNS servery které **vůbec neodpovídají na EDNS dotazy** s
 Prosím otestujte svou implementaci DNS pomocí nástroje [ednscomp](https://ednscomp.isc.org/ednscomp) a ujistěte se, že správně zpracováváte rozšíření EDNS. Zdrojový kód testovacího nástroje je také [k dispozici](https://gitlab.isc.org/isc-projects/DNS-Compliance-Testing).
 
 Upozorňujeme, že rozšíření EDNS stále není povinné. Pokud se rozhodnete nepodporovat EDNS, vše bude fungovat pokud se váš software bude řídit podle [EDNS standard section 7](https://tools.ietf.org/html/rfc6891#section-7).
+
+Výzkumníci
+==========
+Další zdroje pro výzkumníky:
+ * [Statistiky podpory EDNS](https://ednscomp.isc.org/) vygenerované pomocí [sady EDNS testů](https://gitlab.isc.org/isc-projects/DNS-Compliance-Testing) vytvořené sdružením ISC.
+ * [EDNS skener zón](https://gitlab.labs.nic.cz/knot/edns-zone-scanner/) vytvořený sdružením CZ.NIC, který si klade za cíl vyhodnotit reálný dopad změny popsané na této stránce.
+
+Před interpretací dat si prosím přečtěte metodologii uvedenou u konkrétního zdroje. S dotazy se neváhejte obrátit na autory pomocí odkazů do Gitlabu uvedených výše.
 
 Prezentace
 ==========
@@ -110,6 +134,8 @@ Akci podporují
 [![Quad9](/images/quad9.png)](https://quad9.net/)
 
 [![CleanBrowsing](https://cleanbrowsing.org/images/CleanBrowsing-logo-small-dark.png)](https://cleanbrowsing.org/)
+
+[![Cloudflare](/images/cloudflare.png)](https://www.cloudflare.com/)
 
 Literatura
 ==========
