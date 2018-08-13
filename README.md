@@ -1,8 +1,3 @@
----
-title: DNS flag day 2019
-lang: en-US
----
-
 <div class="translations">
 <nav>
 	<a href="/cs"><img alt="Česky" src="/flags/cs.svg"/></a>
