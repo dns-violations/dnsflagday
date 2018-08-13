@@ -43,19 +43,19 @@ const domainCheckerInit = {
 		labelText: 'Jméno domény (bez www): ',
 		submitText: 'Testuj!',
 		reportOkHtml: ': <span style="color: green;">V pořádku.</span></div>' +
-		'<div><img style="height: 5em;" src="signs/ok.svg"/></div>' +
+		'<div><img style="height: 5em;" src="/signs/ok.svg"/></div>' +
 		'<div>Tato doméne je perfektně připravena, gratulujeme!',
 
 		reportCompatibleHtml: ': <span style="color: orange;">Menší nedostatky!</span></div>' +
-		'<div><img style="height: 5em;" src="signs/compatible.svg"/></div>' +
+		'<div><img style="height: 5em;" src="/signs/compatible.svg"/></div>' +
 		'<div>Tato doména bude fungovat i po změnách v roce 2019, nicméně chybí u ní podpora nejnovějších DNS standardů. To znamená, že tato doména nemůže použít nejnovější metody zabezpečení a je zranitelnější vůči útokům. Nalezené nedostatky také mohou způsobit potíže v budoucnosti. Doporučujeme požádat vašeho správce domény o opravu zjištěných problémů. Můžete ho odkázat na web dnsflagday.net/cs a ',
 
 		reportHighLatency: ': <span style="color: red;">Vážné problémy!</span></div>' +
-		'<div><img style="height: 5em;" src="signs/high_latency.svg"/></div>' +
+		'<div><img style="height: 5em;" src="/signs/high_latency.svg"/></div>' +
 		'<div>Tato doména bude po změnách v roce 2019 vážně postižena. Přestože doména nepřestane fungovat, uživatelé mohou čelit náhodným výpadkům a přístup na doménu bude zpomalený. Důrazně doporučujeme požádat vašeho správce domény o opravu zjištěných problémů. Můžete ho odkázat na web dnsflagday.net/cs a ',
 
 		reportFailHtml: ': <span style="font-weight: bold; color: red;">Fatální chyba!</span></div>' +
-		'<div><img style="height: 5em;" src="signs/dead.svg"/></div>' +
+		'<div><img style="height: 5em;" src="/signs/dead.svg"/></div>' +
 		'<div>Tato doména bude po změnách v roce 2019 ZCELA NEFUNKČNÍ! Pro vyloučení nahodilých chyb v síti prosím zopakujte test. Pokud problém přetrvává, je nezbytné požadovat nápravu od vašeho správce domény. Můžete ho odkázat na web dnsflagday.net/cs a ',
 
 		reportTestErrorHtml: ': Výsledek testu nelze vyhodnotit. Prosím ujistěte se, že zadané jméno odpovídá <strong>DNS zóně</strong>, tj. zadejte "example.cz" na místo "www.example.cz". Také můžete zkusit test opakovat pro vyloučení chyb na síti nebo se podívat na podrobnou',
