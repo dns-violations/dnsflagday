@@ -1,3 +1,5 @@
+<img class="logo" alt="DNS flag day logo" src="/images/DNS_Flag.svg">
+
 <div class="translations">
 <nav>
 	<a href="/cs"><img alt="Česky" src="/flags/cs.svg"/></a>
