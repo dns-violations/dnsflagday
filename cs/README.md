@@ -45,7 +45,7 @@ const domainCheckerInit = {
 		'<div><img style="height: 5em;" src="/signs/compatible.svg"/></div>' +
 		'<div>Tato doména bude fungovat i po změnách v roce 2019, nicméně chybí u ní podpora nejnovějších DNS standardů. To znamená, že tato doména nemůže použít nejnovější metody zabezpečení a je zranitelnější vůči útokům. Nalezené nedostatky také mohou způsobit potíže v budoucnosti. Doporučujeme požádat vašeho správce domény o opravu zjištěných problémů. Můžete ho odkázat na web dnsflagday.net/cs a ',
 
-		reportHighLatency: ': <span style="color: red;">Vážné problémy!</span></div>' +
+		reportHighLatencyHtml: ': <span style="color: red;">Vážné problémy!</span></div>' +
 		'<div><img style="height: 5em;" src="/signs/high_latency.svg"/></div>' +
 		'<div>Tato doména bude po změnách v roce 2019 vážně postižena. Přestože doména nepřestane fungovat, uživatelé mohou čelit náhodným výpadkům a přístup na doménu bude zpomalený. Důrazně doporučujeme požádat vašeho správce domény o opravu zjištěných problémů. Můžete ho odkázat na web dnsflagday.net/cs a ',
 

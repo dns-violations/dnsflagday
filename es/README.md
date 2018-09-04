@@ -45,7 +45,7 @@ const domainCheckerInit = {
                 reportCompatibleHtml: ': <span style="color: orange;">¡Problemas menores detectados!</span></div>' +
                 '<div><img style="height: 5em;" src="/signs/compatible.svg"/></div>' +
                 '<div>Este dominio continuará funcionando después del día "DNS Flag Day" del 2019, PERO no respeta los últimos estándares DNS. A consecuencia de esto, este dominio no soporta las últimas características de seguridad y puede ser un objetivo fácil para ataques de red, entre otros problemas en el futuro. Recomendamos que su administrador del dominio corrija los problemas listados acá',
-                reportHighLatency: ': <span style="color: red;">¡Serios problemas detectados!</span></div>' +
+                reportHighLatencyHtml: ': <span style="color: red;">¡Serios problemas detectados!</span></div>' +
                 '<div><img style="height: 5em;" src="/signs/high_latency.svg"/></div>' +
                 '<div>Este dominio encontrará problemas después del día "DNS Flag Day" del 2019. En la práctica funcionará, PERO los clientes experimentarán demoras al acceder a este dominio. ¡Recomendamos que solicite una corrección a su administrador de dominio! Puede enviarle la información en https://dnsflagday.net/ y',
                 reportFailHtml: ': <span style="font-weight: bold; color: red;">¡Error fatal detectado!</span></div>' +

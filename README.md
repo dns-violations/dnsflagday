@@ -47,7 +47,7 @@ const domainCheckerInit = {
 		'<div><img style="height: 5em;" src="/signs/compatible.svg"/></div>' +
 		'<div>This domain is going to work after the 2019 DNS flag day BUT it does not support the latest DNS standards. As a consequence this domain cannot support the latest security features and might be an easier target for network attackers than necessary, and might face other issues later on. We recommend your domain administrator to fix issues listed in the following',
 
-		reportHighLatency: ': <span style="color: red;">Serious problem detected!</span></div>' +
+		reportHighLatencyHtml: ': <span style="color: red;">Serious problem detected!</span></div>' +
 		'<div><img style="height: 5em;" src="/signs/high_latency.svg"/></div>' +
 		'<div>This domain will face issues after the 2019 DNS flag day. It will work in practice, BUT clients will experience delays when accessing this domain. We recommend you request a fix from your domain administrator! You can refer them to https://dnsflagday.net/ and',
 
