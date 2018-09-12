@@ -79,12 +79,12 @@ Celkový výsledek zobrazený nástrojem [ednscomp](https://ednscomp.isc.org/edn
 Pro minimální konfiguraci, která ještě bude v roce 2019 fungovat, nevypisuje nástroj [ednscomp](https://ednscomp.isc.org/ednscomp) výsledek `timeout` v žádném z testů pro původní DNS ani v testech pro rozšíření EDNS verze 0. Vezměte prosím na vědomí, že takováto minimální konfigurace stále neodpovídá standardům a dříve nebo později bude způsobovat potíže. Z tohoto důvodu **doporučujeme najednou opravit vaše DNS tak, aby všechny testy skončily výsledkem `ok`**. Vyhnete se tak problémům v budoucnu.
 
 Pokud bude zjištěn problém, nástroj ednscomp vám zobrazí vysvětlení pro každý test. Problémy jsou typicky způsobeny:
-* nekvalitním DNS softwarem
+* zastaralým nebo nekvalitním DNS softwarem
 * chybnou konfigurací firewallu
 
-Doporučujeme upgradovat váš DNS software na poslední stabilní verzi a provést test znovu. Pokud testy selhávají i po upgrade DNS software, doporučujeme vám zkontrolovat konfiguraci firewallu.
+Doporučujeme aktualizovat váš DNS software na poslední stabilní verzi a zopakovat test. Pokud testy selhávají i po aktualizaci DNS software, doporučujeme vám zkontrolovat konfiguraci firewallu.
 
-**Firewally nesmí zahazovat DNS pakety** které obsahují rozšíření EDNS (ani dosud neznámá rozšíření splňující standard EDNS). Moderní DNS software používá rozšíření jako např. [DNS cookies](https://tools.ietf.org/html/rfc7873) pro ochranu proti DoS útokům. Firewally které zahazují DNS pakety s roršířeními tak zhoršují situaci pro všechny uživatele, včetně zhoršování DoS útoků a zpomalování DNS provozu.
+**Firewally nesmí zahazovat DNS pakety** které obsahují rozšíření EDNS (ani dosud neznámá rozšíření splňující standard EDNS). Moderní DNS software používá rozšíření jako např. [DNS cookies](https://tools.ietf.org/html/rfc7873) pro ochranu proti DoS útokům. Firewally které zahazují DNS pakety s rozšířeními ve skutečnosti zhoršují situaci pro všechny uživatele, včetně zhoršování DoS útoků a zpomalování DNS provozu.
 
 Vývojáři DNS software
 =====================
