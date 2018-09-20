@@ -53,14 +53,14 @@ const domainCheckerInit = {
 		'<div><img style="height: 5em;" src="/signs/dead.svg"/></div>' +
 		'<div>Tato doména bude po změnách v roce 2019 ZCELA NEFUNKČNÍ! Pro vyloučení nahodilých chyb v síti prosím zopakujte test. Pokud problém přetrvává, je nezbytné požadovat nápravu od vašeho správce domény. Můžete ho odkázat na web dnsflagday.net/cs a ',
 
-		reportTestErrorHtml: ': Výsledek testu nelze vyhodnotit. Prosím ujistěte se, že zadané jméno odpovídá <strong>DNS zóně</strong>, tj. zadejte "example.cz" na místo "www.example.cz". Také můžete zkusit test opakovat pro vyloučení chyb na síti nebo se podívat na podrobnou',
+		reportTestErrorHtml: ': Omlouváme se, výsledek testu v tomto okamžiku nelze vyhodnotit. Zájem o testování předčil naše očekávání a již pracujeme na posílení testovací infrastruktury. Zkuste prosím test zopakovat později. Pokud problém přetrvává, ujistěte se, že zadané jméno odpovídá <strong>DNS zóně</strong>, tj. zadejte "example.cz" na místo "www.example.cz".',
 
 		reportLinkText: ' technickou zprávu ',  // text before URL to report
 	},
 	status: {
 		loading: 'Probíhá test, prosím čekejte… Test může zabrat několik desítek sekund.',
 		done: 'Testování dokončeno:',
-		errorApi: 'Chyba při komunikaci! API není dostupné… prosím zkuste to později.',
+		errorApi: 'Omlouváme se, výsledek testu v tomto okamžiku nelze vyhodnotit. Zájem o testování předčil naše očekávání a již pracujeme na posílení testovací infrastruktury.',
 		errorInput: 'Neplatné jméno nebo jiná neočekávaná chyba!',
 	},
 };
