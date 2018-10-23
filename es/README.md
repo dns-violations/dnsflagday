@@ -100,6 +100,7 @@ Por favor revise las metodologías respectivas antes de interpretar los datos. E
 Presentaciones
 ==============
 
+ * LACNOG 2018: [presentación](http://www.lacnic.net/innovaportal/file/3207/1/edns-flag-day.pdf), [video](https://www.youtube.com/watch?v=_hCGucH0kRU)
  * DNS-OARC 28 (en inglés): [abstract](https://indico.dns-oarc.net/event/28/contributions/515/), [slides](https://indico.dns-oarc.net/event/28/contributions/515/attachments/490/799/Removing_EDNS_Workarounds.pdf), [video](https://www.youtube.com/watch?v=9YYH8JFH_bY&feature=youtu.be&t=5198)
  * LOADAYS 2018 (en inglés): [abstract](http://loadays.org/pages/dnsupdate.html), [slides](http://loadays.org/files/plexis-edns-workaround-removal-loadays-2018.pdf), [video](https://www.youtube.com/watch?v=OXbbH0ORmSY)
  * RIPE 76 (en inglés): [slides](https://ripe76.ripe.net/presentations/159-edns.pdf), [video](https://ripe76.ripe.net/archives/video/161)
