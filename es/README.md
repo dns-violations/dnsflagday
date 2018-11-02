@@ -135,6 +135,8 @@ Apoyan
 
 [![Cloudflare](/images/cloudflare.png)](https://www.cloudflare.com/)
 
+[![Cisco](/images/cisco.svg)](https://www.opendns.com/cisco-opendns/)
+
 Lecturas adicionales
 ====================
  * [Minimal EDNS compliance requirements](https://datatracker.ietf.org/doc/draft-spacek-edns-camel-diet/)
