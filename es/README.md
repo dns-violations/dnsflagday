@@ -137,6 +137,8 @@ Apoyan
 
 [![Cisco](/images/cisco.svg)](https://www.opendns.com/cisco-opendns/)
 
+[![Google](/images/google.svg)](https://www.google.com/)
+
 Lecturas adicionales
 ====================
  * [Minimal EDNS compliance requirements](https://datatracker.ietf.org/doc/draft-spacek-edns-camel-diet/)

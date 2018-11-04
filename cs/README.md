@@ -144,6 +144,8 @@ Akci podporují
 
 [![Cisco](/images/cisco.svg)](https://www.opendns.com/cisco-opendns/)
 
+[![Google](/images/google.svg)](https://www.google.com/)
+
 Literatura
 ==========
  * [Minimal EDNS compliance requirements](https://datatracker.ietf.org/doc/draft-spacek-edns-camel-diet/)
