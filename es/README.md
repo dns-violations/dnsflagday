@@ -121,7 +121,7 @@ Apoyan
 ======
 <script id="do-not-translate-randomize-this-section" src="/supporters-randomiser.js" defer></script>
 
-[![PowerDNS](/images/powerdns.png)](https://www.powerdns.com/)
+[![PowerDNS](/images/powerdns.svg)](https://www.powerdns.com/)
 
 [![ISC](/images/isc.png)](https://www.isc.org/)
 

@@ -130,7 +130,7 @@ Akci podporují
 
 [![CZ.NIC](/images/cznic.svg)](https://www.nic.cz/)
 
-[![PowerDNS](/images/powerdns.png)](https://www.powerdns.com/)
+[![PowerDNS](/images/powerdns.svg)](https://www.powerdns.com/)
 
 [![ISC](/images/isc.png)](https://www.isc.org/)
 
