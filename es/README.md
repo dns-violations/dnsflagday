@@ -137,7 +137,7 @@ Apoyan
 
 [![Cisco](/images/cisco.svg)](https://www.opendns.com/cisco-opendns/)
 
-[![Google](/images/google.svg)](https://www.google.com/)
+[![Google](/images/google.svg)](https://developers.google.com/speed/public-dns/)
 
 Lecturas adicionales
 ====================
