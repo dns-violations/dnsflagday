@@ -20,7 +20,7 @@ Prosím zkontrolujte své domény pomocí následujícího formuláře:
 		<fieldset>
 			<legend>Test domény</legend>
 			<label for="zone">Jméno domény (bez www):
-				<input type="text" name="zone" id="zone" required>
+				<input type="text" name="zone" id="zone" required title="Vložte jméno DNS zóny hostované na DNS serverech, které chcete otestovat. (Zadané jméno musí mít SOA a NS záznamy.)">
 			</label>
 			<input type="submit" value="Testuj!">
 			<noscript>Váš prohlížeč nepodporuje JavaScript. Tento formulář otevře nové okno s technickou zprávou o stavu domény.<br>
@@ -127,13 +127,13 @@ Akci podporují
 ==============
 <script id="do-not-translate-randomize-this-section" src="/supporters-randomiser.js" defer></script>
 
-[![CZ.NIC](/images/cznic.svg)](https://www.nic.cz/)
+[![PowerDNS](/images/powerdns.svg)](https://blog.powerdns.com/2018/03/22/removing-edns-workarounds/)
 
-[![PowerDNS](/images/powerdns.svg)](https://www.powerdns.com/)
+[![ISC](/images/isc.png)](https://www.isc.org/blogs/end-to-bandaids/)
 
-[![ISC](/images/isc.png)](https://www.isc.org/)
+[![NLnet Labs](/images/nlnetlabs.svg)](https://www.nlnetlabs.nl/news/2018/Jun/07/putting-an-end-to-workarounds-for-broken-software/)
 
-[![NLnet Labs](/images/nlnetlabs.svg)](https://nlnetlabs.nl/)
+[![CZ.NIC](/images/cznic.svg)](https://en.blog.nic.cz/2018/03/14/together-for-better-stability-speed-and-further-extensibility-of-the-dns-ecosystem/)
 
 [![Quad9](/images/quad9.png)](https://quad9.net/)
 

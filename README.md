@@ -22,7 +22,7 @@ Please check if your domain is affected:
 		<fieldset>
 			<legend>Test your domain</legend>
 			<label for="zone">Domain name (without www):
-				<input type="text" name="zone" id="zone" required>
+				<input type="text" name="zone" id="zone" required title="Please enter name of a DNS zone hosted on DNS servers you want to test. (The name must contain SOA and NS records.)">
 			</label>
 			<input type="submit" value="Test!">
 			<noscript>Your browser does not support JavaScript! Technical report will be shown in a new window.<br>
@@ -128,13 +128,13 @@ Supporters
 ==========
 <script id="do-not-translate-randomize-this-section" src="/supporters-randomiser.js" defer></script>
 
-[![PowerDNS](/images/powerdns.svg)](https://www.powerdns.com/)
+[![PowerDNS](/images/powerdns.svg)](https://blog.powerdns.com/2018/03/22/removing-edns-workarounds/)
 
-[![ISC](/images/isc.png)](https://www.isc.org/)
+[![ISC](/images/isc.png)](https://www.isc.org/blogs/end-to-bandaids/)
 
-[![NLnet Labs](/images/nlnetlabs.svg)](https://nlnetlabs.nl/)
+[![NLnet Labs](/images/nlnetlabs.svg)](https://www.nlnetlabs.nl/news/2018/Jun/07/putting-an-end-to-workarounds-for-broken-software/)
 
-[![CZ.NIC](/images/cznic.svg)](https://www.nic.cz/)
+[![CZ.NIC](/images/cznic.svg)](https://en.blog.nic.cz/2018/03/14/together-for-better-stability-speed-and-further-extensibility-of-the-dns-ecosystem/)
 
 [![Quad9](/images/quad9.png)](https://quad9.net/)
 
