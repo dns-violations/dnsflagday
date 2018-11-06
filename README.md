@@ -10,10 +10,9 @@
 
 What is happening?
 ==================
-The current DNS suffers from unnecessary delays and an inability to deploy new features. To remediate these problems, vendors of DNS software [BIND (ISC)](https://www.isc.org/blogs/end-to-bandaids/), 
-[Knot Resolver (CZ.NIC)](https://en.blog.nic.cz/2018/03/14/together-for-better-stability-speed-and-further-extensibility-of-the-dns-ecosystem/), [PowerDNS](https://blog.powerdns.com/2018/03/22/removing-edns-workarounds/), and [Unbound (NLnet Labs)](https://www.nlnetlabs.nl/news/2018/Jun/07/putting-an-end-to-workarounds-for-broken-software/) are going to remove certain workarounds on February 1st, 2019.
+The current <a href="https://en.wikipedia.org/wiki/Domain_Name_System">DNS</a> is unnecessarily slow and suffers from inability to deploy new features. To remediate these problems, <a href="#supporters">vendors of DNS software</a> and also big <a href="#supporters">public DNS providers</a> are going to remove certain workarounds on February 1st, 2019.
 
-This change affects only sites which operate broken software. Are you affected?
+This change affects only sites which operate software which is not following published standards. Are you affected?
 
 Domain owners
 =============

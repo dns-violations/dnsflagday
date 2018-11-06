@@ -8,10 +8,9 @@
 
 Co se připravuje?
 =================
-Současný systém DNS je z historických důvodů pomalý a neumožňuje nasadit novou funkcionalitu. Skupina výrobců DNS software [BIND (ISC)](https://www.isc.org/blogs/end-to-bandaids/), 
-[Knot Resolver (CZ.NIC)](https://en.blog.nic.cz/2018/03/14/together-for-better-stability-speed-and-further-extensibility-of-the-dns-ecosystem/), [PowerDNS](https://blog.powerdns.com/2018/03/22/removing-edns-workarounds/) a Unbound (NLnet Labs) proto po **1. únoru 2019** ukončí podporu některých historických implementací DNS porušujících standardy.
+Současný systém <a href="https://cs.wikipedia.org/wiki/Domain_Name_System">DNS</a> je z historických důvodů pomalý a neumožňuje nasadit novou funkcionalitu. Pro zmírnění problému skupina <a href="#supporters">výrobců DNS software</a> a <a href="#supporters">významných poskytovatelů DNS infrastruktury</a> proto po **1. únoru 2019** ukončí podporu některých historických implementací DNS porušujících standardy.
 
-Tato změna ovlivní jen domény, které používají nekvalitní DNS software. Ovlivní i vás?
+Tato změna ovlivní jen domény používající software, který nedodržuje publikované standardy. Ovlivní i vás?
 
 Vlastníci domén
 ===============
