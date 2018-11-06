@@ -8,7 +8,7 @@
 
 Co se připravuje?
 =================
-Současný systém <a href="https://cs.wikipedia.org/wiki/Domain_Name_System">DNS</a> je z historických důvodů pomalý a neumožňuje nasadit novou funkcionalitu. Pro zmírnění problému skupina <a href="#supporters">výrobců DNS software</a> a <a href="#supporters">významných poskytovatelů DNS infrastruktury</a> proto po **1. únoru 2019** ukončí podporu některých historických implementací DNS porušujících standardy.
+Současný systém <a href="https://cs.wikipedia.org/wiki/Domain_Name_System">DNS</a> je z historických důvodů pomalý a neumožňuje nasadit novou funkcionalitu. Pro zmírnění problému skupina <a href="#akci-podporují">výrobců DNS software</a> a <a href="#akci-podporují">významných poskytovatelů DNS infrastruktury</a> proto po **1. únoru 2019** ukončí podporu některých historických implementací DNS porušujících standardy.
 
 Tato změna ovlivní jen domény používající software, který nedodržuje publikované standardy. Ovlivní i vás?
 
