@@ -7,6 +7,11 @@
 	<a href="/es"><img alt="Español" src="/flags/es.svg"/></a>
 </nav>
 </div>
+<div class="social">
+<nav>
+	<a href="https://twitter.com/dnsflagday"><img alt="@dnsflagday" src="/images/Twitter_Social_Icon_Rounded_Square_Color.svg"></a>
+</nav>
+</div>
 
 What is happening?
 ==================
