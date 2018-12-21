@@ -5,6 +5,7 @@
 	<a href="/cs"><img alt="Česky" src="/flags/cs.svg"/></a>
 	<a href="/"><img alt="English" src="/flags/en.svg"/></a>
 	<a href="/es"><img alt="Español" src="/flags/es.svg"/></a>
+        <a href="/pt-br"><img alt="Português Brasileiro" src="/flags/pt-br.svg"/></a>
 </nav>
 </div>
 <div class="social">
