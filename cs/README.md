@@ -68,8 +68,21 @@ const domainCheckerInit = {
 <script src="/domain-checker.js"></script>
 <br>
 
-Správci DNS
-===========
+Správci DNS resolverů
+=====================
+
+Skupina výrobců DNS software naplánovala na dny okolo 1. února 2019 vydání aktualizovaných verzí software, které ukončí podporu některých implementací DNS porušujících standardy. Je naplánováno vydání těchto verzí:
+
+* BIND 9.13.3 (vývojová verze) a 9.14.0 (produkční)
+* Knot Resolver ve všech současných verzích již implementuje striktní chování
+* PowerDNS Recursor 4.2.0
+* Unbound 1.9.0
+
+Také <a href="#supporters">poskytovatelé veřejných DNS resolverů uvedení níže</a> během krátkého období ukončí tuto podporu.
+
+
+Správci DNS serverů
+===================
 Pro seznámení s problematikou podpory EDNS vám doporučujeme použít formulář uvedený výše, který poskytuje zjednodušený výsledek pro celou doménu.
 
 Dále je možné otestovat vaše DNS servery pomocí nástroje [ednscomp](https://ednscomp.isc.org/ednscomp), který zobrazuje podrobnou technickou zprávu. Do pole `zone name` zadejte jméno jakékoliv zóny hostované na vašich DNS serverech a klikněte na tlačítko `Submit`.
