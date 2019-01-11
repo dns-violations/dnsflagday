@@ -74,6 +74,18 @@ const domainCheckerInit = {
 <script src="/domain-checker.js"></script>
 <br>
 
+DNS resolver operators
+======================
+
+On or around Feb 1st, 2019, all open source resolver vendors will release updates that implement stricter EDNS handling.
+
+Specifically, the following versions introduce this change:
+
+* BIND 9.13.3 (development) and 9.14.0 (production)
+* Knot Resolver 3.3.0
+* Unbound 1.9.0
+* PowerDNS Recursor 4.2.0
+
 DNS administrators
 ==================
 For introduction to EDNS compliance we recommend you to use form above which produces simplified result for a whole domain.
