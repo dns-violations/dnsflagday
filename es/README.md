@@ -5,15 +5,20 @@
 	<a href="/cs"><img alt="Česky" src="/flags/cs.svg"/></a>
 	<a href="/"><img alt="English" src="/flags/en.svg"/></a>
 	<a href="/es"><img alt="Español" src="/flags/es.svg"/></a>
+        <a href="/pt-br"><img alt="Português Brasileiro" src="/flags/pt-br.svg"/></a>
+</nav>
+</div>
+<div class="social">
+<nav>
+    <a href="https://twitter.com/dnsflagday"><img alt="@dnsflagday" src="/images/Twitter_Social_Icon_Rounded_Square_Color.svg"></a>
 </nav>
 </div>
 
 ¿Qué está pasando?
 ==================
-Los sistemas DNS modernos sufren de demoras innecesarias y dificultad para desarrollar nuevas funcionalidades. Para remediar este problema, los vendedores de software DNS [BIND (ISC)](https://www.isc.org/blogs/end-to-bandaids/), 
-[Knot Resolver (CZ.NIC)](https://en.blog.nic.cz/2018/03/14/together-for-better-stability-speed-and-further-extensibility-of-the-dns-ecosystem/), [PowerDNS](https://blog.powerdns.com/2018/03/22/removing-edns-workarounds/), y Unbound (NLnet Labs) eliminarán ciertos parches provisorios el 1 de Febrero de 2019.
+El <a href="https://en.wikipedia.org/wiki/Domain_Name_System">DNS</a> actual sufre de demoras innecesarias y dificultad para desarrollar nuevas funcionalidades. Para remediar este problema, los <a href="#supporters">proveedores de software DNS</a> y <a href="#supporters">sistemas de DNS públicos</a> eliminarán ciertos parches provisorios el 1 de Febrero de 2019.
 
-Este cambio solo afectará a sitios que operan software incorrecto. ¿Te afectará a ti?
+Este cambio solo afectará a sitios que operan software que no respeta los estándares. ¿Te afectará a ti?
 
 Dueños de dominios
 ==================
@@ -23,7 +28,7 @@ Por favor revise si su dominio está correcto:
                <fieldset>
                       <legend>Revise su dominio</legend>
                       <label for="zone">Nombre de dominio (sin www):
-                               <input type="text" name="zone" id="zone" required>
+                               <input type="text" name="zone" id="zone" required title="Por favor ingrese el nombre de alguna zona DNS hospedada en los servidores que desee revisar (el nombre debe poseer registros SOA y NS).">
                        </label>
                        <input type="submit" value="¡Pruebe!">
                        <noscript>¡Su navegador no soporta JavaScript! El reporte técnico será mostrado en una ventana nueva.<br>
@@ -41,10 +46,10 @@ const domainCheckerInit = {
                submitText: '¡Pruebe!',
                reportOkHtml: ': <span style="color: green;">¡Todo Bien!</span></div>' +
                 '<div><img style="height: 5em;" src="/signs/ok.svg"/></div>' +
-                '<div>Este dominio está completamente listo, ¡Felicidades!',
+                '<div>Este dominio está totalmente listo, ¡Felicidades!',
                 reportCompatibleHtml: ': <span style="color: orange;">¡Problemas menores detectados!</span></div>' +
                 '<div><img style="height: 5em;" src="/signs/compatible.svg"/></div>' +
-                '<div>Este dominio continuará funcionando después del día "DNS Flag Day" del 2019, PERO no respeta los últimos estándares DNS. A consecuencia de esto, este dominio no soporta las últimas características de seguridad y puede ser un objetivo fácil para ataques de red, entre otros problemas en el futuro. Recomendamos que su administrador del dominio corrija los problemas listados acá',
+                '<div>Este dominio continuará funcionando después del día "DNS Flag Day" del 2019, PERO no respeta los últimos estándares DNS. Como consecuencia de esto, este dominio no soporta las últimas características de seguridad y puede ser un objetivo fácil para ataques de red, entre otros problemas en el futuro. Recomendamos que su administrador del dominio corrija los problemas listados acá',
                 reportHighLatencyHtml: ': <span style="color: red;">¡Serios problemas detectados!</span></div>' +
                 '<div><img style="height: 5em;" src="/signs/high_latency.svg"/></div>' +
                 '<div>Este dominio encontrará problemas después del día "DNS Flag Day" del 2019. En la práctica funcionará, PERO los clientes experimentarán demoras al acceder a este dominio. ¡Recomendamos que solicite una corrección a su administrador de dominio! Puede enviarle la información en https://dnsflagday.net/ y',
@@ -58,18 +63,34 @@ const domainCheckerInit = {
                loading: 'Prueba en progreso, por favor espere… Puede tomar varias decenas de segundos.',
                done: 'Prueba finalizada:',
                errorApi: '¡Error de comunicación! API no disponible… por favor reintente más tarde',
-               errorInput: '¡Entrada inválida! IDN aún no está soportado.',
+               errorInput: '¡Entrada inválida u otro error inesperado, lo siento!',
        },
 };
 </script>
 <script src="/domain-checker.js"></script>
 <br>
 
-Administradores DNS
-===================
-Es posible revisar su servidor DNS usando la herramienta [ednscomp](https://ednscomp.isc.org/ednscomp). Ingrese el nombre de alguno de los dominios hospedados en su servidor DNS en el campo `zone name` y presione el botón `Submit`.
+Operadores de "resolvers" DNS
+=============================
+
+En los días cercanos al 1 de febrero de 2019, los más importantes proveedores de software resolutor ("resolver") de código abierto, lanzarán nuevas actualizaciones que implementarán un manejo estricto del estándar EDNS. Específicamente, las versiones que introducen estos cambios son:
+
+* BIND 9.13.3 (development) y 9.14.0 (production)
+* Knot Resolver ya tiene un manejo estricto de EDNS en todas sus versiones actuales
+* PowerDNS Recursor 4.2.0
+* Unbound 1.9.0
+
+Además los <a href="#supporters">sistemas de DNS público indicados más abajo</a> también aplicarán estos cambios.
+
+Operadores de servidores DNS
+============================
+Para revisar su compatibilidad con EDNS le recomendamos usar el formulario de arriba, que entrega resultados simplificados para un dominio.
+
+También es posible revisar su servidor DNS usando la herramienta [ednscomp](https://ednscomp.isc.org/ednscomp) que entrega un detalle técnico detallado. Ingrese el nombre de alguno de los dominios hospedados en su servidor DNS en el campo `zone name` y presione el botón `Submit`.
 
 El resultado de las pruebas de [ednscomp](https://ednscomp.isc.org/ednscomp) debe ser el mensaje en verde `All Ok`.
+
+Una infraestructura mínima que permita sobrevivir el "DNS flag day" no debe tener ningún resultado `timeout` (tiempo de espera agotado) en ninguna de las pruebas de DNS "plain" ni "EDNS version 0", de la herramienta [ednscomp](https://ednscomp.isc.org/ednscomp). Por favor tenga en cuenta que una infraestructura que sólo cumpla este mínimo no será compatible con los estándares y tendrá otros problemas tarde o temprano. Por esta razón **recomendamos encarecidamente obtener la compatibilidad completa con EDNS (todas las pruebas en `ok`)** en vez de solo preocuparse por lo mínimo, para evitar problemas en el futuro.
 
 Si hay algún problema, la herramienta ednscomp entregará una explicación para cada prueba fallida. Las errores típicos son causados por:
 * software DNS que funciona incorrectamente
@@ -81,7 +102,7 @@ Para solucionar estos problemas por favor actualice su software DNS a la última
 
 Desarrolladores de software DNS
 ===============================
-El principal cambio es que los vendedores de software DNS arriba mencionados comenzarán a interpretar los "tiempos de espera agotados" ("timeouts") como una señal de problema en la red, o en el servidor. A partir del 1 de Febrero de 2019, **no habrá ningún intento de desactivar EDNS** como reacción a un tiempo de espera agotado.
+El principal cambio es que los vendedores de software DNS arriba mencionados comenzarán a interpretar los "tiempos de espera agotados" ("timeouts") como una señal de problema en la red o en el servidor. A partir del 1 de Febrero de 2019, **no habrá ningún intento de desactivar EDNS** como reacción a un tiempo de espera agotado.
 
 En la práctica esto significa que todos los servidores DNS que **no respondan a las consultas EDNS** serán tratados como *muertos*.
 
@@ -104,6 +125,7 @@ Presentaciones
  * DNS-OARC 28 (en inglés): [abstract](https://indico.dns-oarc.net/event/28/contributions/515/), [slides](https://indico.dns-oarc.net/event/28/contributions/515/attachments/490/799/Removing_EDNS_Workarounds.pdf), [video](https://www.youtube.com/watch?v=9YYH8JFH_bY&feature=youtu.be&t=5198)
  * LOADAYS 2018 (en inglés): [abstract](http://loadays.org/pages/dnsupdate.html), [slides](http://loadays.org/files/plexis-edns-workaround-removal-loadays-2018.pdf), [video](https://www.youtube.com/watch?v=OXbbH0ORmSY)
  * RIPE 76 (en inglés): [slides](https://ripe76.ripe.net/presentations/159-edns.pdf), [video](https://ripe76.ripe.net/archives/video/161)
+ * DNS-OARC 29 (en inglés): [abstract](https://indico.dns-oarc.net/event/29/contributions/662/), [slides](https://indico.dns-oarc.net/event/29/contributions/662/attachments/634/1063/EDNS_Flag_Day_-_OARC29.pdf)
 
 Herramientas
 ============
@@ -135,7 +157,14 @@ Apoyan
 
 [![Cloudflare](/images/cloudflare.png)](https://www.cloudflare.com/)
 
+[![Cisco](/images/cisco.svg)](https://www.opendns.com/cisco-opendns/)
+
+[![Google](/images/google.svg)](https://developers.google.com/speed/public-dns/)
+
+[![Facebook](/images/facebook.svg)](https://www.facebook.com/)
+
 Lecturas adicionales
 ====================
  * [Minimal EDNS compliance requirements](https://datatracker.ietf.org/doc/draft-spacek-edns-camel-diet/)
  * [“The DNS Camel”, or, the rise in DNS complexity](https://blog.powerdns.com/2018/03/22/the-dns-camel-or-the-rise-in-dns-complexit/)
+
