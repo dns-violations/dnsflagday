@@ -5,15 +5,20 @@
 	<a href="/cs"><img alt="Česky" src="/flags/cs.svg"/></a>
 	<a href="/"><img alt="English" src="/flags/en.svg"/></a>
 	<a href="/es"><img alt="Español" src="/flags/es.svg"/></a>
+        <a href="/pt-br"><img alt="Português Brasileiro" src="/flags/pt-br.svg"/></a>
+</nav>
+</div>
+<div class="social">
+<nav>
+	<a href="https://twitter.com/dnsflagday"><img alt="@dnsflagday" src="/images/Twitter_Social_Icon_Rounded_Square_Color.svg"></a>
 </nav>
 </div>
 
 What is happening?
 ==================
-The current DNS suffers from unnecessary delays and an inability to deploy new features. To remediate these problems, vendors of DNS software [BIND (ISC)](https://www.isc.org/blogs/end-to-bandaids/), 
-[Knot Resolver (CZ.NIC)](https://en.blog.nic.cz/2018/03/14/together-for-better-stability-speed-and-further-extensibility-of-the-dns-ecosystem/), [PowerDNS](https://blog.powerdns.com/2018/03/22/removing-edns-workarounds/), and [Unbound (NLnet Labs)](https://www.nlnetlabs.nl/news/2018/Jun/07/putting-an-end-to-workarounds-for-broken-software/) are going to remove certain workarounds on February 1st, 2019.
+The current <a href="https://en.wikipedia.org/wiki/Domain_Name_System">DNS</a> is unnecessarily slow and suffers from inability to deploy new features. To remediate these problems, <a href="#supporters">vendors of DNS software</a> and also big <a href="#supporters">public DNS providers</a> are going to remove certain workarounds on February 1st, 2019.
 
-This change affects only sites which operate broken software. Are you affected?
+This change affects only sites which operate software which is not following published standards. Are you affected?
 
 Domain owners
 =============
@@ -23,7 +28,7 @@ Please check if your domain is affected:
 		<fieldset>
 			<legend>Test your domain</legend>
 			<label for="zone">Domain name (without www):
-				<input type="text" name="zone" id="zone" required>
+				<input type="text" name="zone" id="zone" required title="Please enter name of a DNS zone hosted on DNS servers you want to test. (The name must contain SOA and NS records.)">
 			</label>
 			<input type="submit" value="Test!">
 			<noscript>Your browser does not support JavaScript! Technical report will be shown in a new window.<br>
@@ -69,8 +74,20 @@ const domainCheckerInit = {
 <script src="/domain-checker.js"></script>
 <br>
 
-DNS administrators
-==================
+DNS resolver operators
+======================
+
+On or around Feb 1st, 2019, major open source resolver vendors will release updates that implement stricter EDNS handling. Specifically, the following versions introduce this change:
+
+* BIND 9.13.3 (development) and 9.14.0 (production)
+* Knot Resolver already implemented stricter EDNS handling in all current versions
+* PowerDNS Recursor 4.2.0
+* Unbound 1.9.0
+
+Also <a href="#supporters">public DNS providers listed below</a> will disable workarounds.
+
+DNS server operators
+====================
 For introduction to EDNS compliance we recommend you to use form above which produces simplified result for a whole domain.
 
 It is also possible to test your DNS servers directly using the tool [ednscomp](https://ednscomp.isc.org/ednscomp) which displays detailed technical report. Simply enter the name of a zone hosted on your DNS servers into the `zone name` field and click the `Submit` button.
@@ -111,6 +128,7 @@ Presentations
  * DNS-OARC 28: [abstract](https://indico.dns-oarc.net/event/28/contributions/515/), [slides](https://indico.dns-oarc.net/event/28/contributions/515/attachments/490/799/Removing_EDNS_Workarounds.pdf), [video](https://www.youtube.com/watch?v=9YYH8JFH_bY&feature=youtu.be&t=5198)
  * LOADAYS 2018: [abstract](http://loadays.org/pages/dnsupdate.html), [slides](http://loadays.org/files/plexis-edns-workaround-removal-loadays-2018.pdf), [video](https://www.youtube.com/watch?v=OXbbH0ORmSY)
  * RIPE 76: [slides](https://ripe76.ripe.net/presentations/159-edns.pdf), [video](https://ripe76.ripe.net/archives/video/161)
+ * DNS-OARC 29: [abstract](https://indico.dns-oarc.net/event/29/contributions/662/), [slides](https://indico.dns-oarc.net/event/29/contributions/662/attachments/634/1063/EDNS_Flag_Day_-_OARC29.pdf)
 
 Tools
 =====
@@ -128,19 +146,25 @@ Supporters
 ==========
 <script id="do-not-translate-randomize-this-section" src="/supporters-randomiser.js" defer></script>
 
-[![PowerDNS](/images/powerdns.png)](https://www.powerdns.com/)
+[![PowerDNS](/images/powerdns.svg)](https://blog.powerdns.com/2018/03/22/removing-edns-workarounds/)
 
-[![ISC](/images/isc.png)](https://www.isc.org/)
+[![ISC](/images/isc.png)](https://www.isc.org/blogs/end-to-bandaids/)
 
-[![NLnet Labs](/images/nlnetlabs.svg)](https://nlnetlabs.nl/)
+[![NLnet Labs](/images/nlnetlabs.svg)](https://www.nlnetlabs.nl/news/2018/Jun/07/putting-an-end-to-workarounds-for-broken-software/)
 
-[![CZ.NIC](/images/cznic.svg)](https://www.nic.cz/)
+[![CZ.NIC](/images/cznic.svg)](https://en.blog.nic.cz/2018/03/14/together-for-better-stability-speed-and-further-extensibility-of-the-dns-ecosystem/)
 
 [![Quad9](/images/quad9.png)](https://quad9.net/)
 
 [![CleanBrowsing](https://cleanbrowsing.org/images/CleanBrowsing-logo-small-dark.png)](https://cleanbrowsing.org/)
 
 [![Cloudflare](/images/cloudflare.png)](https://www.cloudflare.com/)
+
+[![Cisco](/images/cisco.svg)](https://www.opendns.com/cisco-opendns/)
+
+[![Google](/images/google.svg)](https://developers.google.com/speed/public-dns/)
+
+[![Facebook](/images/facebook.svg)](https://www.facebook.com/)
 
 Additional reading
 ==================

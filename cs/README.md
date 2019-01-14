@@ -3,15 +3,15 @@
 	<a href="/cs"><img alt="Česky" src="/flags/cs.svg"/></a>
 	<a href="/"><img alt="English" src="/flags/en.svg"/></a>
 	<a href="/es"><img alt="Español" src="/flags/es.svg"/></a>
+        <a href="/pt-br"><img alt="Português Brasileiro" src="/flags/pt-br.svg"/></a>
 </nav>
 </div>
 
 Co se připravuje?
 =================
-Současný systém DNS je z historických důvodů pomalý a neumožňuje nasadit novou funkcionalitu. Skupina výrobců DNS software [BIND (ISC)](https://www.isc.org/blogs/end-to-bandaids/), 
-[Knot Resolver (CZ.NIC)](https://en.blog.nic.cz/2018/03/14/together-for-better-stability-speed-and-further-extensibility-of-the-dns-ecosystem/), [PowerDNS](https://blog.powerdns.com/2018/03/22/removing-edns-workarounds/) a Unbound (NLnet Labs) proto po **1. únoru 2019** ukončí podporu některých historických implementací DNS porušujících standardy.
+Současný systém <a href="https://cs.wikipedia.org/wiki/Domain_Name_System">DNS</a> je z historických důvodů pomalý a neumožňuje nasadit novou funkcionalitu. Pro zmírnění problému skupina <a href="#akci-podporují">výrobců DNS software</a> a <a href="#akci-podporují">významných poskytovatelů DNS infrastruktury</a> proto po **1. únoru 2019** ukončí podporu některých historických implementací DNS porušujících standardy.
 
-Tato změna ovlivní jen domény, které používají nekvalitní DNS software. Ovlivní i vás?
+Tato změna ovlivní jen domény používající software, který nedodržuje publikované standardy. Ovlivní i vás?
 
 Vlastníci domén
 ===============
@@ -21,7 +21,7 @@ Prosím zkontrolujte své domény pomocí následujícího formuláře:
 		<fieldset>
 			<legend>Test domény</legend>
 			<label for="zone">Jméno domény (bez www):
-				<input type="text" name="zone" id="zone" required>
+				<input type="text" name="zone" id="zone" required title="Vložte jméno DNS zóny hostované na DNS serverech, které chcete otestovat. (Zadané jméno musí mít SOA a NS záznamy.)">
 			</label>
 			<input type="submit" value="Testuj!">
 			<noscript>Váš prohlížeč nepodporuje JavaScript. Tento formulář otevře nové okno s technickou zprávou o stavu domény.<br>
@@ -68,8 +68,21 @@ const domainCheckerInit = {
 <script src="/domain-checker.js"></script>
 <br>
 
-Správci DNS
-===========
+Správci DNS resolverů
+=====================
+
+Skupina výrobců DNS software naplánovala na dny okolo 1. února 2019 vydání aktualizovaných verzí software, které ukončí podporu některých implementací DNS porušujících standardy. Je naplánováno vydání těchto verzí:
+
+* BIND 9.13.3 (vývojová verze) a 9.14.0 (produkční)
+* Knot Resolver ve všech současných verzích již implementuje striktní chování
+* PowerDNS Recursor 4.2.0
+* Unbound 1.9.0
+
+Také <a href="#supporters">poskytovatelé veřejných DNS resolverů uvedení níže</a> během krátkého období ukončí tuto podporu.
+
+
+Správci DNS serverů
+===================
 Pro seznámení s problematikou podpory EDNS vám doporučujeme použít formulář uvedený výše, který poskytuje zjednodušený výsledek pro celou doménu.
 
 Dále je možné otestovat vaše DNS servery pomocí nástroje [ednscomp](https://ednscomp.isc.org/ednscomp), který zobrazuje podrobnou technickou zprávu. Do pole `zone name` zadejte jméno jakékoliv zóny hostované na vašich DNS serverech a klikněte na tlačítko `Submit`.
@@ -128,19 +141,25 @@ Akci podporují
 ==============
 <script id="do-not-translate-randomize-this-section" src="/supporters-randomiser.js" defer></script>
 
-[![CZ.NIC](/images/cznic.svg)](https://www.nic.cz/)
+[![PowerDNS](/images/powerdns.svg)](https://blog.powerdns.com/2018/03/22/removing-edns-workarounds/)
 
-[![PowerDNS](/images/powerdns.png)](https://www.powerdns.com/)
+[![ISC](/images/isc.png)](https://www.isc.org/blogs/end-to-bandaids/)
 
-[![ISC](/images/isc.png)](https://www.isc.org/)
+[![NLnet Labs](/images/nlnetlabs.svg)](https://www.nlnetlabs.nl/news/2018/Jun/07/putting-an-end-to-workarounds-for-broken-software/)
 
-[![NLnet Labs](/images/nlnetlabs.svg)](https://nlnetlabs.nl/)
+[![CZ.NIC](/images/cznic.svg)](https://en.blog.nic.cz/2018/03/14/together-for-better-stability-speed-and-further-extensibility-of-the-dns-ecosystem/)
 
 [![Quad9](/images/quad9.png)](https://quad9.net/)
 
 [![CleanBrowsing](https://cleanbrowsing.org/images/CleanBrowsing-logo-small-dark.png)](https://cleanbrowsing.org/)
 
 [![Cloudflare](/images/cloudflare.png)](https://www.cloudflare.com/)
+
+[![Cisco](/images/cisco.svg)](https://www.opendns.com/cisco-opendns/)
+
+[![Google](/images/google.svg)](https://developers.google.com/speed/public-dns/)
+
+[![Facebook](/images/facebook.svg)](https://www.facebook.com/)
 
 Literatura
 ==========
