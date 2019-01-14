@@ -84,7 +84,7 @@ On or around Feb 1st, 2019, major open source resolver vendors will release upda
 * PowerDNS Recursor 4.2.0
 * Unbound 1.9.0
 
-Also <a href="#supporters">public DNS providers listed below</a> will disable workarounds over a short period of time.
+Also <a href="#supporters">public DNS providers listed below</a> will disable workarounds.
 
 DNS server operators
 ====================
