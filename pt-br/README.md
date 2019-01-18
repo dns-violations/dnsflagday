@@ -16,7 +16,7 @@
 
 O que está acontecendo?
 =======================
-O sistemas de <a href="https://pt.wikipedia.org/wiki/Domain_Name_System">DNS</a> atuais sofrem demoras desnecessárias e dificuldade para lançar novas funcionalidades. Para remediar esses problemas, <a href="#supporters">desenvolvedores</a> e grandes <a href="#supporters">provedores</a> públicos de DNS irão remover certas modificações (workarounds) no dia 1 de Fevereiro de 2019.
+O sistemas de <a href="https://pt.wikipedia.org/wiki/Domain_Name_System">DNS</a> atuais sofrem demoras desnecessárias e dificuldade para lançar novas funcionalidades. Para remediar esses problemas, <a href="#apoiadores">desenvolvedores</a> e grandes <a href="#apoiadores">provedores</a> públicos de DNS irão remover certas modificações (workarounds) no dia 1 de Fevereiro de 2019.
 
 Essa mudança impacta apenas sites que operam software que não esteja seguindo os padrões publicados. Você será impactado?
 
