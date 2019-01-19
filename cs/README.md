@@ -161,6 +161,8 @@ Akci podporují
 
 [![Facebook](/images/facebook.svg)](https://www.facebook.com/)
 
+[![DNSimple](/images/dnsimple.svg)](https://dnsimple.com/)
+
 Literatura
 ==========
  * [Minimal EDNS compliance requirements](https://datatracker.ietf.org/doc/draft-spacek-edns-camel-diet/)

@@ -163,6 +163,8 @@ Apoyan
 
 [![Facebook](/images/facebook.svg)](https://www.facebook.com/)
 
+[![DNSimple](/images/dnsimple.svg)](https://dnsimple.com/)
+
 Lecturas adicionales
 ====================
  * [Minimal EDNS compliance requirements](https://datatracker.ietf.org/doc/draft-spacek-edns-camel-diet/)
