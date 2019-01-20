@@ -83,6 +83,7 @@ On or around Feb 1st, 2019, major open source resolver vendors will release upda
 * Knot Resolver already implemented stricter EDNS handling in all current versions
 * PowerDNS Recursor 4.2.0
 * Unbound 1.9.0
+* CoreDNS 1.2.6
 
 Also <a href="#supporters">public DNS providers listed below</a> will disable workarounds.
 
