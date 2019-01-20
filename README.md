@@ -108,7 +108,7 @@ DNS software developers
 =======================
 The main change is that DNS software from vendors named above will interpret timeouts as sign of a network or server problem. Starting February 1st, 2019 there will be **no attempt to disable EDNS** as reaction to a DNS query timeout.
 
-This effectivelly means that all DNS servers which **do not respond at all to EDNS queries** are going to be treated as *dead*.
+This effectively means that all DNS servers which **do not respond at all to EDNS queries** are going to be treated as *dead*.
 
 Please test your implementations using the [ednscomp](https://ednscomp.isc.org/ednscomp) tool to make sure that you handle EDNS properly. Source code of the tool [is available](https://gitlab.isc.org/isc-projects/DNS-Compliance-Testing) as well.
 
