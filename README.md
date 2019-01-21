@@ -104,6 +104,9 @@ To remediate problems please upgrade your DNS software to the latest stable vers
 
 **Firewalls must not drop DNS packets** with EDNS extensions, including unknown extensions. Modern DNS software may deploy new extensions (e.g. [DNS cookies](https://tools.ietf.org/html/rfc7873) to protect from DoS attacks). Firewalls which drop DNS packets with such extensions are making the situation worse for everyone, including worsening DoS attacks and inducing higher latency for DNS traffic.
 
+Firewalls that drop EDNS packets:
+* Juniper SRX (to disable use: # set security alg dns disable)
+
 DNS software developers
 =======================
 The main change is that DNS software from vendors named above will interpret timeouts as sign of a network or server problem. Starting February 1st, 2019 there will be **no attempt to disable EDNS** as reaction to a DNS query timeout.
