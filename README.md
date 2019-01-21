@@ -104,8 +104,10 @@ To remediate problems please upgrade your DNS software to the latest stable vers
 
 **Firewalls must not drop DNS packets** with EDNS extensions, including unknown extensions. Modern DNS software may deploy new extensions (e.g. [DNS cookies](https://tools.ietf.org/html/rfc7873) to protect from DoS attacks). Firewalls which drop DNS packets with such extensions are making the situation worse for everyone, including worsening DoS attacks and inducing higher latency for DNS traffic.
 
-Firewalls that drop EDNS packets:
-* Juniper SRX (to disable use: # set security alg dns disable)
+Vendor hints:
+* Juniper SRX may drop EDNS packets - to disable use: `# set security alg dns disable` ([docs](https://www.juniper.net/documentation/en_US/junos/topics/topic-map/security-dns-algs.html))
+* [F5 BIG-IP DNS processing and DNS Flag Day](https://support.f5.com/csp/article/K07808381?sf206085287=1)
+* [BlueCat is ready](https://www.bluecatnetworks.com/blog/dns-flag-day-is-coming-and-bluecat-is-ready/)
 
 DNS software developers
 =======================
