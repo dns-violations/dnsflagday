@@ -1,2 +1,6 @@
 theme: jekyll-theme-slate
 title: DNS flag day
+plugins:
+  - jekyll-sitemap
+sitemap:
+file: "/sitemap.xml"
