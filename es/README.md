@@ -1,3 +1,11 @@
+<!--
+
+*** THIS DOCUMENT IS INTENDED TO BE PROPERLY READ ON https://dnsflagday.net ***
+
+( This version is only for development )
+
+-->
+
 <img class="logo" alt="DNS flag day logo" src="/images/DNS_Flag.svg">
 
 <div class="translations">
@@ -100,6 +108,11 @@ Para solucionar estos problemas por favor actualice su software DNS a la última
 
 **Los cortafuegos no deben descartar paquetes DNS** con extensiones EDNS, incluyendo extensiones que aún son desconocidas en el momento. El software moderno de DNS puede desarrollar nuevas extensiones (por ejemplo [DNS cookies](https://tools.ietf.org/html/rfc7873) para protegerse de ataques DoS). Los cortafuegos que descartan paquetes DNS con estas extensiones están empeorando la situación para todos, incluyendo ataques DoS de mayor magnitud, e induciendo mayor latencia en el tráfico DNS.
 
+Ayuda con algunos proveedores:
+* Juniper SRX puede descartar paquetes EDNS - para deshabilitarlo, use: `# set security alg dns disable` ([docs](https://www.juniper.net/documentation/en_US/junos/topics/topic-map/security-dns-algs.html))
+* [F5 BIG-IP DNS processing and DNS Flag Day](https://support.f5.com/csp/article/K07808381?sf206085287=1)
+* [BlueCat está listo](https://www.bluecatnetworks.com/blog/dns-flag-day-is-coming-and-bluecat-is-ready/)
+
 Desarrolladores de software DNS
 ===============================
 El principal cambio es que los vendedores de software DNS arriba mencionados comenzarán a interpretar los "tiempos de espera agotados" ("timeouts") como una señal de problema en la red o en el servidor. A partir del 1 de Febrero de 2019, **no habrá ningún intento de desactivar EDNS** como reacción a un tiempo de espera agotado.
@@ -143,13 +156,13 @@ Apoyan
 ======
 <script id="do-not-translate-randomize-this-section" src="/supporters-randomiser.js" defer></script>
 
-[![PowerDNS](/images/powerdns.svg)](https://www.powerdns.com/)
+[![PowerDNS](/images/powerdns.svg)](https://blog.powerdns.com/2018/03/22/removing-edns-workarounds/)
 
-[![ISC](/images/isc.png)](https://www.isc.org/)
+[![ISC](/images/isc.png)](https://www.isc.org/blogs/end-to-bandaids/)
 
-[![NLnet Labs](/images/nlnetlabs.svg)](https://nlnetlabs.nl/)
+[![NLnet Labs](/images/nlnetlabs.svg)](https://www.nlnetlabs.nl/news/2018/Jun/07/putting-an-end-to-workarounds-for-broken-software/)
 
-[![CZ.NIC](/images/cznic.svg)](https://www.nic.cz/)
+[![CZ.NIC](/images/cznic.svg)](https://en.blog.nic.cz/2018/03/14/together-for-better-stability-speed-and-further-extensibility-of-the-dns-ecosystem/)
 
 [![Quad9](/images/quad9.png)](https://quad9.net/)
 
