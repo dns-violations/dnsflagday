@@ -1,80 +1,13 @@
-<!--
-
-*** THIS DOCUMENT IS INTENDED TO BE PROPERLY READ ON https://dnsflagday.net ***
-
-( Github repo is only for development and Github cannot render it correctly )
-
--->
-
-<div class="translations">
-<nav>
-	<a href="/cs"><img alt="Česky" src="/flags/cs.svg"/></a>
-	<a href="/"><img alt="English" src="/flags/en.svg"/></a>
-	<a href="/es"><img alt="Español" src="/flags/es.svg"/></a>
-        <a href="/pt-br"><img alt="Português Brasileiro" src="/flags/pt-br.svg"/></a>
-</nav>
-</div>
-
 Co se připravuje?
 =================
-Současný systém <a href="https://cs.wikipedia.org/wiki/Domain_Name_System">DNS</a> je z historických důvodů pomalý a neumožňuje nasadit novou funkcionalitu. Pro zmírnění problému skupina <a href="#akci-podporují">výrobců DNS software</a> a <a href="#akci-podporují">významných poskytovatelů DNS infrastruktury</a> proto po **1. únoru 2019** ukončí podporu některých historických implementací DNS porušujících standardy.
+Současný systém [DNS](https://cs.wikipedia.org/wiki/Domain_Name_System) je z historických důvodů pomalý a neumožňuje nasadit novou funkcionalitu. Pro zmírnění problému skupina [výrobců DNS software](#akci-podporují) a [významných poskytovatelů DNS infrastruktury](#akci-podporují) proto po **1. únoru 2019** ukončí podporu některých historických implementací DNS porušujících standardy.
 
 Tato změna ovlivní jen domény používající software, který nedodržuje publikované standardy. Ovlivní i vás?
 
 Vlastníci domén
 ===============
 Prosím zkontrolujte své domény pomocí následujícího formuláře:
-<div id="domain-checker">
-	<form action="https://ednscomp.isc.org/ednscomp" method="GET" target="_blank">
-		<fieldset>
-			<legend>Test domény</legend>
-			<label for="zone">Jméno domény (bez www):
-				<input type="text" name="zone" id="zone" required title="Vložte jméno DNS zóny hostované na DNS serverech, které chcete otestovat. (Zadané jméno musí mít SOA a NS záznamy.)">
-			</label>
-			<input type="submit" value="Testuj!">
-			<noscript>Váš prohlížeč nepodporuje JavaScript. Tento formulář otevře nové okno s technickou zprávou o stavu domény.<br>
-Výsledkem zobrazený nástrojem <a href="https://ednscomp.isc.org/ednscomp">ednscomp</a> musí být zelená zpráva "All Ok". Pokud je výsledkem cokoliv jiného, potom je vaše doména postižena a může se stát nedostupnou. Prosím kontaktujte administrátora a požadujte nápravu!
-			</noscript>
-		</fieldset>
-	</form>
-</div>
-<script><!-- translate the form above and these constants, please keep the whitespaces! -->
-const domainCheckerInit = {
-	placeIntoElement: document.getElementById( "domain-checker" ),
-	texts: {
-		formTitle: 'Test domény',
-		labelText: 'Jméno domény (bez www): ',
-		submitText: 'Testuj!',
-		reportOkHtml: ': <span style="color: green;">V pořádku.</span></div>' +
-		'<div><img style="height: 5em;" src="/signs/ok.svg"/></div>' +
-		'<div>Tato doména je perfektně připravena, gratulujeme!',
-
-		reportCompatibleHtml: ': <span style="color: orange;">Menší nedostatky!</span></div>' +
-		'<div><img style="height: 5em;" src="/signs/compatible.svg"/></div>' +
-		'<div>Tato doména bude fungovat i po změnách v roce 2019, nicméně chybí u ní podpora nejnovějších DNS standardů. To znamená, že tato doména nemůže použít nejnovější metody zabezpečení a je zranitelnější vůči útokům. Nalezené nedostatky také mohou způsobit potíže v budoucnosti. Doporučujeme požádat vašeho správce domény o opravu zjištěných problémů. Můžete ho odkázat na web dnsflagday.net/cs a ',
-
-		reportHighLatencyHtml: ': <span style="color: red;">Vážné problémy!</span></div>' +
-		'<div><img style="height: 5em;" src="/signs/high_latency.svg"/></div>' +
-		'<div>Tato doména bude po změnách v roce 2019 vážně postižena. Přestože doména nepřestane fungovat, uživatelé mohou čelit náhodným výpadkům a přístup na doménu bude zpomalený. Důrazně doporučujeme požádat vašeho správce domény o opravu zjištěných problémů. Můžete ho odkázat na web dnsflagday.net/cs a ',
-
-		reportFailHtml: ': <span style="font-weight: bold; color: red;">Fatální chyba!</span></div>' +
-		'<div><img style="height: 5em;" src="/signs/dead.svg"/></div>' +
-		'<div>Tato doména bude po změnách v roce 2019 ZCELA NEFUNKČNÍ! Pro vyloučení nahodilých chyb v síti prosím zopakujte test. Pokud problém přetrvává, je nezbytné požadovat nápravu od vašeho správce domény. Můžete ho odkázat na web dnsflagday.net/cs a ',
-
-		reportTestErrorHtml: ': Omlouváme se, výsledek testu v tomto okamžiku nelze vyhodnotit. Zájem o testování předčil naše očekávání a již pracujeme na posílení testovací infrastruktury. Zkuste prosím test zopakovat později. Pokud problém přetrvává, ujistěte se, že zadané jméno odpovídá <strong>DNS zóně</strong>, tj. zadejte "example.cz" na místo "www.example.cz".',
-
-		reportLinkText: ' technickou zprávu ',  // text before URL to report
-	},
-	status: {
-		loading: 'Probíhá test, prosím čekejte… Test může zabrat několik desítek sekund.',
-		done: 'Testování dokončeno:',
-		errorApi: 'Omlouváme se, výsledek testu v tomto okamžiku nelze vyhodnotit. Zájem o testování předčil naše očekávání a již pracujeme na posílení testovací infrastruktury.',
-		errorInput: 'Neplatné jméno nebo jiná neočekávaná chyba!',
-	},
-};
-</script>
-<script src="/domain-checker.js"></script>
-<br>
+{% include checker.html lang=site.data.checker.cs %}
 
 Správci DNS resolverů
 =====================
@@ -86,7 +19,7 @@ Skupina výrobců DNS software naplánovala na dny okolo 1. února 2019 vydání
 * PowerDNS Recursor 4.2.0
 * Unbound 1.9.0
 
-Také <a href="#supporters">poskytovatelé veřejných DNS resolverů uvedení níže</a> během krátkého období ukončí tuto podporu.
+Také [poskytovatelé veřejných DNS resolverů uvedení níže](#akci-podporují) během krátkého období ukončí tuto podporu.
 
 
 Správci DNS serverů
@@ -147,27 +80,7 @@ Kontakty
 
 Akci podporují
 ==============
-<script id="do-not-translate-randomize-this-section" src="/supporters-randomiser.js" defer></script>
-
-[![PowerDNS](/images/powerdns.svg)](https://blog.powerdns.com/2018/03/22/removing-edns-workarounds/)
-
-[![ISC](/images/isc.png)](https://www.isc.org/blogs/end-to-bandaids/)
-
-[![NLnet Labs](/images/nlnetlabs.svg)](https://www.nlnetlabs.nl/news/2018/Jun/07/putting-an-end-to-workarounds-for-broken-software/)
-
-[![CZ.NIC](/images/cznic.svg)](https://en.blog.nic.cz/2018/03/14/together-for-better-stability-speed-and-further-extensibility-of-the-dns-ecosystem/)
-
-[![Quad9](/images/quad9.png)](https://quad9.net/)
-
-[![CleanBrowsing](/images/cleanbrowsing.png)](https://cleanbrowsing.org/)
-
-[![Cloudflare](/images/cloudflare.png)](https://www.cloudflare.com/)
-
-[![Cisco](/images/cisco.svg)](https://www.opendns.com/cisco-opendns/)
-
-[![Google](/images/google.svg)](https://developers.google.com/speed/public-dns/)
-
-[![Facebook](/images/facebook.svg)](https://www.facebook.com/)
+{% include supporters.html %}
 
 Literatura
 ==========

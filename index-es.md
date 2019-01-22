@@ -1,82 +1,13 @@
-<!--
-
-*** THIS DOCUMENT IS INTENDED TO BE PROPERLY READ ON https://dnsflagday.net ***
-
-( Github repo is only for development and Github cannot render it correctly )
-
--->
-
-<img class="logo" alt="DNS flag day logo" src="/images/DNS_Flag.svg">
-
-<div class="translations">
-<nav>
-	<a href="/cs"><img alt="Česky" src="/flags/cs.svg"/></a>
-	<a href="/"><img alt="English" src="/flags/en.svg"/></a>
-	<a href="/es"><img alt="Español" src="/flags/es.svg"/></a>
-        <a href="/pt-br"><img alt="Português Brasileiro" src="/flags/pt-br.svg"/></a>
-</nav>
-</div>
-<div class="social">
-<nav>
-    <a href="https://twitter.com/dnsflagday"><img alt="@dnsflagday" src="/images/Twitter_Social_Icon_Rounded_Square_Color.svg"></a>
-</nav>
-</div>
-
 ¿Qué está pasando?
 ==================
-El <a href="https://en.wikipedia.org/wiki/Domain_Name_System">DNS</a> actual sufre de demoras innecesarias y dificultad para desarrollar nuevas funcionalidades. Para remediar este problema, los <a href="#supporters">proveedores de software DNS</a> y <a href="#supporters">sistemas de DNS públicos</a> eliminarán ciertos parches provisorios el 1 de Febrero de 2019.
+El [DNS](https://en.wikipedia.org/wiki/Domain_Name_System) actual sufre de demoras innecesarias y dificultad para desarrollar nuevas funcionalidades. Para remediar este problema, los [proveedores de software DNS](#apoyan) y [sistemas de DNS públicos](#apoyan) eliminarán ciertos parches provisorios el 1 de Febrero de 2019.
 
 Este cambio solo afectará a sitios que operan software que no respeta los estándares. ¿Te afectará a ti?
 
 Dueños de dominios
 ==================
 Por favor revise si su dominio está correcto:
-<div id="domain-checker">
-       <form action="https://ednscomp.isc.org/ednscomp" method="GET" target="_blank">
-               <fieldset>
-                      <legend>Revise su dominio</legend>
-                      <label for="zone">Nombre de dominio (sin www):
-                               <input type="text" name="zone" id="zone" required title="Por favor ingrese el nombre de alguna zona DNS hospedada en los servidores que desee revisar (el nombre debe poseer registros SOA y NS).">
-                       </label>
-                       <input type="submit" value="¡Pruebe!">
-                       <noscript>¡Su navegador no soporta JavaScript! El reporte técnico será mostrado en una ventana nueva.<br>
-El resultado de la prueba [ednscomp](https://ednscomp.isc.org/ednscomp) debe ser un mensaje verde `All Ok` ("Todo bien"). Si recibe cualquier otro resultado, su sistema DNS será afectado por este cambio, y su dominio podría quedar inaccesible. En este caso, por favor ¡contacte al administrador DNS de su dominio y pida que lo corrija!
-                       </noscript>
-               </fieldset>
-       </form>
-</div>
-<script><!-- translate the form above and these constants, please keep the whitespaces! -->
-const domainCheckerInit = {
-       placeIntoElement: document.getElementById( "domain-checker" ),
-       texts: {
-               formTitle: 'Revise su dominio',
-               labelText: 'Nombre de dominio (sin www): ',
-               submitText: '¡Pruebe!',
-               reportOkHtml: ': <span style="color: green;">¡Todo Bien!</span></div>' +
-                '<div><img style="height: 5em;" src="/signs/ok.svg"/></div>' +
-                '<div>Este dominio está totalmente listo, ¡Felicidades!',
-                reportCompatibleHtml: ': <span style="color: orange;">¡Problemas menores detectados!</span></div>' +
-                '<div><img style="height: 5em;" src="/signs/compatible.svg"/></div>' +
-                '<div>Este dominio continuará funcionando después del día "DNS Flag Day" del 2019, PERO no respeta los últimos estándares DNS. Como consecuencia de esto, este dominio no soporta las últimas características de seguridad y puede ser un objetivo fácil para ataques de red, entre otros problemas en el futuro. Recomendamos que su administrador del dominio corrija los problemas listados acá',
-                reportHighLatencyHtml: ': <span style="color: red;">¡Serios problemas detectados!</span></div>' +
-                '<div><img style="height: 5em;" src="/signs/high_latency.svg"/></div>' +
-                '<div>Este dominio encontrará problemas después del día "DNS Flag Day" del 2019. En la práctica funcionará, PERO los clientes experimentarán demoras al acceder a este dominio. ¡Recomendamos que solicite una corrección a su administrador de dominio! Puede enviarle la información en https://dnsflagday.net/ y',
-                reportFailHtml: ': <span style="font-weight: bold; color: red;">¡Error fatal detectado!</span></div>' +
-                '<div><img style="height: 5em;" src="/signs/dead.svg"/></div>' +
-                '<div>¡Este dominio DEJARÁ DE FUNCIONAR después del día "DNS Flag Day" del 2019! Por favor repita la prueba para descartar errores temporales de red. Si el problema persiste, debe contactar a su administrador de dominio y exigir su corrección. Puede enviarle la información en https://dnsflagday.net/ y',
-                reportTestErrorHtml: ': La prueba no pudo realizarse debido a un error. Por favor asegúrese que el nombre de dominio ingresado se refiere a una <strong>zona DNS</strong>, por ej. use "example.com" en vez de "www.example.com". Reintente para eliminar posibles fallas de red temporales, o revise',
-                reportLinkText: ' el informe técnico ',  // text before URL to report
-       },
-       status: {
-               loading: 'Prueba en progreso, por favor espere… Puede tomar varias decenas de segundos.',
-               done: 'Prueba finalizada:',
-               errorApi: '¡Error de comunicación! API no disponible… por favor reintente más tarde',
-               errorInput: '¡Entrada inválida u otro error inesperado, lo siento!',
-       },
-};
-</script>
-<script src="/domain-checker.js"></script>
-<br>
+{% include checker.html lang=site.data.checker.es %}
 
 Operadores de "resolvers" DNS
 =============================
@@ -88,7 +19,7 @@ En los días cercanos al 1 de febrero de 2019, los más importantes proveedores 
 * PowerDNS Recursor 4.2.0
 * Unbound 1.9.0
 
-Además los <a href="#supporters">sistemas de DNS público indicados más abajo</a> también aplicarán estos cambios.
+Además los [sistemas de DNS público indicados más abajo](#apoyan) también aplicarán estos cambios.
 
 Operadores de servidores DNS
 ============================
@@ -154,30 +85,9 @@ Contacto
 
 Apoyan
 ======
-<script id="do-not-translate-randomize-this-section" src="/supporters-randomiser.js" defer></script>
-
-[![PowerDNS](/images/powerdns.svg)](https://blog.powerdns.com/2018/03/22/removing-edns-workarounds/)
-
-[![ISC](/images/isc.png)](https://www.isc.org/blogs/end-to-bandaids/)
-
-[![NLnet Labs](/images/nlnetlabs.svg)](https://www.nlnetlabs.nl/news/2018/Jun/07/putting-an-end-to-workarounds-for-broken-software/)
-
-[![CZ.NIC](/images/cznic.svg)](https://en.blog.nic.cz/2018/03/14/together-for-better-stability-speed-and-further-extensibility-of-the-dns-ecosystem/)
-
-[![Quad9](/images/quad9.png)](https://quad9.net/)
-
-[![CleanBrowsing](/images/cleanbrowsing.png)](https://cleanbrowsing.org/)
-
-[![Cloudflare](/images/cloudflare.png)](https://www.cloudflare.com/)
-
-[![Cisco](/images/cisco.svg)](https://www.opendns.com/cisco-opendns/)
-
-[![Google](/images/google.svg)](https://developers.google.com/speed/public-dns/)
-
-[![Facebook](/images/facebook.svg)](https://www.facebook.com/)
+{% include supporters.html %}
 
 Lecturas adicionales
 ====================
  * [Minimal EDNS compliance requirements](https://datatracker.ietf.org/doc/draft-spacek-edns-camel-diet/)
  * [“The DNS Camel”, or, the rise in DNS complexity](https://blog.powerdns.com/2018/03/22/the-dns-camel-or-the-rise-in-dns-complexit/)
-

@@ -3,22 +3,22 @@
 
 @import "{{ site.theme }}";
 
-.translations {
-	margin-left: auto;
-	margin-right: auto;
-}
-.translations img {
+.translation img {
 	height: 2em;
-        display: inline-block;
+	border: none;
+	box-shadow: none;
+	-webkit-box-shadow: none;
 }
-
 .social img {
-	height: 2em;
-        display: inline-block;
+	height: 2.5em;
+	border: none;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	margin: 0;
 }
 
 /* logos */
-p img {
+.logo {
 	width: 250px;
 	padding: 25px !important;
 	border: none;

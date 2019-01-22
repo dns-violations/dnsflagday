@@ -1,0 +1,177 @@
+en:
+    form:
+        legend: "Test your domain"
+        label: "Domain name (without www):"
+        title: "Please enter name of a DNS zone hosted on DNS servers you want to test. (The name must contain SOA and NS records.)"
+        value: "Test!"
+        noscript: >
+            Your browser does not support JavaScript! Technical report will be shown in a new window.<br>
+            The result of the <a href="https://ednscomp.isc.org/ednscomp">ednscomp</a> test must be a green message "All Ok".
+            If you get any other result your DNS deployment is going to be affected by this change and your domain might be become inaccessible.
+            In that case please contact your DNS administrator and request fixes!
+    reportOk:
+        short: "All Ok!"
+        long: "This domain is perfectly ready, congratulations!"
+    reportCompatible:
+        short: "Minor problems detected!"
+        long: >
+            This domain is going to work after the 2019 DNS flag day BUT it does not
+            support the latest DNS standards. As a consequence this domain cannot
+            support the latest security features and might be an easier target for
+            network attackers than necessary, and might face other issues later on.
+            We recommend your domain administrator to fix issues listed in the following
+    reportHighLatency:
+        short: "Serious problem detected!"
+        long: >
+            This domain will face issues after the 2019 DNS flag day. It will work in
+            practice, BUT clients will experience delays when accessing this domain.
+            We recommend you request a fix from your domain administrator! You can refer
+            them to https://dnsflagday.net/ and
+    reportFail:
+        short: "Fatal error detected!"
+        long: >
+            This domain is going to STOP WORKING after the 2019 DNS flag day! Please retry
+            the test to eliminate random network failures. If the problem persists you
+            really need to request a fix from your domain administrator. You can refer
+            them to https://dnsflagday.net/ and
+    reportTestError: >
+        Test cannot be evaluated because of an error. Please make sure the domain name entered
+        refers to a <strong>DNS zone</strong>, i.e. use "example.com" instead of "www.example.com".
+        Retry the test to eliminate random network failures or investigate
+    reportLinkText: "technical report"
+    status:
+        loading: "Testing in progress, please wait… It might take several tens of seconds."
+        done: "Testing completed:"
+        errorApi: "Communication error! API unavailable… please try again later"
+        errorInput: "Invalid input or other unexpected error, sorry!"
+cs:
+    form:
+        legend: "Test domény"
+        label: "Jméno domény (bez www):"
+        title: "Vložte jméno DNS zóny hostované na DNS serverech, které chcete otestovat. (Zadané jméno musí mít SOA a NS záznamy.)"
+        value: "Testuj!"
+        noscript: >
+            Váš prohlížeč nepodporuje JavaScript. Tento formulář otevře nové okno s technickou zprávou o stavu domény.<br>
+            Výsledkem zobrazený nástrojem <a href="https://ednscomp.isc.org/ednscomp">ednscomp</a> musí být zelená zpráva
+            "All Ok". Pokud je výsledkem cokoliv jiného, potom je vaše doména postižena a může se stát nedostupnou. Prosím
+            kontaktujte administrátora a požadujte nápravu!
+    reportOk:
+        short: "V pořádku."
+        long: "Tato doména je perfektně připravena, gratulujeme!"
+    reportCompatible:
+        short: "Menší nedostatky!"
+        long: >
+            Tato doména bude fungovat i po změnách v roce 2019, nicméně chybí u ní podpora nejnovějších DNS standardů.
+            To znamená, že tato doména nemůže použít nejnovější metody zabezpečení a je zranitelnější vůči útokům.
+            Nalezené nedostatky také mohou způsobit potíže v budoucnosti. Doporučujeme požádat vašeho správce domény o
+            opravu zjištěných problémů. Můžete ho odkázat na web dnsflagday.net/cs a
+    reportHighLatency:
+        short: "Vážné problémy!"
+        long: >
+            Tato doména bude po změnách v roce 2019 vážně postižena. Přestože doména nepřestane fungovat, uživatelé mohou
+            čelit náhodným výpadkům a přístup na doménu bude zpomalený. Důrazně doporučujeme požádat vašeho správce domény
+            o opravu zjištěných problémů. Můžete ho odkázat na web dnsflagday.net/cs a
+    reportFail:
+        short: "Fatální chyba!"
+        long: >
+            Tato doména bude po změnách v roce 2019 ZCELA NEFUNKČNÍ! Pro vyloučení nahodilých chyb v síti prosím zopakujte
+            test. Pokud problém přetrvává, je nezbytné požadovat nápravu od vašeho správce domény. Můžete ho odkázat na
+            web dnsflagday.net/cs a
+    reportTestError: >
+        Omlouváme se, výsledek testu v tomto okamžiku nelze vyhodnotit. Zájem o testování předčil naše očekávání a již
+        pracujeme na posílení testovací infrastruktury. Zkuste prosím test zopakovat později. Pokud problém přetrvává,
+        ujistěte se, že zadané jméno odpovídá <strong>DNS zóně</strong>, tj. zadejte "example.cz" na místo "www.example.cz".
+    reportLinkText: "technickou zprávu"
+    status:
+        loading: "Probíhá test, prosím čekejte… Test může zabrat několik desítek sekund."
+        done: "Testování dokončeno:"
+        errorApi: "Omlouváme se, výsledek testu v tomto okamžiku nelze vyhodnotit. Zájem o testování předčil naše očekávání a již pracujeme na posílení testovací infrastruktury."
+        errorInput: "Neplatné jméno nebo jiná neočekávaná chyba!"
+es:
+    form:
+        legend: "Revise su dominio"
+        label: "Nombre de dominio (sin www):"
+        title: "Por favor ingrese el nombre de alguna zona DNS hospedada en los servidores que desee revisar (el nombre debe poseer registros SOA y NS)."
+        value: "¡Pruebe!"
+        noscript: >
+            ¡Su navegador no soporta JavaScript! El reporte técnico será mostrado en una ventana nueva.<br>
+            El resultado de la prueba [ednscomp](https://ednscomp.isc.org/ednscomp) debe ser un mensaje verde
+            `All Ok` ("Todo bien"). Si recibe cualquier otro resultado, su sistema DNS será afectado por este
+            cambio, y su dominio podría quedar inaccesible. En este caso, por favor ¡contacte al administrador
+            DNS de su dominio y pida que lo corrija!
+    reportOk:
+        short: "¡Todo Bien!"
+        long: "Este dominio está totalmente listo, ¡Felicidades!"
+    reportCompatible:
+        short: "¡Problemas menores detectados!"
+        long: >
+            Este dominio continuará funcionando después del día "DNS Flag Day" del 2019, PERO no respeta los
+            últimos estándares DNS. Como consecuencia de esto, este dominio no soporta las últimas características
+            de seguridad y puede ser un objetivo fácil para ataques de red, entre otros problemas en el futuro.
+            Recomendamos que su administrador del dominio corrija los problemas listados acá
+    reportHighLatency:
+        short: "¡Serios problemas detectados!"
+        long: >
+            Este dominio encontrará problemas después del día "DNS Flag Day" del 2019. En la práctica funcionará,
+            PERO los clientes experimentarán demoras al acceder a este dominio. ¡Recomendamos que solicite una
+            corrección a su administrador de dominio! Puede enviarle la información en https://dnsflagday.net/ y
+    reportFail:
+        short: "¡Error fatal detectado!"
+        long: >
+            ¡Este dominio DEJARÁ DE FUNCIONAR después del día "DNS Flag Day" del 2019! Por favor repita la prueba
+            para descartar errores temporales de red. Si el problema persiste, debe contactar a su administrador
+            de dominio y exigir su corrección. Puede enviarle la información en https://dnsflagday.net/ y
+    reportTestError: >
+        La prueba no pudo realizarse debido a un error. Por favor asegúrese que el nombre de dominio ingresado se
+        refiere a una <strong>zona DNS</strong>, por ej. use "example.com" en vez de "www.example.com". Reintente
+        para eliminar posibles fallas de red temporales, o revise
+    reportLinkText: "el informe técnico"
+    status:
+        loading: "Prueba en progreso, por favor espere… Puede tomar varias decenas de segundos."
+        done: "Prueba finalizada:"
+        errorApi: "¡Error de comunicación! API no disponible… por favor reintente más tarde"
+        errorInput: "¡Entrada inválida u otro error inesperado, lo siento!"
+ptbr:
+    form:
+        legend: "Teste seu domínio"
+        label: "Domínio (sem www):"
+        title: "Por favor digite o nome de uma zona de DNS hospedada nos servidores de DNS que você quer testar. (A zona precisa ter registros SOA e NS.)"
+        value: "Testar!"
+        noscript: >
+            Seu navegador não suporta JavaScript! Relatório técnico será apresentado em uma nova janela.<br>
+            O resultado do teste <a href="https://ednscomp.isc.org/ednscomp">ednscomp</a> deve ser uma mensagem em verde dizendo "Tudo OK!". Se você receber
+            qualquer outro resultado, sua implementação de DNS será impactada por essa mudança e seu domínio pode ficar inacessível. Neste caso, entre
+            em contato com seu administrador de DNS e solicite o conserto!
+    reportOk:
+        short: "Tudo OK!"
+        long: "Este domínio está OK, parabéns!"
+    reportCompatible:
+        short: "Problemas pequenos detectados!"
+        long: >
+            Este domínio irá funcionar após o 2019 DNS flag day MAS ele não suporte os padrões de DNS mais
+            recentes. Como consequência disto, esse domínio não irá suportar certos recursos de segurança e
+            pode se tornar um alvo fácil para invasores. Recomendados que seu administrador de DNS conserte
+            estes problemas listados abaixo
+    reportHighLatency:
+        short: "Problemas graves detectados!"
+        long: >
+            Esse domínio vai ter problemas apartir do 2019 DNS flag day. Ele irá funcionar na prática MAS
+            usuários irão experenciar demoras no acesso à esse domínio. Recomendamos que solicite correções
+            ao seu administrador de domínios! Você pode compartilhar o site  https://dnsflagday.net/ e
+    reportFail:
+        short: "Erros fatais detectados!"
+        long: >
+            Esse domínio irá PARAR DE FUNCIONAR apartir do 2019 DNS flag day! Por favor execute o teste
+            novamente para evitar problemas aleatórios de rede. Se o problema persistir você precisa entrar
+            em contato com seu administrador de DNS urgentemente e solicitar as correções. Você pode
+            compartilhar o site https://dnsflagday.net/ e
+    reportTestError: >
+        Teste não pode ser executado devido a um erro. Por favor verfique que o domínio digitado corresponde
+        a uma <strong>zona de DNS</strong>, ex.: use "example.com" em vez de "www.example.com". Execute novamente
+        o teste para eliminar a chance de problemas aleatórios de rede ou investigue o
+    reportLinkText: "relatório técnico"
+    status:
+        loading: "Teste em andamento, por favor aguarde... Isso pode demorar dezenas de segundos."
+        done: "Teste finalizado:"
+        errorApi: "Erro de comunicação! API indisponível… por favor tente novamente mais tarde"
+        errorInput: "Entrada inválida ou outro erro inesperado, desculpe!"
