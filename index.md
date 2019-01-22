@@ -45,6 +45,7 @@ Vendor hints:
 * Juniper SRX may drop EDNS packets - to disable use: `# set security alg dns disable` ([docs](https://www.juniper.net/documentation/en_US/junos/topics/topic-map/security-dns-algs.html))
 * [F5 BIG-IP DNS processing and DNS Flag Day](https://support.f5.com/csp/article/K07808381?sf206085287=1)
 * [BlueCat is ready](https://www.bluecatnetworks.com/blog/dns-flag-day-is-coming-and-bluecat-is-ready/)
+* [DNS Flag Day and Akamai](https://community.akamai.com/customers/s/article/CloudSecurityDNSFlagDayandAkamai20190115151216?language=en_US)
 
 DNS software developers
 =======================
