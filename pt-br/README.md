@@ -146,7 +146,7 @@ Apoiadores
 
 [![Quad9](/images/quad9.png)](https://quad9.net/)
 
-[![CleanBrowsing](https://cleanbrowsing.org/images/CleanBrowsing-logo-small-dark.png)](https://cleanbrowsing.org/)
+[![CleanBrowsing](/images/cleanbrowsing.png)](https://cleanbrowsing.org/)
 
 [![Cloudflare](/images/cloudflare.png)](https://www.cloudflare.com/)
 
