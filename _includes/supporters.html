@@ -1,0 +1,29 @@
+<script>
+$(document).ready(function () {
+    supportersRandomiser();
+});
+</script>
+<div id="do-not-translate-randomize-this-section"></div>
+
+{% assign col = 0 %}
+
+{% for supporter in site.data.supporters %}
+
+{% if col == 0 %}
+<div class="row">
+{% endif %}
+
+<div class="col-md">
+<p><a href="{{ supporter.url }}"><img class="logo" src="{{ supporter.img }}" alt="{{ supporter.name }}" /></a></p>
+</div>
+
+{% if col == 1 %}
+</div>
+{% assign col = 0 %}
+{% else %}
+{% assign col = 1 %}
+{% endif %}
+
+{% endfor %}
+
+<span></span>

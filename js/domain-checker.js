@@ -1,5 +1,6 @@
 'use strict';
-( function () {
+var domainChecker = function(domainCheckerInit) {
+( function (domainCheckerInit) {
 	const API_URL = new URL( '/ednscomp', 'https://ednscomp.isc.org' ); // URL object not supported in MS IE
 	const API_METHOD = 'GET';
 	const INPUT_NAME = 'zone';
@@ -222,7 +223,6 @@
 		return true;
 	};
 
-
 	/** @type {HTMLElement} */
 	const intoElement = domainCheckerInit.placeIntoElement;
 
@@ -281,4 +281,5 @@
 		domainCheckerInit.placeIntoElement.appendChild( rootFormElement );
 	}
 
-} )();
+} )(domainCheckerInit);
+};

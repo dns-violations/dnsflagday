@@ -1,0 +1,30 @@
+<div id="header_wrap" class="outer">
+    <header class="inner">
+        <div class="float-right">
+        <nav class="text-right">
+          <a class="translation" href="index-cs.html"><img alt="Česky" src="flags/cs.svg"/></a>
+          <a class="translation" href="index.html"><img alt="English" src="flags/en.svg"/></a>
+          <a class="translation" href="index-es.html"><img alt="Español" src="flags/es.svg"/></a>
+          <a class="translation" href="index-pt-br.html"><img alt="Português Brasileiro" src="flags/pt-br.svg"/></a>
+          <br/>
+          <a class="social" href="https://twitter.com/dnsflagday"><img alt="@dnsflagday" src="images/Twitter_Social_Icon_Rounded_Square_Color.svg"></a>
+        </nav>
+        </div>
+
+      {% if site.github.is_project_page %}
+        <a id="forkme_banner" href="{{ site.github.repository_url }}">View on GitHub</a>
+      {% endif %}
+
+      <h1 id="project_title">
+          {{ site.title | default: site.github.repository_name }}
+      </h1>
+      <h2 id="project_tagline">{{ site.description | default: site.github.project_tagline }}</h2>
+
+      {% if site.show_downloads %}
+        <section id="downloads">
+          <a class="zip_download_link" href="{{ site.github.zip_url }}">Download this project as a .zip file</a>
+          <a class="tar_download_link" href="{{ site.github.tar_url }}">Download this project as a tar.gz file</a>
+        </section>
+      {% endif %}
+    </header>
+</div>
