@@ -2,7 +2,7 @@
 
 *** THIS DOCUMENT IS INTENDED TO BE PROPERLY READ ON https://dnsflagday.net ***
 
-( This version is only for development )
+( Github repo is only for development and Github cannot render it correctly )
 
 -->
 

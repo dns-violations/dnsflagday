@@ -1,3 +1,11 @@
+<!--
+
+*** THIS DOCUMENT IS INTENDED TO BE PROPERLY READ ON https://dnsflagday.net ***
+
+( Github repo is only for development and Github cannot render it correctly )
+
+-->
+
 <div class="translations">
 <nav>
 	<a href="/cs"><img alt="Česky" src="/flags/cs.svg"/></a>

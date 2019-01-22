@@ -1,3 +1,11 @@
+<!--
+
+*** THIS DOCUMENT IS INTENDED TO BE PROPERLY READ ON https://dnsflagday.net ***
+
+( Github repo is only for development and Github cannot render it correctly )
+
+-->
+
 <img class="logo" alt="DNS flag day logo" src="/images/DNS_Flag.svg">
 
 <div class="translations">
