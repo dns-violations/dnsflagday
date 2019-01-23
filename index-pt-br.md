@@ -1,5 +1,5 @@
 ---
-title: DNS flag day 2019
+title: 2019
 lang: pt-BR
 redirect_from:
   - /pt-br/
