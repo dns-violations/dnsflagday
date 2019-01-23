@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /es/
+---
+
 ¿Qué está pasando?
 ==================
 El [DNS](https://en.wikipedia.org/wiki/Domain_Name_System) actual sufre de demoras innecesarias y dificultad para desarrollar nuevas funcionalidades. Para remediar este problema, los [proveedores de software DNS](#apoyan) y [sistemas de DNS públicos](#apoyan) eliminarán ciertos parches provisorios el 1 de Febrero de 2019.

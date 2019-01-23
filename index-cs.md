@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /cs/
+---
+
 Co se připravuje?
 =================
 Současný systém [DNS](https://cs.wikipedia.org/wiki/Domain_Name_System) je z historických důvodů pomalý a neumožňuje nasadit novou funkcionalitu. Pro zmírnění problému skupina [výrobců DNS software](#akci-podporují) a [významných poskytovatelů DNS infrastruktury](#akci-podporují) proto po **1. únoru 2019** ukončí podporu některých historických implementací DNS porušujících standardy.
