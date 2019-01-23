@@ -7,7 +7,7 @@ redirect_from:
 
 ¿Qué está pasando?
 ==================
-El [DNS](https://en.wikipedia.org/wiki/Domain_Name_System) actual sufre de demoras innecesarias y dificultad para desarrollar nuevas funcionalidades. Para remediar este problema, los [proveedores de software DNS](#apoyan) y [sistemas de DNS públicos](#apoyan) eliminarán ciertos parches provisorios el 1 de Febrero de 2019.
+El [DNS](https://es.wikipedia.org/wiki/Sistema_de_nombres_de_dominio) actual sufre de demoras innecesarias y dificultad para desarrollar nuevas funcionalidades. Para remediar este problema, los [proveedores de software DNS](#apoyan) y [sistemas de DNS públicos](#apoyan) eliminarán ciertos parches provisorios el 1 de Febrero de 2019.
 
 Este cambio solo afectará a sitios que operan software que no respeta los estándares. ¿Te afectará a ti?
 
@@ -47,9 +47,10 @@ Para solucionar estos problemas por favor actualice su software DNS a la última
 **Los cortafuegos no deben descartar paquetes DNS** con extensiones EDNS, incluyendo extensiones que aún son desconocidas en el momento. El software moderno de DNS puede desarrollar nuevas extensiones (por ejemplo [DNS cookies](https://tools.ietf.org/html/rfc7873) para protegerse de ataques DoS). Los cortafuegos que descartan paquetes DNS con estas extensiones están empeorando la situación para todos, incluyendo ataques DoS de mayor magnitud, e induciendo mayor latencia en el tráfico DNS.
 
 Ayuda con algunos proveedores:
-* Juniper SRX puede descartar paquetes EDNS - para deshabilitarlo, use: `# set security alg dns disable` ([docs](https://www.juniper.net/documentation/en_US/junos/topics/topic-map/security-dns-algs.html))
+* Las versiones antiguas de Juniper SRX descartan por defecto los paquetes EDNS - para deshabilitarlo, use: `# set security alg dns doctoring none`. Actualice a las últimas versiones para tener soporte EDNS.
 * [F5 BIG-IP DNS processing and DNS Flag Day](https://support.f5.com/csp/article/K07808381?sf206085287=1)
 * [BlueCat está listo](https://www.bluecatnetworks.com/blog/dns-flag-day-is-coming-and-bluecat-is-ready/)
+* [DNS Flag Day and Akamai](https://community.akamai.com/customers/s/article/CloudSecurityDNSFlagDayandAkamai20190115151216?language=en_US)
 
 Desarrolladores de software DNS
 ===============================
