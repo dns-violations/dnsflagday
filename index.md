@@ -47,7 +47,7 @@ To remediate problems please upgrade your DNS software to the latest stable vers
 
 Vendor hints:
 
-* Older versions of Juniper SRX will drop EDNS packets by default - Workaround is to disable DNS doctoring via `# set security alg dns doctoring none` ([docs](https://www.juniper.net/documentation/en_US/junos/topics/topic-map/security-dns-algs.html)) Newer versions of Juniper SRX support EDNS by default (12.3X48-D80, 15.1X49-D160, 17.4R3, 18.1R3, 18.2R2, and 18.3R1+).
+* Older versions of Juniper SRX will drop EDNS packets by default - Workaround is to disable DNS doctoring via `# set security alg dns doctoring none`. Upgrade to latest versions for EDNS support. 
 * [F5 BIG-IP DNS processing and DNS Flag Day](https://support.f5.com/csp/article/K07808381?sf206085287=1)
 * [BlueCat is ready](https://www.bluecatnetworks.com/blog/dns-flag-day-is-coming-and-bluecat-is-ready/)
 * [DNS Flag Day and Akamai](https://community.akamai.com/customers/s/article/CloudSecurityDNSFlagDayandAkamai20190115151216?language=en_US)
