@@ -1,5 +1,5 @@
 theme: jekyll-theme-slate
-title: DNS flag day
+title: DNS flag day 2019
 plugins:
   - jekyll-sitemap
   - jekyll-redirect-from

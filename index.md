@@ -1,3 +1,7 @@
+---
+title: DNS flag day 2019
+---
+
 What is happening?
 ==================
 The current [DNS](https://en.wikipedia.org/wiki/Domain_Name_System) is unnecessarily slow and suffers from inability to deploy new features. To remediate these problems, [vendors of DNS software](#supporters) and also big [public DNS providers](#supporters) are going to remove certain workarounds on February 1st, 2019.
