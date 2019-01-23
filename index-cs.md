@@ -1,5 +1,6 @@
 ---
 title: DNS flag day 2019
+lang: cs
 redirect_from:
   - /cs/
 ---
