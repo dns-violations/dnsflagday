@@ -1,7 +1,7 @@
 en:
     form:
         legend: "Test your domain"
-        label: "Domain name (without www):"
+        label: "Please enter name of a DNS zone you want to test. (The zone must contain SOA and NS records.) Domain name (usually does not include www):"
         title: "Please enter name of a DNS zone hosted on DNS servers you want to test. (The name must contain SOA and NS records.)"
         value: "Test!"
         noscript: >
@@ -47,7 +47,7 @@ en:
 cs:
     form:
         legend: "Test domény"
-        label: "Jméno domény (bez www):"
+        label: "Vložte jméno DNS zóny hostované na DNS serverech, které chcete otestovat. (Zadané jméno musí mít SOA a NS záznamy.) Jméno domény (bez www):"
         title: "Vložte jméno DNS zóny hostované na DNS serverech, které chcete otestovat. (Zadané jméno musí mít SOA a NS záznamy.)"
         value: "Testuj!"
         noscript: >
@@ -89,8 +89,8 @@ cs:
         errorInput: "Neplatné jméno nebo jiná neočekávaná chyba!"
 es:
     form:
-        legend: "Revise su dominio"
-        label: "Nombre de dominio (sin www):"
+        legend:"Revise su dominio"
+        label: "Por favor ingrese el nombre de alguna zona DNS hospedada en los servidores que desee revisar (el nombre debe poseer registros SOA y NS). Nombre de dominio (sin www):"
         title: "Por favor ingrese el nombre de alguna zona DNS hospedada en los servidores que desee revisar (el nombre debe poseer registros SOA y NS)."
         value: "¡Pruebe!"
         noscript: >
@@ -134,7 +134,7 @@ es:
 ptbr:
     form:
         legend: "Teste seu domínio"
-        label: "Domínio (sem www):"
+        label: "Por favor digite o nome de uma zona de DNS hospedada nos servidores de DNS que você quer testar. (A zona precisa ter registros SOA e NS.) Domínio (sem www):"
         title: "Por favor digite o nome de uma zona de DNS hospedada nos servidores de DNS que você quer testar. (A zona precisa ter registros SOA e NS.)"
         value: "Testar!"
         noscript: >
