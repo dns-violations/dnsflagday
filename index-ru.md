@@ -30,39 +30,39 @@ redirect_from:
 
 Операторам DNS серверов
 ====================
-For introduction to EDNS compliance we recommend you to use form above which produces simplified result for a whole domain.
+Для ознакомления с соответствием EDNS мы рекомендуем использовать форму выше, которая дает упрощенный результат для всего домена.
 
-It is also possible to test your DNS servers directly using the tool [ednscomp](https://ednscomp.isc.org/ednscomp) which displays detailed technical report. Simply enter the name of a zone hosted on your DNS servers into the `zone name` field and click the `Submit` button.
+Также возможно протестировать ваши DNS-серверы напрямую, используя инструмент [ednscomp](https://ednscomp.isc.org/ednscomp) который отображает подробный технический отчет. Просто введите название зоны, размещенной на ваших DNS-серверах, в поле `zone name` и нажмите кнопку `Submit`.
 
-The summary result of [ednscomp](https://ednscomp.isc.org/ednscomp) tests should preferably be a green message `All Ok`.
+Итоговый результат тестов [ednscomp](https://ednscomp.isc.org/ednscomp) желательно должнен быть зеленым сообщением `All Ok`.
 
-Minimal working setup which will allow your domain to survive 2019 DNS flag day must not have `timeout` result in any of plain DNS and EDNS version 0 tests implemented in [ednscomp](https://ednscomp.isc.org/ednscomp) tool. Please note that this minimal setup is still not standards compliant and will cause other issues sooner or later. For this reason **we strongly recommend you to get full EDNS compliance (all tests `ok`)** instead of doing just minimal cleanup otherwise you will have to face new issues later on.
+Минимальная рабочая настройка, которая позволит вашему домену выжить в 2019 DNS flag day - отсутствие результата `timeout` в любом из простых тестов DNS и EDNS версии 0, реализованных в инстурменте [ednscomp](https://ednscomp.isc.org/ednscomp). Обратите внимание, что эта минимальная настройка все еще не соответствует стандартам и рано или поздно вызовет другие проблемы. По этой причине **мы настоятельно рекомендуем вам получить полное соответствие EDNS (все тесты `ok`)** вместо того, чтобы выполнять минимальную очистку, иначе вам придется столкнуться с новыми проблемами позже.
 
-If there is a problem, the ednscomp tool displays an explanation for each failed test. Failures in these tests are typically caused by:
+Если есть проблема, инструмент ednscomp отображает объяснение каждого неудачного теста. Сбои в этих тестах обычно вызваны:
 
-* broken DNS software
-* broken firewall configuration
+* неправильным программным обеспечением DNS
+* неправильной конфигурацией брандмауэра
 
-To remediate problems please upgrade your DNS software to the latest stable versions and test again. If the tests are still failing even after a DNS upgrade please check your firewall configuration.
+Чтобы устранить проблемы, обновите программное обеспечение DNS до последних стабильных версий и повторите тестирование. Если тесты по-прежнему не проходят даже после обновления DNS, проверьте конфигурацию брандмауэра.
 
-**Firewalls must not drop DNS packets** with EDNS extensions, including unknown extensions. Modern DNS software may deploy new extensions (e.g. [DNS cookies](https://tools.ietf.org/html/rfc7873) to protect from DoS attacks). Firewalls which drop DNS packets with such extensions are making the situation worse for everyone, including worsening DoS attacks and inducing higher latency for DNS traffic.
+**Межсетевые экраны не должны отбрасывать пакеты DNS** с расширениями EDNS, включая неизвестные расширения. Современное программное обеспечение DNS может развертывать новые расширения (например [DNS cookies](https://tools.ietf.org/html/rfc7873) для защиты от DoS атак). Брандмауэры, которые отбрасывают пакеты DNS с такими расширениями, ухудшают ситуацию для всех, в том числе обостряют атаки DoS и увеличивают задержку трафика DNS.
 
-Vendor hints:
+Подсказки продавца:
 
-* Older versions of Juniper SRX will drop EDNS packets by default - Workaround is to disable DNS doctoring via `# set security alg dns doctoring none`. Upgrade to latest versions for EDNS support. 
-* [F5 BIG-IP DNS processing and DNS Flag Day](https://support.f5.com/csp/article/K07808381?sf206085287=1)
-* [BlueCat is ready](https://www.bluecatnetworks.com/blog/dns-flag-day-is-coming-and-bluecat-is-ready/)
-* [DNS Flag Day and Akamai](https://community.akamai.com/customers/s/article/CloudSecurityDNSFlagDayandAkamai20190115151216?language=en_US)
+* Более старые версии Juniper SRX по умолчанию отбрасывают пакеты EDNS. Обходной путь - отключить лечение DNS с помощью `# set security alg dns doctoring none`. Обновление до последних версий для поддержки EDNS. 
+* [Обработка F5 BIG-IP DNS и DNS Flag Day](https://support.f5.com/csp/article/K07808381?sf206085287=1)
+* [BlueCat готов](https://www.bluecatnetworks.com/blog/dns-flag-day-is-coming-and-bluecat-is-ready/)
+* [DNS Flag Day и Akamai](https://community.akamai.com/customers/s/article/CloudSecurityDNSFlagDayandAkamai20190115151216?language=en_US)
 
 Разработчикам DNS ПО
 =======================
-The main change is that DNS software from vendors named above will interpret timeouts as sign of a network or server problem. Starting February 1st, 2019 there will be **no attempt to disable EDNS** as reaction to a DNS query timeout.
+Основное изменение заключается в том, что программное обеспечение DNS от вышеперечисленных поставщиков будет интерпретировать тайм-ауты как признак проблемы сети или сервера. С 1 февраля 2019 **нет попытки отключить EDNS** как реакцию на тайм-аут DNS-запроса.
 
-This effectively means that all DNS servers which **do not respond at all to EDNS queries** are going to be treated as *dead*.
+Это фактически означает, что все DNS-серверы, которые **вообще не отвечают на запросы EDNS** будут рассматриваться как *мертвые*.
 
-Please test your implementations using the [ednscomp](https://ednscomp.isc.org/ednscomp) tool to make sure that you handle EDNS properly. Source code of the tool [is available](https://gitlab.isc.org/isc-projects/DNS-Compliance-Testing) as well.
+Пожалуйста, проверьте ваши реализации, используя инструмент [ednscomp](https://ednscomp.isc.org/ednscomp) чтобы убедиться, что вы правильно обрабатываете EDNS. Исходный код инструмента также [доступен](https://gitlab.isc.org/isc-projects/DNS-Compliance-Testing).
 
-It is important to note that EDNS is still not mandatory. If you decide not to support EDNS it is okay as long as your software replies according to [EDNS standard section 7](https://tools.ietf.org/html/rfc6891#section-7).
+Важно отметить, что EDNS все еще не является обязательным. Если вы решите не поддерживать EDNS, это нормально, если ваше программное обеспечение отвечает в соответствии с [EDNS раздел стандарта 7](https://tools.ietf.org/html/rfc6891#section-7).
 
 Исследователям
 ===========
