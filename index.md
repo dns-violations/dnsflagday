@@ -6,12 +6,11 @@ lang: en-US
 
 What is happening?
 ==================
-The current [DNS](https://en.wikipedia.org/wiki/Domain_Name_System) is unnecessarily slow and inefficient because of efforts to accommodate a few DNS systems that are not in compliance with DNS standards established more than a decade ago. 
+The current [DNS](https://en.wikipedia.org/wiki/Domain_Name_System) is unnecessarily slow and inefficient because of efforts to accommodate a few DNS systems that are not in compliance with DNS standards established two decades ago.
 
-To ensure further sustainability of the system it is time to end these accommodations and remediate the non-compliant systems. This change will make most DNS operations slightly more efficient, and also allow operators to deploy new functionality, including new mechanisms to protect against DDoS attacks. [DDoS] attack.
+To ensure further sustainability of the system it is time to end these accommodations and remediate the non-compliant systems. This change will make most DNS operations slightly more efficient, and also allow operators to deploy new functionality, including new mechanisms to protect against [DDoS] attacks.
 
-DNS software and service providers listed on this site have agreed to coordinate removing accommodations for non-compliant DNS implementations from their software or services, on or around **February 1st 2019**.
-This change will affect only sites operating software which does not comply to the main DNS standard, ([RFC1035]) or the newer standards for Extensions to DNS [EDNS], ([RFC2671], [RFC6891]).  These sites are either using outdated or unmaintained DNS software, or have excessively restrictive firewall settings that block important DNS signals.
+DNS software and service providers [listed on this site](#supporters) have agreed to coordinate removing accommodations for non-compliant DNS implementations from their software or services, on or around **February 1st 2019**. This change will affect only sites operating non-compliant software.
 
 For more information select the group you belong to:
 
@@ -20,10 +19,6 @@ For more information select the group you belong to:
 - [I'm a DNS administrator](#dns-admins)
 - [I'm a DNS expert (DNS software developer, research, etc.)](#experts)
 
-
-[vendors of DNS software](#supporters) and also big [public DNS providers](#supporters) are going to remove certain workarounds on February 1st, 2019.
-
-This change affects only sites which operate software which is not following published standards. Are you affected?
 
 <a name="users"></a>
 
@@ -36,24 +31,25 @@ There is no reason to worry if you are an Internet user without your own domain 
 
 I'm a domain holder
 =================
-If you are a domain holder, please use the form below to check if your domain is ready for the planned change. It is only necessary to validate one zone if you have multiple zones on the same server or cluster of servers. Your test result will include advice on any further steps that may be necessary.
+If you are a domain holder, please use the form below to check if your domain is ready for the planned change. Your test result will include advice on any further steps that may be necessary.
 
 {% include checker.html lang=site.data.checker.en %}
 
+Please note it is only necessary to validate one zone if you have multiple zones on the same server or cluster of servers. See [technical details of tests](#test-details) for more information.
 
 <a name="dns-admins"></a>
 
 I'm a DNS administrator
 =====================
-The impact of the scheduled change to the client side of DNS is described in the section [for DNS resolver operators](#resolver-ops). A small percentage of authoritative servers might require changes [described below](#auth-ops). Further down we list [technical details of tests](#test-details) and [tools for experts](#experts).
+The impact of the scheduled change to the client side of DNS is described in the section for [DNS resolver operators](#resolver-ops). A small percentage of authoritative servers might require changes [described below](#auth-ops). Further down we list [technical details of tests](#test-details) and [tools for experts](#experts).
 
 <a name="resolver-ops"></a>
 
 DNS resolver operators
 ----------------------
-On or around Feb 1st, 2019, major open source resolver vendors will release updates that will stop accommodating non-standard responses. This change will affect authoritative servers which do not comply either with the original DNS standard from 1987 ([RFC1035]) or the newer [EDNS] standards from 1999 ([RFC2671] and [RFC6891]).  Incompatible sites may become unreachable through updated resolvers. Major [public DNS resolver operators listed below](#supporters) are also removing accommodations.
+On or around Feb 1st, 2019, major open source resolver vendors will release updates that will stop accommodating non-standard responses. This change will affect authoritative servers which do not comply either with the original DNS standard from 1987 ([RFC1035]) or the newer [EDNS] standards from 1999 ([RFC2671] and [RFC6891]). Major [public DNS resolver operators listed below](#supporters) are also removing accommodations so this change will also impact Internet users and providers who use these public DNS services.
 
-The [web form above](#domain-holders) diagnostic tool may be helpful while investigating problems with a particular domain. Domains which repeatedly fail the test above have problems with either their DNS software or their firewall configuration.
+Sites hosted on incompatible authoritative servers may become unreachable through updated resolvers. The [web form above](#domain-holders) diagnostic tool may be helpful while investigating problems with a particular domain. Domains which repeatedly fail the test above have problems with either their DNS software or their firewall configuration and cannot be fixed by DNS resolver operators.
 
 The following versions of DNS resolvers will not accommodate [EDNS] non-compliant responses:
 
@@ -77,7 +73,7 @@ We advise you to take the following preparatory steps to avoid operational probl
   * [Akamai](https://community.akamai.com/customers/s/article/CloudSecurityDNSFlagDayandAkamai20190115151216?language=en_US)
   * [BlueCat](https://www.bluecatnetworks.com/blog/dns-flag-day-is-coming-and-bluecat-is-ready/)
   * [F5 BIG-IP](https://support.f5.com/csp/article/K07808381?sf206085287=1)
-  * Older versions of the Juniper SRX will drop EDNS packets by default. The workaround is to disable DNS doctoring via `# set security alg dns doctoring none`. Upgrade to latest versions for EDNS support.
+  * Juniper: Older versions of the Juniper SRX will drop EDNS packets by default. The workaround is to disable DNS doctoring via `# set security alg dns doctoring none`. Upgrade to latest versions for EDNS support.
 
 If the problem persists after DNS software and firewall updates please contact your firewall vendor and request fixes.
 
@@ -86,18 +82,25 @@ If the problem persists after DNS software and firewall updates please contact y
 
 Test details
 ------------
+Your domain name may include `www`, e.g. `www.domainname.com`; or it may not, e.g. `domainname.com`.  If you are not sure, we suggest that you test both.  Names that are not DNS zones will report that this was the most likely reason for the test failure; this is not a cause for concern.
+
+### Mass scanning
+
+The [test form above](#domain-holders) uses hosted [ednscomp](https://ednscomp.isc.org/ednscomp), which is a low-capacity service for ad-hoc checks only. If you need to send bulk queries, you must use [tools linked below](#tools) to run your own test instances. Please do not attempt to automate queries using this web site, an excessive use will be rate-limited or blocked.
+
+### Obtaining detailed test results
+
 The [test form above](#domain-holders) uses [ednscomp](https://ednscomp.isc.org/ednscomp) for individual technical tests, and these partial results are summarized into an aggregate result by the web application.
 
-This hosted tool is a low-capacity service for ad-hoc checks only.  Do not attempt to automate queries.  Excessive use will be rate-limited or blocked.  If you need to send bulk queries, you must download and build the tools to run your own test instance - see https://gitlab.isc.org/isc-projects/DNS-Compliance-Testing and https://gitlab.labs.nic.cz/knot/edns-zone-scanner/.
-
-It is also possible to test your DNS servers directly using the tool [ednscomp](https://ednscomp.isc.org/ednscomp) which displays a more detailed technical report. Simply enter the name of a zone hosted on your DNS servers into the `zone name` field and click the `Submit` button. 
-
-Your domain name may include "www", e.g. "www.domainname.com"; or it may not, e.g. "domainname.com".  If you are not sure, we suggest that you test both.  Names that are not DNS zones will report that this was the most likely reason for
-the test failure; this is not a cause for concern.
+It is also possible to test your DNS servers directly using the tool [ednscomp](https://ednscomp.isc.org/ednscomp) which displays a more detailed technical report. Simply enter the name of a zone hosted on your DNS servers into the `zone name` field and click the `Submit` button.
 
 The summary result of [ednscomp](https://ednscomp.isc.org/ednscomp) tests should ideally be a green message `All Ok`.
 
-The minimal working setup which will allow your domain to survive 2019 DNS flag day must not have a `timeout` result in any of the plain DNS and EDNS version 0 tests implemented in the [ednscomp](https://ednscomp.isc.org/ednscomp) tool. FAilures of the EDNS(1) tests, for example, will not cause any immediate problem. Please note that this minimal compliance is still not full compliance and will cause other issues sooner or later. For this reason **we strongly recommend you to work towards full EDNS compliance (all tests `ok`)** instead of doing just the minimum.
+### Minimal working configuration
+
+The minimal working setup which will allow your domain to survive 2019 DNS flag day must not have a `timeout` result in any of the plain DNS and EDNS version 0 tests implemented in the [ednscomp](https://ednscomp.isc.org/ednscomp) tool. Failures of the EDNS(1) tests will not cause any immediate problem.
+
+Please note that this minimal compliance is still not full compliance and will cause other issues sooner or later. For this reason **we strongly recommend you to work towards full EDNS compliance (all tests `ok`)** instead of doing just the minimum.
 
 If there is a problem, the ednscomp tool displays an explanation for each failed test. Failures in these tests are typically caused by:
 
@@ -124,14 +127,19 @@ It is important to note that EDNS is still not mandatory. If you decide not to s
 
 In other words, software which correctly implements the original DNS standard [RFC1035] from 1987 does not require any changes. Only non-compliant software has to be fixed.
 
+
+<a name="researchers"></a>
+
 Researchers
 -----------
 Researchers and other parties such as TLD operators might be interested in:
 
 * [EDNS compliance statistics](https://ednscomp.isc.org/) generated by [EDNS compliance test suite](https://gitlab.isc.org/isc-projects/DNS-Compliance-Testing) by ISC
-* [EDNS zone scanner](https://gitlab.labs.nic.cz/knot/edns-zone-scanner/) by CZ.NIC which aims to evaluate real-world impact of the DNS flag day
+* [Presentations](#presentations) below
+* [Tools](#tools) for mass scanning etc.
 
-Please read the respective methodologies before interpreting the data. In any case, do not hesitate to reach out to tool authors using links above.
+
+<a name="presentations"></a>
 
 Presentations
 =============
@@ -148,13 +156,21 @@ Technical
 * DNS-OARC 29: Estimating impact of the (E)DNS flag day [abstract](https://indico.dns-oarc.net/event/29/contributions/644/), [slides](https://indico.dns-oarc.net/event/29/contributions/644/attachments/632/1018/edns.pdf), [video](https://youtu.be/rneu1lnJmUI?list=PLCAxS3rufJ1cOBd1D4K4QJFmLcSypixh3&t=3001)
 * DNS-OARC 28: First announcement [abstract](https://indico.dns-oarc.net/event/28/contributions/515/), [slides](https://indico.dns-oarc.net/event/28/contributions/515/attachments/490/799/Removing_EDNS_Workarounds.pdf), [video](https://www.youtube.com/watch?v=9YYH8JFH_bY&feature=youtu.be&t=5198)
 
+
+<a name="tools"></a>
+
 Tools
 =====
 
- * [ISC EDNS Compliance tester](https://ednscomp.isc.org/), [source code](https://gitlab.isc.org/isc-projects/DNS-Compliance-Testing)
- * [EDNS zone scanner](https://gitlab.labs.nic.cz/knot/edns-zone-scanner/) for mass scanning and evaluation of real-world impact of the DNS flag day
- * [DNSViz](http://dnsviz.net/)
+Researchers and other parties such as large DNS operators might be interested in:
+
+ * [ISC EDNS Compliance tester](https://ednscomp.isc.org/), [source code](https://gitlab.isc.org/isc-projects/DNS-Compliance-Testing) for testing all aspects of EDNS compliance
+ * [EDNS zone scanner](https://gitlab.labs.nic.cz/knot/edns-zone-scanner/tree/master) for mass scanning and evaluation of real-world impact of the DNS flag day by CZ.NIC
  * [Testing EDNS Compatibility with dig](https://kb.isc.org/docs/edns-compatibility-dig-queries)
+ * [DNSViz](http://dnsviz.net/)
+
+Please read the respective methodologies before interpreting the data. In any case, do not hesitate to reach out to tool authors using links above.
+
 
 Contacts
 ========

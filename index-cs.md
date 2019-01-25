@@ -7,9 +7,11 @@ redirect_from:
 
 Co se připravuje?
 =================
-Současný systém [DNS] je z pomalý a potýká se s technickými problémy způsobenými nedodržováním standardů. Pro celosvětový chod je nezbytné provést změny, aby bylo možné nasadit novou funkcionalitu jako je např. lepší ochrana před [DDoS] útoky.
+Současný systém [DNS] je z pomalý a potýká se s technickými problémy způsobenými nedodržováním standardů vydaných již před dvaceti lety.
 
-Z výše uvedených důvodů bude po **1. únoru 2019** ukončena podpora některých historických implementací DNS. Tato změna ovlivní jen domény používající software, který nedodržuje ani starší standard DNS z roku 1987 ([RFC1035]) ani novější standard [EDNS] z roku 1999 ([RFC2671], [RFC6891]).
+Aby celosvětové DNS bylo i nadále udržitelné je nezbytné provést změny a ukončit podporu nestandardních implemendací. Tímto krokem dojde ke zlepšení efektivity systému a bude umožněno nasadit novou funkcionalitu jako je např. lepší ochrana před [DDoS] útoky.
+
+Z výše uvedených důvodů po **1. únoru 2019** [níže uvedení výrobci](#supporters) ukončí podporu nestandardních implementací DNS. Tato změna ovlivní jen domény používající software, který nedodržuje standardy DNS.
 
 Pro více informací klikněte na skupinu, do které spadáte:
 
@@ -30,10 +32,11 @@ Pokud nemáte vlastní doménu, není třeba se strachovat. Vás se změna týk�
 
 Jsem držitel domény
 ===================
-Jste-li držitel domény, zkontrolujte, zda je vaše doména připravena na změnu systému DNS pomocí následujícího formuláře. Výsledek testu vám v případě potřeby zároveň sdělí doporučený postup nápravy.
+Jste-li držitel domény, zkontrolujte, zda je vaše doména připravena na změny v systému DNS pomocí následujícího formuláře. Výsledek testu vám v případě potřeby zároveň sdělí doporučený postup nápravy.
 
 {% include checker.html lang=site.data.checker.cs %}
 
+Pokud máte více domén hostovaných na stejné sadě serverů, stačí otestovat pouze jednu z nich. Další informace naleznete v části [technické detaily testů](#test-details).
 
 <a name="dns-admins"></a>
 
@@ -79,11 +82,21 @@ Pokud jste provedli upgrade DNS softwaru a problém přetrvává i po aplikaci p
 
 Podrobnosti o testování
 -----------------------
+Vaše doména může nebo nemusí obsahovat předponu `www`, např. doména může být `www.nic.cz` nebo pouze `nic.cz`. Pokud si nejste jistí, doporučujeme vám otestovat obě možnosti. Pro jména, která nejsou tzv. DNS zóny, bude testovací formulář upozorňovat, že se nejedná o zónu. V takovém případě lze konkrétní jméno ignorovat a otestovat pouze druhé z dvojice.
+
+### Skenování velkého počtu domén
+
+Testovací [formulář uvedený výše](#domain-holders) na pozadí používá server s nástrojem [ednscomp](https://ednscomp.isc.org/ednscomp), který nemá velkou kapacitu. Pokud potřebujete otestovat velké množství domén, použijte prosím [nástroje odkazované níže](#tools). Pokud budete nadmíru zatěžovat server automatizovanými dotazy, budeme nuceni omezit počet dotazů nebo vám službu odepřít.
+
+### Podrobné výsledky testů
+
 Testovací [formulář uvedený výše](#domain-holders) na pozadí provádí technické testy pomocí nástroje [ednscomp](https://ednscomp.isc.org/ednscomp) a z dílčích výsledků počítá souhrnné hodnocení.
 
 DNS servery lze také otestovat přímo pomocí nástroje [ednscomp](https://ednscomp.isc.org/ednscomp), který zobrazuje podrobnou technickou zprávu. Do pole `zone name` zadejte jméno jakékoliv zóny hostované na vašich DNS serverech a klikněte na tlačítko `Submit`.
 
 Celkový výsledek zobrazený nástrojem [ednscomp](https://ednscomp.isc.org/ednscomp) by měla být zpráva `All Ok` (zelenou barvou).
+
+### Minimální funkční konfigurace
 
 Pro minimální konfiguraci, která ještě bude v roce 2019 fungovat, nevypisuje nástroj [ednscomp](https://ednscomp.isc.org/ednscomp) výsledek `timeout` v žádném z testů pro původní DNS ani v testech pro rozšíření EDNS verze 0. Vezměte prosím na vědomí, že takováto minimální konfigurace stále neodpovídá standardům a dříve nebo později bude způsobovat potíže. Z tohoto důvodu **doporučujeme najednou opravit vaše DNS tak, aby všechny testy skončily výsledkem `ok`**. Vyhnete se tak problémům v budoucnu.
 
@@ -116,12 +129,14 @@ Jinak řečeno, software, který správně implementuje původní standard [RFC1
 
 Výzkumníci
 ----------
-Další zdroje pro výzkumníky:
+Další zdroje pro výzkumníky, operátory TLD atd.:
 
  * [Statistiky podpory EDNS](https://ednscomp.isc.org/) vygenerované pomocí [sady EDNS testů](https://gitlab.isc.org/isc-projects/DNS-Compliance-Testing) vytvořené sdružením ISC.
- * [EDNS skener zón](https://gitlab.labs.nic.cz/knot/edns-zone-scanner/) vytvořený sdružením CZ.NIC, který si klade za cíl vyhodnotit reálný dopad změny popsané na této stránce.
+ * [Prezentace](#presentations) níže
+ * [Nástroje](#tools) pro skenování velkého počtu domén atd.
 
-Před interpretací dat si prosím přečtěte metodologii uvedenou u konkrétního zdroje. S dotazy se neváhejte obrátit na autory pomocí odkazů uvedených výše.
+
+<a name="presentations"></a>
 
 Prezentace
 ==========
@@ -138,12 +153,18 @@ Technické
 * DNS-OARC 28: First announcement [abstract](https://indico.dns-oarc.net/event/28/contributions/515/), [slides](https://indico.dns-oarc.net/event/28/contributions/515/attachments/490/799/Removing_EDNS_Workarounds.pdf), [video](https://www.youtube.com/watch?v=9YYH8JFH_bY&feature=youtu.be&t=5198)
 
 
+<a name="tools"></a>
+
 Nástroje
 ========
 
- * [ISC EDNS Compliance tester](https://ednscomp.isc.org/), [source code](https://gitlab.isc.org/isc-projects/DNS-Compliance-Testing)
- * [EDNS zone scanner](https://gitlab.labs.nic.cz/knot/edns-zone-scanner/) pro kontrolu velkého množství zón a vyhodnocení dopadů změny
+ * [ISC EDNS Compliance tester](https://ednscomp.isc.org/), [zdrojový kód](https://gitlab.isc.org/isc-projects/DNS-Compliance-Testing) pro testování všech aspektů implementace EDNS
+ * [EDNS zone scanner](https://gitlab.labs.nic.cz/knot/edns-zone-scanner/) pro kontrolu velkého množství zón a vyhodnocení dopadů změny (CZ.NIC)
+ * [Testování EDNS kompatibility pomocí nástroje dig](https://kb.isc.org/docs/edns-compatibility-dig-queries)
  * [DNSViz](http://dnsviz.net/)
+
+Před interpretací dat si prosím přečtěte metodologii uvedenou u konkrétního zdroje. S dotazy se neváhejte obrátit na autory nástrojů pomocí odkazů uvedených výše.
+
 
 Kontakty
 ========
