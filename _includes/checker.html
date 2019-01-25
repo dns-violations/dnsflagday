@@ -15,23 +15,23 @@ $(document).ready(function () {
 	domainChecker({
 		placeIntoElement: document.getElementById( "domain-checker" ),
 		texts: {
-			formTitle: '{{ include.lang.form.legend }}',
-			labelText: '{{ include.lang.form.label }} ',
-			submitText: '{{ include.lang.form.value }}',
+			formTitle: '{{ include.lang.form.legend | strip_newlines }}',
+			labelText: '{{ include.lang.form.label | strip_newlines }} ',
+			submitText: '{{ include.lang.form.value | strip_newlines }}',
 			reportOkHtml: ': <span style="color: green;">{{ include.lang.reportOk.short }}</span></div>' +
 			'<div><img style="height: 5em;" src="signs/ok.svg"/></div>' +
-			'<div>{{ include.lang.reportOk.long | strip }}',
+			'<div>{{ include.lang.reportOk.long | strip | strip_newlines }}',
 			reportCompatibleHtml: ': <span style="color: orange;">{{ include.lang.reportCompatible.short }}</span></div>' +
 			'<div><img style="height: 5em;" src="signs/compatible.svg"/></div>' +
-			'<div>{{ include.lang.reportCompatible.long | strip }}',
+			'<div>{{ include.lang.reportCompatible.long | strip | strip_newlines }}',
 			reportHighLatencyHtml: ': <span style="color: red;">{{ include.lang.reportHighLatency.short }}</span></div>' +
 			'<div><img style="height: 5em;" src="signs/high_latency.svg"/></div>' +
-			'<div>{{ include.lang.reportHighLatency.long | strip }}',
+			'<div>{{ include.lang.reportHighLatency.long | strip | strip_newlines }}',
 			reportFailHtml: ': <span style="font-weight: bold; color: red;">{{ include.lang.reportFail.short }}</span></div>' +
 			'<div><img style="height: 5em;" src="signs/dead.svg"/></div>' +
-			'<div>{{ include.lang.reportFail.long | strip }}',
-			reportTestErrorHtml: ': {{ include.lang.reportTestError | strip }}',
-			reportLinkText: ' {{ include.lang.reportLinkText | strip }} ',  // text before URL to report
+			'<div>{{ include.lang.reportFail.long | strip | strip_newlines }}',
+			reportTestErrorHtml: ': {{ include.lang.reportTestError | strip | strip_newlines }}',
+			reportLinkText: ' {{ include.lang.reportLinkText | strip | strip_newlines }} ',  // text before URL to report
 		},
 		status: {
 			loading: '{{ include.lang.status.loading }}',

@@ -5,35 +5,55 @@ en:
         title: "Please enter name of a DNS zone hosted on DNS servers you want to test. (The name must contain SOA and NS records.)"
         value: "Test!"
         noscript: >
-            Your browser does not support JavaScript! Technical report will be shown in a new window.<br>
-            The result of the <a href="https://ednscomp.isc.org/ednscomp">ednscomp</a> test must be a green message "All Ok".
-            If you get any other result your DNS deployment is going to be affected by this change and your domain might be become inaccessible.
-            In that case please contact your DNS administrator and request fixes!
+            <ul>
+            <li>To obtain human-readable test results please enable JavaScript in your web browser. Without JavaScript we can display only a technical report without summary.</li>
+            <li>The technical result in a new window should end with a green message "All Ok".</li>
+            <li>If you get any other result your DNS deployment is to some degree affected by this change.
+            Please retest using a web browser with JavaScript enabled to see evaluation of its impact on your domain.</li>
+            </ul>
     reportOk:
         short: "All Ok!"
-        long: "This domain is perfectly ready, congratulations!"
+        long: >
+            <ul>
+                <li>This domain is perfectly ready, you do not need to worry about DNS flag day 2019.</li>
+                <li>Your DNS administrator is doing a good job, send him a sincere thank you ;-)</li>
+            </ul>
     reportCompatible:
         short: "Minor problems detected!"
         long: >
-            This domain is going to work after the 2019 DNS flag day BUT it does not
-            support the latest DNS standards. As a consequence this domain cannot
-            support the latest security features and might be an easier target for
-            network attackers than necessary, and might face other issues later on.
-            We recommend your domain administrator to fix issues listed in the following
+            <ul>
+                <li><strong>This domain is going to work after February 1st 2019.</strong></li>
+                <li>This domain does not support latest DNS standards:</li>
+                <ul>
+                    <li>As a consequence this domain cannot support the latest security features
+                        and might be an easier target for network attackers than necessary.</li>
+                    <li>These imperfections might cause problems in the future.</li>
+                </ul>
+                <li>Administrators - it is recommended to fix problems mentioned in the technical report below
+                    to avoid compatibility problems in the future. Please see <a href="#dns-admins">description for DNS admins</a>.
+                    Thank you for cooperation!</li>
+            </ul>
     reportHighLatency:
         short: "Serious problem detected!"
         long: >
-            This domain will face issues after the 2019 DNS flag day. It will work in
-            practice, BUT clients will experience delays when accessing this domain.
-            We recommend you request a fix from your domain administrator! You can refer
-            them to https://dnsflagday.net/ and
+            <ul>
+                <li><strong>This domain will face issues after February 1st 2019!</strong></li>
+                <li>It will work but clients will experience delays while accessing this domain.</li>
+                <li>Domain holders - please contact your domain administrators and point them to this page.</li>
+                <li>Administrators - some of the servers have problems while other servers work correcly.
+                    Please see <a href="#dns-admins">description for DNS admins</a>
+                    and correct problems reported in the technical report below.</li>
+            </ul>
     reportFail:
         short: "Fatal error detected!"
         long: >
-            This domain is going to STOP WORKING after the 2019 DNS flag day! Please retry
-            the test to eliminate random network failures. If the problem persists you
-            really need to request a fix from your domain administrator. You can refer
-            them to https://dnsflagday.net/ and
+            <ul>
+                <li><strong>This domain is going to STOP WORKING after February 1st 2019</strong></li>
+                <li>Please retry the test to eliminate random network failures</li>
+                <li>Domain holders - please contact your domain administrator and point him to this page.</li>
+                <li>Administrators - please see <a href="#dns-admins">description for DNS admins</a>
+                    and correct problems reported in the technical report below.</li>
+            </ul>
     reportTestError: >
         Test cannot be evaluated because of an error. Please make sure the domain name entered
         refers to a <strong>DNS zone</strong>, i.e. use "example.com" instead of "www.example.com".
@@ -51,8 +71,11 @@ cs:
         title: "Vložte jméno DNS zóny hostované na DNS serverech, které chcete otestovat. (Zadané jméno musí mít SOA a NS záznamy.)"
         value: "Testuj!"
         noscript: >
-            Váš prohlížeč nepodporuje JavaScript. Tento formulář otevře nové okno s technickou zprávou o stavu domény.<br>
-            Výsledkem zobrazený nástrojem <a href="https://ednscomp.isc.org/ednscomp">ednscomp</a> musí být zelená zpráva
+            Váš prohlížeč nepodporuje JavaScript!
+            <ul>
+            <li>Bez podpory JavaScriptu tento formulář pouze otevře nové okno s technickou zprávou o stavu domény.</li>
+            <li>Pro lepší (lidštější) interpretaci výsledků je nutné povolit JavaScript.</li>
+            <li>Výsledek zobrazený nástrojem <a href="https://ednscomp.isc.org/ednscomp">ednscomp</a> musí být zelený text
             "All Ok". Pokud je výsledkem cokoliv jiného, potom je vaše doména postižena a může se stát nedostupnou. Prosím
             kontaktujte administrátora a požadujte nápravu!
     reportOk:
