@@ -49,6 +49,7 @@ Para solucionar estos problemas por favor actualice su software DNS a la última
 Ayuda con algunos proveedores:
 * Las versiones antiguas de Juniper SRX descartan por defecto los paquetes EDNS - para deshabilitarlo, use: `# set security alg dns doctoring none`. Actualice a las últimas versiones para tener soporte EDNS.
 * [F5 BIG-IP DNS processing and DNS Flag Day](https://support.f5.com/csp/article/K07808381?sf206085287=1)
+* [Infoblox](https://community.infoblox.com/t5/Community-Blog/DNS-Flag-Day/ba-p/15843?es_p=8449211)
 * [BlueCat está listo](https://www.bluecatnetworks.com/blog/dns-flag-day-is-coming-and-bluecat-is-ready/)
 * [DNS Flag Day and Akamai](https://community.akamai.com/customers/s/article/CloudSecurityDNSFlagDayandAkamai20190115151216?language=en_US)
 
