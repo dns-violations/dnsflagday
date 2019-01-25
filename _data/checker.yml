@@ -71,13 +71,13 @@ cs:
         title: "Vložte jméno DNS zóny hostované na DNS serverech, které chcete otestovat. (Zadané jméno musí mít SOA a NS záznamy.)"
         value: "Testuj!"
         noscript: >
-            Váš prohlížeč nepodporuje JavaScript!
             <ul>
             <li>Bez podpory JavaScriptu tento formulář pouze otevře nové okno s technickou zprávou o stavu domény.</li>
             <li>Pro lepší (lidštější) interpretaci výsledků je nutné povolit JavaScript.</li>
             <li>Výsledek zobrazený nástrojem <a href="https://ednscomp.isc.org/ednscomp">ednscomp</a> musí být zelený text
             "All Ok". Pokud je výsledkem cokoliv jiného, potom je vaše doména postižena a může se stát nedostupnou. Prosím
-            kontaktujte administrátora a požadujte nápravu!
+            kontaktujte administrátora a požadujte nápravu!</li>
+            </ul>
     reportOk:
         short: "V pořádku."
         long: "Tato doména je perfektně připravena, gratulujeme!"
