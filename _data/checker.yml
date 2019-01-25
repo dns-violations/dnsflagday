@@ -221,3 +221,49 @@ ru:
         done: "Тестирование выполнено:"
         errorApi: "Ошибка связи! API недоступно… пожалуйста, попробуйте снова позже"
         errorInput: "Недействительный ввод или неожиданная ошибка, извините!"
+zh-CN:
+    form:
+        legend: "测试您的域名"
+        label: "域名 (不含 www):"
+        title: "请输入您所要测试的在 DNS 服务器上所承载的域名。(该域名必须包含 SOA 和 NS 记录。)"
+        value: "测试！"
+        noscript: >
+            你的浏览器不支持Javascript！技术报告将在新窗口中显示。<br>
+            <a href="https://ednscomp.isc.org/ednscomp">ednscomp</a> 的测试结果必须是绿色消息“一切正常”。
+            如果您获得任何其他结果，则您的 DNS 部署将受此更改的影响，并且您的域名可能无法访问。
+            在这种情况下, 请联系您的 DNS 管理员并请求修复此问题!
+    reportOk:
+        short: "一切正常！"
+        long: "这个域名已经完全准备好了，恭喜！"
+    reportCompatible:
+        short: "检测到小问题！"
+        long: >
+            这个域名将在 2019 DNS flag day 之后继续工作，但它没有
+            支持最新的 DNS 标准。因此，这个域名不能
+            支持最新的安全功能，对于网络攻击者来说
+            可能是一个比其他域名更加容易攻击的目标，并可能在以后会面临其他问题。
+            我们建议您的域名管理员修复以下列出的问题
+    reportHighLatency:
+        short: "检测到严重问题！"
+        long: >
+            该域名将在 2019 DNS flag day 后面临问题。它实际可以
+            工作，但客户端在访问此域名时将会遇到延迟。
+            我们建议您向域名管理员请求修复此问题！你可以向他们
+            推荐 https://dnsflagday.net/ 以及
+    reportFail:
+        short: "检测到致命错误！"
+        long: >
+            这个域名将在 2019 DNS flag day 之后停止工作！请重新
+            测试以消除随机的网络故障。如果问题仍然存在，您确实
+            需要向域名管理员请求修复此问题。你可以向他们
+            推荐 https://dnsflagday.net/ 以及
+    reportTestError: >
+        由于错误，无法评估测试。请确保输入的域名
+        指向 <strong>DNS 区域</strong>，即使用 "example.com" 而不是 "www.example.com"。
+        重新测试以消除随机网络故障或进行调查
+    reportLinkText: "技术报告"
+    status:
+        loading: "正在测试中，请稍候......可能需要几十秒钟。"
+        done: "测试完成:"
+        errorApi: "通信故障！ API不可用......请稍后再试"
+        errorInput: "输入无效或其他意外错误，对不起！"
