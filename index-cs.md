@@ -74,6 +74,7 @@ Pro minimalizaci problémů vám doporučujeme použít následující postup:
   * [Akamai](https://community.akamai.com/customers/s/article/CloudSecurityDNSFlagDayandAkamai20190115151216?language=en_US)
   * [BlueCat](https://www.bluecatnetworks.com/blog/dns-flag-day-is-coming-and-bluecat-is-ready/)
   * [F5 BIG-IP](https://support.f5.com/csp/article/K07808381?sf206085287=1)
+  * [Infoblox](https://community.infoblox.com/t5/Community-Blog/DNS-Flag-Day/ba-p/15843?es_p=8449211)
   * Juniper SRX ve výchozím nastavení zahazují EDNS pakety. Řešením je buď upgrade na polední verzi, nebo vypnutí funkce "DNS doctoring" příkazem `# set security alg dns doctoring none`.
 
 Pokud jste provedli upgrade DNS softwaru a problém přetrvává i po aplikaci postupů uvedených výše, prosím kontaktujte výrobce firewallu a požadujte opravu.
