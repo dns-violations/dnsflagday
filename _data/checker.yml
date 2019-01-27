@@ -16,7 +16,7 @@ en:
         long: >
             <ul>
                 <li>This domain is perfectly ready, you do not need to worry about DNS flag day 2019.</li>
-                <li>Your DNS administrator is doing a good job, send him a sincere thank you ;-)</li>
+                <li>Your DNS administrator is doing a good job, send them a sincere thank you ;-)</li>
             </ul>
     reportCompatible:
         short: "Minor problems detected!"
@@ -50,7 +50,7 @@ en:
             <ul>
                 <li><strong>This domain is going to STOP WORKING after February 1st 2019</strong></li>
                 <li>Please retry the test to eliminate random network failures</li>
-                <li>Domain holders - please contact your domain administrator and point him to this page.</li>
+                <li>Domain holders - please contact your domain administrator and point them to this page.</li>
                 <li>Administrators - please see <a href="#dns-admins">description for DNS admins</a>
                     and correct problems reported in the technical report below.</li>
             </ul>
