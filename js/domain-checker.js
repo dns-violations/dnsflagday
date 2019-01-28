@@ -113,12 +113,9 @@ var domainChecker = function(domainCheckerInit) {
 		}
 		element.appendChild( span );
 
-		if ( json.status !== 'ok' && json.report )
+		if ( json.report )
 		{
-			if ( typeof domainCheckerInit.texts.reportLinkText !== UNDEFINED && domainCheckerInit.texts.reportLinkText )
-			{
-				element.appendChild( document.createTextNode( domainCheckerInit.texts.reportLinkText ) );
-			}
+			element.appendChild( document.createTextNode( domainCheckerInit.texts.reportLinkText ) );
 			const link = document.createElement( 'a' );
 			link.href = json.report;
 			link.onclick = function () {
