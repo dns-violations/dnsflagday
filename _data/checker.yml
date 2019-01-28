@@ -79,34 +79,56 @@ cs:
         value: "Testuj!"
         noscript: >
             <ul>
-            <li>Bez podpory JavaScriptu tento formulář pouze otevře nové okno s technickou zprávou o stavu domény.</li>
             <li>Pro lepší (lidštější) interpretaci výsledků je nutné povolit JavaScript.</li>
-            <li>Výsledek zobrazený nástrojem <a href="https://ednscomp.isc.org/ednscomp">ednscomp</a> musí být zelený text
-            "All Ok". Pokud je výsledkem cokoliv jiného, potom je vaše doména postižena a může se stát nedostupnou. Prosím
-            kontaktujte administrátora a požadujte nápravu!</li>
+            <li>Bez podpory JavaScriptu tento formulář pouze otevře nové okno s technickou zprávou o stavu domény.</li>
+            <li>Technická zpráva by měla obsahovat zelený text "All Ok".</li>
+            <li>Pokud je výsledkem cokoliv jiného, potom je vaše doména do určité míry postižena. Pro zobrazení podrobností o vážnosti problému prosím opakujte test pomocí prohlížeče se zapnutou podporou JavaScriptu.<li>
             </ul>
     reportOk:
         short: "V pořádku."
-        long: "Tato doména je perfektně připravena, gratulujeme!"
+        long: >
+            <ul>
+                <li>Tato doména je perfektně připravena.</li>
+                <li>Nemusíte se změn v průběhu DNS flag day 2019 vůbec obávat.</li>
+                <li>Váš správce domény odvádí dobrou práci, poděkujte mu ;-)</li>
+            </ul>
     reportCompatible:
         short: "Menší nedostatky!"
         long: >
-            Tato doména bude fungovat i po změnách v roce 2019, nicméně chybí u ní podpora nejnovějších DNS standardů.
-            To znamená, že tato doména nemůže použít nejnovější metody zabezpečení a je zranitelnější vůči útokům.
-            Nalezené nedostatky také mohou způsobit potíže v budoucnosti. Doporučujeme požádat vašeho správce domény o
-            opravu zjištěných problémů. Můžete ho odkázat na web dnsflagday.net/cs a
+            <ul>
+                <li><strong>Doména bude fungovat i po 1. únoru 2019.</strong></li>
+                <li>Chybí podpora posledních DNS standardů:</li>
+                <ul>
+                    <li>Doména nemůže použít poslední metody zabezpečení
+                        a je tak zranitelnější vůči útočníkům než by musela být.</li>
+                    <li>Tyto nedostatky mohou v budoucnu způsobit i jiné problémy.</li>
+                </ul>
+                <li>Správci - doporučujeme vám opravit problémy, na které upozorňuje technická zpráva níže.
+                    Vyhnete se tak potížím v budoucnu.</li>
+                <li>Další informace naleznete v části <a href="#dns-admins">pro správce DNS</a>.
+                    Děkujeme za spolupráci!</li>
+            </ul>
     reportHighLatency:
         short: "Vážné problémy!"
         long: >
-            Tato doména bude po změnách v roce 2019 vážně postižena. Přestože doména nepřestane fungovat, uživatelé mohou
-            čelit náhodným výpadkům a přístup na doménu bude zpomalený. Důrazně doporučujeme požádat vašeho správce domény
-            o opravu zjištěných problémů. Můžete ho odkázat na web dnsflagday.net/cs a
+            <ul>
+                <li><strong>Doména bude po 1. únoru 2019 ve vážných problémech!</strong></li>
+                <li>Uživatelé přistupující k doméně budou trpět pomalou odezvou.</li>
+                <li>Držitelé domén - prosím kontaktujte svého správce domény a odkažte ho na tuto stránku.</li>
+                <li>Správci domén - část autoritativních serverů má problémy.
+                    Prosím přečtěte si text <a href="#dns-admins">pro správce DNS</a>
+                    a opravte problémy zmíněné v technické zprávě níže.</li>
+            </ul>
     reportFail:
         short: "Fatální chyba!"
         long: >
-            Tato doména bude po změnách v roce 2019 ZCELA NEFUNKČNÍ! Pro vyloučení nahodilých chyb v síti prosím zopakujte
-            test. Pokud problém přetrvává, je nezbytné požadovat nápravu od vašeho správce domény. Můžete ho odkázat na
-            web dnsflagday.net/cs a
+            <ul>
+                <li><strong>Doména po 1. únoru 2019 PŘESTANE FUNGOVAT!</strong></li>
+                <li>Pro vyloučení náhodných chyb v síti pro jistotu zopakujte test.</li>
+                <li>Držitelé domén - prosím kontaktujte svého správce domény a odkažte ho na tuto stránku.</li>
+                <li>Správci domén - prosím přečtěte si text <a href="#dns-admins">pro správce DNS</a>
+                    a opravte problémy zmíněné v technické zprávě níže.</li>
+            </ul>
     reportTestError: >
         Omlouváme se, výsledek testu v tomto okamžiku nelze vyhodnotit. Zájem o testování předčil naše očekávání a již
         pracujeme na posílení testovací infrastruktury. Zkuste prosím test zopakovat později. Pokud problém přetrvává,
