@@ -64,6 +64,13 @@ en:
         done: "Testing completed:"
         errorApi: "Communication error! API unavailable… please try again later"
         errorInput: "Invalid input or other unexpected error, sorry!"
+        errorBan: >
+                Your IP address was banned for service abuse.
+                Please see <a href="#mass-scanning">section about mass scanning</a> for more information.
+        rateLimit: >
+                Your IP address is sending requests too quickly.
+                Please slow down otherwise your IP address will be banned from this service.
+                See <a href="#mass-scanning">section about mass scanning</a> for more information.
 cs:
     form:
         legend: "Test domény"
@@ -110,6 +117,13 @@ cs:
         done: "Testování dokončeno:"
         errorApi: "Omlouváme se, výsledek testu v tomto okamžiku nelze vyhodnotit. Zájem o testování předčil naše očekávání a již pracujeme na posílení testovací infrastruktury."
         errorInput: "Neplatné jméno nebo jiná neočekávaná chyba!"
+        errorBan: >
+                Z vaší IP adresy bylo odesláno příliš mnoho dotazů a adresa proto byla zablokována jako ochrana před přetížením serveru.
+                Více informací najdete v <a href="#mass-scanning">části o skenování velkého počtu domén</a>.
+        rateLimit: >
+                Z vaší IP adresy přicházejí požadavky na testování příliš rychle.
+                Prosím zpomalte odesálíní požadavků, jinak bude vaše IP adresa zablokována.
+                Více informací najdete v <a href="#mass-scanning">části o skenování velkého počtu domén</a>.
 es:
     form:
         legend: "Revise su dominio"
@@ -154,6 +168,13 @@ es:
         done: "Prueba finalizada:"
         errorApi: "¡Error de comunicación! API no disponible… por favor reintente más tarde"
         errorInput: "¡Entrada inválida u otro error inesperado, lo siento!"
+        errorBan: >
+                Your IP address was banned for service abuse.
+                Please see <a href="#mass-scanning">section about mass scanning</a> for more information.
+        rateLimit: >
+                Your IP address is sending requests too quickly.
+                Please slow down otherwise your IP address will be banned from this service.
+                See <a href="#mass-scanning">section about mass scanning</a> for more information.
 ptbr:
     form:
         legend: "Teste seu domínio"
@@ -198,6 +219,13 @@ ptbr:
         done: "Teste finalizado:"
         errorApi: "Erro de comunicação! API indisponível… por favor tente novamente mais tarde"
         errorInput: "Entrada inválida ou outro erro inesperado, desculpe!"
+        errorBan: >
+                Your IP address was banned for service abuse.
+                Please see <a href="#mass-scanning">section about mass scanning</a> for more information.
+        rateLimit: >
+                Your IP address is sending requests too quickly.
+                Please slow down otherwise your IP address will be banned from this service.
+                See <a href="#mass-scanning">section about mass scanning</a> for more information.
 ru:
     form:
         legend: "Проверьте ваш домен"
@@ -244,6 +272,13 @@ ru:
         done: "Тестирование выполнено:"
         errorApi: "Ошибка связи! API недоступно… пожалуйста, попробуйте снова позже"
         errorInput: "Недействительный ввод или неожиданная ошибка, извините!"
+        errorBan: >
+                Your IP address was banned for service abuse.
+                Please see <a href="#mass-scanning">section about mass scanning</a> for more information.
+        rateLimit: >
+                Your IP address is sending requests too quickly.
+                Please slow down otherwise your IP address will be banned from this service.
+                See <a href="#mass-scanning">section about mass scanning</a> for more information.
 zh-CN:
     form:
         legend: "测试您的域名"
@@ -290,3 +325,10 @@ zh-CN:
         done: "测试完成:"
         errorApi: "通信故障！ API不可用......请稍后再试"
         errorInput: "输入无效或其他意外错误，对不起！"
+        errorBan: >
+                Your IP address was banned for service abuse.
+                Please see <a href="#mass-scanning">section about mass scanning</a> for more information.
+        rateLimit: >
+                Your IP address is sending requests too quickly.
+                Please slow down otherwise your IP address will be banned from this service.
+                See <a href="#mass-scanning">section about mass scanning</a> for more information.

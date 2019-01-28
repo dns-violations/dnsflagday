@@ -85,6 +85,7 @@ Podrobnosti o testování
 -----------------------
 Vaše doména může nebo nemusí obsahovat předponu `www`, např. doména může být `www.nic.cz` nebo pouze `nic.cz`. Pokud si nejste jistí, doporučujeme vám otestovat obě možnosti. Pro jména, která nejsou tzv. DNS zóny, bude testovací formulář upozorňovat, že se nejedná o zónu. V takovém případě lze konkrétní jméno ignorovat a otestovat pouze druhé z dvojice.
 
+<a name="mass-scanning"></a>
 ### Skenování velkého počtu domén
 
 Testovací [formulář uvedený výše](#domain-holders) na pozadí používá server s nástrojem [ednscomp](https://ednscomp.isc.org/ednscomp), který nemá velkou kapacitu. Pokud potřebujete otestovat velké množství domén, použijte prosím [nástroje odkazované níže](#tools). Pokud budete nadmíru zatěžovat server automatizovanými dotazy, budeme nuceni omezit počet dotazů nebo vám službu odepřít.
