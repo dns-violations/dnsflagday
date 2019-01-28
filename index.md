@@ -75,6 +75,7 @@ We advise you to take the following preparatory steps to avoid operational probl
   * [F5 BIG-IP](https://support.f5.com/csp/article/K07808381?sf206085287=1)
   * Juniper: Older versions of the Juniper SRX will drop EDNS packets by default. The workaround is to disable DNS doctoring via `# set security alg dns doctoring none`. Upgrade to latest versions for EDNS support.
   * [Infoblox](https://community.infoblox.com/t5/Community-Blog/DNS-Flag-Day/ba-p/15843?es_p=8449211)
+  * [Microsoft Azure](https://azure.microsoft.com/en-us/updates/azure-dns-flag-day/)
 
 If the problem persists after DNS software and firewall updates please contact your firewall vendor and request fixes.
 
