@@ -54,6 +54,7 @@ redirect_from:
 * [Infoblox](https://community.infoblox.com/t5/Community-Blog/DNS-Flag-Day/ba-p/15843?es_p=8449211)
 * [BlueCat готов](https://www.bluecatnetworks.com/blog/dns-flag-day-is-coming-and-bluecat-is-ready/)
 * [DNS Flag Day и Akamai](https://community.akamai.com/customers/s/article/CloudSecurityDNSFlagDayandAkamai20190115151216?language=en_US)
+* [Microsoft Azure](https://azure.microsoft.com/en-us/updates/azure-dns-flag-day/)
 
 Разработчикам DNS ПО
 =======================
