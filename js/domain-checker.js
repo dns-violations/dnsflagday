@@ -113,12 +113,9 @@ var domainChecker = function(domainCheckerInit) {
 		}
 		element.appendChild( span );
 
-		if ( json.status !== 'ok' && json.report )
+		if ( json.report )
 		{
-			if ( typeof domainCheckerInit.texts.reportLinkText !== UNDEFINED && domainCheckerInit.texts.reportLinkText )
-			{
-				element.appendChild( document.createTextNode( domainCheckerInit.texts.reportLinkText ) );
-			}
+			element.appendChild( document.createTextNode( domainCheckerInit.texts.reportLinkText ) );
 			const link = document.createElement( 'a' );
 			link.href = json.report;
 			link.onclick = function () {
@@ -193,13 +190,18 @@ var domainChecker = function(domainCheckerInit) {
 						'Accept': 'application/json',
 					},
 				} ).then( function ( /** @type {Response} */ response ) {
-					if ( response.ok && ( response.status === 200 ) )
-					{
-						return response.json();
-					}
 					submitElement.disabled = false;
 					clearTimeout( timeout );
-					statusElement.replaceChild( document.createTextNode( domainCheckerInit.status.errorApi ), statusElement.firstChild );
+
+					if ( response.status === 200 )
+					{
+						return response.json();
+					} else if ( response.status == 429 ) {
+						return Promise.reject(new Error(domainCheckerInit.status.rateLimit));
+					} else if ( response.status == 403 ) {
+						return Promise.reject(new Error(domainCheckerInit.status.errorBan));
+					}
+					return Promise.reject(new Error(domainCheckerInit.status.errorApi));
 				} ).then( function ( /** @type {{}} */ json ) {
 					resultsElement.appendChild( createSingleResultElement( json, zone ) );
 					fieldset.appendChild( resultsElement );
@@ -214,10 +216,11 @@ var domainChecker = function(domainCheckerInit) {
 				} ).catch( function ( /** @type {Error | SyntaxError} */ error ) {
 					submitElement.disabled = false;
 					clearTimeout( timeout );
-					statusElement.replaceChild( document.createTextNode( domainCheckerInit.status.errorInput ), statusElement.firstChild );
+					const errmsg = document.createElement( 'span' );
+					errmsg.innerHTML = error.message;
+					statusElement.replaceChild( errmsg, statusElement.firstChild );
 				} );
 			}
-
 		} );
 
 		return true;

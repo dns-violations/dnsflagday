@@ -86,6 +86,9 @@ Test details
 ------------
 Your domain name may include `www`, e.g. `www.domainname.com`; or it may not, e.g. `domainname.com`.  If you are not sure, we suggest that you test both.  Names that are not DNS zones will report that this was the most likely reason for the test failure; this is not a cause for concern.
 
+
+<a name="mass-scanning"></a>
+
 ### Mass scanning
 
 The [test form above](#domain-holders) uses hosted [ednscomp](https://ednscomp.isc.org/ednscomp), which is a low-capacity service for ad-hoc checks only. If you need to send bulk queries, you must use [tools linked below](#tools) to run your own test instances. Please do not attempt to automate queries using this web site, an excessive use will be rate-limited or blocked.

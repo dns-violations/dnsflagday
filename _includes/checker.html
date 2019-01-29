@@ -34,10 +34,12 @@ $(document).ready(function () {
 			reportLinkText: ' {{ include.lang.reportLinkText | strip | strip_newlines }} ',  // text before URL to report
 		},
 		status: {
-			loading: '{{ include.lang.status.loading }}',
-			done: '{{ include.lang.status.done }}',
-			errorApi: '{{ include.lang.status.errorApi }}',
-			errorInput: '{{ include.lang.status.errorInput }}',
+			loading: '{{ include.lang.status.loading | strip | strip_newlines }}',
+			done: '{{ include.lang.status.done | strip | strip_newlines }}',
+			errorApi: '{{ include.lang.status.errorApi | strip | strip_newlines }}',
+			errorInput: '{{ include.lang.status.errorInput | strip | strip_newlines }}',
+			errorBan: '{{ include.lang.status.errorBan | strip | strip_newlines }}',
+			rateLimit: '{{ include.lang.status.rateLimit  | strip | strip_newlines }}',
 		},
 	});
 });
