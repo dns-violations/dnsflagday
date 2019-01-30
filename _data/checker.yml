@@ -204,33 +204,57 @@ ptbr:
         title: "Por favor digite o nome de uma zona de DNS hospedada nos servidores de DNS que você quer testar. (A zona precisa ter registros SOA e NS.)"
         value: "Testar!"
         noscript: >
-            Seu navegador não suporta JavaScript! Relatório técnico será apresentado em uma nova janela.<br>
-            O resultado do teste <a href="https://ednscomp.isc.org/ednscomp">ednscomp</a> deve ser uma mensagem em verde dizendo "Tudo OK!". Se você receber
-            qualquer outro resultado, sua implementação de DNS será impactada por essa mudança e seu domínio pode ficar inacessível. Neste caso, entre
-            em contato com seu administrador de DNS e solicite o conserto!
+            <ul>
+            <li>Para obter um relatório de testes mais humano, por favor ative o JavaScript em seu navegador. Sem o JavaScript nós só poderemos exibir relatórios técnicos sem um resumo.</li>
+            <li>O resultado técnico em uma nova janela deverá finalizar com uma mensagem em verde informando "Tudo OK".</li>
+            <li>Se você receber qualquer outro resultado em sua implementação de DNS, seu domínio poderá ser afetado por esta mudança em algum nível ou até mesmo ficar inacessível.
+            Por favor faça um novo teste usando um navegador com suporte a JavaScript para para ver a avaliação do impacto em seu domínio.</li>
+            </ul>
     reportOk:
         short: "Tudo OK!"
-        long: "Este domínio está OK, parabéns!"
+        long: >
+            <ul>
+                <li>Este domínio está perfeitamente pronto, você não precisa se preocupar com o dia do DNS flag 2019.</li>
+                <li>O administrador do seu DNS está fazendo um bom trabalho, agradeça a ele por isto ;-)</li>
+            </ul>
     reportCompatible:
         short: "Problemas pequenos detectados!"
         long: >
-            Este domínio irá funcionar após o 2019 DNS flag day MAS ele não suporte os padrões de DNS mais
-            recentes. Como consequência disto, esse domínio não irá suportar certos recursos de segurança e
-            pode se tornar um alvo fácil para invasores. Recomendados que seu administrador de DNS conserte
-            estes problemas listados abaixo
+            <ul>
+                <li><strong>Este domínio irá funcionar após o dia do DNS flag 2019.</strong></li>
+                <li>Este domínio não suporta os mais recentes padrões de DNS:</li>
+                <ul>
+                    <li>Como consequência, este domínio não irá suportar os mais recentes recursos de segurança
+                        e poderá ser um alvo mais fácil para ataques de rede do que o necessário.</li>
+                    <li>Estas implicações poderão causar problemas no futuro.</li>
+                </ul>
+                <li>Aministradores - É recomendável corrigir os problemas mencionados no relatório técnico abaixo
+                    para evitar problemas de compatibilidade no futuro. Por favor veja a <a href="#administradores-de-dns">descrição para administradores de DNS</a>.
+                    Obrigado pela cooperação!</li>
+            </ul>
     reportHighLatency:
         short: "Problemas graves detectados!"
         long: >
-            Esse domínio vai ter problemas apartir do 2019 DNS flag day. Ele irá funcionar na prática MAS
-            usuários irão experenciar demoras no acesso à esse domínio. Recomendamos que solicite correções
-            ao seu administrador de domínios! Você pode compartilhar o site  https://dnsflagday.net/ e
+            <ul>
+                <li><strong>Este domínio terá problemas a partir de 1 de Fevereiro de 2019!</strong></li>
+                <li>O domínio irá funcionar, mas os clientes começarão a ter demoras e delays para acessar este domínio.</li>
+                <li>Titulares do domínio - Por favor entrem em contato com o seu administrador de domínio e mostrem esta página.</li>
+                <li>Administradores - alguns servidores tem problemas, enquanto outros funcionam corretamente.
+                    Por favor veja a <a href="#administradores-de-dns">descrição para administradores de DNS</a>
+                    e façam as correções dos problemas exibidos no relatório técnico abaixo.</li>
+            </ul>
     reportFail:
         short: "Erros fatais detectados!"
         long: >
-            Esse domínio irá PARAR DE FUNCIONAR apartir do 2019 DNS flag day! Por favor execute o teste
-            novamente para evitar problemas aleatórios de rede. Se o problema persistir você precisa entrar
-            em contato com seu administrador de DNS urgentemente e solicitar as correções. Você pode
-            compartilhar o site https://dnsflagday.net/ e
+            <ul>
+                <li><strong>Esse domínio irá PARAR DE FUNCIONAR depois de 1 de Fevereiro de 2019!</strong></li>
+                <li>Por favor execute o teste novamente para evitar problemas aleatórios de rede</li>
+                <li>Titulares do domínio - Por favor entrem em contato com o seu administrador de domínio e mostrem esta página.</li>
+                <li>Administradores - por favor veja a <a href="#administradores-de-dns">descrição para administradores de DNS</a>
+                    e façam as correções dos problemas exibidos no relatório técnico abaixo.</li>
+
+            </ul>
+
     reportTestError: >
         Teste não pode ser executado devido a um erro. Por favor verfique que o domínio digitado corresponde
         a uma <strong>zona de DNS</strong>, ex.: use "example.com" em vez de "www.example.com". Execute novamente
@@ -242,12 +266,12 @@ ptbr:
         errorApi: "Erro de comunicação! API indisponível… por favor tente novamente mais tarde"
         errorInput: "Entrada inválida ou outro erro inesperado, desculpe!"
         errorBan: >
-                Your IP address was banned for service abuse.
-                Please see <a href="#mass-scanning">section about mass scanning</a> for more information.
+                O seu IP está banido por abuso no uso do serviço.
+                Por favor verifique <a href="#mass-scanning">esta seção sobre mass scanning</a> para mais informações.
         rateLimit: >
-                Your IP address is sending requests too quickly.
-                Please slow down otherwise your IP address will be banned from this service.
-                See <a href="#mass-scanning">section about mass scanning</a> for more information.
+                O seu IP está enviando muitas requisições rapidamente.
+                Por favor reduza as requisições ou seu IP será banido do nosso serviço.
+                Por favor verifique <a href="#mass-scanning">esta seção sobre mass scanning</a> para mais informações.
 ru:
     form:
         legend: "Проверьте ваш домен"
