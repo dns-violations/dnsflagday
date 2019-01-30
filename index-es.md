@@ -5,6 +5,9 @@ redirect_from:
   - /es/
 ---
 
+**Esta traducción está a la espera de actualización, consulte la [versión en inglés](/en/) para obtener la información más reciente.**
+
+
 ¿Qué está pasando?
 ==================
 El [DNS](https://es.wikipedia.org/wiki/Sistema_de_nombres_de_dominio) actual sufre de demoras innecesarias y dificultad para desarrollar nuevas funcionalidades. Para remediar este problema, los [proveedores de software DNS](#apoyan) y [sistemas de DNS públicos](#apoyan) eliminarán ciertos parches provisorios el 1 de Febrero de 2019.

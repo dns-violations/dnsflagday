@@ -1,6 +1,8 @@
 ---
 title: 2019
 lang: en-US
+redirect_from:
+  - /en/
 ---
 
 

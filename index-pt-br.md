@@ -5,6 +5,9 @@ redirect_from:
   - /pt-br/
 ---
 
+**Esta tradução está aguardando atualização, por favor veja a [versão em inglês](/en/) para as últimas informações.**
+
+
 O que está acontecendo?
 =======================
 O sistemas de [DNS](https://pt.wikipedia.org/wiki/Domain_Name_System) atuais sofrem demoras desnecessárias e dificuldade para lançar novas funcionalidades. Para remediar esses problemas, [desenvolvedores](#apoiadores) e grandes [provedores](#apoiadores) públicos de DNS irão remover certas modificações (workarounds) no dia 1 de Fevereiro de 2019.
