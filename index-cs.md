@@ -75,6 +75,7 @@ Pro minimalizaci problémů vám doporučujeme použít následující postup:
   * [Citrix](https://support.citrix.com/article/CTX241493)
   * [BlueCat](https://www.bluecatnetworks.com/blog/dns-flag-day-is-coming-and-bluecat-is-ready/)
   * [F5 BIG-IP](https://support.f5.com/csp/article/K07808381?sf206085287=1)
+  * [Google](https://groups.google.com/d/msg/public-dns-announce/-qaRKDV9InA/CsX-2fJpBAAJ)
   * [Infoblox](https://community.infoblox.com/t5/Community-Blog/DNS-Flag-Day/ba-p/15843?es_p=8449211)
   * [Microsoft Azure](https://azure.microsoft.com/en-us/updates/azure-dns-flag-day/)
   * Juniper SRX ve výchozím nastavení zahazují EDNS pakety. Řešením je buď upgrade na polední verzi, nebo vypnutí funkce "DNS doctoring" příkazem `# set security alg dns doctoring none`.
