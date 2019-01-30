@@ -82,7 +82,7 @@ cs:
             <li>Pro lepší (lidštější) interpretaci výsledků je nutné povolit JavaScript.</li>
             <li>Bez podpory JavaScriptu tento formulář pouze otevře nové okno s technickou zprávou o stavu domény.</li>
             <li>Technická zpráva by měla obsahovat zelený text "All Ok".</li>
-            <li>Pokud je výsledkem cokoliv jiného, potom je vaše doména do určité míry postižena. Pro zobrazení podrobností o vážnosti problému prosím opakujte test pomocí prohlížeče se zapnutou podporou JavaScriptu.<li>
+            <li>Pokud je výsledkem cokoliv jiného, potom je vaše doména do určité míry postižena. Pro zobrazení podrobností o vážnosti problému prosím opakujte test pomocí prohlížeče se zapnutou podporou JavaScriptu.</li>
             </ul>
     reportOk:
         short: "V pořádku."
