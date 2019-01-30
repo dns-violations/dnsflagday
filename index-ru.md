@@ -92,6 +92,7 @@ redirect_from:
 
  * [Тестер соответствия ISC EDNS](https://ednscomp.isc.org/), [исходный код](https://gitlab.isc.org/isc-projects/DNS-Compliance-Testing)
  * [DNSViz](http://dnsviz.net/)
+ * [Zonemaster](http://zonemaster.net/)
 
 Контакты
 ========

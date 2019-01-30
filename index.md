@@ -177,6 +177,7 @@ Researchers and other parties such as large DNS operators might be interested in
  * [EDNS zone scanner](https://gitlab.labs.nic.cz/knot/edns-zone-scanner/tree/master) for mass scanning and evaluation of real-world impact of the DNS flag day by CZ.NIC
  * [Testing EDNS Compatibility with dig](https://kb.isc.org/docs/edns-compatibility-dig-queries)
  * [DNSViz](http://dnsviz.net/)
+ * [Zonemaster](http://zonemaster.net/)
 
 Please read the respective methodologies before interpreting the data. In any case, do not hesitate to reach out to tool authors using links above.
 

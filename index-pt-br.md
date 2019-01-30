@@ -68,6 +68,7 @@ Ferramentas
 
  * [ISC EDNS Compliance tester](https://ednscomp.isc.org/), [source code](https://gitlab.isc.org/isc-projects/DNS-Compliance-Testing)
  * [DNSViz](http://dnsviz.net/)
+ * [Zonemaster](http://zonemaster.net/)
 
 Contatos
 ========
