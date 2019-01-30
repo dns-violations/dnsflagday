@@ -72,8 +72,10 @@ Pro minimalizaci problémů vám doporučujeme použít následující postup:
 1. Pokud testy selhávají, aktualizujte váš DNS software na poslední stabilní verzi a zopakujte test. Pokud testy selhávají i po aktualizaci DNS softwaru, doporučujeme vám zkontrolovat konfiguraci firewallu.
 1. **Firewally nesmí zahazovat DNS pakety** obsahující rozšíření [EDNS], včetně dosud neznámých rozšíření splňující standard EDNS. Články jednotlivých výrobců k tomuto tématu naleznete zde:
   * [Akamai](https://community.akamai.com/customers/s/article/CloudSecurityDNSFlagDayandAkamai20190115151216?language=en_US)
+  * [Citrix](https://support.citrix.com/article/CTX241493)
   * [BlueCat](https://www.bluecatnetworks.com/blog/dns-flag-day-is-coming-and-bluecat-is-ready/)
   * [F5 BIG-IP](https://support.f5.com/csp/article/K07808381?sf206085287=1)
+  * [Google](https://groups.google.com/d/msg/public-dns-announce/-qaRKDV9InA/CsX-2fJpBAAJ)
   * [Infoblox](https://community.infoblox.com/t5/Community-Blog/DNS-Flag-Day/ba-p/15843?es_p=8449211)
   * [Microsoft Azure](https://azure.microsoft.com/en-us/updates/azure-dns-flag-day/)
   * Juniper SRX ve výchozím nastavení zahazují EDNS pakety. Řešením je buď upgrade na polední verzi, nebo vypnutí funkce "DNS doctoring" příkazem `# set security alg dns doctoring none`.
@@ -86,6 +88,7 @@ Podrobnosti o testování
 -----------------------
 Vaše doména může nebo nemusí obsahovat předponu `www`, např. doména může být `www.nic.cz` nebo pouze `nic.cz`. Pokud si nejste jistí, doporučujeme vám otestovat obě možnosti. Pro jména, která nejsou tzv. DNS zóny, bude testovací formulář upozorňovat, že se nejedná o zónu. V takovém případě lze konkrétní jméno ignorovat a otestovat pouze druhé z dvojice.
 
+<a name="mass-scanning"></a>
 ### Skenování velkého počtu domén
 
 Testovací [formulář uvedený výše](#domain-holders) na pozadí používá server s nástrojem [ednscomp](https://ednscomp.isc.org/ednscomp), který nemá velkou kapacitu. Pokud potřebujete otestovat velké množství domén, použijte prosím [nástroje odkazované níže](#tools). Pokud budete nadmíru zatěžovat server automatizovanými dotazy, budeme nuceni omezit počet dotazů nebo vám službu odepřít.

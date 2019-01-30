@@ -1,6 +1,8 @@
 ---
 title: 2019
 lang: en-US
+redirect_from:
+  - /en/
 ---
 
 
@@ -71,8 +73,10 @@ We advise you to take the following preparatory steps to avoid operational probl
 1. If the tested domain fails the test, please update your DNS software to the latest stable version and repeat the test. If the tests are failing even after the DNS software update please check your firewall configuration.
 1. **Firewalls must not drop DNS packets** with [EDNS] extensions, including unknown extensions which follow the standards. Relevant information from vendors can be found here:
   * [Akamai](https://community.akamai.com/customers/s/article/CloudSecurityDNSFlagDayandAkamai20190115151216?language=en_US)
+  * [Citrix](https://support.citrix.com/article/CTX241493)
   * [BlueCat](https://www.bluecatnetworks.com/blog/dns-flag-day-is-coming-and-bluecat-is-ready/)
   * [F5 BIG-IP](https://support.f5.com/csp/article/K07808381?sf206085287=1)
+  * [Google](https://groups.google.com/d/msg/public-dns-announce/-qaRKDV9InA/CsX-2fJpBAAJ)
   * Juniper: Older versions of the Juniper SRX will drop EDNS packets by default. The workaround is to disable DNS doctoring via `# set security alg dns doctoring none`. Upgrade to latest versions for EDNS support.
   * [Infoblox](https://community.infoblox.com/t5/Community-Blog/DNS-Flag-Day/ba-p/15843?es_p=8449211)
   * [Microsoft Azure](https://azure.microsoft.com/en-us/updates/azure-dns-flag-day/)
@@ -85,6 +89,9 @@ If the problem persists after DNS software and firewall updates please contact y
 Test details
 ------------
 Your domain name may include `www`, e.g. `www.domainname.com`; or it may not, e.g. `domainname.com`.  If you are not sure, we suggest that you test both.  Names that are not DNS zones will report that this was the most likely reason for the test failure; this is not a cause for concern.
+
+
+<a name="mass-scanning"></a>
 
 ### Mass scanning
 

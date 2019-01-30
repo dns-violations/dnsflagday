@@ -5,6 +5,9 @@ redirect_from:
   - /es/
 ---
 
+**Esta traducción está a la espera de actualización, consulte la [versión en inglés](/en/) para obtener la información más reciente.**
+
+
 ¿Qué está pasando?
 ==================
 El [DNS](https://es.wikipedia.org/wiki/Sistema_de_nombres_de_dominio) actual sufre de demoras innecesarias y dificultad para desarrollar nuevas funcionalidades. Para remediar este problema, los [proveedores de software DNS](#apoyan) y [sistemas de DNS públicos](#apoyan) eliminarán ciertos parches provisorios el 1 de Febrero de 2019.
@@ -48,10 +51,12 @@ Para solucionar estos problemas por favor actualice su software DNS a la última
 
 Ayuda con algunos proveedores:
 * Las versiones antiguas de Juniper SRX descartan por defecto los paquetes EDNS - para deshabilitarlo, use: `# set security alg dns doctoring none`. Actualice a las últimas versiones para tener soporte EDNS.
-* [F5 BIG-IP DNS processing and DNS Flag Day](https://support.f5.com/csp/article/K07808381?sf206085287=1)
-* [Infoblox](https://community.infoblox.com/t5/Community-Blog/DNS-Flag-Day/ba-p/15843?es_p=8449211)
+* [Akamai](https://community.akamai.com/customers/s/article/CloudSecurityDNSFlagDayandAkamai20190115151216?language=en_US)
 * [BlueCat está listo](https://www.bluecatnetworks.com/blog/dns-flag-day-is-coming-and-bluecat-is-ready/)
-* [DNS Flag Day and Akamai](https://community.akamai.com/customers/s/article/CloudSecurityDNSFlagDayandAkamai20190115151216?language=en_US)
+* [Citrix](https://support.citrix.com/article/CTX241493)
+* [F5 BIG-IP](https://support.f5.com/csp/article/K07808381?sf206085287=1)
+* [Google](https://groups.google.com/d/msg/public-dns-announce/-qaRKDV9InA/CsX-2fJpBAAJ)
+* [Infoblox](https://community.infoblox.com/t5/Community-Blog/DNS-Flag-Day/ba-p/15843?es_p=8449211)
 * [Microsoft Azure](https://azure.microsoft.com/en-us/updates/azure-dns-flag-day/)
 
 Desarrolladores de software DNS

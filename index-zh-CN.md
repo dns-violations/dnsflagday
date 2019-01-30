@@ -5,6 +5,9 @@ redirect_from:
   - /zh-CN/
 ---
 
+**此翻译正在等待更新，[请参阅英文版以获取最新信息](/en/)。**
+
+
 发生了什么事？
 ==================
 当前 [DNS](https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F) 缓慢的速度是不必要的，并且 DNS 无法部署新功能。为了解决这些问题，[DNS 软件供应商](#支持者)以及大型[公共 DNS 提供商](#支持者)将在2019年2月1日删除某些变通方案。
@@ -50,10 +53,12 @@ DNS 服务器运营商
 供应商的提示：
 
 * 较早版本的 Juniper SRX 默认会丢弃 EDNS 数据包 —— 解决方法是通过 `# set security alg dns doctoring none` 关闭 DNS doctoring。升级到最新版本以获得 EDNS 支持。 
-* [F5 BIG-IP DNS processing 与 DNS Flag Day](https://support.f5.com/csp/article/K07808381?sf206085287=1)
+* [Akamai](https://community.akamai.com/customers/s/article/CloudSecurityDNSFlagDayandAkamai20190115151216?language=zh_CN)
+* [BlueCat](https://www.bluecatnetworks.com/blog/dns-flag-day-is-coming-and-bluecat-is-ready/)
+* [Citrix](https://support.citrix.com/article/CTX241493)
+* [F5 BIG-IP](https://support.f5.com/csp/article/K07808381?sf206085287=1)
+* [Google](https://groups.google.com/d/msg/public-dns-announce/-qaRKDV9InA/CsX-2fJpBAAJ)
 * [Infoblox](https://community.infoblox.com/t5/Community-Blog/DNS-Flag-Day/ba-p/15843?es_p=8449211)
-* [BlueCat 准备好了](https://www.bluecatnetworks.com/blog/dns-flag-day-is-coming-and-bluecat-is-ready/)
-* [DNS Flag Day 与 Akamai](https://community.akamai.com/customers/s/article/CloudSecurityDNSFlagDayandAkamai20190115151216?language=zh_CN)
 * [Microsoft Azure](https://azure.microsoft.com/en-us/updates/azure-dns-flag-day/)
 
 DNS 软件开发人员
