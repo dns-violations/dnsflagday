@@ -348,9 +348,9 @@ zh-CN:
         errorApi: "通信故障！ API不可用......请稍后再试"
         errorInput: "输入无效或其他意外错误，对不起！"
         errorBan: >
-                Your IP address was banned for service abuse.
-                Please see <a href="#mass-scanning">section about mass scanning</a> for more information.
+                你的 IP 地址存在服务滥用行为被禁止访问。
+                详情请参阅 <a href="#mass-scanning">大规模扫描</a>。
         rateLimit: >
-                Your IP address is sending requests too quickly.
-                Please slow down otherwise your IP address will be banned from this service.
-                See <a href="#mass-scanning">section about mass scanning</a> for more information.
+                你的 IP 地址发送请求过快。
+                请降低速度，否则你的 IP 地址将被禁止访问此服务。
+                详情请参阅 <a href="#mass-scanning">大规模扫描</a>。
