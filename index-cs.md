@@ -72,6 +72,7 @@ Pro minimalizaci problémů vám doporučujeme použít následující postup:
 1. Pokud testy selhávají, aktualizujte váš DNS software na poslední stabilní verzi a zopakujte test. Pokud testy selhávají i po aktualizaci DNS softwaru, doporučujeme vám zkontrolovat konfiguraci firewallu.
 1. **Firewally nesmí zahazovat DNS pakety** obsahující rozšíření [EDNS], včetně dosud neznámých rozšíření splňující standard EDNS. Články jednotlivých výrobců k tomuto tématu naleznete zde:
   * [Akamai](https://community.akamai.com/customers/s/article/CloudSecurityDNSFlagDayandAkamai20190115151216?language=en_US)
+  * [Citrix](https://support.citrix.com/article/CTX241493)
   * [BlueCat](https://www.bluecatnetworks.com/blog/dns-flag-day-is-coming-and-bluecat-is-ready/)
   * [F5 BIG-IP](https://support.f5.com/csp/article/K07808381?sf206085287=1)
   * [Infoblox](https://community.infoblox.com/t5/Community-Blog/DNS-Flag-Day/ba-p/15843?es_p=8449211)

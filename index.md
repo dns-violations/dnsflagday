@@ -71,6 +71,7 @@ We advise you to take the following preparatory steps to avoid operational probl
 1. If the tested domain fails the test, please update your DNS software to the latest stable version and repeat the test. If the tests are failing even after the DNS software update please check your firewall configuration.
 1. **Firewalls must not drop DNS packets** with [EDNS] extensions, including unknown extensions which follow the standards. Relevant information from vendors can be found here:
   * [Akamai](https://community.akamai.com/customers/s/article/CloudSecurityDNSFlagDayandAkamai20190115151216?language=en_US)
+  * [Citrix](https://support.citrix.com/article/CTX241493)
   * [BlueCat](https://www.bluecatnetworks.com/blog/dns-flag-day-is-coming-and-bluecat-is-ready/)
   * [F5 BIG-IP](https://support.f5.com/csp/article/K07808381?sf206085287=1)
   * Juniper: Older versions of the Juniper SRX will drop EDNS packets by default. The workaround is to disable DNS doctoring via `# set security alg dns doctoring none`. Upgrade to latest versions for EDNS support.

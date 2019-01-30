@@ -50,10 +50,11 @@ redirect_from:
 Подсказки продавца:
 
 * Более старые версии Juniper SRX по умолчанию отбрасывают пакеты EDNS. Обходной путь - отключить лечение DNS с помощью `# set security alg dns doctoring none`. Обновление до последних версий для поддержки EDNS. 
-* [Обработка F5 BIG-IP DNS и DNS Flag Day](https://support.f5.com/csp/article/K07808381?sf206085287=1)
+* [Akamai](https://community.akamai.com/customers/s/article/CloudSecurityDNSFlagDayandAkamai20190115151216?language=en_US)
+* [BlueCat](https://www.bluecatnetworks.com/blog/dns-flag-day-is-coming-and-bluecat-is-ready/)
+* [Citrix](https://support.citrix.com/article/CTX241493)
+* [F5 BIG-IP](https://support.f5.com/csp/article/K07808381?sf206085287=1)
 * [Infoblox](https://community.infoblox.com/t5/Community-Blog/DNS-Flag-Day/ba-p/15843?es_p=8449211)
-* [BlueCat готов](https://www.bluecatnetworks.com/blog/dns-flag-day-is-coming-and-bluecat-is-ready/)
-* [DNS Flag Day и Akamai](https://community.akamai.com/customers/s/article/CloudSecurityDNSFlagDayandAkamai20190115151216?language=en_US)
 * [Microsoft Azure](https://azure.microsoft.com/en-us/updates/azure-dns-flag-day/)
 
 Разработчикам DNS ПО
