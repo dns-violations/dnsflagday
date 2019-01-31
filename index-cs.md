@@ -70,7 +70,9 @@ Pro minimalizaci problémů vám doporučujeme použít následující postup:
 1. Otestujte své autoritativní servery pomocí [formuláře uvedeného výše](#domain-holders). Stačí otestovat libovolnou DNS zónu hostovanou na vašich DNS serverech. (Testované vlastnosti serverů nezávisí na obsahu zóny, takže není potřeba testovat všechny zóny jednotlivě, stačí pokrýt všechny autoritativní servery.)
 1. Výsledek testu může být ovlivněn dočasným problémem v síti. Pokud je detekován problém, zkuste zopakovat test.
 1. Pokud testy selhávají, aktualizujte váš DNS software na poslední stabilní verzi a zopakujte test. Pokud testy selhávají i po aktualizaci DNS softwaru, doporučujeme vám zkontrolovat konfiguraci firewallu.
-1. **Firewally nesmí zahazovat DNS pakety** obsahující rozšíření [EDNS], včetně dosud neznámých rozšíření splňující standard EDNS. Články jednotlivých výrobců k tomuto tématu naleznete zde:
+1. **Firewally nesmí zahazovat DNS pakety** obsahující rozšíření [EDNS], včetně dosud neznámých rozšíření splňující standard EDNS.
+
+Články jednotlivých výrobců k tomuto tématu naleznete zde:
   * [Akamai](https://community.akamai.com/customers/s/article/CloudSecurityDNSFlagDayandAkamai20190115151216?language=en_US)
   * [Citrix](https://support.citrix.com/article/CTX241493)
   * [BlueCat](https://www.bluecatnetworks.com/blog/dns-flag-day-is-coming-and-bluecat-is-ready/)
