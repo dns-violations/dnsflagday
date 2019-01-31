@@ -77,7 +77,9 @@ Recomendamos que tome los siguientes pasos preparatorios para evitar problemas o
 1. Pruebe sus servidores autoritativos usando el [formulario de pruebas de arriba](#domain-holders). Es suficiente con probar una sola zona DNS hospedada en un conjunto particular de servidores autoritativos. (Si cualquier zona particular pasa las pruebas, con eso es suficiente, porque las pruebas no dependen del contenido de la zona).
 1. Los resultados pueden verse afectados por inestablidades aleatorias en la red. Algunas de las pruebas analizan los tiempos de respuesta agotados (timeouts), los que pueden deberse a un software DNS inadecuado, algún cortafuegos bloqueando la respuesta, o por pérdidas de paquetes en Internet. Si se reporta algún problema, por favor reintente la prueba.
 1. Si el dominio probado falla las pruebas, por favor actualice su software DNS a la última versión y repita las pruebas. Si las pruebas siguen fallando incluso después de la actualización del software DNS, por favor revise la configuración de su cortafuegos.
-1. **Los cortafuegos (firewalls) no deben descartar paquetes DNS** con extensiones [EDNS], incluyendo las extensiones desconocidas pero que siguen los estándares. Puede encontrar información relevante para algunos proveedores aquí:
+1. **Los cortafuegos (firewalls) no deben descartar paquetes DNS** con extensiones [EDNS], incluyendo las extensiones desconocidas pero que siguen los estándares.
+
+Puede encontrar información relevante para algunos proveedores aquí:
   * [Akamai](https://community.akamai.com/customers/s/article/CloudSecurityDNSFlagDayandAkamai20190115151216?language=en_US)
   * [Citrix](https://support.citrix.com/article/CTX241493)
   * [BlueCat](https://www.bluecatnetworks.com/blog/dns-flag-day-is-coming-and-bluecat-is-ready/)
@@ -85,7 +87,7 @@ Recomendamos que tome los siguientes pasos preparatorios para evitar problemas o
   * [Google](https://groups.google.com/d/msg/public-dns-announce/-qaRKDV9InA/CsX-2fJpBAAJ)
   * [Infoblox](https://community.infoblox.com/t5/Community-Blog/DNS-Flag-Day/ba-p/15843?es_p=8449211)
   * Juniper: Las versiones antiguas de Juniper SRX descartan por defecto los paquetes EDNS. La solución es deshabilitar el DNS doctoring mediante `# set security alg dns doctoring none`. Actualice a las últimas versiones para tener soporte EDNS.
-* [Microsoft Azure](https://azure.microsoft.com/en-us/updates/azure-dns-flag-day/)
+  * [Microsoft Azure](https://azure.microsoft.com/en-us/updates/azure-dns-flag-day/)
 
 Si el problema persiste después de actualizar su software DNS y cortafuegos por favor contacte a su proveedores de cortafuegos y solicite los parches.
 

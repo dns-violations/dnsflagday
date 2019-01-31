@@ -71,7 +71,9 @@ We advise you to take the following preparatory steps to avoid operational probl
 1. Test your authoritative servers using [test form above](#domain-holders). It is sufficient to test a single DNS zone hosted on a particular set of authoritative servers. (If any single zone on the server passes the test, that is sufficient, because the test is not dependant on the content of the zone.)
 1. Random network instability can affect test results. Part of the problem is in interpreting timeouts, which can be caused by unresponsive DNS software, a firewall blocking the response, or packet loss on the Internet. If a problem is reported please retry the test.
 1. If the tested domain fails the test, please update your DNS software to the latest stable version and repeat the test. If the tests are failing even after the DNS software update please check your firewall configuration.
-1. **Firewalls must not drop DNS packets** with [EDNS] extensions, including unknown extensions which follow the standards. Relevant information from vendors can be found here:
+1. **Firewalls must not drop DNS packets** with [EDNS] extensions, including unknown extensions which follow the standards.
+
+Relevant information from vendors can be found here:
   * [Akamai](https://community.akamai.com/customers/s/article/CloudSecurityDNSFlagDayandAkamai20190115151216?language=en_US)
   * [Citrix](https://support.citrix.com/article/CTX241493)
   * [BlueCat](https://www.bluecatnetworks.com/blog/dns-flag-day-is-coming-and-bluecat-is-ready/)
