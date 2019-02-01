@@ -86,6 +86,7 @@ Puede encontrar información relevante para algunos proveedores aquí:
   * [F5 BIG-IP](https://support.f5.com/csp/article/K07808381?sf206085287=1)
   * [Google](https://groups.google.com/d/msg/public-dns-announce/-qaRKDV9InA/CsX-2fJpBAAJ)
   * [Infoblox](https://community.infoblox.com/t5/Community-Blog/DNS-Flag-Day/ba-p/15843?es_p=8449211)
+  * [Pulse Secure](https://kb.pulsesecure.net/articles/Pulse_Secure_Article/KB43996)
   * Juniper: Las versiones antiguas de Juniper SRX descartan por defecto los paquetes EDNS. La solución es deshabilitar el DNS doctoring mediante `# set security alg dns doctoring none`. Actualice a las últimas versiones para tener soporte EDNS.
   * [Microsoft Azure](https://azure.microsoft.com/en-us/updates/azure-dns-flag-day/)
 

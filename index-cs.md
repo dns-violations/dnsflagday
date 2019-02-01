@@ -80,6 +80,7 @@ Pro minimalizaci problémů vám doporučujeme použít následující postup:
   * [Google](https://groups.google.com/d/msg/public-dns-announce/-qaRKDV9InA/CsX-2fJpBAAJ)
   * [Infoblox](https://community.infoblox.com/t5/Community-Blog/DNS-Flag-Day/ba-p/15843?es_p=8449211)
   * [Microsoft Azure](https://azure.microsoft.com/en-us/updates/azure-dns-flag-day/)
+  * [Pulse Secure](https://kb.pulsesecure.net/articles/Pulse_Secure_Article/KB43996)
   * Juniper SRX ve výchozím nastavení zahazují EDNS pakety. Řešením je buď upgrade na polední verzi, nebo vypnutí funkce "DNS doctoring" příkazem `# set security alg dns doctoring none`.
 
 Pokud jste provedli upgrade DNS softwaru a problém přetrvává i po aplikaci postupů uvedených výše, prosím kontaktujte výrobce firewallu a požadujte opravu.
