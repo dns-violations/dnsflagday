@@ -77,6 +77,7 @@ Relevant information from vendors can be found here:
   * [Akamai](https://community.akamai.com/customers/s/article/CloudSecurityDNSFlagDayandAkamai20190115151216?language=en_US)
   * [Citrix](https://support.citrix.com/article/CTX241493)
   * [BlueCat](https://www.bluecatnetworks.com/blog/dns-flag-day-is-coming-and-bluecat-is-ready/)
+  * [efficient iP](http://www.efficientip.com/dns-flag-day-notes/)
   * [F5 BIG-IP](https://support.f5.com/csp/article/K07808381?sf206085287=1)
   * [Google](https://groups.google.com/d/msg/public-dns-announce/-qaRKDV9InA/CsX-2fJpBAAJ)
   * Juniper: Older versions of the Juniper SRX will drop EDNS packets by default. The workaround is to disable DNS doctoring via `# set security alg dns doctoring none`. Upgrade to latest versions for EDNS support.
