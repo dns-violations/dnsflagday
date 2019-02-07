@@ -89,7 +89,7 @@ Puede encontrar información relevante para algunos proveedores aquí:
   * [Infoblox](https://community.infoblox.com/t5/Community-Blog/DNS-Flag-Day/ba-p/15843?es_p=8449211)
   * [Pulse Secure](https://kb.pulsesecure.net/articles/Pulse_Secure_Article/KB43996)
   * Juniper: Las versiones antiguas de Juniper SRX descartan por defecto los paquetes EDNS. La solución es deshabilitar el DNS doctoring mediante `# set security alg dns doctoring none`. Actualice a las últimas versiones para tener soporte EDNS.
-  * [Microsoft Azure](https://azure.microsoft.com/en-us/updates/azure-dns-flag-day/)
+  * [Microsoft Azure](https://azure.microsoft.com/en-us/updates/azure-dns-flag-day/), [Microsoft DNS](https://support.microsoft.com/en-sg/help/4489468/windows-server-domain-name-system-dns-flag-day-compliance)
 
 Si el problema persiste después de actualizar su software DNS y cortafuegos por favor contacte a su proveedores de cortafuegos y solicite los parches.
 

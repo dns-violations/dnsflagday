@@ -60,7 +60,7 @@ DNS 服务器运营商
 * [F5 BIG-IP](https://support.f5.com/csp/article/K07808381?sf206085287=1)
 * [Google](https://groups.google.com/d/msg/public-dns-announce/-qaRKDV9InA/CsX-2fJpBAAJ)
 * [Infoblox](https://community.infoblox.com/t5/Community-Blog/DNS-Flag-Day/ba-p/15843?es_p=8449211)
-* [Microsoft Azure](https://azure.microsoft.com/en-us/updates/azure-dns-flag-day/)
+* [Microsoft Azure](https://azure.microsoft.com/en-us/updates/azure-dns-flag-day/), [Microsoft DNS](https://support.microsoft.com/en-sg/help/4489468/windows-server-domain-name-system-dns-flag-day-compliance)
 * [Pulse Secure](https://kb.pulsesecure.net/articles/Pulse_Secure_Article/KB43996)
 
 DNS 软件开发人员
