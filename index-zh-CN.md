@@ -52,10 +52,11 @@ DNS 服务器运营商
 
 供应商的提示：
 
-* 较早版本的 Juniper SRX 默认会丢弃 EDNS 数据包 —— 解决方法是通过 `# set security alg dns doctoring none` 关闭 DNS doctoring。升级到最新版本以获得 EDNS 支持。 
+* 较早版本的 Juniper SRX 默认会丢弃 EDNS 数据包 —— 解决方法是通过 `# set security alg dns doctoring none` 关闭 DNS doctoring。升级到最新版本以获得 EDNS 支持。
 * [Akamai](https://community.akamai.com/customers/s/article/CloudSecurityDNSFlagDayandAkamai20190115151216?language=zh_CN)
 * [BlueCat](https://www.bluecatnetworks.com/blog/dns-flag-day-is-coming-and-bluecat-is-ready/)
 * [Citrix](https://support.citrix.com/article/CTX241493)
+* [efficient iP](http://www.efficientip.com/dns-flag-day-notes/)
 * [F5 BIG-IP](https://support.f5.com/csp/article/K07808381?sf206085287=1)
 * [Google](https://groups.google.com/d/msg/public-dns-announce/-qaRKDV9InA/CsX-2fJpBAAJ)
 * [Infoblox](https://community.infoblox.com/t5/Community-Blog/DNS-Flag-Day/ba-p/15843?es_p=8449211)
