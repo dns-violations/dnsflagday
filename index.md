@@ -82,7 +82,7 @@ Relevant information from vendors can be found here:
   * [Google](https://groups.google.com/d/msg/public-dns-announce/-qaRKDV9InA/CsX-2fJpBAAJ)
   * Juniper: Older versions of the Juniper SRX will drop EDNS packets by default. The workaround is to disable DNS doctoring via `# set security alg dns doctoring none`. Upgrade to latest versions for EDNS support.
   * [Infoblox](https://community.infoblox.com/t5/Community-Blog/DNS-Flag-Day/ba-p/15843?es_p=8449211)
-  * [Microsoft Azure](https://azure.microsoft.com/en-us/updates/azure-dns-flag-day/)
+  * [Microsoft Azure](https://azure.microsoft.com/en-us/updates/azure-dns-flag-day/), [Microsoft DNS](https://support.microsoft.com/en-sg/help/4489468/windows-server-domain-name-system-dns-flag-day-compliance)
   * [Pulse Secure](https://kb.pulsesecure.net/articles/Pulse_Secure_Article/KB43996)
 
 If the problem persists after DNS software and firewall updates please contact your firewall vendor and request fixes.
