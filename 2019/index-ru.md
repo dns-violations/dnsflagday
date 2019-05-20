@@ -2,8 +2,11 @@
 title: 2019
 lang: ru
 redirect_from:
-  - /ru/
+  - /2019/ru/
+flagdayyear: 2019
 ---
+
+{% include 2019_languages.html %}
 
 **Этот перевод ожидает обновления, пожалуйста, смотрите [английскую версию](/en/) для последней информации.**
 
@@ -16,7 +19,7 @@ redirect_from:
 Владельцам доменов
 =============
 Пожалуйста, проверьте затронут ли ваш домен:
-{% include checker.html lang=site.data.checker.ru %}
+{% include 2019_checker.html lang=site.data.2019_checker.ru %}
 
 Операторам DNS-резольвера
 ======================
@@ -103,7 +106,7 @@ redirect_from:
 
 Сторонники
 ==========
-{% include supporters.html %}
+{% include 2019_supporters.html %}
 
 Дополнительное чтение
 ==================

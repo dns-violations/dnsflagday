@@ -16,6 +16,15 @@
 	-webkit-box-shadow: none;
 	margin: 0;
 }
+.home img {
+	margin: 0;
+	height: 40px;
+	border: none;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-webkit-filter: invert(100%);
+	filter: invert(100%);
+}
 
 /* logos */
 .logo {
