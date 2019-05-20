@@ -2,8 +2,11 @@
 title: 2019
 lang: pt-BR
 redirect_from:
-  - /pt-br/
+  - /2019/pt-br/
+flagdayyear: 2019
 ---
+
+{% include 2019_languages.html %}
 
 **Esta tradução está aguardando atualização, por favor veja a [versão em inglês](/en/) para as últimas informações.**
 
@@ -17,7 +20,7 @@ Essa mudança impacta apenas sites que operam software que não esteja seguindo 
 Donos de Domínios
 =================
 Por favor verifique se seu domínio será impactado:
-{% include checker.html lang=site.data.checker.ptbr %}
+{% include 2019_checker.html lang=site.data.2019_checker.ptbr %}
 
 Administradores de DNS
 ======================
@@ -77,7 +80,7 @@ Contatos
 
 Apoiadores
 ==========
-{% include supporters.html %}
+{% include 2019_supporters.html %}
 
 Leitura Adicional
 =================

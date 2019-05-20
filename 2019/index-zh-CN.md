@@ -2,8 +2,11 @@
 title: 2019
 lang: zh-CN
 redirect_from:
-  - /zh-CN/
+  - /2019/zh-CN/
+flagdayyear: 2019
 ---
+
+{% include 2019_languages.html %}
 
 **此翻译正在等待更新，[请参阅英文版以获取最新信息](/en/)。**
 
@@ -17,7 +20,7 @@ redirect_from:
 域名所有者
 =============
 请检查您的域名是否受到影响：
-{% include checker.html lang=site.data.checker.zh-CN %}
+{% include 2019_checker.html lang=site.data.2019_checker.zh-CN %}
 
 DNS 解析器运营商
 ======================
@@ -104,7 +107,7 @@ DNS 软件开发人员
 
 支持者
 ==========
-{% include supporters.html %}
+{% include 2019_supporters.html %}
 
 扩展阅读
 ==================

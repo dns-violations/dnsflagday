@@ -5,3 +5,12 @@ plugins:
   - jekyll-redirect-from
 sitemap:
 file: "/sitemap.xml"
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+  -
+    scope:
+      path: "2019"
+      type: "pages"

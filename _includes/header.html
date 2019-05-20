@@ -2,15 +2,8 @@
     <header class="inner">
         <div class="float-right">
         <nav class="text-right">
-          <a class="translation" href="index-cs.html"><img alt="Česky" src="flags/cs.svg"/></a>
-          <a class="translation" href="index-de.html"><img alt="Deutsch" src="flags/de.svg"/></a>
-          <a class="translation" href="index.html"><img alt="English" src="flags/en.svg"/></a>
-          <a class="translation" href="index-es.html"><img alt="Español" src="flags/es.svg"/></a>
-          <a class="translation" href="index-pt-br.html"><img alt="Português Brasileiro" src="flags/pt-br.svg"/></a>
-          <a class="translation" href="index-ru.html"><img alt="Русский" src="flags/ru.svg"/></a>
-          <a class="translation" href="index-zh-CN.html"><img alt="中文（中国）" src="flags/zh-CN.svg"/></a>
-          <br/>
-          <a class="social" href="https://twitter.com/dnsflagday"><img alt="@dnsflagday" src="images/Twitter_Social_Icon_Rounded_Square_Color.svg"></a>
+          <a class="social" href="https://twitter.com/dnsflagday"><img alt="@dnsflagday" src="/images/Twitter_Social_Icon_Rounded_Square_Color.svg"></a>
+          <a class="home" href="/"><img src="/images/home.svg" alt="Home"></a>
         </nav>
         </div>
 
@@ -20,6 +13,7 @@
 
       <h1 id="project_title">
           {{ site.title | default: site.github.repository_name }}
+          {{ page.flagdayyear }}
       </h1>
       <h2 id="project_tagline">{{ site.description | default: site.github.project_tagline }}</h2>
 

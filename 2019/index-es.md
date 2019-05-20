@@ -2,9 +2,11 @@
 title: 2019
 lang: es
 redirect_from:
-  - /es/
+  - /2019/es/
+flagdayyear: 2019
 ---
 
+{% include 2019_languages.html %}
 
 
 ¿Qué está pasando?
@@ -38,7 +40,7 @@ Tengo nombre(s) de dominio
 
 Si usted es titular de algún(os) nombre(s) de dominio, por favor utilice el formulario acá abajo para revisar si su dominio está listo para los cambios. El resultado le indicará si es necesario que tome alguna acción correctiva.
 
-{% include checker.html lang=site.data.checker.es %}
+{% include 2019_checker.html lang=site.data.2019_checker.es %}
 
 Tenga presente que si tiene múltiples zonas en el mismo servidor o cluster de servidores, es suficiente con probar una sola zona. Vea los [detalles técnicos de las pruebas](#test-details) para más información.
 
@@ -200,7 +202,7 @@ Contactos
 
 Apoyan
 ======
-{% include supporters.html %}
+{% include 2019_supporters.html %}
 
 Lecturas adicionales
 ====================

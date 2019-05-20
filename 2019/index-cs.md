@@ -2,8 +2,12 @@
 title: 2019
 lang: cs
 redirect_from:
-  - /cs/
+  - /2019/cs/
+flagdayyear: 2019
 ---
+
+{% include 2019_languages.html %}
+
 
 Co se připravuje?
 =================
@@ -34,7 +38,7 @@ Jsem držitel domény
 ===================
 Jste-li držitel domény, zkontrolujte, zda je vaše doména připravena na změny v systému DNS pomocí následujícího formuláře. Výsledek testu vám v případě potřeby zároveň sdělí doporučený postup nápravy.
 
-{% include checker.html lang=site.data.checker.cs %}
+{% include 2019_checker.html lang=site.data.2019_checker.cs %}
 
 Pokud máte více domén hostovaných na stejné sadě serverů, stačí otestovat pouze jednu z nich. Další informace naleznete v části [technické detaily testů](#test-details).
 
@@ -185,7 +189,7 @@ Kontakty
 
 Akci podporují
 ==============
-{% include supporters.html %}
+{% include 2019_supporters.html %}
 
 Literatura
 ==========

@@ -1,7 +1,32 @@
 [https://dnsflagday.net](https://dnsflagday.net)
 
-What is happening?
-==================
-The current [DNS](https://en.wikipedia.org/wiki/Domain_Name_System) is unnecessarily slow and suffers from inability to deploy new features. To remediate these problems, [vendors of DNS software](#supporters) and also big [public DNS providers](#supporters) are going to remove certain workarounds on February 1st, 2019.
+Thank you!
+==========
 
-This change affects only sites which operate software which is not following published standards. Are you affected?
+The [DNS flag day 2019](https://dnsflagday.net/2019/) was very successful event and the Internet community
+worked together and fixed problems which were causing delays and other
+problems for Internet users worldwide. We would like to thank to all
+operators who cooperated and helped to make Internet a better place.
+
+Summary of the past and future DNS flag days can be found e.g. in
+[https://youtu.be/mH_elg9EUWw?t=649](https://youtu.be/mH_elg9EUWw?t=649).
+
+What's next?
+============
+
+Next round of DNS flag day is being planned right now, with focus on
+operational and security problems in DNS caused by Internet Protocol
+fragmentation.
+
+Please subscribe to [mailing list dns-announce](https://lists.dns-oarc.net/mailman/listinfo/dns-announce)
+or follow [dnsflagday Twitter](https://www.twitter.com/dnsflagday)
+to receive notification when more information becomes available.
+
+Want to build this locally?
+===========================
+
+Here are some helpful commands:
+```
+docker run --rm -v "$(pwd):/srv/jekyll" -it jekyll/jekyll jekyll build --watch
+python3 -mhttp.server
+```
