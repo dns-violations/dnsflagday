@@ -8,6 +8,7 @@ flagdayyear: 2019
 
 {% include 2019_languages.html %}
 
+**Toto je archivní verze stránky popisující akci skončenou v únoru 2019. Aktuální informace podstatné pro dnešek naleznete na hlavní stránce [dnsflagday.net](https://dnsflagday.net/).**
 
 Co se připravuje?
 =================

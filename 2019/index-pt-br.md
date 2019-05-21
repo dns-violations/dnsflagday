@@ -8,7 +8,9 @@ flagdayyear: 2019
 
 {% include 2019_languages.html %}
 
-**Esta tradução está aguardando atualização, por favor veja a [versão em inglês](/en/) para as últimas informações.**
+**Esta é a versão do arquivo da página que descreve o evento concluído em fevereiro de 2019. Informações relevantes para hoje podem ser encontradas na página principal [dnsflagday.net](https://dnsflagday.net/).**
+
+**Esta tradução está aguardando atualização, por favor veja a [versão em inglês](/2019/en/) para as últimas informações.**
 
 
 O que está acontecendo?

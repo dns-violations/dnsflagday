@@ -8,6 +8,7 @@ flagdayyear: 2019
 
 {% include 2019_languages.html %}
 
+**Esta es la versión de archivo de la página que describe el evento finalizado en febrero de 2019. La información relevante para hoy se puede encontrar en la página principal [dnsflagday.net](https://dnsflagday.net/).**
 
 ¿Qué está pasando?
 ==================
