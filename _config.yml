@@ -14,3 +14,7 @@ defaults:
     scope:
       path: "2019"
       type: "pages"
+  -
+    scope:
+      path: "2020"
+      type: "pages"

@@ -1,0 +1,49 @@
+en:
+    form:
+        legend: "Test your domain"
+        label: "Domain name (without www):"
+        title: "Please enter name of a DNS zone hosted on DNS servers you want to test. (The name must contain SOA and NS records.)"
+        value: "Test!"
+        noscript: >
+            <ul>
+                <li>To obtain human-readable test results please enable JavaScript in your web browser. Without JavaScript we can display only a technical report without summary.</li>
+            </ul>
+    reportOk:
+        short: "All Ok!"
+        long: >
+            <ul>
+                <li>This domain is perfectly ready, you do not need to worry about DNS flag day 2020.</li>
+                <li>Your DNS administrator is doing a good job, send them a sincere thank you ;-)</li>
+            </ul>
+    reportWarning:
+        short: "Problems detected!"
+        long: >
+            <ul>
+                <li><strong>This domain does not fully support TCP!</strong></li>
+                <li>Some of the DNS servers could not operate over TCP</li>
+                <li>Domain holders - please contact your domain administrator and point them to this page.</li>
+                <li>Administrators - please correct problems reported in the technical report below.</li>
+            </ul>
+    reportFail:
+        short: "Fatal error detected!"
+        long: >
+            <ul>
+                <li><strong>This domain does not support TCP!</strong></li>
+                <li>Please retry the test to eliminate random network failures</li>
+                <li>Domain holders - please contact your domain administrator and point them to this page.</li>
+                <li>Administrators - please correct problems reported in the technical report below.</li>
+            </ul>
+    reportTestError: >
+        Test cannot be evaluated because of an error. Please make sure the domain name entered
+        refers to a <strong>DNS zone</strong>, i.e. use "example.com" instead of "www.example.com".
+        Retry the test to eliminate random network failures or investigate
+    reportLinkText: "Technical report"
+    status:
+        loading: "Testing in progress, please wait… It might take several tens of seconds."
+        done: "Testing completed:"
+        errorApi: "Communication error! API unavailable… please try again later"
+        errorBan: >
+                Your IP address was banned for service abuse.
+        rateLimit: >
+                Your IP address is sending requests too quickly.
+                Please slow down otherwise your IP address will be banned from this service.
