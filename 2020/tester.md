@@ -1,6 +1,7 @@
 ---
-title: DNS flag day 2020
+title: 2020
 lang: en-US
+flagdayyear: 2020
 ---
 
 Tester
