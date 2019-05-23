@@ -1,0 +1,45 @@
+<div id="tcp-checker">
+    <form action="https://ednscomp.isc.org/ednscomp" method="GET" target="_blank">
+        <fieldset>
+            <legend>{{ include.lang.form.legend }}</legend>
+            <label for="zone">{{ include.lang.form.label }}
+                <input type="text" name="zone" id="zone" required title="{{ include.lang.form.title }}">
+            </label>
+            <input type="submit" value="{{ include.lang.form.value }}">
+            <noscript>{{ include.lang.form.noscript }}</noscript>
+        </fieldset>
+        <div id="tcp-checker-status"></div>
+        <div id="tcp-checker-result"></div>
+        <div id="tcp-checker-report"></div>
+    </form>
+</div>
+<script>
+$(document).ready(function () {
+    tcpChecker({
+        texts: {
+            formTitle: '{{ include.lang.form.legend | strip_newlines }}',
+            labelText: '{{ include.lang.form.label | strip_newlines }} ',
+            submitText: '{{ include.lang.form.value | strip_newlines }}',
+            reportOkHtml: ': <span style="color: green;">{{ include.lang.reportOk.short }}</span></div>' +
+            '<div><img style="height: 5em;" src="/signs/ok.svg"/></div>' +
+            '<div>{{ include.lang.reportOk.long | strip | strip_newlines }}',
+            reportWarningHtml: ': <span style="color: orange;">{{ include.lang.reportWarning.short }}</span></div>' +
+            '<div><img style="height: 5em;" src="/signs/compatible.svg"/></div>' +
+            '<div>{{ include.lang.reportWarning.long | strip | strip_newlines }}',
+            reportFailHtml: ': <span style="font-weight: bold; color: red;">{{ include.lang.reportFail.short }}</span></div>' +
+            '<div><img style="height: 5em;" src="/signs/dead.svg"/></div>' +
+            '<div>{{ include.lang.reportFail.long | strip | strip_newlines }}',
+            reportTestErrorHtml: ': {{ include.lang.reportTestError | strip | strip_newlines }}',
+            reportLinkText: '{{ include.lang.reportLinkText | strip | strip_newlines }} ',  // text before URL to report
+        },
+        status: {
+            loading: '{{ include.lang.status.loading | strip | strip_newlines }}',
+            done: '{{ include.lang.status.done | strip | strip_newlines }}',
+            errorApi: '{{ include.lang.status.errorApi | strip | strip_newlines }}',
+            errorBan: '{{ include.lang.status.errorBan | strip | strip_newlines }}',
+            rateLimit: '{{ include.lang.status.rateLimit  | strip | strip_newlines }}',
+        },
+    });
+});
+</script>
+<br>
