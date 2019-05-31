@@ -26,6 +26,9 @@ $(document).ready(function () {
             reportWarningHtml: ': <span style="color: orange;">{{ include.lang.reportWarning.short }}</span></div>' +
             '<div><img style="height: 5em;" src="/signs/compatible.svg"/></div>' +
             '<div>{{ include.lang.reportWarning.long | strip | strip_newlines }}',
+            reportHighLatencyHtml: ': <span style="color: red;">{{ include.lang.reportHighLatency.short }}</span></div>' +
+            '<div><img style="height: 5em;" src="/signs/high_latency.svg"/></div>' +
+            '<div>{{ include.lang.reportHighLatency.long | strip | strip_newlines }}',
             reportFailHtml: ': <span style="font-weight: bold; color: red;">{{ include.lang.reportFail.short }}</span></div>' +
             '<div><img style="height: 5em;" src="/signs/dead.svg"/></div>' +
             '<div>{{ include.lang.reportFail.long | strip | strip_newlines }}',
