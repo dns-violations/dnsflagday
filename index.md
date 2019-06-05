@@ -218,10 +218,10 @@ Get in touch
 For press & media inquiries please use media (at) dns-oarc.net and please put
 “DNS Flag Day" in the email subject line.
 
-- Web https://dnsflagday.net/
-- Twitter https://twitter.com/dnsflagday
-- Announcements: https://lists.dns-oarc.net/mailman/listinfo/dns-announce
-- Discussion: https://lists.dns-oarc.net/mailman/listinfo/dns-operations
+- Web: <https://dnsflagday.net/>
+- Twitter: <https://twitter.com/dnsflagday>
+- Announcements: <https://lists.dns-oarc.net/mailman/listinfo/dns-announce>
+- Discussion: <https://lists.dns-oarc.net/mailman/listinfo/dns-operations>
 
 FAQ
 ===
