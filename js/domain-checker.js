@@ -22,6 +22,11 @@ var domainChecker = function(domainCheckerInit) {
 		return values
 	}
 
+	const checks_2019 = [
+		'dns', 'edns', 'edns@512', 'ednsopt', 'edns1opt', 'do',
+		'ednsflags', 'docookie', 'edns512tcp', 'optlist'
+	]
+
 	// eval one server
 	const eval_edns_strict = function (tests_results) {
 		// strip test names -> array of arrays with test results
@@ -30,10 +35,12 @@ var domainChecker = function(domainCheckerInit) {
 		if (all_ok)
 			return 'ok'
 
-		// ignore EDNS1, it will not cause problems during the flag day
+		// consider only tests relevant for 2019 flag day
+		// (ignore EDNS1 which was out of scope,
+		//  and also any other tests added later)
 		var edns0_tests_results = {}
 		for (var key in tests_results) {
-			if (key.indexOf('edns1') === -1)
+			if (checks_2019.includes(key))
 				edns0_tests_results[key] = tests_results[key]
 			else
 				edns0_tests_results[key] = ['ignored']
