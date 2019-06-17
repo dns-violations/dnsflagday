@@ -97,8 +97,7 @@ Action: Authoritative DNS Operators
 -----------------------------------
 
 For the authoritative side what you should do to help with these issues
-is to **_honor [RFC 7766](https://tools.ietf.org/html/rfc7766)_** and
-answer DNS queries over TCP (port 53), _check your firewall(s) also!_
+is to answer DNS queries over TCP (port 53), _check your firewall(s) also!_
 
 You should also use an EDNS buffer size that will not cause fragmentation,
 recommended here is around 1220 bytes but it is still up for discussion.
@@ -109,10 +108,10 @@ than requested EDNS buffer size!_
 Action: DNS Resolver Operators
 ------------------------------
 
-For the resolver side it's more or less the same requirement as for the
-authoritative, **_honor [RFC 7766](https://tools.ietf.org/html/rfc7766)_**
-_(DNS over TCP port 53)_ and use an EDNS buffer size _(~1220 bytes)_ that
-will not cause fragmentation. _Remember to check your firewall(s)!_
+For the resolver side it's more or less the same requirement as for
+the authoritative, answer DNS queries over TCP (port 53) and use an
+EDNS buffer size _(~1220 bytes)_ that will not cause
+fragmentation. _Remember to check your firewall(s)!_
 
 And for that last important part, _Resolvers **MUST** repeat queries over
 TCP if they receive a truncated UDP response (with TC=1 set)!_
@@ -128,7 +127,7 @@ Relevant standards are mainly [RFC 7766](https://tools.ietf.org/html/rfc7766),
 [RFC 6891 section 6.2.3.](https://tools.ietf.org/html/rfc6891#section-6.2.3)
 and [RFC 6891 section 6.2.4.](https://tools.ietf.org/html/rfc6891#section-6.2.4).
 
-Motivation for the change is described in [IETF draft intarea-frag-fragile section 6.1](https://tools.ietf.org/html/draft-ietf-intarea-frag-fragile-10#section-6.1).
+Motivation for the change is described in [IETF draft intarea-frag-fragile section 6.1](https://tools.ietf.org/html/draft-ietf-intarea-frag-fragile-10#section-6.1) and [IETF draft iab-protocol-maintenance](https://datatracker.ietf.org/doc/draft-iab-protocol-maintenance/).
 
 How to test?
 ------------
@@ -284,3 +283,14 @@ FAQ
      software is configured, and on the firewall configuration used at
      that site. Less commonly-used and custom or proprietary DNS software
      may not be compliant, and may require updates.
+
+- Q: Is the requirement for DNS over TCP actually a DNS standard?
+
+  A: Yes, it is.  The [RFC 1035](https://tools.ietf.org/html/rfc1035)
+     Section 4.2 Transport explicitly lists UDP and TCP transports as
+     equals.  Furthermore, [RFC 7766](https://tools.ietf.org/html/rfc7766)
+     makes the requirement for DNS over TCP mandatory to implement for DNS
+     vendors.  While it's at operator's discretion to allow traffic on the
+     TCP port 53, the inability to respond over TCP might lead to resolution
+     failure in case of DNS answers bigger than EDNS buffer size chose at
+     the client side.
