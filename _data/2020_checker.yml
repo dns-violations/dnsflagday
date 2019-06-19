@@ -1,7 +1,7 @@
 en:
     form:
         legend: "Test your domain"
-        label: "Domain name (without www):"
+        label: "Domain name (typically without www):"
         title: "Please enter name of a DNS zone hosted on DNS servers you want to test. (The name must contain SOA and NS records.)"
         value: "Test!"
         noscript: >
@@ -16,22 +16,37 @@ en:
                 <li>Your DNS administrator is doing a good job, send them a sincere thank you ;-)</li>
             </ul>
     reportWarning:
-        short: "Problems detected!"
+        short: "Minor problems detected!"
         long: >
             <ul>
-                <li><strong>This domain does not fully support TCP!</strong></li>
-                <li>Some of the DNS servers could not operate over TCP</li>
+                <li><strong>This domain is going to work after DNS flag day 2020.</strong></li>
+                <li>This domain does not support latest DNS standards, which might cause problems in the future.</li>
+                <li>Domain holders - it is recommended to contact your domain administrator and point them to this page.</li>
+                <li>Administrators - it is recommended to fix problems mentioned in the technical report below
+                    to avoid compatibility problems in the future.
+                    Please see <a href="#action-authoritative-dns-operators">description for DNS admins</a>.
+                    Thank you for cooperation!</li>
+            </ul>
+    reportHighLatency:
+        short: "Serious problem detected!"
+        long: >
+            <ul>
+                <li><strong>This domain will have problems after DNS flag day 2020!</strong></li>
+                <li>It will work but clients will experience delays while accessing this domain.</li>
                 <li>Domain holders - please contact your domain administrator and point them to this page.</li>
-                <li>Administrators - please correct problems reported in the technical report below.</li>
+                <li>Administrators - please see <a href="#action-authoritative-dns-operators">description for DNS admins</a>
+                        and correct problems reported in the technical report below.</li>
+                <li>Some of the DNS servers do not properly support DNS over TCP.</li>
             </ul>
     reportFail:
-        short: "Fatal error detected!"
+        short: "Fatal errors detected!"
         long: >
             <ul>
-                <li><strong>This domain does not support TCP!</strong></li>
-                <li>Please retry the test to eliminate random network failures</li>
+                <li><strong>This domain will likely stop working after DNS flag day 2020!</strong></li>
+                <li>Please retry the test to eliminate possibility of random network failures.</li>
                 <li>Domain holders - please contact your domain administrator and point them to this page.</li>
-                <li>Administrators - please correct problems reported in the technical report below.</li>
+                <li>Administrators - please see <a href="#action-authoritative-dns-operators">description for DNS admins</a>
+                        and correct problems reported in the technical report below.</li>
             </ul>
     reportTestError: >
         Test cannot be evaluated because of an error. Please make sure the domain name entered
