@@ -10,11 +10,17 @@ defaults:
     scope:
       path: ""
       type: "pages"
+    values:
+      layouts: "default"
   -
     scope:
       path: "2019"
       type: "pages"
+    values:
+      layouts: "default"
   -
     scope:
       path: "2020"
       type: "pages"
+    values:
+      layouts: "default"
