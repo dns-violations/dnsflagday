@@ -20,6 +20,7 @@ redirect_from:
 flagdayyear: 2020
 ---
 
+{% include 2020_languages.html %}
 
 <img class="logo float-right" alt="DNS flag day logo" src="/images/DNS_Flag.svg">
 
