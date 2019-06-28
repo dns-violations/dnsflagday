@@ -101,7 +101,7 @@ DNS に許容することで解決できます。
 最後に、 _権威DNSサーバーは、問い合わせに含まれる EDNS バッファーサイズを超える大きさで応答
 **してはいけません**!_
 
-**最新情報!** お持ちのドメインを下記に入力して "Test!" をクリックすることで、確認することができます。
+お持ちのドメインを下記に入力して "Test!" をクリックすることで、確認することができます。
 このテストは [ISC の EDNS Compliance Tester](https://ednscomp.isc.org/)
 を内部で使っていて、それに含まれる `edns512udp` テストが成功するかを確認しています。
 加えて、他のテストで一般的に標準規格に準拠していることを確認しています。
@@ -120,7 +120,13 @@ _ファイアウォールの設定も忘れずに確認して下さい!_
 _フルサービスリゾルバーが切り詰められた UDP 応答 (TC=1 がセットされたもの) を受け取った場合、
 TCP で再度問い合わせを行わなければ **なりません**_!
 
-**フルサービスリゾルバーのクライアントのためのテストは現在開発中です。**
+**NEW!** This checker will test your browser, system and ISPs resolver by
+loading an image on a specific URL that can only be looked up if there is
+support for TCP at the last resolver querying the authority. For more
+information go to [Check My DNS](https://cmdns.dev.dns-oarc.net) which this
+checker uses.
+
+{% include 2020_cli_checker.html lang=site.data.2020_checker.ja %}
 
 対応: DNS ソフトウェア製品のベンダー
 ------------------------------------

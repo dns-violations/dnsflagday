@@ -112,7 +112,7 @@ recommended here is around 1220 bytes but it is still up for discussion.
 And lastly, _Authoritative DNS servers **MUST NOT** send answers larger
 than requested EDNS buffer size!_
 
-**NEW!** You can now check your domain by entering it below and pressing
+You can now check your domain by entering it below and pressing
 "Test!". This tester uses [ISC's EDNS Compliance Tester](https://ednscomp.isc.org/)
 and will check that it's `edns512tcp` test is successful among other tests
 for general compliance.
@@ -130,7 +130,13 @@ fragmentation. _Remember to check your firewall(s)!_
 And for that last important part, _Resolvers **MUST** repeat queries over
 TCP if they receive a truncated UDP response (with TC=1 set)!_
 
-**Tester for clients DNS resolver is in development!**
+**NEW!** This checker will test your browser, system and ISPs resolver by
+loading an image on a specific URL that can only be looked up if there is
+support for TCP at the last resolver querying the authority. For more
+information go to [Check My DNS](https://cmdns.dev.dns-oarc.net) which this
+checker uses.
+
+{% include 2020_cli_checker.html lang=site.data.2020_checker.en %}
 
 Action: DNS software vendors
 ----------------------------

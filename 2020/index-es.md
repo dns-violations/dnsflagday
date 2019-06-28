@@ -107,7 +107,7 @@ discusión.
 Y por último, _¡los servidores DNS Autoritativos **NO DEBEN** enviar
 respuestas más grandes que el tamaño del buffer EDNS solicitado!_
 
-**¡NUEVO!** Ya puede revisar su dominio ingresándolo acá abajo y presionando "Test!".
+Ya puede revisar su dominio ingresándolo acá abajo y presionando "Test!".
 Esta herramienta de prueba usa el [EDNS Compliance Tester de ISC](https://ednscomp.isc.org/)
 y revisará que la prueba `edns512tcp` es exitosa, entre otras pruebas de
 compatibilidad general.
@@ -126,7 +126,13 @@ Y por último es muy importante que _¡los resolutores **DEBEN** repetir
 sus consultas sobre TCP si reciben una respuesta UDP truncada (con el
 bit TC=1 encendido)!_
 
-**¡El sitio de pruebas para clientes de un resolutor DNS está en desarrollo!**
+**NEW!** This checker will test your browser, system and ISPs resolver by
+loading an image on a specific URL that can only be looked up if there is
+support for TCP at the last resolver querying the authority. For more
+information go to [Check My DNS](https://cmdns.dev.dns-oarc.net) which this
+checker uses.
+
+{% include 2020_cli_checker.html lang=site.data.2020_checker.es %}
 
 Acción: Proveedores de software DNS
 -----------------------------------
