@@ -4,8 +4,9 @@
 @import "{{ site.theme }}";
 
 .translation img {
-	height: 2em;
-	border: none;
+	padding: 0;
+	height: 1.8em;
+	border: 1px solid #ccc;
 	box-shadow: none;
 	-webkit-box-shadow: none;
 }
