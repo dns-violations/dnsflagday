@@ -62,3 +62,65 @@ en:
         rateLimit: >
                 Your IP address is sending requests too quickly.
                 Please slow down otherwise your IP address will be banned from this service.
+fr:
+    form:
+        legend: "Testez votre domaine"
+        label: "Nom de domaine (sans le www):"
+        title: "Veuillez entrer le nom d\\'une zone DNS hébergée sur les serveurs DNS que vous voulez tester. (Le nom doit contenir les enregistrements SOA et NS.)"
+        value: "Tester !"
+        noscript: >
+            <ul>
+                <li>Pour obtenir des résultats compréhensibles par l\'homme, veuillez activer JavaScript dans votre navigateur web. Sans JavaScript, nous pouvons afficher uniquement un rapport technique sans résumé.</li>
+            </ul>
+    reportOk:
+        short: "Tout est Ok !"
+        long: >
+            <ul>
+                <li>Ce domaine est complètement prêt, vous n\'avez pas de soucis à vous faire à propos du DNS flag day 2020.</li>
+                <li>Votre administrateur DNS fait un bon travail, envoyez-lui des remerciements ;-)</li>
+            </ul>
+    reportWarning:
+        short: "Problèmes mineurs détectés !"
+        long: >
+            <ul>
+                <li><strong>Ce domaine fonctionnera après le DNS flag day 2020.</strong></li>
+                <li>Ce domaine ne supporte pas les derniers standards DNS, ce qui pourrait poser des problèmes dans le futur.</li>
+                <li>Propriétaires de domaines - il est recommandé de contacter votre administrateur de domaine et de les renvoyer vers cette page.</li>
+                <li>Administrateurs - il est recommandé de résoudre les problèmes mentionnés dans le rapport technique ci-dessous pour éviter des problèmes de compatibilité dans le futur.
+                    Veuillez vous référer à <a href="#action-authoritative-dns-operators">description pour les administrateurs DNS</a>.
+                    Merci pour votre coopération !</li>
+            </ul>
+    reportHighLatency:
+        short: "Problèmes sérieux détectés !"
+        long: >
+            <ul>
+                <li><strong>Ce domaine rencontrera des problèmes après le DNS flag day 2020!</strong></li>
+                <li>Il fonctionnera mais les clients rencontreront des lenteurs pour accéder à ce domaine.</li>
+                <li>Propriétaires de domaines - veuillez contacter votre administrateur de domaine et renvoyez-le vers cette page.</li>
+                <li>Administrateurs - veuillez vous référer à <a href="#action-authoritative-dns-operators">description pour les administrateurs</a>
+                        et corriger les problèmes signalés dans le rapport technique ci-dessous.</li>
+                <li>Certains des serveurs DNS ne supportent pas DNS sur TCP correctement.</li>
+            </ul>
+    reportFail:
+        short: "Erreurs fatales détectées !"
+        long: >
+            <ul>
+                <li><strong>Il est probable que ce domaine ne fonctionne plus après le DNS flag day 2020!</strong></li>
+                <li>Veuillez relancer le test pour éliminer la possibilite d\'un problème réseau.</li>
+                <li>Propriétaires de domaines - veuillez contacter votre administrateur de domaine et renvoyez-le vers cette page.</li>
+                <li>Administrateurs - veuillez vous référer à <a href="#action-authoritative-dns-operators">description pour les administrateurs</a>
+                        et corriger les problèmes signalés dans le rapport technique ci-dessous.</li>
+            </ul>
+    reportTestError: >
+        Le test ne peut pas être effectué à cause d\'une erreur. Veuillez vous assurer que  le nom de domaine entré correspond bien à une <strong>zone DNS</strong>, c\'est-à-dire utilisez "example.com" au lieu de "www.example.com".
+        Veuillez relancer le test pour éliminer la possibilite d\'un problème réseau, ou investiguez.
+    reportLinkText: "Rapport technique"
+    status:
+        loading: "Test en cours, veuillez patienter... Le test peut durer plusieurs dizaines de secondes."
+        done: "Test fini:"
+        errorApi: "Erreur de communication ! L\\'API est indisponible... Veuillez réessayer plus tard"
+        errorBan: >
+                Votre adresse IP a été bannie à cause d\'un usage abusif.
+        rateLimit: >
+                Votre adresse IP envoie des requêtes trop rapidement.
+                Merci de les ralentir, sinon votre adresse IP sera bannie.
