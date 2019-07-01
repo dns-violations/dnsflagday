@@ -87,7 +87,7 @@ fr:
                 <li>Ce domaine ne supporte pas les derniers standards DNS, ce qui pourrait poser des problèmes dans le futur.</li>
                 <li>Propriétaires de domaines - il est recommandé de contacter votre administrateur de domaine et de les renvoyer vers cette page.</li>
                 <li>Administrateurs - il est recommandé de résoudre les problèmes mentionnés dans le rapport technique ci-dessous pour éviter des problèmes de compatibilité dans le futur.
-                    Veuillez vous référer à <a href="#action-authoritative-dns-operators">description pour les administrateurs DNS</a>.
+                    Veuillez vous référer à <a href="#action-opérateurs-de-serveurs-dns-faisant-autorité">description pour les administrateurs DNS</a>.
                     Merci pour votre coopération !</li>
             </ul>
     reportHighLatency:
@@ -97,7 +97,7 @@ fr:
                 <li><strong>Ce domaine rencontrera des problèmes après le DNS flag day 2020!</strong></li>
                 <li>Il fonctionnera mais les clients rencontreront des lenteurs pour accéder à ce domaine.</li>
                 <li>Propriétaires de domaines - veuillez contacter votre administrateur de domaine et renvoyez-le vers cette page.</li>
-                <li>Administrateurs - veuillez vous référer à <a href="#action-authoritative-dns-operators">description pour les administrateurs</a>
+                <li>Administrateurs - veuillez vous référer à <a href="#action-opérateurs-de-serveurs-dns-faisant-autorité">description pour les administrateurs</a>
                         et corriger les problèmes signalés dans le rapport technique ci-dessous.</li>
                 <li>Certains des serveurs DNS ne supportent pas DNS sur TCP correctement.</li>
             </ul>
@@ -108,7 +108,7 @@ fr:
                 <li><strong>Il est probable que ce domaine ne fonctionne plus après le DNS flag day 2020!</strong></li>
                 <li>Veuillez relancer le test pour éliminer la possibilite d\'un problème réseau.</li>
                 <li>Propriétaires de domaines - veuillez contacter votre administrateur de domaine et renvoyez-le vers cette page.</li>
-                <li>Administrateurs - veuillez vous référer à <a href="#action-authoritative-dns-operators">description pour les administrateurs</a>
+                <li>Administrateurs - veuillez vous référer à <a href="#action-opérateurs-de-serveurs-dns-faisant-autorité">description pour les administrateurs</a>
                         et corriger les problèmes signalés dans le rapport technique ci-dessous.</li>
             </ul>
     reportTestError: >
@@ -189,3 +189,67 @@ ja:
         rateLimit: >
                 お使いの IP アドレスは高頻度の要求を送信しています。
                 要求の頻度を下げないと、お使いの IP アドレスからこのサービスの利用が禁止されることになります。
+es:
+    form:
+        legend: "Pruebe su dominio"
+        label: "Nombre de dominio (no incluya el www):"
+        title: "Por favor ingrese el nombre de alguna zona DNS hospedada en los servidores DNS que quiera probar. (El nombre debe contener registros SOA y NS.)"
+        value: "¡Probar!"
+        noscript: >
+            <ul>
+                <li>Para obtener resultados simples de las pruebas por favor habilite JavaScipt en su navegador. Sin JavaScript solo podemos mostrar un informe técnico, sin resumen.</li>
+            </ul>
+    reportOk:
+        short: "¡Todo bien!"
+        long: >
+            <ul>
+                <li>Este dominio está totalmente listo, no necesita preocuparse por el DNS flag day 2020.</li>
+                <li>Su administrador DNS está haciendo una buena labor, envíele un sincero agradecimiento ;-)</li>
+            </ul>
+    reportWarning:
+        short: "¡Se detectan problemas menores!"
+        long: >
+            <ul>
+                <li><strong>Este dominio seguirá funcionando después del DNS flag day 2020.</strong></li>
+                <li>Este dominio no soporta los últimos estándares DNS, lo que podría causarle problemas en el futuro.</li>
+                <li>Titulares de dominio - es recomendable que contacte a su administrador del dominio y le dirija a esta página.</li>
+                <li>Administradores - es recomendable que solucione los problemas mencionados en el reporte técnico más abajo
+                    para evitar problemas de compatibilidad en el futuro.
+                    Por favor revise <a href="#acción-operadores-de-dns-autoritativos">la descripción para administradores DNS</a>.
+                    ¡Gracias por su cooperación!</li>
+            </ul>
+    reportHighLatency:
+        short: "¡Se detectan problemas serios!"
+        long: >
+            <ul>
+                <li><strong>¡Este dominio tendrá problemas después del DNS flag day 2020!</strong></li>
+                <li>Funcionará, pero los clientes tendrás demoras al acceder a este dominio.</li>
+                <li>Titulares de dominio - por favor contacte al administrador de su dominio y diríjalo a esta página.</li>
+                <li>Administradores - por favor revise <a href="#acción-operadores-de-dns-autoritativos">la descripción para administradores DNS</a>
+                        y corrija los problemas reportados en el informe técnico abajo.</li>
+                <li>Algunos de sus servidores DNS no soportan adecuadamente DNS sobre TCP.</li>
+            </ul>
+    reportFail:
+        short: "¡Se detectan errores fatales!"
+        long: >
+            <ul>
+                <li><strong>¡Este dominio probablemente dejará de funcionar después del DNS flag day 2020!</strong></li>
+                <li>Por favor repita la prueba para eliminar la posibilidad de fallos de red aleatorios.</li>
+                <li>Titulares de dominio - por favor contacte al administrador de su dominio y diríjalo a esta página.</li>
+                <li>Administradores - por favor revise <a href="#acción-operadores-de-dns-autoritativos">la descripción para administradores DNS</a>
+                        y corrija los problemas reportados en el informe técnico abajo.</li>
+            </ul>
+    reportTestError: >
+        La prueba no puede ejecutarse debido a un error. Por favor asegúrese que el nombre de dominio ingresado
+        se refiere a una <strong>zona DNS</strong>, por ejemplo use "ejemplo.com" en vez de "www.ejemplo.com".
+        Repita la prueba para eliminar la posibilidad de fallos de red aleatorios o investigue
+    reportLinkText: "Informe técnico"
+    status:
+        loading: "Prueba en ejecución, por favor espere… puede tomar varios segundos."
+        done: "Pruebas completadas:"
+        errorApi: "¡Error de comunicación! API no disponible… por favor reintente más tarde"
+        errorBan: >
+                Su dirección IP fue bloqueada por abuso del servicio.
+        rateLimit: >
+                Su dirección IP está enviando solicitudes muy rápidamente.
+                Por favor disminuya el uso, sino su dirección IP será bloqueada de este servicio.
