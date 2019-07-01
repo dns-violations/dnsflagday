@@ -46,6 +46,7 @@ flagdayyear: 2020
 - [過去のflag day](#%E9%81%8E%E5%8E%BB%E3%81%AEflag-day)
 - [誰が行っているの?](#%E8%AA%B0%E3%81%8C%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B%E3%81%AE)
 - [最新情報を得る](#%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1%E3%82%92%E5%BE%97%E3%82%8B)
+- [協力者](#%E5%8D%94%E5%8A%9B%E8%80%85)
 - [FAQ](#faq)
 
 次回予告
@@ -247,6 +248,11 @@ DNS flag dayに関する技術的な質問については、
 - Announcements: <https://lists.dns-oarc.net/mailman/listinfo/dns-announce>
 - Discussion: <https://lists.dns-oarc.net/mailman/listinfo/dns-operations>
 
+協力者
+======
+
+{% include 2020_supporters.html %}
+
 FAQ
 ===
 
@@ -319,3 +325,12 @@ FAQ
         裁量の範囲です。しかしながら、 TCP をサポートしていない場合には、
         クライアントの EDNS バッファーサイズを超える応答に関して、名前解決が
         失敗することになるでしょう。
+
+- 質問: DNS flag day 2020 の協力者になりたいのですが、何をしたらいいですか?
+
+  回答: ありがとうございます!
+        [プルリクエスト](https://github.com/dns-violations/dnsflagday/pulls)
+        を送って名前や画像、 URL を DNS flag day 2020 の協力者として
+	`_data/2020_supporters.yml` に追加することができます。
+	プルリクエストの代わりに、 [Issue](https://github.com/dns-violations/dnsflagday/issues/new)
+	を作成して同じ情報を送っていただくこともできます。
