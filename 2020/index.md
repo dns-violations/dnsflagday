@@ -46,6 +46,7 @@ Contents
 - [Previous flag days](#previous-flag-days)
 - [Who's behind DNS flag day?](#whos-behind-dns-flag-day)
 - [Get in touch](#get-in-touch)
+- [Supporters](#supporters)
 - [FAQ](#faq)
 
 What's next?
@@ -245,6 +246,11 @@ For press & media inquiries please use media (at) dns-oarc.net and please put
 - Announcements: <https://lists.dns-oarc.net/mailman/listinfo/dns-announce>
 - Discussion: <https://lists.dns-oarc.net/mailman/listinfo/dns-operations>
 
+Supporters
+==========
+
+{% include 2020_supporters.html %}
+
 FAQ
 ===
 
@@ -317,3 +323,11 @@ FAQ
      TCP port 53, the inability to respond over TCP might lead to resolution
      failure in case of DNS answers bigger than EDNS buffer size chose at
      the client side.
+
+- Q: I want to support DNS flag day 2020, what do I do?
+
+  A: Great to hear!  You can add yourself as a supporter by making a
+     [pull request](https://github.com/dns-violations/dnsflagday/pulls) and
+     add name, image and URL to `_data/2020_supporters.yml`, or make
+     an [issue](https://github.com/dns-violations/dnsflagday/issues/new)
+     and supply the same information in that.
