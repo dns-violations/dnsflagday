@@ -4,13 +4,11 @@ lang: en-US
 redirect_from:
   - /
   - /en/
-  - /zh-CN/
   - /ru/
   - /pt-br/
   - /de/
   - /cs/
   - /2020/en/
-  - /2020/zh-CN/
   - /2020/ru/
   - /2020/pt-br/
   - /2020/de/
