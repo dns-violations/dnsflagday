@@ -253,3 +253,61 @@ es:
         rateLimit: >
                 Su dirección IP está enviando solicitudes muy rápidamente.
                 Por favor disminuya el uso, sino su dirección IP será bloqueada de este servicio.
+cn:
+    form:
+        legend: "测试你的域名"
+        label: "域名 (通常没有www):"
+        title: "请输入你要测试的DNS服务器上承载的DNS区域的名字(这个名字一定要有SOA和NS记录)"
+        value: "测试!"
+        noscript: >
+            <ul>
+                <li>为了获得更易阅读的测试结果，请在web浏览器中启用JavaScript。没有JavaScript，我们只能显示没有摘要的技术报告。</li>
+            </ul>
+    reportOk:
+        short: "测试都通过了!"
+        long: >
+            <ul>
+                <li>这个域名已经完全准备好了，您不需要担心DNS flag day 2020。</li>
+                <li>您的DNS管理员做得很好，给他们一个真诚的感谢;-)</li>
+            </ul>
+    reportWarning:
+        short: "发现一些小问题!"
+        long: >
+            <ul>
+                <li><strong>该域名在2020 DNS Flag Day之后还能够工作。</strong></li>
+                <li>该域名不支持最新的DNS标准，这可能会在未来造成问题。</li>
+                <li>域名持有者 - 建议联系您的域名管理员并将他们指向此页面。</li>
+                <li>管理员 - 建议修复下面技术报告中提到的问题，以避免将来出现兼容性问题。 请阅读<a href="#行动-权威DNS运营者">DNS管理员的操作说明</a> 谢谢合作！</li>
+            </ul>
+    reportHighLatency:
+        short: "发现严重的问题!"
+        long: >
+            <ul>
+                <li><strong>该域名将在2020 DNS flag day之后发生问题!!</strong></li>
+                <li>它会工作，但客户端在访问此域时会遇到延迟。</li>
+                <li>域名持有者 - 建议联系您的域名管理员并将他们指向此页面。</li>
+                <li>管理员 - 请阅读<a href="#行动-权威DNS运营者">DNS管理员的操作说明</a>，修复下面技术报告中提到的问题。</li>
+                <li>一些DNS服务器不支持TCP传输协议。</li>
+            </ul>
+    reportFail:
+        short: "检测到致命错误!"
+        long: >
+            <ul>
+                <li><strong>该域名很可能将于2020 DNS flag day之后停止工作!</strong></li>
+                <li>请重试测试，以消除随机网络故障的可能性。</li>
+                <li>域名持有者 - 建议联系您的域名管理员并将他们指向此页面。</li>
+                <li>管理员 - 请阅读<a href="#行动-权威DNS运营者">DNS管理员的操作说明</a>，修复下面技术报告中提到的问题。</li>
+            </ul>
+    reportTestError: >
+        由于出现了一个错误，无法进行测试评估。请确认域名指向一个<strong>DNS Zone</strong>, 例如 使用 "example.com" 而不是 "www.example.com"。
+        重试测试以消除随机网络故障，以确认结果。
+    reportLinkText: "技术报告"
+    status:
+        loading: "正在测试中，请稍候，可能需要几十秒。"
+        done: "完成测试:"
+        errorApi: "通信错误!API不可用，请稍后再试。"
+        errorBan: >
+                您的IP地址因为服务滥用而被禁止。
+        rateLimit: >
+                您的IP地址发送请求太快。
+                请慢一点，否则您的IP地址将被禁止使用此服务。
