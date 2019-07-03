@@ -7,14 +7,12 @@ redirect_from:
   - /zh-CN/
   - /ru/
   - /pt-br/
-  - /es/
   - /de/
   - /cs/
   - /2020/en/
   - /2020/zh-CN/
   - /2020/ru/
   - /2020/pt-br/
-  - /2020/es/
   - /2020/de/
   - /2020/cs/
 flagdayyear: 2020
