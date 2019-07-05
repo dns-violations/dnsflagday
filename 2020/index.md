@@ -76,7 +76,7 @@ IP fragmentation is a problem on the Internet today, especially when it
 comes to large DNS messages. And even if fragmentation works it might not be
 secure enough for DNS.
 - Bonica R. et al, "[IP Fragmentation Considered Fragile](https://tools.ietf.org/html/draft-bonica-intarea-frag-fragile)", Work in Progress, July 2018
-- Huston G., "[IPv6, Large UDP Packets and the DNS](http://www.potaroo.net/ispcol/2017-08/xtn-hdrs.html)",  August 2017
+- Huston G., "[IPv6, Large UDP Packets and the DNS](https://www.potaroo.net/ispcol/2017-08/xtn-hdrs.html)",  August 2017
 - Fujiwara K., "[Measures against cache poisoning attacks using IP fragmentation in DNS](https://indico.dns-oarc.net/event/31/contributions/692/)", May 2019
 
 These issues can be fixed by honoring an EDNS buffer size that will

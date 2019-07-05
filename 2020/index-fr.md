@@ -54,7 +54,7 @@ de l'ISC ([video](https://ripe78.ripe.net/archives/video/28),
 La fragmentation IP est un problème sur Internet aujourd'hui, en particulier avec les messages DNS larges. Et même si la fragmentation fonctionne, elle pourrait ne pas être assez sécurisée pour le DNS.
 
 - Bonica R. et al, "[IP Fragmentation Considered Fragile](https://tools.ietf.org/html/draft-bonica-intarea-frag-fragile)", Work in Progress, Juillet 2018
-- Huston G., "[IPv6, Large UDP Packets and the DNS](http://www.potaroo.net/ispcol/2017-08/xtn-hdrs.html)",  Août 2017
+- Huston G., "[IPv6, Large UDP Packets and the DNS](https://www.potaroo.net/ispcol/2017-08/xtn-hdrs.html)",  Août 2017
 - Fujiwara K., "[Measures against cache poisoning attacks using IP fragmentation in DNS](https://indico.dns-oarc.net/event/31/contributions/692/)", Mai 2019
 
 Ces problèmes peuvent être résolus en honorant une taille de tampon EDNS qui ne causera pas de fragmentation et en permettant au DNS de basculer d'UDP à TCP lorsque des tailles de tampon larges ne suffisent pas.
