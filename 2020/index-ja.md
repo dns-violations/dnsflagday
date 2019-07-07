@@ -65,7 +65,7 @@ DNS Flag Day 2020 の計画に関する提案は、
 IP フラグメンテーション、とりわけ、大きなサイズの DNS メッセージに関するものは、現在のインターネットにおける問題となっています。
 フラグメンテーションが正しく動作したとしても、 DNS を保護するには不十分なのです。
 - Bonica R. et al, "[IP Fragmentation Considered Fragile](https://tools.ietf.org/html/draft-bonica-intarea-frag-fragile)", Work in Progress, July 2018
-- Huston G., "[IPv6, Large UDP Packets and the DNS](http://www.potaroo.net/ispcol/2017-08/xtn-hdrs.html)",  August 2017
+- Huston G., "[IPv6, Large UDP Packets and the DNS](https://www.potaroo.net/ispcol/2017-08/xtn-hdrs.html)",  August 2017
 - Fujiwara K., "[Measures against cache poisoning attacks using IP fragmentation in DNS](https://indico.dns-oarc.net/event/31/contributions/692/)", May 2019
 
 これらの問題は、フラグメンテーションが起きないような EDNS バッファーサイズを尊重し、
