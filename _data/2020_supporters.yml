@@ -13,3 +13,6 @@
 - name: "NLnet Labs"
   img: "/images/nlnetlabs.svg"
   url: "https://www.nlnetlabs.nl/"
+- name: "Quad9"
+  img: "/images/quad9.png"
+  url: "https://quad9.net/"
