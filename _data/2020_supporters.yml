@@ -16,3 +16,6 @@
 - name: "Quad9"
   img: "/images/quad9.png"
   url: "https://quad9.net/"
+- name: "Alibaba Cloud"
+  img: "/images/AliCloud.png"
+  url: "https://www.alibabacloud.com/"
