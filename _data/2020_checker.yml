@@ -71,7 +71,7 @@ en:
         long: >
             <ul>
                 <li><strong>The test could not be completed due to a network problem!</strong></li>
-                <li>This can also happen if Check My DNS is down or temporary unavailable, please check <a href="https://cmdns.dev.dns-oarc.net">https://cmdns.dev.dns-oarc.net</a> before trying again.</li>
+                <li>This can also happen if Check My DNS service is down or temporary unavailable, please check <a href="https://cmdns.dev.dns-oarc.net">https://cmdns.dev.dns-oarc.net</a> before trying again.</li>
             </ul>
     reportTestError: >
         Test cannot be evaluated because of an error. Please make sure the domain name entered
