@@ -67,7 +67,7 @@ en:
                     Please see <a href="#action-dns-resolver-operators">description for DNS admins</a> and correct problems.</li>
             </ul>
     reportNetworkProblem:
-        short: "Network problem!"
+        short: "Test system error!"
         long: >
             <ul>
                 <li><strong>The test could not be completed due to a network problem!</strong></li>
