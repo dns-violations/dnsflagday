@@ -79,7 +79,7 @@ Vous devriez aussi utiliser une taille tampon EDNS qui ne causera pas de fragmen
 
 Enfin, _les serveurs DNS faisant Autorité **NE DOIVENT PAS** envoyer de réponses plus grandes que la taille du tampon EDNS demandée._
 
-**NOUVEAU !!** Vous pouvez maintenant vérifier votre domaine en le rentrant dans le formulaire ci-dessous et en pressant "Test!". Ce testeur utilise l'[EDNS Compliance Tester de l'ISC](https://ednscomp.isc.org/) et vérifiera que son test `edns512tcp` passe avec succès (entre autres tests).
+Vous pouvez maintenant vérifier votre domaine en le rentrant dans le formulaire ci-dessous et en pressant "Test!". Ce testeur utilise l'[EDNS Compliance Tester de l'ISC](https://ednscomp.isc.org/) et vérifiera que son test `edns512tcp` passe avec succès (entre autres tests).
 
 {% include 2020_checker.html lang=site.data.2020_checker.fr %}
 
@@ -89,6 +89,14 @@ Action: Opérateurs de serveurs DNS Récursifs
 En ce qui concerne le DNS Récursif, on retrouve plus ou moins les mêmes prérequis que pour le DNS faisant Autorité: répondre aux requêtes DNS sur TCP (port 53) et utilisation d'une taille de tampon EDNS  _(d'environ 1220 octets)_ qui ne causera pas de fragmentation. _N'oubliez pas de vérifier vos pare-feux !_
 
 Enfin, dernière point important, _les résolveurs **DOIVENT** répéter les requêtes via TCP s'ils reçoivent une réponse UDP tronquée (avec le bit TC=1 défini) !_
+
+**NEW!** This checker will test your browser, system and ISPs resolver by
+loading an image on a specific URL that can only be looked up if there is
+support for TCP at the last resolver querying the authority. For more
+information go to [Check My DNS](https://cmdns.dev.dns-oarc.net) which this
+checker uses.
+
+{% include 2020_cli_checker.html lang=site.data.2020_checker.fr %}
 
 Action: Fournisseurs de logiciels DNS
 -------------------------------------

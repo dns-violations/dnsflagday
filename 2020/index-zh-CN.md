@@ -85,7 +85,7 @@ IP分片是一个当前互联网存在的问题，尤其是当DNS应答消息比
 
 最后，权威DNS服务器**不可以**发送超过查询报文中请求的EDNS 缓冲区大小的报文!
 
-**新闻！** 现在你可以测试检查你的域名了！通过在下面输入你的域名，然后按Test! 这个测试使用了[ISC的EDNS合规性测试器](https://ednscomp.isc.org/)，它会从所有通用合规性测试例中选择`edns512tcp` 来测试。
+现在你可以测试检查你的域名了！通过在下面输入你的域名，然后按Test! 这个测试使用了[ISC的EDNS合规性测试器](https://ednscomp.isc.org/)，它会从所有通用合规性测试例中选择`edns512tcp` 来测试。
 
 {% include 2020_checker.html lang=site.data.2020_checker.cn %}
 
@@ -96,8 +96,13 @@ IP分片是一个当前互联网存在的问题，尤其是当DNS应答消息比
 
 最重要的是，递归解析服务器**必须**要通过TCP重复查询，如果他们收到一个被截断的UDP应答报文（TC被设置为1）！
 
-**对递归解析服务器的测试器还在开发中！**
+**NEW!** This checker will test your browser, system and ISPs resolver by
+loading an image on a specific URL that can only be looked up if there is
+support for TCP at the last resolver querying the authority. For more
+information go to [Check My DNS](https://cmdns.dev.dns-oarc.net) which this
+checker uses.
 
+{% include 2020_cli_checker.html lang=site.data.2020_checker.cn %}
 
 行动: DNS软件供应商
 ----------------------------

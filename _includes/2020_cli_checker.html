@@ -1,0 +1,36 @@
+<div id="client-tcp">
+    <form>
+        <fieldset>
+            <legend>{{ include.lang.form.client_legend }}</legend>
+            <input type="submit" value="{{ include.lang.form.value }}">
+            <noscript>{{ include.lang.form.noscript }}</noscript>
+        </fieldset>
+        <div id="client-tcp-checker-status"></div>
+        <div id="client-tcp-checker-result"></div>
+        <div id="client-tcp-checker-report"></div>
+    </form>
+    <div id="client-tcp-loading-area" style="display: none;"></div>
+</div>
+<script>
+$(document).ready(function () {
+    clientTcpChecker({
+        texts: {
+            reportOkHtml: ': <span style="color: green;">{{ include.lang.clientReportOk.short }}</span></div>' +
+            '<div><img style="height: 5em;" src="/signs/ok.svg"/></div>' +
+            '<div>{{ include.lang.clientReportOk.long | strip | strip_newlines }}',
+            reportNetworkProblemHtml: ': <span style="color: orange;">{{ include.lang.reportNetworkProblem.short }}</span></div>' +
+            '<div><img style="height: 5em;" src="/signs/compatible.svg"/></div>' +
+            '<div>{{ include.lang.reportNetworkProblem.long | strip | strip_newlines }}',
+            reportFailHtml: ': <span style="font-weight: bold; color: red;">{{ include.lang.clientReportFail.short }}</span></div>' +
+            '<div><img style="height: 5em;" src="/signs/dead.svg"/></div>' +
+            '<div>{{ include.lang.clientReportFail.long | strip | strip_newlines }}',
+        },
+        status: {
+            checkNetwork: '{{ include.lang.status.checkNetwork | strip | strip_newlines }}',
+            loading: '{{ include.lang.status.loading | strip | strip_newlines }}',
+            done: '{{ include.lang.status.done | strip | strip_newlines }}',
+        },
+    });
+});
+</script>
+<br>
