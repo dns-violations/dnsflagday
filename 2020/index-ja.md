@@ -120,11 +120,10 @@ _ファイアウォールの設定も忘れずに確認して下さい!_
 _フルサービスリゾルバーが切り詰められた UDP 応答 (TC=1 がセットされたもの) を受け取った場合、
 TCP で再度問い合わせを行わなければ **なりません**_!
 
-**NEW!** This checker will test your browser, system and ISPs resolver by
-loading an image on a specific URL that can only be looked up if there is
-support for TCP at the last resolver querying the authority. For more
-information go to [Check My DNS](https://cmdns.dev.dns-oarc.net) which this
-checker uses.
+**最新情報!** このチェッカーは、お使いのブラウザー・システム・ ISP のフルサービスリゾルバーをテストします。
+テスト用の権威 DNS サーバーに直接問い合わせるフルサービスリゾルバーが TCP をサポートしている時にだけ名前解決できる
+URL の画像を読み込むことで確認します。
+詳細は、このチェッカーが利用している [Check My DNS](https://cmdns.dev.dns-oarc.net) (英語) をご覧ください。
 
 {% include 2020_cli_checker.html lang=site.data.2020_checker.ja %}
 
