@@ -126,11 +126,11 @@ Y por último es muy importante que _¡los resolutores **DEBEN** repetir
 sus consultas sobre TCP si reciben una respuesta UDP truncada (con el
 bit TC=1 encendido)!_
 
-**NEW!** This checker will test your browser, system and ISPs resolver by
-loading an image on a specific URL that can only be looked up if there is
-support for TCP at the last resolver querying the authority. For more
-information go to [Check My DNS](https://cmdns.dev.dns-oarc.net) which this
-checker uses.
+**¡NUEVO!** Esta herramienta revisará su navegador, sistema y DNS resolutor
+de su ISP cargando una imagen en una dirección URL específica que solo puede
+ser resuelta si hay soporte TCP en el último resolutor que consulta al
+autoritativo. Para más información revise [Check My DNS](https://cmdns.dev.dns-oarc.net)
+que es el mecanismo que utiliza esta herramienta.
 
 {% include 2020_cli_checker.html lang=site.data.2020_checker.es %}
 

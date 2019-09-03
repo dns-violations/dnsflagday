@@ -270,7 +270,7 @@ ja:
 es:
     form:
         legend: "Pruebe su dominio"
-        client_legend: "Test your resolver"
+        client_legend: "Pruebe su resolutor"
         label: "Nombre de dominio (no incluya el www):"
         title: "Por favor ingrese el nombre de alguna zona DNS hospedada en los servidores DNS que quiera probar. (El nombre debe contener registros SOA y NS.)"
         value: "¡Probar!"
@@ -286,11 +286,11 @@ es:
                 <li>Su administrador DNS está haciendo una buena labor, envíele un sincero agradecimiento ;-)</li>
             </ul>
     clientReportOk:
-        short: "All Ok!"
+        short: "¡Todo bien!"
         long: >
             <ul>
-                <li>Your system is perfectly ready, you do not need to worry about DNS flag day 2020.</li>
-                <li>Your system administrator is doing a good job, send them a sincere thank you ;-)</li>
+                <li>Este dominio está totalmente listo, no necesita preocuparse por el DNS flag day 2020.</li>
+                <li>Su administrador DNS está haciendo una buena labor, envíele un sincero agradecimiento ;-)</li>
             </ul>
     reportWarning:
         short: "¡Se detectan problemas menores!"
@@ -326,21 +326,21 @@ es:
                         y corrija los problemas reportados en el informe técnico abajo.</li>
             </ul>
     clientReportFail:
-        short: "Fatal errors detected!"
+        short: "¡Se detectan errores fatales!"
         long: >
             <ul>
-                <li><strong>Your computer will have problems accessing some sites after DNS flag day 2020!</strong></li>
-                <li>Please retry the test to eliminate possibility of random network failures.</li>
-                <li>Users - please contact your computer administrator and point them to this page.</li>
-                <li>Administrators - this system is not able to complete DNS resolution for domains which depend on working DNS-over-TCP protocol.
-                    Please see <a href="#action-dns-resolver-operators">description for DNS admins</a> and correct problems.</li>
+                <li><strong>¡Su computadora tendrá problemas para acceder a algunos sitios después del DNS flag day 2020!</strong></li>
+                <li>Por favor repita la prueba para eliminar la posibilidad de fallos de red aleatorios.</li>
+                <li>Usuarios - por favor contacte al administrador de su computadora y diríjalo a esta página.</li>
+                <li>Administradores - este sistema no es capaz de completar la resolución DNS para nombres de dominio que dependen del protocolo DNS-sobre-TCP operativo.
+                    Por favore revise <a href="#acción-operadores-de-dns-resolutor">la descripción para administradores DNS</a> y corrija los problemas.</li>
             </ul>
     reportNetworkProblem:
-        short: "Test system error!"
+        short: "¡Error en sistema de pruebas!"
         long: >
             <ul>
-                <li><strong>The test could not be completed due to a network problem!</strong></li>
-                <li>This can also happen if Check My DNS service is down or temporary unavailable, please check <a href="https://cmdns.dev.dns-oarc.net">https://cmdns.dev.dns-oarc.net</a> before trying again.</li>
+                <li><strong>¡La prueba no pudo completarse debido a problemas de red!</strong></li>
+                <li>Esto también puede suceder si la herramienta &quot;Check My DNS&quot; está abajo o temporalmente no disponible, por favor revise <a href="https://cmdns.dev.dns-oarc.net">https://cmdns.dev.dns-oarc.net</a> antes de reintentar.</li>
             </ul>
     reportTestError: >
         La prueba no puede ejecutarse debido a un error. Por favor asegúrese que el nombre de dominio ingresado
@@ -348,7 +348,7 @@ es:
         Repita la prueba para eliminar la posibilidad de fallos de red aleatorios o investigue
     reportLinkText: "Informe técnico"
     status:
-        checkNetwork: "Checking network, please wait…"
+        checkNetwork: "Revisando la red, por favor espere…"
         loading: "Prueba en ejecución, por favor espere… puede tomar varios segundos."
         done: "Pruebas completadas:"
         errorApi: "¡Error de comunicación! API no disponible… por favor reintente más tarde"
