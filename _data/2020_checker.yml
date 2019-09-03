@@ -156,11 +156,11 @@ fr:
                     Please see <a href="#action-dns-resolver-operators">description for DNS admins</a> and correct problems.</li>
             </ul>
     reportNetworkProblem:
-        short: "Network problem!"
+        short: "Test system error!"
         long: >
             <ul>
                 <li><strong>The test could not be completed due to a network problem!</strong></li>
-                <li>This can also happen if Check My DNS is down or temporary unavailable, please check <a href="https://cmdns.dev.dns-oarc.net">https://cmdns.dev.dns-oarc.net</a> before trying again.</li>
+                <li>This can also happen if Check My DNS service is down or temporary unavailable, please check <a href="https://cmdns.dev.dns-oarc.net">https://cmdns.dev.dns-oarc.net</a> before trying again.</li>
             </ul>
     reportTestError: >
         Le test ne peut pas être effectué à cause d\'une erreur. Veuillez vous assurer que  le nom de domaine entré correspond bien à une <strong>zone DNS</strong>, c\'est-à-dire utilisez "example.com" au lieu de "www.example.com".
@@ -245,11 +245,11 @@ ja:
                     Please see <a href="#action-dns-resolver-operators">description for DNS admins</a> and correct problems.</li>
             </ul>
     reportNetworkProblem:
-        short: "Network problem!"
+        short: "Test system error!"
         long: >
             <ul>
                 <li><strong>The test could not be completed due to a network problem!</strong></li>
-                <li>This can also happen if Check My DNS is down or temporary unavailable, please check <a href="https://cmdns.dev.dns-oarc.net">https://cmdns.dev.dns-oarc.net</a> before trying again.</li>
+                <li>This can also happen if Check My DNS service is down or temporary unavailable, please check <a href="https://cmdns.dev.dns-oarc.net">https://cmdns.dev.dns-oarc.net</a> before trying again.</li>
             </ul>
     reportTestError: >
         エラーが発生したため、テストを実行することができませんでした。
@@ -336,11 +336,11 @@ es:
                     Please see <a href="#action-dns-resolver-operators">description for DNS admins</a> and correct problems.</li>
             </ul>
     reportNetworkProblem:
-        short: "Network problem!"
+        short: "Test system error!"
         long: >
             <ul>
                 <li><strong>The test could not be completed due to a network problem!</strong></li>
-                <li>This can also happen if Check My DNS is down or temporary unavailable, please check <a href="https://cmdns.dev.dns-oarc.net">https://cmdns.dev.dns-oarc.net</a> before trying again.</li>
+                <li>This can also happen if Check My DNS service is down or temporary unavailable, please check <a href="https://cmdns.dev.dns-oarc.net">https://cmdns.dev.dns-oarc.net</a> before trying again.</li>
             </ul>
     reportTestError: >
         La prueba no puede ejecutarse debido a un error. Por favor asegúrese que el nombre de dominio ingresado
@@ -421,11 +421,11 @@ cn:
                     Please see <a href="#action-dns-resolver-operators">description for DNS admins</a> and correct problems.</li>
             </ul>
     reportNetworkProblem:
-        short: "Network problem!"
+        short: "Test system error!"
         long: >
             <ul>
                 <li><strong>The test could not be completed due to a network problem!</strong></li>
-                <li>This can also happen if Check My DNS is down or temporary unavailable, please check <a href="https://cmdns.dev.dns-oarc.net">https://cmdns.dev.dns-oarc.net</a> before trying again.</li>
+                <li>This can also happen if Check My DNS service is down or temporary unavailable, please check <a href="https://cmdns.dev.dns-oarc.net">https://cmdns.dev.dns-oarc.net</a> before trying again.</li>
             </ul>
     reportTestError: >
         由于出现了一个错误，无法进行测试评估。请确认域名指向一个<strong>DNS Zone</strong>, 例如 使用 "example.com" 而不是 "www.example.com"。
