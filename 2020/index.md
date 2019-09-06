@@ -116,7 +116,7 @@ This web site and some aspects of DNS Flag Day 2020 are works in progress.
 - The _exact date_ for the 2020 DNS Flag Day is not yet determined.
 - **Please note** that the _exact recommended EDNS buffer sizes_ have not
   yet been agreed upon. The current proposal is to use a value around
-  1200 (1220, 1232, ...) to limit the risk of fragmentation on IPv6.
+  1232 to limit the risk of fragmentation on IPv6.
 
 Nevertheless, the technical requirements are already clear enough that
 operators and developers can start preparing by testing and fixing their
