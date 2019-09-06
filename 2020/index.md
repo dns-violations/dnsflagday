@@ -115,8 +115,8 @@ Note: Work in progress
 This web site and some aspects of DNS Flag Day 2020 are works in progress.
 - The _exact date_ for the 2020 DNS Flag Day is not yet determined.
 - **Please note** that the _exact recommended EDNS buffer sizes_ have not
-  yet been agreed upon. The current proposal is to use a value around
-  1232 to limit the risk of fragmentation on IPv6.
+  yet been agreed upon. The current proposal is to use a value of
+  1232 bytes to limit the risk of fragmentation on IPv6.
 
 Nevertheless, the technical requirements are already clear enough that
 operators and developers can start preparing by testing and fixing their
@@ -135,16 +135,17 @@ over TCP (port 53). _Check your firewall(s) as well,_ as some of them block
 TCP/53.
 
 You should also configure your servers to negotiate an EDNS buffer size
-that will not cause fragmentation. The value recommended here is around
+that will not cause fragmentation. The value recommended here is
 1232 bytes, though it is still up for discussion.
 
 _Authoritative DNS servers **MUST NOT** send answers larger than the
 requested EDNS buffer size!_
 
 You can now check your servers by entering your domain name below and
-pressing "Test!".  This tester uses [ISC's EDNS Compliance
-Tester](https://ednscomp.isc.org/) and will check that it's `edns512tcp`
-test is successful among other tests for general compliance.
+pressing "Test!".  This tester uses
+[ISC's EDNS Compliance Tester](https://ednscomp.isc.org/) and will
+check that its `edns512tcp` test is successful, among other tests for
+general standards compliance.
 
 {% include 2020_checker.html lang=site.data.2020_checker.en %}
 
@@ -321,8 +322,8 @@ FAQ
      IP fragmentation of TCP segments. It also makes it harder to spoof
      DNS responses.
 
-     TCP support was recommended in the earliest DNS standards
-     specification, but some implementers may have taken that to mean TCP
+     TCP support was recommended in the earliest DNS standard
+     specifications. Some implementers may have taken that to mean TCP
      was optional, and so in August 2010
      [RFC 5966](https://tools.ietf.org/html/rfc5966) made it clear that TCP
      support is absolutely required for compliance with the Internet
