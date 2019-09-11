@@ -18,17 +18,17 @@ flagdayyear: 2020
 
 {% include 2020_languages.html %}
 
-<img class="logo float-right" alt="DNS flag day logo" src="/images/DNS_Flag.svg">
+<img class="logo float-right" alt="DNS Flag Day logo" src="/images/DNS_Flag.svg">
 
 Thank you!
 ==========
 
-The [2019 DNS flag day](/2019/) was a very successful event. The Internet
+The [2019 DNS Flag Day](/2019/) was a very successful event. The Internet
 community worked together and fixed problems which were causing delays and
 other problems for Internet users worldwide. We would like to thank all
 operators who cooperated and helped to make Internet a better place.
 
-Summary of the past and future DNS flag days can be found e.g. in
+Summary of the past and future DNS Flag Days can be found e.g. in
 [https://youtu.be/mH_elg9EUWw?t=649](https://youtu.be/mH_elg9EUWw?t=649).
 
 Contents
@@ -40,8 +40,8 @@ Contents
   - [Action: DNS Resolver Operators](#action-dns-resolver-operators)
   - [Action: DNS software vendors](#action-dns-software-vendors)
   - [How to test?](#how-to-test)
-- [Previous flag days](#previous-flag-days)
-- [Who's behind DNS flag day?](#whos-behind-dns-flag-day)
+- [Previous Flag Days](#previous-flag-days)
+- [Who's behind DNS Flag Day?](#whos-behind-dns-flag-day)
 - [Get in touch](#get-in-touch)
 - [Supporters](#supporters)
 - [FAQ](#faq)
@@ -49,7 +49,7 @@ Contents
 What's next?
 ============
 
-The next DNS flag day is being planned right now. It will focus on the
+The next DNS Flag Day is being planned right now. It will focus on the
 operational and security problems in DNS caused by Internet Protocol
 packet fragmentation.
 
@@ -66,100 +66,136 @@ conferences such as [DNS-OARC 30](https://www.dns-oarc.net/oarc30) panel
 discussion ([video](https://youtu.be/mH_elg9EUWw?t=680),
 [slides](https://indico.dns-oarc.net/event/31/contributions/678/attachments/673/1102/dns_flag_day_panel.pdf)).
 
-The proposed plan for the DNS flag day 2020 was announced at
+The proposed plan for DNS Flag Day 2020 was announced at
 [RIPE78](https://ripe78.ripe.net) by Petr Špaček, CZ.NIC and Ondřej Surý,
 ISC ([video](https://ripe78.ripe.net/archives/video/28),
-[slides](https://ripe78.ripe.net/presentations/53-plenary.pdf)). This time,
-we will focus on the problems with IP fragmentation of DNS packets.
+[slides](https://ripe78.ripe.net/presentations/53-plenary.pdf)). This
+year, we are focusing on problems with IP fragmentation of DNS packets.
 
-IP fragmentation is a problem on the Internet today, especially when it
-comes to large DNS messages. And even if fragmentation works it might not be
-secure enough for DNS.
+IP fragmentation is unreliable on the Internet today, and can cause
+transmission failures when large DNS messages are sent via UDP. Even
+when fragmentation does work, it may not be secure; it is theoretically
+possible to spoof *parts* of a fragmented DNS message, without easy
+detection at the receiving end.
 - Bonica R. et al, "[IP Fragmentation Considered Fragile](https://tools.ietf.org/html/draft-bonica-intarea-frag-fragile)", Work in Progress, July 2018
 - Huston G., "[IPv6, Large UDP Packets and the DNS](https://www.potaroo.net/ispcol/2017-08/xtn-hdrs.html)",  August 2017
 - Fujiwara K., "[Measures against cache poisoning attacks using IP fragmentation in DNS](https://indico.dns-oarc.net/event/31/contributions/692/)", May 2019
 
-These issues can be fixed by honoring an EDNS buffer size that will
-not cause fragmentation and by allowing DNS to switch from UDP to TCP when
-larger buffer sizes are not enough.
+These issues can be addressed by a) configuring servers to limit DNS
+messages sent over UDP to a size that will not trigger fragmentation on
+typical network links, and b) ensuring that DNS servers can switch from
+UDP to TCP when a DNS response is too big to fit in this limited buffer
+size.
+
+Message Size Considerations
+---------------------------
+
+The optimum DNS message size to avoid IP fragmentation while minimizaing
+the use of TCP will depend on the Maximum Transmission Unit (MTU) of the
+physical network links connecting two network endpoints.  Unfortunately,
+there is not yet a standard mechanism for DNS server implementors to access
+this information.  Until such a standard exists, we recommend that the EDNS
+buffer size should, by _default_, be set to a value small enough to avoid
+fragmentation on the majority of network links in use today.
+
+An EDNS buffer size of 1232 bytes will avoid fragmentation on nearly all
+current networks. This is based on an MTU of 1280, which is required by the
+IPv6 specification, minus 48 bytes for the IPv6 and UDP headers.
+
+Note that this recomendation is for a _default_ value, to be used when
+better information is not available.  Operators may still configure larger
+values if their networks support larger data frames and they are certain
+there is no risk of IP fragmentation.  DNS server vendors may use higher
+(or lower) packet sizes if better information about the MTU is available
+from the kernel.
 
 Note: Work in progress
 ----------------------
 
-This web site and some aspects of DNS flag day 2020 are work in progress.
+This web site and some aspects of DNS Flag Day 2020 are works in progress.
 - The _exact date_ for the 2020 DNS Flag Day is not yet determined.
 - **Please note** that the _exact recommended EDNS buffer sizes_ have not
-  been agreed upon, the current ballpark around 1200 (1220, 1232, ...) is
-  to limit the risk of fragmentation in IPv6.
+  yet been agreed upon. The current proposal is to use a value of
+  1232 bytes to limit the risk of fragmentation on IPv6.
 
 Nevertheless, the technical requirements are already clear enough that
 operators and developers can start preparing by testing and fixing their
 systems.
 
-If you have comments or suggestion then please join the discussion at
+If you have comments or suggestions, please join the discussion at the
 [dns-operations](https://lists.dns-oarc.net/mailman/listinfo/dns-operations)
 mailing list.
 
 Action: Authoritative DNS Operators
 -----------------------------------
 
-For the authoritative side what you should do to help with these issues
-is to answer DNS queries over TCP (port 53), _check your firewall(s) also!_
+If you are an authoritative DNS server operator, what you should do to help
+with these issues is ensure that your DNS servers can answer DNS queries
+over TCP (port 53). _Check your firewall(s) as well,_ as some of them block
+TCP/53.
 
-You should also use an EDNS buffer size that will not cause fragmentation,
-recommended here is around 1220 bytes but it is still up for discussion.
+You should also configure your servers to negotiate an EDNS buffer size
+that will not cause fragmentation. The value recommended here is
+1232 bytes, though it is still up for discussion.
 
-And lastly, _Authoritative DNS servers **MUST NOT** send answers larger
-than requested EDNS buffer size!_
+_Authoritative DNS servers **MUST NOT** send answers larger than the
+requested EDNS buffer size!_
 
-You can now check your domain by entering it below and pressing
-"Test!". This tester uses [ISC's EDNS Compliance Tester](https://ednscomp.isc.org/)
-and will check that it's `edns512tcp` test is successful among other tests
-for general compliance.
+You can now check your servers by entering your domain name below and
+pressing "Test!".  This tester uses
+[ISC's EDNS Compliance Tester](https://ednscomp.isc.org/) and will
+check that its `edns512tcp` test is successful, among other tests for
+general standards compliance.
 
 {% include 2020_checker.html lang=site.data.2020_checker.en %}
 
 Action: DNS Resolver Operators
 ------------------------------
 
-For the resolver side it's more or less the same requirement as for
-the authoritative, answer DNS queries over TCP (port 53) and use an
-EDNS buffer size _(~1220 bytes)_ that will not cause
-fragmentation. _Remember to check your firewall(s)!_
+Requrirements on the resolver side are more or less the same as for
+authoritative: ensure that your servers can answer DNS queries over TCP
+(port 53), and configure an EDNS buffer size of 1232 bytes to avoid
+fragmentation. Remember to check your firewall(s) for problems with
+DNS over TCP!
 
-And for that last important part, _Resolvers **MUST** repeat queries over
-TCP if they receive a truncated UDP response (with TC=1 set)!_
+Most importantly: _Resolvers **MUST** resend queries over TCP if they
+receive a truncated UDP response (with TC=1 set)!_
 
-**NEW!** This checker will test your browser, system and ISPs resolver by
+**NEW!** This checker will test your browser, system and ISP's resolver by
 loading an image on a specific URL that can only be looked up if there is
 support for TCP at the last resolver querying the authority. For more
-information go to [Check My DNS](https://cmdns.dev.dns-oarc.net) which this
-checker uses.
+information, go to [Check My DNS](https://cmdns.dev.dns-oarc.net) which
+this checker uses.
 
 {% include 2020_cli_checker.html lang=site.data.2020_checker.en %}
 
-Action: DNS software vendors
+Action: DNS Software Vendors
 ----------------------------
 
-As a DNS software vendor it is important to be **standards compliant** and
-to use a _**default EDNS buffer size** (~1220)_ that will not cause
-fragmentation.
+It is important for DNS software vendors to **comply with DNS standards**,
+and to use a default EDNS buffer size (1232 bytes) that will not cause
+fragmentation on typical network links.
 
-Relevant standards are mainly [RFC 7766](https://tools.ietf.org/html/rfc7766),
+Relevant standards include [RFC 7766](https://tools.ietf.org/html/rfc7766),
 [RFC 6891 section 6.2.3.](https://tools.ietf.org/html/rfc6891#section-6.2.3)
-and [RFC 6891 section 6.2.4.](https://tools.ietf.org/html/rfc6891#section-6.2.4).
+and
+[RFC 6891 section 6.2.4.](https://tools.ietf.org/html/rfc6891#section-6.2.4).
 
-Motivation for the change is described in [IETF draft intarea-frag-fragile section 6.1](https://tools.ietf.org/html/draft-ietf-intarea-frag-fragile-10#section-6.1) and [IETF draft iab-protocol-maintenance](https://datatracker.ietf.org/doc/draft-iab-protocol-maintenance/).
+The motivation for this effort is described in
+[IETF draft intarea-frag-fragile section 6.1](https://tools.ietf.org/html/draft-ietf-intarea-frag-fragile-10#section-6.1)
+and [IETF draft iab-protocol-maintenance](https://datatracker.ietf.org/doc/draft-iab-protocol-maintenance/).
 
 How to test?
 ------------
 
-If you're a domain owner or an authoritative DNS operator you can use our
-web-based testing tool to check a domain, you will find it under
+If you're the owner of a domain or the operator of an authoritative DNS
+server, you can use our web-based testing tool to check your domains; you
+can find it above under
 [Action: Authoritative DNS Operators](#action-authoritative-dns-operators).
 
-We are working on a web-based testing tool for clients and DNS resolver
-operators and once it's ready you will find it on this page,
+Our web-based testing tool for clients and DNS resolver operators can be
+found above under 
+[Action: DNS Resolver Operators](#action-dns-resolver-operators).
 
 You can also test by using the following CLI commands:
 
@@ -169,72 +205,73 @@ $ dig +tcp @resolver_IP yourdomain.example.
 $ dig @resolver_IP test.knot-resolver.cz. TXT
 ```
 
-All DNS queries must be successful and commands with `+tcp` option or
-without it should return the same. If you are a service provider you can
-also test your authoritative and resolver services by allowing DNS over
-TCP and changing the configuration for the default EDNS buffer size:
+All DNS queries must be successful, and commands should return the same
+results both with and without the `+tcp` option.
+
+If you are a service provider, you can test your authoritative and
+recursive DNS services by configuring the default EDNS buffer size:
 
 - BIND
 ```
 options {
-    edns-udp-size 1220;
-    max-udp-size 1220;
+    edns-udp-size 1232;
+    max-udp-size 1232;
 };
 ```
 
 - Knot DNS
 ```
 server:
-    max-udp-payload: 1220
+    max-udp-payload: 1232
 ```
 
 - Knot Resolver
 ```
-net.bufsize(1220)
+net.bufsize(1232)
 ```
 
 - PowerDNS Authoritative
 ```
-udp-truncation-threshold=1220
+udp-truncation-threshold=1232
 ```
 
 - PowerDNS Recursor
 ```
-edns-outgoing-bufsize=1220
-udp-truncation-threshold=1220
+edns-outgoing-bufsize=1232
+udp-truncation-threshold=1232
 ```
 
 - Unbound
 ```
 server:
-    edns-buffer-size: 1220
+    edns-buffer-size: 1232
 ```
 
 - NSD
 ```
 server:
-    ipv4-edns-size: 1220
-    ipv6-edns-size: 1220
+    ipv4-edns-size: 1232
+    ipv6-edns-size: 1232
 ```
 
 The configuration above will have no visible effect if everything works
-correctly, but some queries will fail to resolve if TCP transport is not
+correctly. Some queries will fail to resolve if the TCP transport is not
 available.
 
-Previous flag days
-==================
+Previous DNS Flag Days
+======================
 
-Here is a list of the previous flag days:
+Here is a list of the previous DNS Flag Days:
 - [2019 EDNS workarounds](/2019/)
 
-Who's behind DNS flag day?
+Who's behind DNS Flag Day?
 ==========================
 
-The DNS flag day effort is community driven by DNS software and service
+The DNS Flag Day effort is community driven by DNS software and service
 providers, and supported by [The DNS Operations, Analysis, and Research Center (DNS-OARC)](https://www.dns-oarc.net/)
 which most in the community are members of.
 
-If you have technical questions around DNS flag day you can join
+If you have technical questions about DNS Flag Day, you can join
 [the DNS-operations mailing list](https://lists.dns-oarc.net/mailman/listinfo/dns-operations)
 and ask them there.
 
@@ -257,25 +294,24 @@ Supporters
 FAQ
 ===
 
-- Q: Is DNS over UDP dead?
-
-  A: No, DNS over UDP will still be the main means of transportation as it
-     is massively scalable, very resource-efficient and fault-tolerant.
-
 - Q: TL;DR [RFC 7766](https://tools.ietf.org/html/rfc7766)
 
   A: DNS **MUST** work over TCP!
 
+- Q: Is DNS over UDP dead?
+
+  A: No, DNS over UDP will still be the primary mode of transmission, as it
+     is massively scalable, very resource-efficient, and fault-tolerant.
+
 - Q: Will everything break on date-to-be-decided 2020?
 
-  A: Certainly not everything! Only a small percentage of sites is affected,
-     and this number is shrinking as operators work on fixing their systems.
-     On the date that will be announced major DNS resolver operators will
-     stop tolerating misbehavior which breaks published standards, so this
-     change will not affect sites which follows published standards.
-     Also, on the announced date software vendors will change behavior
-     _**in new software releases**_, so this change will also slowly affect
-     others who operate their own DNS resolvers.
+  A: No! Only a small percentage of sites will be affected.  On the
+     date to be announced, software vendors will change their default
+     behavior in new software releases so that the default message size
+     used over UDP will be 1232 bytes.  As these new releases are
+     deployed, sites that return DNS responses larger than 1232 bytes,
+     but which cannot answer DNS queries via TCP, may fail to resolve.
+     Note that these sites are already unreliable today.
 
 - Q: Why is TCP support so important?
 
@@ -286,30 +322,42 @@ FAQ
      IP fragmentation of TCP segments. It also makes it harder to spoof
      DNS responses.
 
-     Finally, TCP support was recommended from the early standards
-     specification, but some implementers may have taken that to mean TCP
-     was optional, and so about ten years ago (August 2010)
-     [RFC 5966](https://tools.ietf.org/html/rfc5966) made it clear that
-     TCP support is absolutely required for compliance with the Internet
+     TCP support was recommended in the earliest DNS standard
+     specifications. Some implementers may have taken that to mean TCP
+     was optional, and so in August 2010
+     [RFC 5966](https://tools.ietf.org/html/rfc5966) made it clear that TCP
+     support is absolutely required for compliance with the Internet
      standards for DNS.
 
 - Q: Why not just switch to TCP only?
 
   A: DNS over UDP is fine for small packets that do not require IP
      fragmentation. It can still be used for that class of DNS messages,
-     which is the larger part of the Internet traffic. Switching everything
-     over on TCP may cause stress on DNS services. While in principle
-     DNS over TCP only should be feasible, it is slower than DNS over UDP,
-     in the best case by a factor of 4 (based on Baptiste Jonglez work
+     which is the majority of DNS traffic. Switching everything
+     over to TCP may cause stress on DNS services. While in principle
+     DNS over TCP only should be feasible, it is slower than DNS over UDP
+     by at least a factor of 4 (based on Baptiste Jonglez work
      [presented at RIPE76](https://ripe76.ripe.net/archives/video/63/)),
      and it may limit the number of connections a DNS server can accept
      simultaneously.
 
-- Q: Will this Flag Day require a software update?
+- Q: What if we want to use bigger packet sizes in the future?
 
-  A: DNS software which follows published standards does not require upgrade
-     and will continue to work. E.g. supported versions of major open source
-     DNS servers will continue to work correctly.
+  A: Our goal is simply to avoid IP fragmentation by choosing a _default_
+     EDNS buffer size that will work well on typical networks today. This
+     is not a permanent change to any DNS specification.  Default values
+     can always be overridden locally if better information is avaialble.
+     If a standard method for retrieving MTU data from the kernel becomes
+     available, that can be used as well.
+
+- Q: Will DNS Flag Day 2020 require a software update?
+
+  A: In most cases, no. DNS software which follows published standards does
+     not require upgrade and will continue to work. All supported versions
+     of major open source DNS servers work correctly now and will continue
+     to do so. They can all be configured to use the recommended EDNS
+     buffer sizes, even if they have not yet been updated to use those
+     sizes by default.
 
      Whether a particular deployment is compliant depends on the way the
      software is configured, and on the firewall configuration used at
@@ -327,7 +375,7 @@ FAQ
      failure in case of DNS answers bigger than EDNS buffer size chose at
      the client side.
 
-- Q: I want to support DNS flag day 2020, what do I do?
+- Q: I want to support DNS Flag Day 2020, what do I do?
 
   A: Great to hear!  You can add yourself as a supporter by making a
      [pull request](https://github.com/dns-violations/dnsflagday/pulls) and
