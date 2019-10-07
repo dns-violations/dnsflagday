@@ -70,7 +70,6 @@ IP分片是一个当前互联网存在的问题，尤其是当DNS应答消息比
 
 这个网站和2020 DNS Flag Day的一些工作还在开展中（尚未确定）。
 - 2020 DNS Flag Day 的准确时间还没有确定
-- **请注意** 推荐的EDNS 缓冲区大小的精确值还没有确定，现在它的大致范围是 1200字节（1220, 1232, ...）。 这个取值主要目的是为了减少IPv6分片风险。
 
 然而，技术需求已经足够清晰，运营者和开发者可以开始准备测试和改动他们的系统。
 
@@ -81,7 +80,7 @@ IP分片是一个当前互联网存在的问题，尤其是当DNS应答消息比
 
 对于权威侧来说，需要你帮助做的是应答DNS over TCP的查询（53端口）。同时检查你的防火墙！
 
-你也应该使用一个固定的EDNS 缓冲区大小，那样就不会造成分片。这里建议采用大概1220字节，但是这个取值仍然在讨论中。
+你也应该使用一个固定的EDNS 缓冲区大小，那样就不会造成分片。这里建议采用大概1232字节，但是这个取值仍然在讨论中。
 
 最后，权威DNS服务器**不可以**发送超过查询报文中请求的EDNS 缓冲区大小的报文!
 
@@ -92,7 +91,7 @@ IP分片是一个当前互联网存在的问题，尤其是当DNS应答消息比
 行动: 递归DNS运营者
 ------------------------------
 
-对递归解析测来说，或多或少与权威的要求类似，即能够通过TCP(53端口)应答DNS查询，用固定的EDNS 缓冲区大小 (大概1220字节)从而避免IP分片。记得要检查你的防火墙。
+对递归解析测来说，或多或少与权威的要求类似，即能够通过TCP(53端口)应答DNS查询，用固定的EDNS 缓冲区大小 (大概1232字节)从而避免IP分片。记得要检查你的防火墙。
 
 最重要的是，递归解析服务器**必须**要通过TCP重复查询，如果他们收到一个被截断的UDP应答报文（TC被设置为1）！
 
@@ -107,7 +106,7 @@ checker uses.
 行动: DNS软件供应商
 ----------------------------
 
-对DNS软件供应商重要的一点就是要**符合标准**，采用 **EDNS 缓冲区大小默认值** （~ 1220字节），这样就不会造成分片。
+对DNS软件供应商重要的一点就是要**符合标准**，采用 **EDNS 缓冲区大小默认值** （~ 1232字节），这样就不会造成分片。
 
 相关重要的标准主要是[RFC 7766](https://tools.ietf.org/html/rfc7766),
 [RFC 6891 section 6.2.3.](https://tools.ietf.org/html/rfc6891#section-6.2.3)
@@ -134,44 +133,44 @@ $ dig @resolver_IP test.knot-resolver.cz. TXT
 - BIND
 ```
 options {
-    edns-udp-size 1220;
-    max-udp-size 1220;
+    edns-udp-size 1232;
+    max-udp-size 1232;
 };
 ```
 
 - Knot DNS
 ```
 server:
-    max-udp-payload: 1220
+    max-udp-payload: 1232
 ```
 
 - Knot Resolver
 ```
-net.bufsize(1220)
+net.bufsize(1232)
 ```
 
 - PowerDNS Authoritative
 ```
-udp-truncation-threshold=1220
+udp-truncation-threshold=1232
 ```
 
 - PowerDNS Recursor
 ```
-edns-outgoing-bufsize=1220
-udp-truncation-threshold=1220
+edns-outgoing-bufsize=1232
+udp-truncation-threshold=1232
 ```
 
 - Unbound
 ```
 server:
-    edns-buffer-size: 1220
+    edns-buffer-size: 1232
 ```
 
 - NSD
 ```
 server:
-    ipv4-edns-size: 1220
-    ipv6-edns-size: 1220
+    ipv4-edns-size: 1232
+    ipv6-edns-size: 1232
 ```
 
 如果一切工作正常（支持TCP），以上的配置不会有明显的影响。如果递归或者权威不支持TCP，一些查询就会失败。

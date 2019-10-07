@@ -81,9 +81,6 @@ Nota: Trabajo en marcha
 Este sitio web y algunos aspectos del DNS flag day 2020 son aún un trabajo
 en progreso.
 - La _fecha exacta_ para el DNS Flag Day 2020 no está aún determinada.
-- **Tenga en cuenta** que los _tamaños exactos recomendados para el buffer EDNS_
-no se han acordado aún, siendo la actual estimación alrededor de 1200
-(1220, 1232, ...) para limitar el riesgo de fragmentación en IPv6.
 
 No obstante, los requisitos técnicos ya son lo suficientemente claros
 como para que los operadores y desarrolladores puedan comenzar a
@@ -101,7 +98,7 @@ problemas es responder consultas DNS sobre TCP (puerto 53).
 _¡Recuerde revisar también su(s) cortafuegos (firewalls)!_
 
 También debería usar un tamaño de buffer EDNS que no cause fragmentación.
-El valor recomendado es alrededor de 1220 bytes, pero está aún en
+El valor recomendado es alrededor de 1232 bytes, pero está aún en
 discusión.
 
 Y por último, _¡los servidores DNS Autoritativos **NO DEBEN** enviar
@@ -120,7 +117,7 @@ Acción: Operadores de DNS Resolutor
 En el lado del resolutor ("resolver"), son más o menos los mismos
 requisitos que para el autoritativo: responder consultas DNS sobre
 TCP (puerto 53) y usar un tamaño de buffer EDNS que no cause
-fragmentación _(~1220 bytes)_. _¡Recuerde revisar su(s) cortafuegos (firewalls)!_.
+fragmentación _(~1232 bytes)_. _¡Recuerde revisar su(s) cortafuegos (firewalls)!_.
 
 Y por último es muy importante que _¡los resolutores **DEBEN** repetir
 sus consultas sobre TCP si reciben una respuesta UDP truncada (con el
@@ -138,7 +135,7 @@ Acción: Proveedores de software DNS
 -----------------------------------
 
 Como proveedor de software DNS es importante ser **compatible con los estándares**
-y usar un _**tamaño por defecto de buffer EDNS** (~1220)_ que no cause
+y usar un _**tamaño por defecto de buffer EDNS** (~1232)_ que no cause
 fragmentación.
 
 Los estándares relevantes son principalmente los
@@ -177,44 +174,44 @@ con el tamaño por defecto de buffer EDNS:
 - BIND
 ```
 options {
-    edns-udp-size 1220;
-    max-udp-size 1220;
+    edns-udp-size 1232;
+    max-udp-size 1232;
 };
 ```
 
 - Knot DNS
 ```
 server:
-    max-udp-payload: 1220
+    max-udp-payload: 1232
 ```
 
 - Knot Resolver
 ```
-net.bufsize(1220)
+net.bufsize(1232)
 ```
 
 - PowerDNS Authoritative
 ```
-udp-truncation-threshold=1220
+udp-truncation-threshold=1232
 ```
 
 - PowerDNS Recursor
 ```
-edns-outgoing-bufsize=1220
-udp-truncation-threshold=1220
+edns-outgoing-bufsize=1232
+udp-truncation-threshold=1232
 ```
 
 - Unbound
 ```
 server:
-    edns-buffer-size: 1220
+    edns-buffer-size: 1232
 ```
 
 - NSD
 ```
 server:
-    ipv4-edns-size: 1220
-    ipv6-edns-size: 1220
+    ipv4-edns-size: 1232
+    ipv6-edns-size: 1232
 ```
 
 La configuración indicada no ocasionará cambios visibles en caso que

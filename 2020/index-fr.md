@@ -64,7 +64,6 @@ Note: Travail en cours
 
 Ce site web et certains aspects du DNS flag day 2020 sont toujours en cours de finalisation.
 - La _date exacte_ pour le DNS Flag Day 2020 n'a pas encore été arrêtée.
-- **Merci de noter** que les _tailles exactes des tampons EDNS_ n'ont pas encore été convenues, la taille approximative actuelle autour de 1200 (1220, 1232, ...) est pour limiter le risque de fragmentation en IPv6.
 
 Néanmoins, les prérequis techniques sont déjà suffisament clairs et les opérateurs et  développeurs peuvent dores et déjà tester et reconfigurer leurs systèmes.
 
@@ -75,7 +74,7 @@ Action: Opérateurs de serveurs DNS faisant Autorité
 
 En ce qui concerne le "DNS faisant Autorité", vous pouvez aider à résoudre ce genre de problèmes en répondant aux requêtes DNS sur TCP (port 53), _vérifiez aussi vos pare-feux !_
 
-Vous devriez aussi utiliser une taille tampon EDNS qui ne causera pas de fragmentation, la recommandation ici est autour de 1220 octets, mais la valeur définitive est toujours en cours de discussion.
+Vous devriez aussi utiliser une taille tampon EDNS qui ne causera pas de fragmentation, la recommandation ici est autour de 1232 octets, mais la valeur définitive est toujours en cours de discussion.
 
 Enfin, _les serveurs DNS faisant Autorité **NE DOIVENT PAS** envoyer de réponses plus grandes que la taille du tampon EDNS demandée._
 
@@ -86,7 +85,7 @@ Vous pouvez maintenant vérifier votre domaine en le rentrant dans le formulaire
 Action: Opérateurs de serveurs DNS Récursifs
 --------------------------------------------
 
-En ce qui concerne le DNS Récursif, on retrouve plus ou moins les mêmes prérequis que pour le DNS faisant Autorité: répondre aux requêtes DNS sur TCP (port 53) et utilisation d'une taille de tampon EDNS  _(d'environ 1220 octets)_ qui ne causera pas de fragmentation. _N'oubliez pas de vérifier vos pare-feux !_
+En ce qui concerne le DNS Récursif, on retrouve plus ou moins les mêmes prérequis que pour le DNS faisant Autorité: répondre aux requêtes DNS sur TCP (port 53) et utilisation d'une taille de tampon EDNS  _(d'environ 1232 octets)_ qui ne causera pas de fragmentation. _N'oubliez pas de vérifier vos pare-feux !_
 
 Enfin, dernière point important, _les résolveurs **DOIVENT** répéter les requêtes via TCP s'ils reçoivent une réponse UDP tronquée (avec le bit TC=1 défini) !_
 
@@ -101,7 +100,7 @@ checker uses.
 Action: Fournisseurs de logiciels DNS
 -------------------------------------
 
-En tant que fournisseur de logiciel DNS, il est important de se **conformer aux standards** et d'utiliser une _**taille de tampon EDNS par défaut** (environ 1220 octets)_ qui ne causera pas de fragmentation.
+En tant que fournisseur de logiciel DNS, il est important de se **conformer aux standards** et d'utiliser une _**taille de tampon EDNS par défaut** (environ 1232 octets)_ qui ne causera pas de fragmentation.
 
 Les standards pertinents sont principalement les [RFC 7766](https://tools.ietf.org/html/rfc7766), [RFC 6891 section 6.2.3.](https://tools.ietf.org/html/rfc6891#section-6.2.3)
 et [RFC 6891 section 6.2.4.](https://tools.ietf.org/html/rfc6891#section-6.2.4).
@@ -126,44 +125,44 @@ Toutes les requêtes DNS doivent aboutir et les commandes avec ou sans l'option 
 - BIND
 ```
 options {
-    edns-udp-size 1220;
-    max-udp-size 1220;
+    edns-udp-size 1232;
+    max-udp-size 1232;
 };
 ```
 
 - Knot DNS
 ```
 server:
-    max-udp-payload: 1220
+    max-udp-payload: 1232
 ```
 
 - Knot Resolver
 ```
-net.bufsize(1220)
+net.bufsize(1232)
 ```
 
 - PowerDNS Authoritative
 ```
-udp-truncation-threshold=1220
+udp-truncation-threshold=1232
 ```
 
 - PowerDNS Recursor
 ```
-edns-outgoing-bufsize=1220
-udp-truncation-threshold=1220
+edns-outgoing-bufsize=1232
+udp-truncation-threshold=1232
 ```
 
 - Unbound
 ```
 server:
-    edns-buffer-size: 1220
+    edns-buffer-size: 1232
 ```
 
 - NSD
 ```
 server:
-    ipv4-edns-size: 1220
-    ipv6-edns-size: 1220
+    ipv4-edns-size: 1232
+    ipv6-edns-size: 1232
 ```
 
 La configuration ci-dessus n'aura aucun impact si tout fonctionne correctement, mais certaines requêtes échoueront si TCP n'est pas disponible.

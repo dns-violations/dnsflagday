@@ -114,9 +114,6 @@ Note: Work in progress
 
 This web site and some aspects of DNS Flag Day 2020 are works in progress.
 - The _exact date_ for the 2020 DNS Flag Day is not yet determined.
-- **Please note** that the _exact recommended EDNS buffer sizes_ have not
-  yet been agreed upon. The current proposal is to use a value of
-  1232 bytes to limit the risk of fragmentation on IPv6.
 
 Nevertheless, the technical requirements are already clear enough that
 operators and developers can start preparing by testing and fixing their
@@ -194,7 +191,7 @@ can find it above under
 [Action: Authoritative DNS Operators](#action-authoritative-dns-operators).
 
 Our web-based testing tool for clients and DNS resolver operators can be
-found above under 
+found above under
 [Action: DNS Resolver Operators](#action-dns-resolver-operators).
 
 You can also test by using the following CLI commands:
