@@ -133,7 +133,7 @@ TCP/53.
 
 You should also configure your servers to negotiate an EDNS buffer size
 that will not cause fragmentation. The value recommended here is
-1232 bytes, though it is still up for discussion.
+1232 bytes.
 
 _Authoritative DNS servers **MUST NOT** send answers larger than the
 requested EDNS buffer size!_
