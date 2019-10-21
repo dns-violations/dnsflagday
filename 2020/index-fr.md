@@ -74,7 +74,7 @@ Action: Opérateurs de serveurs DNS faisant Autorité
 
 En ce qui concerne le "DNS faisant Autorité", vous pouvez aider à résoudre ce genre de problèmes en répondant aux requêtes DNS sur TCP (port 53), _vérifiez aussi vos pare-feux !_
 
-Vous devriez aussi utiliser une taille tampon EDNS qui ne causera pas de fragmentation, la recommandation ici est autour de 1232 octets, mais la valeur définitive est toujours en cours de discussion.
+Vous devriez aussi utiliser une taille tampon EDNS qui ne causera pas de fragmentation, la recommandation ici est autour de 1232 octets.
 
 Enfin, _les serveurs DNS faisant Autorité **NE DOIVENT PAS** envoyer de réponses plus grandes que la taille du tampon EDNS demandée._
 
