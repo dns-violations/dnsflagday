@@ -98,8 +98,7 @@ problemas es responder consultas DNS sobre TCP (puerto 53).
 _¡Recuerde revisar también su(s) cortafuegos (firewalls)!_
 
 También debería usar un tamaño de buffer EDNS que no cause fragmentación.
-El valor recomendado es alrededor de 1232 bytes, pero está aún en
-discusión.
+El valor recomendado es alrededor de 1232 bytes.
 
 Y por último, _¡los servidores DNS Autoritativos **NO DEBEN** enviar
 respuestas más grandes que el tamaño del buffer EDNS solicitado!_
