@@ -70,8 +70,9 @@ en:
         short: "Test system error!"
         long: >
             <ul>
-                <li><strong>The test could not be completed due to a network problem!</strong></li>
-                <li>This can also happen if Check My DNS service is down or temporary unavailable, please check <a href="https://cmdns.dev.dns-oarc.net">https://cmdns.dev.dns-oarc.net</a> before trying again.</li>
+                <li><strong>The test could not be completed due to an error in the testing system!</strong></li>
+                <li>This can happen if Check My DNS service is down or temporary unavailable, please check <a href="https://cmdns.dev.dns-oarc.net">https://cmdns.dev.dns-oarc.net</a> before trying again.</li>
+                <li>If the problem persist please report it as issue in <a href="https://github.com/dns-violations/dnsflagday/issues/"Flagday Github repo</a>.</li>
             </ul>
     reportTestError: >
         Test cannot be evaluated because of an error. Please make sure the domain name entered
@@ -159,8 +160,9 @@ fr:
         short: "Test system error!"
         long: >
             <ul>
-                <li><strong>The test could not be completed due to a network problem!</strong></li>
-                <li>This can also happen if Check My DNS service is down or temporary unavailable, please check <a href="https://cmdns.dev.dns-oarc.net">https://cmdns.dev.dns-oarc.net</a> before trying again.</li>
+                <li><strong>The test could not be completed due to an error in the testing system!</strong></li>
+                <li>This can happen if Check My DNS service is down or temporary unavailable, please check <a href="https://cmdns.dev.dns-oarc.net">https://cmdns.dev.dns-oarc.net</a> before trying again.</li>
+                <li>If the problem persist please report it as issue in <a href="https://github.com/dns-violations/dnsflagday/issues/"Flagday Github repo</a>.</li>
             </ul>
     reportTestError: >
         Le test ne peut pas être effectué à cause d\'une erreur. Veuillez vous assurer que  le nom de domaine entré correspond bien à une <strong>zone DNS</strong>, c\'est-à-dire utilisez "example.com" au lieu de "www.example.com".
@@ -425,8 +427,9 @@ cn:
         short: "Test system error!"
         long: >
             <ul>
-                <li><strong>The test could not be completed due to a network problem!</strong></li>
-                <li>This can also happen if Check My DNS service is down or temporary unavailable, please check <a href="https://cmdns.dev.dns-oarc.net">https://cmdns.dev.dns-oarc.net</a> before trying again.</li>
+                <li><strong>The test could not be completed due to an error in the testing system!</strong></li>
+                <li>This can happen if Check My DNS service is down or temporary unavailable, please check <a href="https://cmdns.dev.dns-oarc.net">https://cmdns.dev.dns-oarc.net</a> before trying again.</li>
+                <li>If the problem persist please report it as issue in <a href="https://github.com/dns-violations/dnsflagday/issues/"Flagday Github repo</a>.</li>
             </ul>
     reportTestError: >
         由于出现了一个错误，无法进行测试评估。请确认域名指向一个<strong>DNS Zone</strong>, 例如 使用 "example.com" 而不是 "www.example.com"。
