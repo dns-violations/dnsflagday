@@ -21,7 +21,7 @@ var clientTcpChecker = function(init) {
                 $('#client-tcp-checker-result').html(init.texts.reportFailHtml);
             });
 
-            img.attr('src', 'https://dnsflagdaytcp.cmdns.dev.dns-oarc.net/dot.png');
+            img.attr('src', 'http://dnsflagdaytcp.cmdns.dev.dns-oarc.net/dot.png');
             console.log('loading');
             $('#client-tcp-checker-status').text(init.status.loading);
         });
@@ -33,7 +33,7 @@ var clientTcpChecker = function(init) {
         });
 
         $('#client-tcp input[type="submit"]').attr('disabled', true);
-        img.attr('src', 'https://cmdns.dev.dns-oarc.net/dot.png');
+        img.attr('src', 'http://cmdns.dev.dns-oarc.net/dot.png');
         console.log('checking network');
         $('#client-tcp-checker-status').text(init.status.checkNetwork);
 
