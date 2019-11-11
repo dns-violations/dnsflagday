@@ -51,7 +51,7 @@ L'approche proposée pour le DNS Flag Day 2020 a été annoncée lors du [RIPE78
 de l'ISC ([video](https://ripe78.ripe.net/archives/video/28),
 [slides](https://ripe78.ripe.net/presentations/53-plenary.pdf)). Cette année, nous allons nous concentrer sur les problèmes de fragmentation IP des paquets DNS.
 
-La fragmentation IP n'est pas fiable sur Internet aujourd'hui, et peut causer des problèmes de transmission quand de lardes messages DNS sont envoyés via UDP. Même quand la fragmentation fonctionne, elle pourrait ne pas être sécurisée; il est en théorie possible d'usurper une *partie* d'un message DNS fragmenté, sans que cela soit facilement détectable par la partie recevant le message.
+La fragmentation IP n'est pas fiable sur Internet aujourd'hui, et peut causer des problèmes de transmission quand de larges messages DNS sont envoyés via UDP. Même quand la fragmentation fonctionne, elle pourrait ne pas être sécurisée; il est en théorie possible d'usurper une *partie* d'un message DNS fragmenté, sans que cela soit facilement détectable par la partie recevant le message.
 
 - Bonica R. et al, "[IP Fragmentation Considered Fragile](https://tools.ietf.org/html/draft-bonica-intarea-frag-fragile)", Work in Progress, Juillet 2018
 - Huston G., "[IPv6, Large UDP Packets and the DNS](https://www.potaroo.net/ispcol/2017-08/xtn-hdrs.html)",  Août 2017
@@ -61,7 +61,7 @@ Ces problèmes peuvent être résolus en a) configurant les serveurs pour qu'ils
 
 Considérations sur la Taille des Messages
 -----------------------------------------
-La taille optimale d'un message DNS pour éviter la fragmentation IP, tout en minimisant l'utilisation de TCP, dépendra du MTU (Maximum Transmission Unit) du lien réseau physique qui connecte les deux parties. Malheureusement, il n'y a pas encore de mécanisme standard pour les fournisseurs de serveur DNS permettant d'accéder à cette information. D'ici à ce qu'un tel standard exsite, nous recommandons que la taille tampon EDNS soit, par _défaut_, configurée sur une valeur assez petite pour éviter la fragmentation sur la majorité des liens réseaux utilisés aujourd'hui.
+La taille optimale d'un message DNS pour éviter la fragmentation IP, tout en minimisant l'utilisation de TCP, dépendra du MTU (Maximum Transmission Unit) du lien réseau physique qui connecte les deux parties. Malheureusement, il n'y a pas encore de mécanisme standard pour les fournisseurs de serveur DNS permettant d'accéder à cette information. D'ici à ce qu'un tel standard existe, nous recommandons que la taille tampon EDNS soit, par _défaut_, configurée sur une valeur assez petite pour éviter la fragmentation sur la majorité des liens réseaux utilisés aujourd'hui.
 
 Une taille tompon EDNS de 1232 bits évitera une fragmentation sur presque tous les réseaux actuels. Cette valeur se base sur un MTU de 1280, qui est requis par la spécification IPv6, moins 48 bits pour les entêtes IPv6 et UDP.
 
@@ -116,7 +116,7 @@ Comment tester?
 
 Si vous êtes le propriétaire d'un domaine ou l'opérateur d'un serveur DNS faisant Autorité, vous pouvez utiliser notre outil de vérification en ligne pour tester votre domaine; vous pouvez le trouver dans la section [Action: Opérateurs de serveurs DNS faisant Autorité](#action-opérateurs-de-serveurs-dns-faisant-autorité).
 
-Notre outil de vérification en ligne pour les clients et les opérateurs de résolveurs DNS se trouve dans la section [Action: Opérateurs de serverus DNS Récursifs](#action-opérateurs-de-serveurs-dns-récursifs).
+Notre outil de vérification en ligne pour les clients et les opérateurs de résolveurs DNS se trouve dans la section [Action: Opérateurs de serveurs DNS Récursifs](#action-opérateurs-de-serveurs-dns-récursifs).
 
 Vous pouvez également tester en utilisant les lignes de commande suivantes:
 
@@ -216,7 +216,7 @@ FAQ
 
 - Q: Est-ce que tout va s'arrêter de fonctionner le <date à confirmer> 2020 ?
 
-  A: Non pas tout ! Seul un faible pourcentage de sites sera affecté. A la date qui sera annoncée, les fournisseurs de logiciels DNS changeront le comportement _**dans les nouvelles versions logicielles**, afin que la taille par défaut d'un message sur UDP soit de 1232 bits. Au fur et à mesure que ces versions seront déployées, les sites qui retournent des réponses DNS supérieures à 1232 bits mais qui ne peuvent pas répondre aux requêtes DNS sur TCP, pourraient échouer à résoudre. Veuillez noter que ces sites sont déjà peu fiables aujourd'hui. 
+  A: Non pas tout ! Seul un faible pourcentage de sites sera affecté. A la date qui sera annoncée, les fournisseurs de logiciels DNS changeront le comportement **dans les nouvelles versions logicielles**, afin que la taille par défaut d'un message sur UDP soit de 1232 bits. Au fur et à mesure que ces versions seront déployées, les sites qui retournent des réponses DNS supérieures à 1232 bits mais qui ne peuvent pas répondre aux requêtes DNS sur TCP, pourraient échouer à résoudre. Veuillez noter que ces sites sont déjà peu fiables aujourd'hui. 
 
 - Q: Pourquoi le transport TCP est-il si important ?
 
@@ -230,7 +230,7 @@ FAQ
 
   A: DNS sur UDP est très bien pour les petits paquets qui ne requièrent pas de fragmentation IP. Il peut toujours être utilisé pour ce type de messages DNS, qui constituent la majeure partie du trafic Internet. Tout basculer en TCP rajouterait une charge inutile sur les services DNS. Il serait faisable en principe d'avoir uniquement DNS sur TCP, mais c'est plus lent que DNS sur UDP, dans le meilleur des cas par un facteur de 4 (en se réferrant au travail de Baptiste Jonglez [présenté au RIPE76](https://ripe76.ripe.net/archives/video/63/)), et cela pourrait limiter le nombre de connexions simultanées qu'un serveur DNS peut accepter.
 
-- Q: Et si nous voulons utiliser des tailles de paquet plus grande dans le futur ?
+- Q: Et si nous voulons utiliser des tailles de paquets plus grandes dans le futur ?
 
   A: Notre but est simplement d'éviter la fragmentation IP en choisissant une taille de tampon EDNS _par défaut_ qui fonctionnera bien sur les réseaux d'aujourd'hui. Ce n'est pas un changement permanent aux spécifications DNS. Les valeurs par défaut peuvent toujours être remplacées localement si une meilleure information est disponible. Si une méthode standard pour récupérer le MTU depuis le kernel devient disponible, elle peut également être utilisée.
 
