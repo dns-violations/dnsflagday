@@ -22,4 +22,9 @@
 - name: "BlueCat Networks"
   img: "/images/bluecat.png"
   url: "https://www.bluecatnetworks.com/blog/dns-flag-day-is-coming-and-bluecat-is-ready/#flagday2020"
-  
+- name: "Infoblox"
+  img: "/images/Infoblox-logo-with-tag.png"
+  url: "https://blogs.infoblox.com/company/infoblox-is-supporting-dns-flag-day-2020/"
+- name: "Space available for the next supporter!"
+  img: "/images/space-available.png"
+  url: "https://dnsflagday.net"
