@@ -14,7 +14,7 @@ flagdayyear: 2020
 Merci !
 =======
 
-Le [DNS flag day 2019](/2019/) a été un événément réussi. La communauté Internet a travaillé de manière concertée, ce qui a permis de résoudre des problèmes qui causaient des délais pour les utilisateurs d'Internet. Nous souhaitons remercier tous les opérateurs qui ont coopéré et ont contribué à un meilleur Internet.
+Le [DNS Flag Day 2019](/2019/) a été un succès. La communauté Internet a travaillé de manière concertée, ce qui a permis de résoudre des problèmes qui causaient des délais pour les utilisateurs d'Internet. Nous souhaitons remercier tous les opérateurs qui ont coopéré et ont contribué à un Internet meilleur.
 
 Un résumé des "Flag Days" passés et à venir est disponible ici:
 [https://youtu.be/mH_elg9EUWw?t=649](https://youtu.be/mH_elg9EUWw?t=649).
@@ -37,7 +37,7 @@ Contenu
 Quelle est la suite?
 ====================
 
-Le prochain DNS flag day est actuellement en cours de planification. Il sera focalisé sur les problèmes opérationnels et de sécurité dans le DNS, causés par la fragmentation des packets IP (Internet Protocol).
+Le prochain DNS Flag Day est actuellement en cours de planification. Il se concentrera sur les problèmes opérationnels et de sécurité dans le DNS, causés par la fragmentation des packets IP (Internet Protocol).
 
 Veuillez vous abonner à la [mailing list dns-announce](https://lists.dns-oarc.net/mailman/listinfo/dns-announce) ou suivre [@dnsflagday sur Twitter](https://www.twitter.com/dnsflagday) pour recevoir une notification quand davantage d'informations seront disponibles.
 
@@ -47,17 +47,25 @@ DNS Flag Day 2020
 La communauté DNS a discuté des problèmes persistants d'interoperabilité et de performance du DNS sur les mailing-lists, ainsi qu'à des conférences telles que [DNS-OARC 30](https://www.dns-oarc.net/oarc30)  ([video](https://youtu.be/mH_elg9EUWw?t=680),
 [slides](https://indico.dns-oarc.net/event/31/contributions/678/attachments/673/1102/dns_flag_day_panel.pdf)).
 
-L'approche proposée pour le DNS flag day 2020 a été annoncée lors du [RIPE78](https://ripe78.ripe.net) par Petr Špaček, de CZ.NIC et Ondřej Surý,
+L'approche proposée pour le DNS Flag Day 2020 a été annoncée lors du [RIPE78](https://ripe78.ripe.net) par Petr Špaček, de CZ.NIC et Ondřej Surý,
 de l'ISC ([video](https://ripe78.ripe.net/archives/video/28),
-[slides](https://ripe78.ripe.net/presentations/53-plenary.pdf)). Cette fois, nous allons nous concentrer sur les problèmes de fragmentation IP des paquets DNS.
+[slides](https://ripe78.ripe.net/presentations/53-plenary.pdf)). Cette année, nous allons nous concentrer sur les problèmes de fragmentation IP des paquets DNS.
 
-La fragmentation IP est un problème sur Internet aujourd'hui, en particulier avec les messages DNS larges. Et même si la fragmentation fonctionne, elle pourrait ne pas être assez sécurisée pour le DNS.
+La fragmentation IP n'est pas fiable sur Internet aujourd'hui, et peut causer des problèmes de transmission quand de larges messages DNS sont envoyés via UDP. Même quand la fragmentation fonctionne, elle pourrait ne pas être sécurisée; il est en théorie possible d'usurper une *partie* d'un message DNS fragmenté, sans que cela soit facilement détectable par la partie recevant le message.
 
 - Bonica R. et al, "[IP Fragmentation Considered Fragile](https://tools.ietf.org/html/draft-bonica-intarea-frag-fragile)", Work in Progress, Juillet 2018
 - Huston G., "[IPv6, Large UDP Packets and the DNS](https://www.potaroo.net/ispcol/2017-08/xtn-hdrs.html)",  Août 2017
 - Fujiwara K., "[Measures against cache poisoning attacks using IP fragmentation in DNS](https://indico.dns-oarc.net/event/31/contributions/692/)", Mai 2019
 
-Ces problèmes peuvent être résolus en honorant une taille de tampon EDNS qui ne causera pas de fragmentation et en permettant au DNS de basculer d'UDP à TCP lorsque des tailles de tampon larges ne suffisent pas.
+Ces problèmes peuvent être résolus en a) configurant les serveurs pour qu'ils limitent les messages envoyés en UDP à une taille qui ne déclenchera pas la fragmentation sur les liens réseaux typiques,  et b) en s'assurant que les serveurs DNS puissent basculer d'UDP à TCP quand une réponse DNS est trop grande pour rentrer dans cette taille tampon limitée.
+
+Considérations sur la Taille des Messages
+-----------------------------------------
+La taille optimale d'un message DNS pour éviter la fragmentation IP, tout en minimisant l'utilisation de TCP, dépendra du MTU (Maximum Transmission Unit) du lien réseau physique qui connecte les deux parties. Malheureusement, il n'y a pas encore de mécanisme standard pour les fournisseurs de serveur DNS permettant d'accéder à cette information. D'ici à ce qu'un tel standard existe, nous recommandons que la taille tampon EDNS soit, par _défaut_, configurée sur une valeur assez petite pour éviter la fragmentation sur la majorité des liens réseaux utilisés aujourd'hui.
+
+Une taille tompon EDNS de 1232 bits évitera une fragmentation sur presque tous les réseaux actuels. Cette valeur se base sur un MTU de 1280, qui est requis par la spécification IPv6, moins 48 bits pour les entêtes IPv6 et UDP.
+
+Veuillez noter que cette recommandation est pour une valeur par _défaut_, et est donc à utiliser lorsqu'aucune autre meilleure information n'est disponible. Les opérateurs peuvent toujours configurer des valeurs plus grandes si leurs réseaux supportent des trames de données plus grandes et s'ils sont certains qu'il n'y a pas de risque de fragmentation IP. Les fournisseurs de serveurs DNS peuvent utiliser des tailles de paquet plus grandes (ou plus petites) si de meilleures information à propos du MTO sont rendues disponibles par le kernel. 
 
 Note: Travail en cours
 ----------------------
@@ -65,42 +73,38 @@ Note: Travail en cours
 Ce site web et certains aspects du DNS flag day 2020 sont toujours en cours de finalisation.
 - La _date exacte_ pour le DNS Flag Day 2020 n'a pas encore été arrêtée.
 
-Néanmoins, les prérequis techniques sont déjà suffisament clairs et les opérateurs et  développeurs peuvent dores et déjà tester et reconfigurer leurs systèmes.
+Néanmoins, les prérequis techniques sont déjà suffisament clairs et les opérateurs et développeurs peuvent dores et déjà tester et reconfigurer leurs systèmes.
 
 Si vous avez des commentaires ou des suggestions, merci de rejoindre la discussion sur la mailing-list [dns-operations](https://lists.dns-oarc.net/mailman/listinfo/dns-operations).
 
 Action: Opérateurs de serveurs DNS faisant Autorité
 ---------------------------------------------------
 
-En ce qui concerne le "DNS faisant Autorité", vous pouvez aider à résoudre ce genre de problèmes en répondant aux requêtes DNS sur TCP (port 53), _vérifiez aussi vos pare-feux !_
+Si vous êtes un opérateur de serveur DNS faisant Autorité, ce que vous pouvez faire pour contribuer est de vous assurer que vos serveurs DNS peuvent répondre aux requêtes DNS sur TCP (port 53). _Vérifiez aussi vos pare-feux !_ car certains bloquent TCP/53.
 
-Vous devriez aussi utiliser une taille tampon EDNS qui ne causera pas de fragmentation, la recommandation ici est autour de 1232 octets.
+Vous devriez aussi configurer vos serveurs pour négocier une taille tampon EDNS qui ne causera pas de fragmentation. La recommandation ici est de 1232 bits.
 
-Enfin, _les serveurs DNS faisant Autorité **NE DOIVENT PAS** envoyer de réponses plus grandes que la taille du tampon EDNS demandée._
+_Les serveurs DNS faisant Autorité **NE DOIVENT PAS** envoyer de réponses plus grandes que la taille du tampon EDNS demandée._
 
-Vous pouvez maintenant vérifier votre domaine en le rentrant dans le formulaire ci-dessous et en pressant "Test!". Ce testeur utilise l'[EDNS Compliance Tester de l'ISC](https://ednscomp.isc.org/) et vérifiera que son test `edns512tcp` passe avec succès (entre autres tests).
+Vous pouvez maintenant tester vos serveurs en rentrant votre domaine dans le formulaire ci-dessous et en pressant "Test!". Ce testeur utilise l'[EDNS Compliance Tester de l'ISC](https://ednscomp.isc.org/) et vérifiera que son test `edns512tcp` passe avec succès (entre autres tests).
 
 {% include 2020_checker.html lang=site.data.2020_checker.fr %}
 
 Action: Opérateurs de serveurs DNS Récursifs
 --------------------------------------------
 
-En ce qui concerne le DNS Récursif, on retrouve plus ou moins les mêmes prérequis que pour le DNS faisant Autorité: répondre aux requêtes DNS sur TCP (port 53) et utilisation d'une taille de tampon EDNS  _(d'environ 1232 octets)_ qui ne causera pas de fragmentation. _N'oubliez pas de vérifier vos pare-feux !_
+En ce qui concerne le DNS Récursif, on retrouve plus ou moins les mêmes prérequis que pour le DNS faisant Autorité: répondre aux requêtes DNS sur TCP (port 53) et utilisation d'une taille de tampon EDNS  _de 1232 bits_ qui ne causera pas de fragmentation. _N'oubliez pas de vérifier vos pare-feux pour éviter les problèmes de DNS sur TCP !_
 
-Enfin, dernière point important, _les résolveurs **DOIVENT** répéter les requêtes via TCP s'ils reçoivent une réponse UDP tronquée (avec le bit TC=1 défini) !_
+Enfin, dernière point important, _les résolveurs **DOIVENT** renvoyer les requêtes via TCP s'ils reçoivent une réponse UDP tronquée (avec le bit TC=1 défini) !_
 
-**NEW!** This checker will test your browser, system and ISPs resolver by
-loading an image on a specific URL that can only be looked up if there is
-support for TCP at the last resolver querying the authority. For more
-information go to [Check My DNS](https://cmdns.dev.dns-oarc.net) which this
-checker uses.
+**NOUVEAU !** Cet outil de vérification testera votre navigateur, votre système et le résolveur DNS de votre FAI, en chargeant une image à partir d'une URL spécifique qui peut uniquement être résolue si le dernier résolveur DNS qui requête le DNS faisant Autorité supporte TCP. Pour plus d'information, consultez la page [Check My DNS](https://cmdns.dev.dns-oarc.net) qui est utilisée par cet outil. 
 
 {% include 2020_cli_checker.html lang=site.data.2020_checker.fr %}
 
 Action: Fournisseurs de logiciels DNS
 -------------------------------------
 
-En tant que fournisseur de logiciel DNS, il est important de se **conformer aux standards** et d'utiliser une _**taille de tampon EDNS par défaut** (environ 1232 octets)_ qui ne causera pas de fragmentation.
+Il est important pour les fournisseurs de logiciel DNS de se **conformer aux standards** et d'utiliser une _**taille de tampon EDNS par défaut** (1232 bits)_ qui ne causera pas de fragmentation.
 
 Les standards pertinents sont principalement les [RFC 7766](https://tools.ietf.org/html/rfc7766), [RFC 6891 section 6.2.3.](https://tools.ietf.org/html/rfc6891#section-6.2.3)
 et [RFC 6891 section 6.2.4.](https://tools.ietf.org/html/rfc6891#section-6.2.4).
@@ -110,7 +114,9 @@ La motivation pour ce changement est décrite dans les documents [IETF draft int
 Comment tester?
 ---------------
 
-Vous pouvez utiliser le testeur de l'ISC indiqué dans la section [Action: Opérateurs de serveurs DNS faisant Autorité](#action-opérateurs-de-serveurs-dns-faisant-autorité).
+Si vous êtes le propriétaire d'un domaine ou l'opérateur d'un serveur DNS faisant Autorité, vous pouvez utiliser notre outil de vérification en ligne pour tester votre domaine; vous pouvez le trouver dans la section [Action: Opérateurs de serveurs DNS faisant Autorité](#action-opérateurs-de-serveurs-dns-faisant-autorité).
+
+Notre outil de vérification en ligne pour les clients et les opérateurs de résolveurs DNS se trouve dans la section [Action: Opérateurs de serveurs DNS Récursifs](#action-opérateurs-de-serveurs-dns-récursifs).
 
 Vous pouvez également tester en utilisant les lignes de commande suivantes:
 
@@ -120,7 +126,9 @@ $ dig +tcp @resolver_IP yourdomain.example.
 $ dig @resolver_IP test.knot-resolver.cz. TXT
 ```
 
-Toutes les requêtes DNS doivent aboutir et les commandes avec ou sans l'option `+tcp` doivent retourner la même chose. Si vous êtes un fournisseur de service, vous pouvez aussi tester vos serveurs faisant autorité et récursifs en autorisant DNS sur TCP et en changeant la configuration pour la taille par défaut du tampon EDNS:
+Toutes les requêtes DNS doivent aboutir et les commandes avec ou sans l'option `+tcp` doivent retourner la même chose.
+
+Si vous êtes un FAI, vous pouvez tester vos serveurs faisant autorité et récursifs en changeant la configuration pour la taille par défaut du tampon EDNS:
 
 - BIND
 ```
@@ -170,10 +178,10 @@ La configuration ci-dessus n'aura aucun impact si tout fonctionne correctement, 
 Précédents flag days
 ====================
 
-Voici une liste des précédents flag days:
+Voici une liste des précédents Flag Days:
 - [2019 EDNS workarounds](/2019/)
 
-Qui est derrière DNS flag day?
+Qui est derrière DNS Flag Day?
 ==============================
 
 L'initiative DNS flag day est soutenue par les fournisseurs de logiciels DNS et par les fournisseurs de service, et supportée par [DNS Operations, Analysis, and Research Center (DNS-OARC)](https://www.dns-oarc.net/), dont la plupart des acteurs de la communité est membre.
@@ -198,17 +206,17 @@ Supporters
 FAQ
 ===
 
+- Q: TL;DR [RFC 7766](https://tools.ietf.org/html/rfc7766)
+
+  A: DNS **DOIT** fonctionner sur TCP !
+
 - Q: Est-ce que DNS sur UDP est fini ?
 
   A: Non, DNS sur UDP sera toujours le transport principal car il est hautement évolutif, efficace au niveau ressources, et tolérant aux pannes.
 
-- Q: TL;DR [RFC 7766](https://tools.ietf.org/html/rfc7766)
-
-  A: DNS **DOIT** fonctionner sur TCP!
-
 - Q: Est-ce que tout va s'arrêter de fonctionner le <date à confirmer> 2020 ?
 
-  A: Non pas tout ! Seul un faible pourcentage de sites sera affecté, et ce nombre diminue au fur et à mesure que les opérateurs s'affairent pour mettre à jour leurs systèmes. A la date qui sera annoncée, les opérateurs des principaux résolveurs DNS arrêteront de tolérer les comportements qui ne respectent pas les standards publiés, donc ce changement n'affectera pas les sites qui suivent les standards. A la date annoncée, les éditeurs de logiciels DNS changeront le comportement _**dans les nouvelles versions logicielles**_, donc ce changement affectera également petit à petit ceux qui opèrent leurs propres résolveurs DNS.
+  A: Non pas tout ! Seul un faible pourcentage de sites sera affecté. A la date qui sera annoncée, les fournisseurs de logiciels DNS changeront le comportement **dans les nouvelles versions logicielles**, afin que la taille par défaut d'un message sur UDP soit de 1232 bits. Au fur et à mesure que ces versions seront déployées, les sites qui retournent des réponses DNS supérieures à 1232 bits mais qui ne peuvent pas répondre aux requêtes DNS sur TCP, pourraient échouer à résoudre. Veuillez noter que ces sites sont déjà peu fiables aujourd'hui. 
 
 - Q: Pourquoi le transport TCP est-il si important ?
 
@@ -222,9 +230,13 @@ FAQ
 
   A: DNS sur UDP est très bien pour les petits paquets qui ne requièrent pas de fragmentation IP. Il peut toujours être utilisé pour ce type de messages DNS, qui constituent la majeure partie du trafic Internet. Tout basculer en TCP rajouterait une charge inutile sur les services DNS. Il serait faisable en principe d'avoir uniquement DNS sur TCP, mais c'est plus lent que DNS sur UDP, dans le meilleur des cas par un facteur de 4 (en se réferrant au travail de Baptiste Jonglez [présenté au RIPE76](https://ripe76.ripe.net/archives/video/63/)), et cela pourrait limiter le nombre de connexions simultanées qu'un serveur DNS peut accepter.
 
+- Q: Et si nous voulons utiliser des tailles de paquets plus grandes dans le futur ?
+
+  A: Notre but est simplement d'éviter la fragmentation IP en choisissant une taille de tampon EDNS _par défaut_ qui fonctionnera bien sur les réseaux d'aujourd'hui. Ce n'est pas un changement permanent aux spécifications DNS. Les valeurs par défaut peuvent toujours être remplacées localement si une meilleure information est disponible. Si une méthode standard pour récupérer le MTU depuis le kernel devient disponible, elle peut également être utilisée.
+
 - Q: Est-ce que ce Flag Day nécessitera une mise à jour logicielle ?
 
-  A: Un logiciel DNS qui suit les standards publiés n'aura pas besoin d'être mis à jour et continuera à fonctionner. Par exemple, les versions supportées des principaux serveurs DNS open source continueront de fonctionner correctement.
+  A: Dans la plupart des cas, non. Un logiciel DNS qui suit les standards publiés n'aura pas besoin d'être mis à jour et continuera à fonctionner. Les versions supportées des principaux serveurs DNS open source continueront de fonctionner correctement. Ces logiciels DNS peuvent tous être configurés pour utiliser la taille tampon EDNS recommandée, même s'ils n'ont pas encore été mis à jour pour utiliser la taille par défaut.
 
      Le bon fonctionnement d'un déploiement spécifique dépendra de la façon dont le logiciel a été configuré, et de la configuration du pare-feu utilisé. Les logiciels DNS moins utilisés, personnalisés ou propriétaires pourraient ne pas être conformes, et nécessiter une mise à jour.
 
