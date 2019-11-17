@@ -100,7 +100,9 @@ fragmentation on the majority of network links in use today.
 
 An EDNS buffer size of 1232 bytes will avoid fragmentation on nearly all
 current networks. This is based on an MTU of 1280, which is required by the
-IPv6 specification, minus 48 bytes for the IPv6 and UDP headers.
+IPv6 specification, minus 48 bytes for the IPv6 and UDP headers. The value
+of "1232" is arbitary, and controversial. See the extended discussion in
+https://datatracker.ietf.org/doc/draft-fujiwara-dnsop-avoid-fragmentation/.
 
 Note that this recomendation is for a _default_ value, to be used when
 better information is not available.  Operators may still configure larger
@@ -113,7 +115,8 @@ Note: Work in progress
 ----------------------
 
 This web site and some aspects of DNS Flag Day 2020 are works in progress.
-- The _exact date_ for the 2020 DNS Flag Day is not yet determined.
+- The _exact date_ for the 2020 DNS Flag Day is not yet determined, but is
+likely to be 2020-10-31, per https://github.com/dns-violations/dnsflagday/issues/139 .
 
 Nevertheless, the technical requirements are already clear enough that
 operators and developers can start preparing by testing and fixing their
