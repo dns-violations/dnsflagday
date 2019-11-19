@@ -78,8 +78,9 @@ when fragmentation does work, it may not be secure; it is theoretically
 possible to spoof *parts* of a fragmented DNS message, without easy
 detection at the receiving end.
 - Bonica R. et al, "[IP Fragmentation Considered Fragile](https://tools.ietf.org/html/draft-bonica-intarea-frag-fragile)", Work in Progress, July 2018
-- Huston G., "[IPv6, Large UDP Packets and the DNS](https://www.potaroo.net/ispcol/2017-08/xtn-hdrs.html)",  August 2017
+- Huston G., "[IPv6, Large UDP Packets and the DNS](https://www.potaroo.net/ispcol/2017-08/xtn-hdrs.html)", August 2017
 - Fujiwara K., "[Measures against cache poisoning attacks using IP fragmentation in DNS](https://indico.dns-oarc.net/event/31/contributions/692/)", May 2019
+- Fujiwara K. et al, "[Avoid IP fragmentation in DNS](https://tools.ietf.org/html/draft-fujiwara-dnsop-avoid-fragmentation)", September 2019
 
 These issues can be addressed by a) configuring servers to limit DNS
 messages sent over UDP to a size that will not trigger fragmentation on
@@ -113,7 +114,9 @@ Note: Work in progress
 ----------------------
 
 This web site and some aspects of DNS Flag Day 2020 are works in progress.
-- The _exact date_ for the 2020 DNS Flag Day is not yet determined.
+- The _exact date_ for the 2020 DNS Flag Day is now being discussed, please
+see "[Flag Day 2020: The date](https://github.com/dns-violations/dnsflagday/issues/139)"
+and feel free to join in!
 
 Nevertheless, the technical requirements are already clear enough that
 operators and developers can start preparing by testing and fixing their
