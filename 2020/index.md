@@ -57,6 +57,11 @@ Please subscribe to [the dns-announce mailing list](https://lists.dns-oarc.net/m
 or follow [@dnsflagday on Twitter](https://www.twitter.com/dnsflagday)
 to receive a notification when more information becomes available.
 
+The exact date
+==============
+
+**1. October 2020**
+
 DNS Flag Day 2020
 =================
 
@@ -82,6 +87,15 @@ detection at the receiving end.
 - Fujiwara K., "[Measures against cache poisoning attacks using IP fragmentation in DNS](https://indico.dns-oarc.net/event/31/contributions/692/)", May 2019
 - Fujiwara K. et al, "[Avoid IP fragmentation in DNS](https://tools.ietf.org/html/draft-fujiwara-dnsop-avoid-fragmentation)", September 2019
 
+Recently, there was an paper and presentation [Defragmenting DNS - Determining
+the optimal maximum UDP response size for DNS
+](https://indico.dns-oarc.net/event/36/contributions/776/) by Axel Koolhaas, and
+Tjeerd Slokker in collaboration with NlNetLabs that explored the real world data
+using the RIPE Atlas probes and the researchers suggested different values for
+IPv4 and IPv6 and in different scenarios.  This is practical for the server
+operators that know their environment, and the defaults in the DNS software
+should reflect the minimum safe size which is **1232**.
+
 These issues can be addressed by a) configuring servers to limit DNS
 messages sent over UDP to a size that will not trigger fragmentation on
 typical network links, and b) ensuring that DNS servers can switch from
@@ -99,9 +113,10 @@ this information.  Until such a standard exists, we recommend that the EDNS
 buffer size should, by _default_, be set to a value small enough to avoid
 fragmentation on the majority of network links in use today.
 
-An EDNS buffer size of 1232 bytes will avoid fragmentation on nearly all
-current networks. This is based on an MTU of 1280, which is required by the
-IPv6 specification, minus 48 bytes for the IPv6 and UDP headers.
+An EDNS buffer size of 1232 bytes will avoid fragmentation on nearly all current
+networks. This is based on an MTU of 1280, which is required by the IPv6
+specification, minus 48 bytes for the IPv6 and UDP headers and the
+aforementioned research.
 
 Note that this recomendation is for a _default_ value, to be used when
 better information is not available.  Operators may still configure larger
@@ -109,22 +124,6 @@ values if their networks support larger data frames and they are certain
 there is no risk of IP fragmentation.  DNS server vendors may use higher
 (or lower) packet sizes if better information about the MTU is available
 from the kernel.
-
-Note: Work in progress
-----------------------
-
-This web site and some aspects of DNS Flag Day 2020 are works in progress.
-- The _exact date_ for the 2020 DNS Flag Day is now being discussed, please
-see "[Flag Day 2020: The date](https://github.com/dns-violations/dnsflagday/issues/139)"
-and feel free to join in!
-
-Nevertheless, the technical requirements are already clear enough that
-operators and developers can start preparing by testing and fixing their
-systems.
-
-If you have comments or suggestions, please join the discussion at the
-[dns-operations](https://lists.dns-oarc.net/mailman/listinfo/dns-operations)
-mailing list.
 
 Action: Authoritative DNS Operators
 -----------------------------------
