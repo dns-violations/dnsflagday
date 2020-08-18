@@ -90,7 +90,7 @@ detection at the receiving end.
 Recently, there was an paper and presentation [Defragmenting DNS - Determining
 the optimal maximum UDP response size for DNS
 ](https://indico.dns-oarc.net/event/36/contributions/776/) by Axel Koolhaas, and
-Tjeerd Slokker in collaboration with NlNetLabs that explored the real world data
+Tjeerd Slokker in collaboration with NLnet Labs that explored the real world data
 using the RIPE Atlas probes and the researchers suggested different values for
 IPv4 and IPv6 and in different scenarios.  This is practical for the server
 operators that know their environment, and the defaults in the DNS software
