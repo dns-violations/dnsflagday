@@ -47,6 +47,11 @@ flagdayyear: 2020
 新しい情報については [dns-announce メーリングリスト](https://lists.dns-oarc.net/mailman/listinfo/dns-announce) (英語) を購読する、
 または [Twitter の @dnsflagday](https://www.twitter.com/dnsflagday) (英語)  をフォローすることで受け取ることができます。
 
+確定した日付
+============
+
+** 2020 年 10 月 1 日 **
+
 DNS Flag Day 2020
 =================
 
@@ -71,6 +76,15 @@ IP フラグメンテーションは、現在のインターネットでは正�
 - Huston G., "[IPv6, Large UDP Packets and the DNS](https://www.potaroo.net/ispcol/2017-08/xtn-hdrs.html)",  August 2017
 - Fujiwara K., "[Measures against cache poisoning attacks using IP fragmentation in DNS](https://indico.dns-oarc.net/event/31/contributions/692/)", May 2019
 
+最近、 Axel Koolhaas 氏 と Tjeerd Slokker 氏 によって発表された論文とプレゼンテーション
+[Defragmenting DNS - Determining the optimal maximum UDP response size for DNS]
+(https://indico.dns-oarc.net/event/36/contributions/776/) では、 NLnet Labs と共同で
+RIPE Atlas のプローブを利用して現実世界のデータが調査されました。
+その結果として、 IPv4 と IPv6 で、またシナリオ (訳注: スタブリゾルバーとフルサービスリゾルバー)
+によって異なる値が提案されています。
+環境に応じた値に設定することは、環境を把握している運用者にとっては現実的なことですので、
+DNS ソフトウェアのデフォルト値としては、最小で安全なサイズである **1232** を反映するべきでしょう。
+
 これらの問題を解決するには、下記の全てを行う必要があります。
 a) UDP で送信する DNS メッセージについて、一般的なネットワークリンクでフラグメンテーションが起きないようなサイズに制限するようサーバーを設定する
 b) DNS 応答のサイズが大きく、前述の制限したバッファーサイズを超えてしまう場合には、 DNS サーバーで UDP から TCP に切り替えられるようにする
@@ -87,27 +101,13 @@ _デフォルトで_ 設定されていることを推奨します。
 
 1232 バイトの EDNS バッファーサイズは、現在のほぼすべてのネットワークにおいてフラグメンテーションを回避することができます。
 この値は IPv6 の仕様で必須とされている 1280 バイトの MTU 値に基づいていて、さらに IPv6 ヘッダーと UDP ヘッダーのために
-48 バイトを引いた値です。
+48 バイトを引いた値です。そして、前述の調査結果にも基づいています。
 
 この推奨値は、より良い情報が得られない場合の _デフォルトの_ 値に関するものであることに留意してください。
 運用者の方は、管理しているネットワークがより大きなデータフレームをサポートしていて、
 IP フラグメンテーションのリスクがないことが確実であれば、より大きな値を設定しても構いません。
 DNS サーバーのベンダーは、カーネルから MTU に関するより良い情報を得られる場合には、
 より大きな(または、より小さな)パケットサイズを使っても構いません。
-
-注意: まだ確定ではありません
-----------------------------
-
-このウェブサイト自身や、 DNS Flag Day 2020 に関するいくつかの点はまだ作業中です。
-- 2020 DNS Flag Day の _確定した日付_ はまだ決まっていません
-
-いずれにせよ、技術的な要件は明確です。
-つまり、オペレーターや開発者は DNS Flag Day 2020 に向けてテストを行ったり、
-システムを修正することで備えておくことができます。
-
-ご意見やご提案をお持ちの方は、
-[dns-operations メーリングリスト](https://lists.dns-oarc.net/mailman/listinfo/dns-operations) (英語)
-で行われている議論に参加してください。
 
 対応: 権威DNSサーバーのオペレーター
 -----------------------------------
