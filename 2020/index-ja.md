@@ -50,7 +50,7 @@ flagdayyear: 2020
 確定した日付
 ============
 
-** 2020 年 10 月 1 日 **
+**2020 年 10 月 1 日**
 
 DNS Flag Day 2020
 =================
@@ -77,8 +77,8 @@ IP フラグメンテーションは、現在のインターネットでは正�
 - Fujiwara K., "[Measures against cache poisoning attacks using IP fragmentation in DNS](https://indico.dns-oarc.net/event/31/contributions/692/)", May 2019
 
 最近、 Axel Koolhaas 氏 と Tjeerd Slokker 氏 によって発表された論文とプレゼンテーション
-[Defragmenting DNS - Determining the optimal maximum UDP response size for DNS]
-(https://indico.dns-oarc.net/event/36/contributions/776/) では、 NLnet Labs と共同で
+[Defragmenting DNS - Determining the optimal maximum UDP response size for DNS
+](https://indico.dns-oarc.net/event/36/contributions/776/) では、 NLnet Labs と共同で
 RIPE Atlas のプローブを利用して現実世界のデータが調査されました。
 その結果として、 IPv4 と IPv6 で、またシナリオ (訳注: スタブリゾルバーとフルサービスリゾルバー)
 によって異なる値が提案されています。
