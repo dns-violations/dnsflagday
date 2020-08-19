@@ -73,8 +73,9 @@ IP フラグメンテーションは、現在のインターネットでは正�
 なぜなら、フラグメントされた DNS メッセージの *一部* を偽装することは理論的に可能であり、
 受信側で簡単にそれを検知する方法はないからです。
 - Bonica R. et al, "[IP Fragmentation Considered Fragile](https://tools.ietf.org/html/draft-bonica-intarea-frag-fragile)", Work in Progress, July 2018
-- Huston G., "[IPv6, Large UDP Packets and the DNS](https://www.potaroo.net/ispcol/2017-08/xtn-hdrs.html)",  August 2017
+- Huston G., "[IPv6, Large UDP Packets and the DNS](https://www.potaroo.net/ispcol/2017-08/xtn-hdrs.html)", August 2017
 - Fujiwara K., "[Measures against cache poisoning attacks using IP fragmentation in DNS](https://indico.dns-oarc.net/event/31/contributions/692/)", May 2019
+- Fujiwara K. et al, "[Avoid IP fragmentation in DNS](https://tools.ietf.org/html/draft-fujiwara-dnsop-avoid-fragmentation)", September 2019
 
 最近、 Axel Koolhaas 氏 と Tjeerd Slokker 氏 によって発表された論文とプレゼンテーション
 [Defragmenting DNS - Determining the optimal maximum UDP response size for DNS
