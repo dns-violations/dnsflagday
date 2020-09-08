@@ -20,47 +20,40 @@ flagdayyear: 2020
 
 <img class="logo float-right" alt="DNS Flag Day logo" src="/images/DNS_Flag.svg">
 
-Thank you!
-==========
-
-The [2019 DNS Flag Day](/2019/) was a very successful event. The Internet
-community worked together and fixed problems which were causing delays and
-other problems for Internet users worldwide. We would like to thank all
-operators who cooperated and helped to make Internet a better place.
-
-Summary of the past and future DNS Flag Days can be found e.g. in
-[https://youtu.be/mH_elg9EUWw?t=649](https://youtu.be/mH_elg9EUWw?t=649).
-
 Contents
 ========
 - [What's next?](#whats-next)
 - [DNS Flag Day 2020](#dns-flag-day-2020)
-  - [Note: Work in progress](#note-work-in-progress)
   - [Action: Authoritative DNS Operators](#action-authoritative-dns-operators)
   - [Action: DNS Resolver Operators](#action-dns-resolver-operators)
   - [Action: DNS software vendors](#action-dns-software-vendors)
   - [How to test?](#how-to-test)
-- [Previous Flag Days](#previous-flag-days)
 - [Who's behind DNS Flag Day?](#whos-behind-dns-flag-day)
 - [Get in touch](#get-in-touch)
 - [Supporters](#supporters)
 - [FAQ](#faq)
+- [Previous Flag Days](#previous-flag-days)
 
 What's next?
 ============
 
-The next DNS Flag Day is being planned right now. It will focus on the
+The next DNS Flag Day is scheduled for 2020-10-01. It focuses on the
 operational and security problems in DNS caused by Internet Protocol
 packet fragmentation.
 
-Please subscribe to [the dns-announce mailing list](https://lists.dns-oarc.net/mailman/listinfo/dns-announce)
+On this page you can find comprehensive description of the problem,
+technical changes planned for 2020-10-01, and ways to test your systems
+before the set date.
+
+You can also subscribe to
+[the dns-announce mailing list](https://lists.dns-oarc.net/mailman/listinfo/dns-announce)
 or follow [@dnsflagday on Twitter](https://www.twitter.com/dnsflagday)
-to receive a notification when more information becomes available.
+to receive a notification about significant changes.
 
 The exact date
 ==============
 
-**1. October 2020**
+**2020-10-01** (October 1st 2020)
 
 DNS Flag Day 2020
 =================
@@ -71,7 +64,7 @@ conferences such as [DNS-OARC 30](https://www.dns-oarc.net/oarc30) panel
 discussion ([video](https://youtu.be/mH_elg9EUWw?t=680),
 [slides](https://indico.dns-oarc.net/event/31/contributions/678/attachments/673/1102/dns_flag_day_panel.pdf)).
 
-The proposed plan for DNS Flag Day 2020 was announced at
+The proposed plan for DNS Flag Day 2020 was announced in October 2019 at
 [RIPE78](https://ripe78.ripe.net) by Petr Špaček, CZ.NIC and Ondřej Surý,
 ISC ([video](https://ripe78.ripe.net/archives/video/28),
 [slides](https://ripe78.ripe.net/presentations/53-plenary.pdf)). This
@@ -257,12 +250,6 @@ The configuration above will have no visible effect if everything works
 correctly. Some queries will fail to resolve if the TCP transport is not
 available.
 
-Previous DNS Flag Days
-======================
-
-Here is a list of the previous DNS Flag Days:
-- [2019 EDNS workarounds](/2019/)
-
 Who's behind DNS Flag Day?
 ==========================
 
@@ -302,10 +289,12 @@ FAQ
   A: No, DNS over UDP will still be the primary mode of transmission, as it
      is massively scalable, very resource-efficient, and fault-tolerant.
 
-- Q: Will everything break on date-to-be-decided 2020?
+- Q: Will everything break on 2020-10-01?
 
-  A: No! Only a small percentage of sites will be affected.  On the
-     date to be announced, software vendors will change their default
+  A: No! Latest measurements shown that only
+     a [tiny percentage](https://github.com/dns-violations/dnsflagday/issues/139#issuecomment-673489183)
+     of sites will be affected.  On the
+     flag day software vendors will change their default
      behavior in new software releases so that the default message size
      used over UDP will be 1232 bytes.  As these new releases are
      deployed, sites that return DNS responses larger than 1232 bytes,
@@ -381,3 +370,17 @@ FAQ
      add name, image and URL to `_data/2020_supporters.yml`, or make
      an [issue](https://github.com/dns-violations/dnsflagday/issues/new)
      and supply the same information in that.
+
+Previous DNS Flag Days
+======================
+
+Here is a list of the previous DNS Flag Days:
+- [2019 EDNS workarounds](/2019/)
+
+The [2019 DNS Flag Day](/2019/) was a very successful event. The Internet
+community worked together and fixed problems which were causing delays and
+other problems for Internet users worldwide. We would like to thank all
+operators who cooperated and helped to make Internet a better place.
+
+Summary of the past and future DNS Flag Days can be found e.g. in
+[https://youtu.be/mH_elg9EUWw?t=649](https://youtu.be/mH_elg9EUWw?t=649).
