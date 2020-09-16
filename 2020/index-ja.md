@@ -11,41 +11,36 @@ flagdayyear: 2020
 
 <img class="logo float-right" alt="DNS Flag Day logo" src="/images/DNS_Flag.svg">
 
-はじめに(謝辞)
-==============
-
-[2019 DNS Flag Day](/2019/) は成功裏に終わりました。
-名前解決に時間がかかるなどの世界中のインターネット利用者に影響を及ぼす問題に対して、
-インターネットコミュニティの参加者は連携して解決に当たりました。
-インターネットをより良くするために協調して尽力した全てのオペレーターに対して謝意を表します。
-
-過去に行われた、または将来行われる予定の DNS Flag Day の概要はこの動画などで確認できます。
-[https://youtu.be/mH_elg9EUWw?t=649](https://youtu.be/mH_elg9EUWw?t=649) (英語)
-
 内容
 ====
 - [次回予告](#%E6%AC%A1%E5%9B%9E%E4%BA%88%E5%91%8A)
 - [DNS Flag Day 2020](#dns-flag-day-2020)
-  - [注意: まだ確定ではありません](#%E6%B3%A8%E6%84%8F-%E3%81%BE%E3%81%A0%E7%A2%BA%E5%AE%9A%E3%81%A7%E3%81%AF%E3%81%82%E3%82%8A%E3%81%BE%E3%81%9B%E3%82%93)
   - [対応: 権威DNSサーバーのオペレーター](#%E5%AF%BE%E5%BF%9C-%E6%A8%A9%E5%A8%81dns%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%AE%E3%82%AA%E3%83%9A%E3%83%AC%E3%83%BC%E3%82%BF%E3%83%BC)
   - [対応: フルサービスリゾルバーのオペレーター](#%E5%AF%BE%E5%BF%9C-%E3%83%95%E3%83%AB%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%83%AA%E3%82%BE%E3%83%AB%E3%83%90%E3%83%BC%E3%81%AE%E3%82%AA%E3%83%9A%E3%83%AC%E3%83%BC%E3%82%BF%E3%83%BC)
   - [対応: DNS ソフトウェア製品のベンダー](#%E5%AF%BE%E5%BF%9C-dns-%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E8%A3%BD%E5%93%81%E3%81%AE%E3%83%99%E3%83%B3%E3%83%80%E3%83%BC)
   - [テスト方法](#%E3%83%86%E3%82%B9%E3%83%88%E6%96%B9%E6%B3%95)
-- [過去の DNS Flag Day](#%E9%81%8E%E5%8E%BB%E3%81%AE-dns-flag-day)
 - [誰が行っているの?](#%E8%AA%B0%E3%81%8C%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B%E3%81%AE)
 - [最新情報を得る](#%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1%E3%82%92%E5%BE%97%E3%82%8B)
 - [協力者](#%E5%8D%94%E5%8A%9B%E8%80%85)
 - [FAQ](#faq)
+- [過去の DNS Flag Day](#%E9%81%8E%E5%8E%BB%E3%81%AE-dns-flag-day)
 
 次回予告
 ========
 
-次回の DNS Flag Day は、現在計画中です。
+次回の DNS Flag Day は、 2020 年 10 月 1 日に予定されています。
 その内容は、 IP パケットのフラグメンテーション (fragmentation) が引き起こす、
 運用上のまたはセキュリティの問題に特化したものになる予定です。
 
-新しい情報については [dns-announce メーリングリスト](https://lists.dns-oarc.net/mailman/listinfo/dns-announce) (英語) を購読する、
+問題点、 2020 年 10 月 1 日に予定されている技術的な変更、そして予定日の前にあなたのシステムをテストする方法の全般的な説明が本ページに掲載されています。
+
+計画に関する重要な変更については [dns-announce メーリングリスト](https://lists.dns-oarc.net/mailman/listinfo/dns-announce) (英語) を購読する、
 または [Twitter の @dnsflagday](https://www.twitter.com/dnsflagday) (英語)  をフォローすることで受け取ることができます。
+
+確定した日付
+============
+
+**2020 年 10 月 1 日**
 
 DNS Flag Day 2020
 =================
@@ -56,7 +51,7 @@ DNS コミュニティは、相互運用性を持続させ、性能に影響を�
 [発表資料](https://indico.dns-oarc.net/event/31/contributions/678/attachments/673/1102/dns_flag_day_panel.pdf) (英語))
 といったカンファレンスで行われています。
 
-DNS Flag Day 2020 の計画に関する提案は、
+DNS Flag Day 2020 の計画に関する提案は、 2019 年 10 月に
 [RIPE78](https://ripe78.ripe.net) にて CZ.NIC の Petr Špaček 氏と ISC の Ondřej Surý 氏から行われました。
 ([セッションの録画](https://ripe78.ripe.net/archives/video/28) (英語)  と
 [発表資料](https://ripe78.ripe.net/presentations/53-plenary.pdf) (英語))
@@ -68,8 +63,18 @@ IP フラグメンテーションは、現在のインターネットでは正�
 なぜなら、フラグメントされた DNS メッセージの *一部* を偽装することは理論的に可能であり、
 受信側で簡単にそれを検知する方法はないからです。
 - Bonica R. et al, "[IP Fragmentation Considered Fragile](https://tools.ietf.org/html/draft-bonica-intarea-frag-fragile)", Work in Progress, July 2018
-- Huston G., "[IPv6, Large UDP Packets and the DNS](https://www.potaroo.net/ispcol/2017-08/xtn-hdrs.html)",  August 2017
+- Huston G., "[IPv6, Large UDP Packets and the DNS](https://www.potaroo.net/ispcol/2017-08/xtn-hdrs.html)", August 2017
 - Fujiwara K., "[Measures against cache poisoning attacks using IP fragmentation in DNS](https://indico.dns-oarc.net/event/31/contributions/692/)", May 2019
+- Fujiwara K. et al, "[Avoid IP fragmentation in DNS](https://tools.ietf.org/html/draft-fujiwara-dnsop-avoid-fragmentation)", September 2019
+
+最近、 Axel Koolhaas 氏 と Tjeerd Slokker 氏 によって発表された論文とプレゼンテーション
+[Defragmenting DNS - Determining the optimal maximum UDP response size for DNS
+](https://indico.dns-oarc.net/event/36/contributions/776/) では、 NLnet Labs と共同で
+RIPE Atlas のプローブを利用して現実世界のデータが調査されました。
+その結果として、 IPv4 と IPv6 で、またシナリオ (訳注: スタブリゾルバーとフルサービスリゾルバー)
+によって異なる値が提案されています。
+環境に応じた値に設定することは、環境を把握している運用者にとっては現実的なことですので、
+DNS ソフトウェアのデフォルト値としては、最小で安全なサイズである **1232** を反映するべきでしょう。
 
 これらの問題を解決するには、下記の全てを行う必要があります。
 a) UDP で送信する DNS メッセージについて、一般的なネットワークリンクでフラグメンテーションが起きないようなサイズに制限するようサーバーを設定する
@@ -87,27 +92,13 @@ _デフォルトで_ 設定されていることを推奨します。
 
 1232 バイトの EDNS バッファーサイズは、現在のほぼすべてのネットワークにおいてフラグメンテーションを回避することができます。
 この値は IPv6 の仕様で必須とされている 1280 バイトの MTU 値に基づいていて、さらに IPv6 ヘッダーと UDP ヘッダーのために
-48 バイトを引いた値です。
+48 バイトを引いた値です。そして、前述の調査結果にも基づいています。
 
 この推奨値は、より良い情報が得られない場合の _デフォルトの_ 値に関するものであることに留意してください。
 運用者の方は、管理しているネットワークがより大きなデータフレームをサポートしていて、
 IP フラグメンテーションのリスクがないことが確実であれば、より大きな値を設定しても構いません。
 DNS サーバーのベンダーは、カーネルから MTU に関するより良い情報を得られる場合には、
 より大きな(または、より小さな)パケットサイズを使っても構いません。
-
-注意: まだ確定ではありません
-----------------------------
-
-このウェブサイト自身や、 DNS Flag Day 2020 に関するいくつかの点はまだ作業中です。
-- 2020 DNS Flag Day の _確定した日付_ はまだ決まっていません
-
-いずれにせよ、技術的な要件は明確です。
-つまり、オペレーターや開発者は DNS Flag Day 2020 に向けてテストを行ったり、
-システムを修正することで備えておくことができます。
-
-ご意見やご提案をお持ちの方は、
-[dns-operations メーリングリスト](https://lists.dns-oarc.net/mailman/listinfo/dns-operations) (英語)
-で行われている議論に参加してください。
 
 対応: 権威DNSサーバーのオペレーター
 -----------------------------------
@@ -235,12 +226,6 @@ server:
 変更前に何の問題もなくサービスできていれば、上記の設定変更を適用しても影響はありません。
 TCP で応答していない場合には、一部の問い合わせが失敗するようになるでしょう。
 
-過去の DNS Flag Day
-===================
-
-過去に行われた DNS Flag Day のリストは下記の通りです:
-- [2019 EDNS workarounds](/2019/)
-
 誰が行っているの?
 =================
 
@@ -280,10 +265,10 @@ FAQ
   回答: いいえ。 UDP での DNS 問い合わせは、スケーラビリティがあること、要求されるリソース量が少ないこと、
         耐障害性の観点から、引き続き主流のままでしょう。
 
-- 質問: 2020 年のある日に、全てが動かなくなるのですか?
+- 質問: 2020 年 10 月 1 日に、全てが動かなくなるのですか?
 
-  回答: いいえ! 影響を受けるのはわずかです。
-        DNS Flag Day 2020 の日程が発表され次第、 DNS ソフトウェア製品のベンダーは新しいリリースの際に、
+  回答: いいえ! 最新の計測調査では、影響を受けるサイトの数は [ほんの一握り](https://github.com/dns-violations/dnsflagday/issues/139#issuecomment-673489183) (英語) です。
+        DNS Flag Day 2020 の当日に、 DNS ソフトウェア製品のベンダーは新しいリリースの際に、
         UDP でのメッセージサイズのデフォルト値を 1232 バイトとするようにデフォルトの挙動を変更するでしょう。
         そのような新しい製品が普及すると、 1232 バイトよりも大きな DNS 応答を返すものの TCP での
         DNS に応答しないサイトについては、名前解決に失敗するでしょう。
@@ -355,3 +340,17 @@ FAQ
         `_data/2020_supporters.yml` に追加することができます。
         プルリクエストの代わりに、 [Issue](https://github.com/dns-violations/dnsflagday/issues/new)
         を作成して同じ情報を送っていただくこともできます。
+
+過去の DNS Flag Day
+===================
+
+過去に行われた DNS Flag Day のリストは下記の通りです:
+- [2019 EDNS workarounds](/2019/)
+
+[2019 DNS Flag Day](/2019/) は成功裏に終わりました。
+名前解決に時間がかかるなどの世界中のインターネット利用者に影響を及ぼす問題に対して、
+インターネットコミュニティの参加者は連携して解決に当たりました。
+インターネットをより良くするために協調して尽力した全てのオペレーターに対して謝意を表します。
+
+過去に行われた、または将来行われる予定の DNS Flag Day の概要はこの動画などで確認できます。
+[https://youtu.be/mH_elg9EUWw?t=649](https://youtu.be/mH_elg9EUWw?t=649) (英語)

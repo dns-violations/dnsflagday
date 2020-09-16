@@ -251,8 +251,9 @@ ja:
         short: "テストシステムのエラー!"
         long: >
             <ul>
-                <li><strong>ネットワークに何らかの問題があるため、テストを完了することができませんでした!</strong></li>
-                <li>Check My DNS のサービスがダウンしているか一時的に利用できなくなっている可能性もあります。 テストをもう一度試す前に <a href="https://cmdns.dev.dns-oarc.net">https://cmdns.dev.dns-oarc.net</a> をご確認ください。</li>
+                <li><strong>テストシステムに何らかの問題があるため、テストを完了することができませんでした!</strong></li>
+                <li>Check My DNS のサービスがダウンしているか一時的に利用できなくなっている可能性があります。 テストをもう一度試す前に <a href="https://cmdns.dev.dns-oarc.net">https://cmdns.dev.dns-oarc.net</a> をご確認ください。</li>
+                <li>問題が継続するようであれば、 <a href="https://github.com/dns-violations/dnsflagday/issues/">DNS Flag Day の GitHub リポジトリ</a> に Issue として報告してください。</li>
             </ul>
     reportTestError: >
         エラーが発生したため、テストを実行することができませんでした。
