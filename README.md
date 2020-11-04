@@ -64,8 +64,22 @@ For press & media inquiries please use media (at) dns-oarc.net and please put
 Want to build this locally?
 ===========================
 
-Here are some helpful commands:
+In `Gemfile`, put:
+
+```
+source 'https://rubygems.org'
+gem 'github-pages', group: :jekyll_plugins
+
+```
+
+Then, to build (and keep building after every edit, run:
+
 ```
 docker run --rm -v "$PWD:/srv/jekyll" -v "$PWD/vendor/bundle:/usr/local/bundle" -it jekyll/jekyll jekyll build --watch
+```
+
+Then, in `_site/`, run:
+
+```
 python3 -mhttp.server
 ```
