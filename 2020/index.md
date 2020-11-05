@@ -32,7 +32,7 @@ Contents
 - [Get in touch](#get-in-touch)
 - [Supporters](#supporters)
 - [FAQ](#faq)
-- [Previous Flag Days](#previous-flag-days)
+- [Previous DNS Flag Days](#previous-dns-flag-days)
 
 What's next?
 ============
