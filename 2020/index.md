@@ -211,6 +211,15 @@ options {
 };
 ```
 
+- CoreDNS
+```
+. {
+    bufsize 1232
+    file db.example.org
+    log
+}
+```
+
 - Knot DNS
 ```
 server:
