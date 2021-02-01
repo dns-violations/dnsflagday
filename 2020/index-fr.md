@@ -130,48 +130,7 @@ Toutes les requêtes DNS doivent aboutir et les commandes avec ou sans l'option 
 
 Si vous êtes un FAI, vous pouvez tester vos serveurs faisant autorité et récursifs en changeant la configuration pour la taille par défaut du tampon EDNS:
 
-- BIND
-```
-options {
-    edns-udp-size 1232;
-    max-udp-size 1232;
-};
-```
-
-- Knot DNS
-```
-server:
-    max-udp-payload: 1232
-```
-
-- Knot Resolver
-```
-net.bufsize(1232)
-```
-
-- PowerDNS Authoritative
-```
-udp-truncation-threshold=1232
-```
-
-- PowerDNS Recursor
-```
-edns-outgoing-bufsize=1232
-udp-truncation-threshold=1232
-```
-
-- Unbound
-```
-server:
-    edns-buffer-size: 1232
-```
-
-- NSD
-```
-server:
-    ipv4-edns-size: 1232
-    ipv6-edns-size: 1232
-```
+{% include 2020_server_configs.md %}
 
 La configuration ci-dessus n'aura aucun impact si tout fonctionne correctement, mais certaines requêtes échoueront si TCP n'est pas disponible.
 

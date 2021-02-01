@@ -180,48 +180,7 @@ $ dig @resolver_IP test.knot-resolver.cz. TXT
 DNS サービスの提供者の方は、権威 DNS サーバーやフルサービスリゾルバーを下記のように
 EDNS バッファーサイズのデフォルト値を変更してテストすることができます:
 
-- BIND
-```
-options {
-    edns-udp-size 1232;
-    max-udp-size 1232;
-};
-```
-
-- Knot DNS
-```
-server:
-    max-udp-payload: 1232
-```
-
-- Knot Resolver
-```
-net.bufsize(1232)
-```
-
-- PowerDNS Authoritative
-```
-udp-truncation-threshold=1232
-```
-
-- PowerDNS Recursor
-```
-edns-outgoing-bufsize=1232
-udp-truncation-threshold=1232
-```
-
-- Unbound
-```
-server:
-    edns-buffer-size: 1232
-```
-
-- NSD
-```
-server:
-    ipv4-edns-size: 1232
-    ipv6-edns-size: 1232
-```
+{% include 2020_server_configs.md %}
 
 変更前に何の問題もなくサービスできていれば、上記の設定変更を適用しても影響はありません。
 TCP で応答していない場合には、一部の問い合わせが失敗するようになるでしょう。
