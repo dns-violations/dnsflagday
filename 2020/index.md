@@ -203,57 +203,7 @@ results both with and without the `+tcp` option.
 If you are a service provider, you can test your authoritative and
 recursive DNS services by configuring the default EDNS buffer size:
 
-- BIND
-```
-options {
-    edns-udp-size 1232;
-    max-udp-size 1232;
-};
-```
-
-- CoreDNS
-```
-. {
-    bufsize 1232
-    file db.example.org
-    log
-}
-```
-
-- Knot DNS
-```
-server:
-    max-udp-payload: 1232
-```
-
-- Knot Resolver
-```
-net.bufsize(1232)
-```
-
-- PowerDNS Authoritative
-```
-udp-truncation-threshold=1232
-```
-
-- PowerDNS Recursor
-```
-edns-outgoing-bufsize=1232
-udp-truncation-threshold=1232
-```
-
-- Unbound
-```
-server:
-    edns-buffer-size: 1232
-```
-
-- NSD
-```
-server:
-    ipv4-edns-size: 1232
-    ipv6-edns-size: 1232
-```
+{% include 2020_server_configs.md %}
 
 The configuration above will have no visible effect if everything works
 correctly. Some queries will fail to resolve if the TCP transport is not

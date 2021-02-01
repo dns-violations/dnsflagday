@@ -130,48 +130,7 @@ $ dig @resolver_IP test.knot-resolver.cz. TXT
 ```
 无论是否使用‘+tcp’选项,所有的DNS查询必须是成功的。如果你是一项业务的提供商，你也可以通过允许DNS支持TCP，以及改变下面默认的EDNS 缓冲区大小的配置来测试你的权威和递归服务。
 
-- BIND
-```
-options {
-    edns-udp-size 1232;
-    max-udp-size 1232;
-};
-```
-
-- Knot DNS
-```
-server:
-    max-udp-payload: 1232
-```
-
-- Knot Resolver
-```
-net.bufsize(1232)
-```
-
-- PowerDNS Authoritative
-```
-udp-truncation-threshold=1232
-```
-
-- PowerDNS Recursor
-```
-edns-outgoing-bufsize=1232
-udp-truncation-threshold=1232
-```
-
-- Unbound
-```
-server:
-    edns-buffer-size: 1232
-```
-
-- NSD
-```
-server:
-    ipv4-edns-size: 1232
-    ipv6-edns-size: 1232
-```
+{% include 2020_server_configs.md %}
 
 如果一切工作正常（支持TCP），以上的配置不会有明显的影响。如果递归或者权威不支持TCP，一些查询就会失败。
 
